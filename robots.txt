@@ -1,0 +1,6 @@
+# robots.txt for FadingUtilities
+User-agent: *
+Allow: /
+Disallow: /Images/
+
+Sitemap: https://cheapmanga.github.io/FadingUtilities/sitemap.xml

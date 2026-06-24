@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FadingUtilities - Speedrun Resources</title>
+<meta name="description" content="Fading Echo speedrun resources: glitches, movement techniques, tools and mods">
+<meta property="og:title" content="FadingUtilities - Speedrun">
+<meta property="og:description" content="Master the game with advanced techniques and tools">
+<meta name="theme-color" content="#00F5FF">
+<link rel="icon" type="image/png" href="Images/favicon.png">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-animation"></div>
+<header>
+<nav>
+<a href="index.html" class="logo">FADING ECHO SPEEDRUNS</a>
+<div style="display: flex; align-items: center;">
+<button class="search-trigger" id="searchTrigger">
+<i class="fas fa-search"></i>
+<span>Search</span>
+<kbd>Ctrl+K</kbd>
+</button>
+<button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+<ul>
+<li><a href="index.html" onclick="closeMenu()">Home</a></li>
+<li><a href="index.html#features" onclick="closeMenu()">Features</a></li>
+<li><a href="speedrun.html" onclick="closeMenu()">Speedrun</a></li>
+<li><a href="mods.html" onclick="closeMenu()">Mods</a></li>
+<li><a href="index.html#social" onclick="closeMenu()">Community</a></li>
+<li><a href="index.html#play" onclick="closeMenu()">Play</a></li>
+</ul>
+</div>
+
+<div class="container">
+<h1 class="page-title">Speedrun Resources</h1>
+<p class="page-subtitle">Master the game with advanced techniques and tools</p>
+
+<div class="sections-selector">
+<div class="section-card active" onclick="showSection('glitches')">
+<i class="fas fa-bug"></i>
+<h2>Glitches</h2>
+<p>Discover all movement techniques, skips and exploits to optimize your runs</p>
+</div>
+<div class="section-card" onclick="showSection('tools')">
+<i class="fas fa-tools"></i>
+<h2>External Tools</h2>
+<p>Timing software, practice tools and mods to improve your speedrunning experience</p>
+</div>
+</div>
+
+<div id="glitches" class="content-section active">
+<a href="#" class="back-btn" onclick="showMainSelector(); return false;"><i class="fas fa-arrow-left"></i> Back to sections</a>
+<div class="content-grid">
+<div class="content-card">
+<h3>Hyper Dash (HD) <span class="alt-names">| Wave Dash (like in Celeste), Long Jump, Collision Jump, Ricochet</span>
+<a href="https://discord.com/channels/1262382985844359221/1501975620953968672/1513007350787870870" target="_blank" rel="noopener noreferrer" class="glitch-link" title="View on Discord"><i class="fab fa-discord"></i></a>
+</h3>
+<h4>How to do:</h4>
+<p>From the air (usually after a jump), dash into a walkable surface and quickly press jump. You'll be launched with the speed of the dash on a long distance, like a boosted bunny hop. It is possible on flat surfaces: the flatter it is, the more delay it needs between dash and jump.</p>
+<h4>Variations:</h4>
+<ul><li><a href="https://discord.com/channels/1262382985844359221/1501975620953968672/1512967434791813120" target="_blank" rel="noopener noreferrer" class="inline-link">Element Hyper Dash</a> (Poison/Steam/Nitro...) - As water form, do an Hyper Dash into a liquid to get the corresponding boost. The Poison version seems to be the most useful for now.</li></ul>
+<div class="note"><strong>Note:</strong> Often used in the run, especially in the intro before getting the Form Dash. Seems conditioned to a higher framerate (ideally, 120fps no vsync).</div>
+</div>
+<div class="content-card">
+<h3>Jump Switch (JS) <span class="alt-names">| Element Switch, Switch Boost</span>
+<a href="https://discord.com/channels/1262382985844359221/1501975620953968672" target="_blank" rel="noopener noreferrer" class="glitch-link" title="View on Discord"><i class="fab fa-discord"></i></a>
+</h3>
+<h4>How to do:</h4>
+<p>As water form, jump and switch at the same time, or at least in that order, to get a small boost up.</p>
+<h4>Variations:</h4>
+<ul><li><a href="https://discord.com/channels/1262382985844359221/1501975620953968672/1512521417714040964" target="_blank" rel="noopener noreferrer" class="inline-link">Poison Jump Switch</a> - When releasing the poison by jumping, delay your transformation to receive a big momentum up as One.</li></ul>
+<div class="note"><strong>Note:</strong> Mostly used in speedrun as the poison variation, but the basic water Jump Switch still gains a small boost and allows to chain very fast jumps (See Form Dash notes).</div>
+</div>
+<div class="content-card">
+<h3>Hyper Switch (HS)
+<a href="https://discord.com/channels/1262382985844359221/1501975620953968672" target="_blank" rel="noopener noreferrer" class="glitch-link" title="View on Discord"><i class="fab fa-discord"></i></a>
+</h3>
+<h4>How to do:</h4>
+<p>Combination of Hyper Dash and Jump Switch - Starting as water form in the air, dash into a surface and immediately jump > switch into One.</p>
+<h4>Variations:</h4>
+<ul><li><strong>Poison Hyper Switch</strong> - Combination of Poison Hyper Dash and Poison Jump Switch - Water form > Hyper Dash into Poison > after jumping, delay the transfo like for Poison Jump Switch > get a big boost up and forward.</li></ul>
+<div class="note"><strong>Note:</strong> Allows to get a bit more height and distance with the Hyper Dash. Can help with jumps like <a href="https://discord.com/channels/1262382985844359221/1501975620953968672" target="_blank" rel="noopener noreferrer" class="inline-link">this one</a>.</div>
+</div>
+<div class="content-card">
+<h3>Form Dash (FD)
+<a href="https://discord.com/channels/1262382985844359221/1501975620953968672" target="_blank" rel="noopener noreferrer" class="glitch-link" title="View on Discord"><i class="fab fa-discord"></i></a>
+</h3>
+<h4>How to do:</h4>
+<p>Dash just before a transformation to reach a very high speed. Usually stands for the aerial version, but works on the ground (quickly alternating each input).</p>
+<h4>Variations:</h4>
+<ul><li><a href="https://discord.com/channels/1262382985844359221/1501975620953968672/1513217181943332885" target="_blank" rel="noopener noreferrer" class="inline-link">Form Dash Poison (FDP)</a> - Press jump > switch > dash (with a precise timing). This will perform a Form Dash without switching to One, but staying as water form. Can be done to keep an item stored while performing a Form Dash.</li></ul>
+<div class="note"><strong>Note:</strong> Very often used in the run after the intro. To <a href="https://discord.com/channels/1262382985844359221/1501975620953968672" target="_blank" rel="noopener noreferrer" class="inline-link">chain them properly</a>, start as water form > Jump Switch (jump>switch) > Form Dash (dash>switch) > as soon as you land as water form, repeat this cycle (it can get very fast).</div>
+</div>
+<div class="content-card">
+<h3>Jump Kick (JK)
+<a href="https://discord.com/channels/1262382985844359221/1501975620953968672" target="_blank" rel="noopener noreferrer" class="glitch-link" title="View on Discord"><i class="fab fa-discord"></i></a>
+</h3>
+<h4>How to do:</h4>
+<p>From the air (usually quickly after a jump), do the kick move into a geometry corner to gain momentum up.</p>
+<div class="note"><strong>Note:</strong> This specific clip is from the older demo. It still remains possible but has been nerfed since then. Conditioned to a higher framerate (ideally, 120fps no vsync).</div>
+</div>
+<div class="content-card">
+<h3>Void Infinite Dash <span class="alt-names">| Infinite Dash Respawn</span>
+<a href="https://discord.com/channels/1262382985844359221/1501975620953968672" target="_blank" rel="noopener noreferrer" class="glitch-link" title="View on Discord"><i class="fab fa-discord"></i></a>
+</h3>
+<h4>How to do:</h4>
+<p>Simply mash the dash just after respawning from a fall/void.</p>
+<div class="note"><strong>Note:</strong> This can not last very long and the game will make you void pretty fast</div>
+</div>
+<div class="content-card">
+<h3>Jojo Glitch <span class="alt-names">| Tube Glitch, Flying Glitch, Air-Lock Glitch</span>
+<a href="https://discord.com/channels/1262382985844359221/1501975620953968672" target="_blank" rel="noopener noreferrer" class="glitch-link" title="View on Discord"><i class="fab fa-discord"></i></a>
+</h3>
+<h4>How to do:</h4>
+<p>Go into a water tube and simply restart from checkpoint (it needs to be in the same level). This seems to disturb the transition from ground to air and locks you into a walking state, unable to jump. You'll be standing onto an invisible floor with the possibility to work your hitbox up or down by entering in contact with the environment. Find the ideal collisions in the level design to navigate in the available space. It allows the <a href="https://discord.com/channels/1262382985844359221/1501975620953968672/1513257445365907749" target="_blank" rel="noopener noreferrer" class="inline-link">Volcano Skip</a> (follow this routing).</p>
+<div class="note"><strong>Note:</strong> The best spot to perform this is the portal going from Bastion to Volcano, in the underwater biome (there is a checkpoint just next to the first tubes). When active, the fastest way to move horizontally is with the ground version of the Form Dash (quickly alternating dash and switch). The best way to go up seems to be by mashing the switch (no dash) while facing an inclined wall.</div>
+</div>
+<div class="content-card">
+<h3>Portal Glitch <span class="alt-names">| Portal Wrong Load, Portal Escape Glitch</span>
+<a href="https://discord.com/channels/1262382985844359221/1501975620953968672" target="_blank" rel="noopener noreferrer" class="glitch-link" title="View on Discord"><i class="fab fa-discord"></i></a>
+</h3>
+<h4>How to do:</h4>
+<p>Previously done thanks to the "restart from checkpoint" - patched. Still possible thanks to the glitch form (purple). Place a teleportation mark out of the portal, turn the camera away from this point, stand on the central button to activate the portal but quickly teleport back to the mark. The camera will turn to aim the mark you left, leaving enough time for the portal to activate just before you get teleported. Once escaped, the level will still unload and switch to the targeted one, leaving you unprotected and free for a few seconds...</p>
+<div class="note"><strong>Note:</strong> Can be used to unload walls and go <a href="https://discord.com/channels/1262382985844359221/1501975620953968672/1511816420642525187" target="_blank" rel="noopener noreferrer" class="inline-link">OOB</a>. Opening the start menu at a specific moment can allow the new level to load while suspending your position.</div>
+</div>
+<div class="content-card">
+<h3>Glitch² <span class="alt-names">| Glitch Glitch, GG</span>
+<a href="https://discord.com/channels/1262382985844359221/1501975620953968672" target="_blank" rel="noopener noreferrer" class="glitch-link" title="View on Discord"><i class="fab fa-discord"></i></a>
+</h3>
+<h4>How to do:</h4>
+<p>As One, get affected by the <a href="https://discord.com/channels/1262382985844359221/1501975620953968672/1511796188133724310" target="_blank" rel="noopener noreferrer" class="inline-link">glitch liquid</a> but dash away from the edge of the pool to fall/void during the animation. After respawning, you'll be insensible to other liquids and to enemy attacks.</p>
+<div class="warning"><strong>Note:</strong> This is a hidden liquid/color still accessible in the demo, giving us a glimpse on the future puzzles and exploits we might be able to do in the full game... No real use found yet but great potential for the full game and its most intense combat phases.</div>
+</div>
+<div class="content-card">
+    <h3>Cutscene Skip (CS)
+      <a href="https://www.youtube.com/watch?v=CMLUlUVKSEc&list=PLfS_Ge59iHlSnz583JHwopKhzn1ENZPvz" target="_blank" rel="noopener noreferrer" class="glitch-link" title="View on Youtube"><i class="fab fa-youtube"></i> </a>
+    </h3>
+    <h4>How to do:</h4>
+    <p>From the main menu, you choose new game, then the difficulty of your game and when you press enter, press down and enter relatively quickly. What it does is that for a brief moment after starting, you're still able to navigate through the menu : going down and validating makes you choose CONTINUE. Right after that, move your stick forward, do a dash, jump and attack. You should be able to hear these actions during the black-screen the cutscene. The last input being an attack, you should also get a vibration from a controller.</p>
+    <h4>To summarize:</h4>
+    <p>Enter > Down > Enter > Hold stick forward > Dash > Jump > Attack</p>
+    <div class="warning"><strong>Note:</strong> The timings are comfortable, it is recommended trying different timings and picking the one that suits your playstyle or watch (and listen to) <a href="https://www.youtube.com/watch?v=CMLUlUVKSEc&list=PLfS_Ge59iHlSnz583JHwopKhzn1ENZPvz" target="_blank" rel="noopener noreferrer" class="inline-link">this</a>.
+    You know you did it right if One doesn't talk right after the cutscene and there is no camera movement. It is highly recommended to have the sound of the game turned on, so you can hear your inputs.
+    <br>Congrats, you did a Cuscene Skip (CS) and you unlocked new glitches!
+  </div>
+  </div>
+<div class="content-card">
+<h3 style="color: var(--primary-pink);">VOID CANCELs
+<a href="https://www.youtube.com/watch?v=CMLUlUVKSEc&list=PLfS_Ge59iHlSnz583JHwopKhzn1ENZPvz" target="_blank" rel="noopener noreferrer" class="glitch-link" title="View on YouTube"><i class="fab fa-youtube"></i> </a>
+</h3>
+<a href="voidcancel.html" class="download-btn" style="margin-top: 20px;">
+<i class="fas fa-book-open"></i> Read the Guide for Void Cancels
+</a>
+</div>
+</div>
+
+<div class="community-section">
+<h2><i class="fas fa-users"></i> Contribute to the Community</h2>
+<p>Found a new glitch? Discovered an optimized route? Have something interesting to share?<br>Help us improve Fading Echo speedrunning by sharing your discoveries with the community!</p>
+<div class="community-buttons">
+<a href="https://discord.com/channels/1262382985844359221/1501975620953968672" target="_blank" rel="noopener noreferrer" class="community-btn discord"><i class="fab fa-discord"></i> Share on Discord</a>
+<a href="https://www.youtube.com/playlist?list=PLfS_Ge59iHlSnz583JHwopKhzn1ENZPvz&jct=l7ZOhys5h66wlHzp6H8hKg" target="_blank" rel="noopener noreferrer" class="community-btn youtube"><i class="fab fa-youtube"></i> Add to Community Playlist</a>
+</div>
+</div>
+</div>
+
+<div id="tools" class="content-section">
+<a href="#" class="back-btn" onclick="showMainSelector(); return false;"><i class="fas fa-arrow-left"></i> Back to sections</a>
+<div class="tool-card">
+<h3><i class="fas fa-stopwatch"></i> LiveSplit - Timing Software</h3>
+<p>We use a software called <strong>LiveSplit</strong>, it allows us to precisely time our runs.</p>
+<p style="margin-top: 15px;">There is an auto-splitter out there, just type <strong>"Fading Echo"</strong> in the name section and you'll see an auto-splitter made by Streetbackguy.</p>
+<a href="https://livesplit.org/" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download LiveSplit</a>
+</div>
+<div class="tool-card">
+<h3><i class="fas fa-microchip"></i> Cheat Engine - Practice Tool</h3>
+<p>Teleportation tool using <a href="https://cheatengine.org" target="_blank" rel="noopener noreferrer" style="color: var(--primary-yellow); text-decoration: none; font-weight: 700;">Cheat Engine</a> for practice and route optimization.</p>
+<h4>Requirements:</h4>
+<ul><li><strong>Cheat Engine 7.5 or 7.6</strong></li><li>Download the table file</li></ul>
+<h4>Installation:</h4>
+<ul><li>Download the table</li><li>Open the table by double-clicking it</li><li>Open the game</li><li>Open the game process in Cheat Engine</li><li>Check <strong>"Auto Assemble script"</strong> (Don't forget!)</li></ul>
+<h4>Controls:</h4>
+<ul><li><strong>Press "C"</strong> to save your position</li><li><strong>Press "X"</strong> to teleport</li></ul>
+<div class="note" style="margin-top: 20px;"><strong>Note:</strong> If the teleportation is not immediate, move your character a bit. If you know the coordinates and if you are in the correct dimension, you can just teleport yourself anywhere.</div>
+<div class="warning" style="margin-top: 20px;"><strong><a href="https://docs.google.com/document/d/1N3TDETkZ3tl-a5jP5OhRn1InMCQMetF1_weFx_e5fDU/edit?usp=sharing" target="_blank" rel="noopener noreferrer" style="color: var(--primary-pink); text-decoration: none;">TEST STATE:</a></strong> This is currently in a test state for Fading Echo v. 1.0.27280</div>
+<div style="margin-top: 20px;"><a href="https://drive.google.com/uc?id=1dtwtP66JOekEabQbCy_VPdglDtysBBeA" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-external-link-alt"></i> Get the Table File</a></div>
+</div>
+<div class="tool-card">
+<h3><i class="fas fa-cube"></i> Mods</h3>
+<p>Check out our mods page for more advanced tools including:</p>
+<ul style="margin-top: 15px; margin-left: 20px;">
+<li><strong>Teleport Mod</strong> - Alternative to Cheat Engine</li>
+<li><strong>Trigger & Wall Visualizer</strong> - See triggers and invisible walls</li>
+</ul>
+<a href="mods.html" class="download-btn" style="margin-top: 20px;"><i class="fas fa-arrow-right"></i> Go to Mods Page</a>
+</div>
+<div style="background: rgba(255, 255, 255, 0.03); border: 2px solid rgba(0, 245, 255, 0.3); border-radius: 20px; padding: 40px; margin-top: 30px; text-align: center;">
+<h3 style="font-family: 'Orbitron', sans-serif; color: var(--primary-yellow); margin-bottom: 20px;"><i class="fas fa-shield-alt"></i> Security Notice</h3>
+<p style="font-size: 1.1rem; color: #aaa;">If you have any doubt, feel free to inspect and test all the files on <a href="https://www.virustotal.com/gui/home/upload" target="_blank" rel="noopener noreferrer" style="color: var(--primary-yellow); text-decoration: none; font-weight: 700;">VirusTotal</a> or any virus-testing tool.</p>
+</div>
+</div>
+</div>
+
+<section class="contribute-section">
+<div class="contribute-container">
+    <h2 class="section-title">Want to Improve This?</h2>
+    <p style="font-size: 1.3rem; color: #a0a0a0; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+        Found something to fix or have an idea to make this site better? 
+        Contributions are welcome! Submit a pull request on GitHub and help improve the community.
+    </p>
+    <a href="https://github.com/cheapmanga/FadingUtilities" target="_blank" rel="noopener noreferrer" class="contribute-button">
+        <i class="fab fa-github"></i> View on GitHub
+    </a>
+</div>
+</section>
+
+<footer>
+<p>&copy; 2026 Fading Echo Speedrun Community</p>
+<p>Resources maintained by the community</p>
+<p style="margin-top: 20px;"><a href="https://discord.gg/KnjSeWrRPv" target="_blank" rel="noopener noreferrer" style="color: var(--primary-cyan); text-decoration: none;"><i class="fab fa-discord"></i> Join our Discord</a></p>
+</footer>
+
+<!-- SEARCH MODAL -->
+<div id="searchModal" class="search-modal" role="dialog" aria-label="Search">
+<div class="search-container">
+<div class="search-header">
+<i class="fas fa-search search-icon"></i>
+<input type="text" id="searchInput" placeholder="Search glitches, mods, tools..." autocomplete="off" aria-label="Search input">
+<kbd class="search-shortcut">ESC</kbd>
+</div>
+<div class="search-results" id="searchResults">
+<div class="search-empty">Start typing to search...</div>
+</div>
+<div class="search-footer">
+<span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+<span><kbd>↵</kbd> to select</span>
+<span><kbd>ESC</kbd> to close</span>
+</div>
+</div>
+</div>
+
+<script>
+// Index de recherche spécifique à cette page
+const pageSearchIndex = [
+{ title: "Hyper Dash (HD)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Wave Dash, Long Jump", icon: "fa-bolt" },
+{ title: "Form Dash (FD)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Water Dash, Drop Dash", icon: "fa-wind" },
+{ title: "Jump Switch (JS)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Element Switch, Switch Boost", icon: "fa-arrow-up" },
+{ title: "Hyper Switch (HS)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Combo of Hyper Dash and Jump Switch", icon: "fa-bolt" },
+{ title: "Jump Kick (JK)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Gain momentum up", icon: "fa-shoe-prints" },
+{ title: "Void Infinite Dash", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Infinite Dash Respawn", icon: "fa-ghost" },
+{ title: "Jojo Glitch", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Tube Glitch, Flying Glitch", icon: "fa-bug" },
+{ title: "Portal Glitch", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Portal Wrong Load", icon: "fa-door-open" },
+{ title: "Glitch²", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Glitch Glitch, GG", icon: "fa-radiation" },
+{ title: "NEW VOID CANCEL!", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Cancel void/respawn", icon: "fa-ban" },
+{ title: "Void Cancel Guide", category: "Glitch", page: "voidcancel.html", target: "", desc: "Complete detailed guide to bypass fall limits", icon: "fa-book-open" },
+{ title: "Teleport Mod", category: "Mod", page: "mods.html", target: "mods", desc: "Alternative to Cheat Engine", icon: "fa-location-arrow" },
+{ title: "Trigger & Wall Visualizer", category: "Mod", page: "mods.html", target: "mods", desc: "See triggers and invisible walls", icon: "fa-border-all" },
+{ title: "LiveSplit", category: "Tool", page: "speedrun.html", target: "tools", desc: "Timing software with auto-splitter", icon: "fa-stopwatch" },
+{ title: "Cheat Engine", category: "Tool", page: "speedrun.html", target: "tools", desc: "Practice tool for teleportation", icon: "fa-microchip" }
+];
+</script>
+<script src="search.js"></script>
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+hamburger.classList.toggle('active');
+hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('active') ? 'true' : 'false');
+mobileMenu.classList.toggle('active');
+document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+function closeMenu() {
+hamburger.classList.remove('active');
+mobileMenu.classList.remove('active');
+hamburger.setAttribute('aria-expanded', 'false');
+document.body.style.overflow = '';
+}
+mobileMenu.addEventListener('click', (e) => { if (e.target === mobileMenu) closeMenu(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMenu(); });
+
+function createWaterParticle() {
+const particle = document.createElement('div');
+particle.className = 'water-particle';
+particle.style.left = Math.random() * 100 + 'vw';
+particle.style.width = Math.random() * 10 + 5 + 'px';
+particle.style.height = particle.style.width;
+particle.style.animationDuration = Math.random() * 3 + 2 + 's';
+document.body.appendChild(particle);
+setTimeout(() => { particle.remove(); }, 5000);
+}
+setInterval(createWaterParticle, 500);
+
+function showSection(sectionName) {
+document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+document.querySelectorAll('.section-card').forEach(card => card.classList.remove('active'));
+const selectedSection = document.getElementById(sectionName);
+if (selectedSection) selectedSection.classList.add('active');
+event.currentTarget.classList.add('active');
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function showMainSelector() {
+document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+document.querySelectorAll('.section-card').forEach(card => card.classList.remove('active'));
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
