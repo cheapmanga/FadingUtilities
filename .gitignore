@@ -1,3 +1,16 @@
 # Fichiers de déploiement locaux
 push.bat
-*.bat
+deploy.sh
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
