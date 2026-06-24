@@ -24,11 +24,11 @@ if not exist ".git" (
     exit /b 1
 )
 
-:: Récupère la date et heure pour le message de commit
-for /f "tokens=2 delims==" %%I in ('wmic os get localdatetime /value') do set datetime=%%I
-set commitdate=%datetime:~0,4%-%datetime:~4,2%-%datetime:~6,2% %datetime:~8,2%:%datetime:~10,2%
+:: Récupère la date et heure via PowerShell (compatible Windows 11)
+for /f "delims=" %%I in ('powershell -command "Get-Date -Format 'yyyy-MM-dd HH:mm'"') do set commitdate=%%I
 
 echo [INFO] Dossier: %cd%
+echo [INFO] Date: %commitdate%
 echo.
 
 :: Affiche les fichiers modifiés
@@ -63,9 +63,20 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-:: Push vers GitHub
+:: Push vers GitHub (avec gestion du premier push)
 echo [3/3] Push vers GitHub...
-git push
+git rev-parse --abbrev-ref HEAD >nul 2>nul
+for /f "delims=" %%B in ('git rev-parse --abbrev-ref HEAD') do set branch=%%B
+
+:: Vérifie si la branche a déjà un upstream
+git rev-parse --abbrev-ref @{upstream} >nul 2>nul
+if %errorlevel% neq 0 (
+    echo [INFO] Premier push - configuration de l'upstream...
+    git push --set-upstream origin %branch%
+) else (
+    git push
+)
+
 if %errorlevel% neq 0 (
     echo.
     echo [ERREUR] Échec du push. Vérifie tes identifiants ou ta connexion.
