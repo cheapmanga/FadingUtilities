@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FadingUtilities - Mods</title>
+<meta name="description" content="Fading Echo community mods: Teleport Mod, Volume Mod and more tools">
+<meta property="og:title" content="FadingUtilities - Mods">
+<meta property="og:description" content="Enhance your Fading Echo experience with community-made tools">
+<meta name="theme-color" content="#00F5FF">
+<link rel="icon" type="image/png" href="Images/favicon.png">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg-animation"></div>
+<header>
+<nav>
+<a href="index.html" class="logo">FADING ECHO SPEEDRUNS</a>
+<div style="display: flex; align-items: center;">
+<button class="search-trigger" id="searchTrigger">
+<i class="fas fa-search"></i>
+<span>Search</span>
+<kbd>Ctrl+K</kbd>
+</button>
+<button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+<ul>
+<li><a href="index.html" onclick="closeMenu()">Home</a></li>
+<li><a href="index.html#features" onclick="closeMenu()">Features</a></li>
+<li><a href="speedrun.html" onclick="closeMenu()">Speedrun</a></li>
+<li><a href="mods.html" onclick="closeMenu()">Mods</a></li>
+<li><a href="index.html#social" onclick="closeMenu()">Community</a></li>
+<li><a href="index.html#play" onclick="closeMenu()">Play</a></li>
+</ul>
+</div>
+
+<div class="container">
+<a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+<h1 class="page-title">Mods</h1>
+<p class="page-subtitle">Enhance your Fading Echo experience with community-made tools</p>
+
+<div class="mods-grid">
+<!-- Teleport Mod -->
+<div class="mod-card">
+<div class="mod-icon"><i class="fas fa-location-arrow"></i></div>
+<h2>Teleport Mod</h2>
+<span class="mod-version">v0.1.0</span>
+<p>A powerful alternative to Cheat Engine for practicing routes and exploring the game world. Save your position anywhere and teleport back instantly with a single key press.</p>
+
+<h3><i class="fas fa-gamepad"></i> Controls</h3>
+<ul>
+<li><code>F6</code> : save current player position and rotation</li>
+<li><code>F7</code> : load saved player position and rotation</li>
+</ul>
+
+<div class="warning">
+<strong>IMPORTANT:</strong> The readme is made for the Volume Mod but the Teleport Mod is included.
+</div>
+
+<div class="note">
+<strong>Note:</strong> Do not create mods with <code>UE4SS Debugging Tools (OpenGL 3) - External Thread</code> or else it will ask you administrator rights to remove it. Even if you have them you will not be able to remove them. You will have to remove it using the console.
+</div>
+
+<div class="warning">
+<strong>Link Issue?</strong> If the Google Drive link doesn't work, you can contact me via discord: <strong>cheapmanga_89714</strong>
+</div>
+
+<a href="https://drive.google.com/uc?id=1KaB3u3OKECMud42-oIlTjFKndRZCpx5F" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
+<a href="speedrun.html#tools" class="secondary-btn"><i class="fas fa-info-circle"></i> Alternative: Cheat Engine</a>
+</div>
+
+<!-- Volume Mod -->
+<div class="mod-card">
+<div class="mod-icon"><i class="fas fa-border-all"></i></div>
+<h2>Volume Mod</h2>
+<span class="mod-version">v0.1.0</span>
+<p>See invisible walls and triggers in the game world. Perfect for understanding level boundaries and planning optimized routes for speedrunning.</p>
+
+<h3><i class="fas fa-eye"></i> Features</h3>
+<ul>
+<li>Visualize all invisible walls and collision volumes</li>
+<li>See trigger zones and interactive areas</li>
+<li>Essential for route planning and optimization</li>
+<li>Helps understand level design and boundaries</li>
+</ul>
+
+<div class="warning">
+<strong>IMPORTANT:</strong> PLEASE READ THE README IN THE .ZIP FOR TUTORIAL
+</div>
+
+<div class="note">
+<strong>Note:</strong> The readme is made for the Volume Mod but the Teleport Mod is also included in the same package.
+</div>
+
+<a href="https://drive.google.com/uc?id=1KaB3u3OKECMud42-oIlTjFKndRZCpx5F" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
+</div>
+</div>
+
+<div style="background: rgba(255, 255, 255, 0.03); border: 2px solid rgba(0, 245, 255, 0.3); border-radius: 20px; padding: 40px; margin: 60px 0; text-align: center;">
+<h3 style="font-family: 'Orbitron', sans-serif; color: var(--primary-yellow); margin-bottom: 20px;"><i class="fas fa-shield-alt"></i> Security Notice</h3>
+<p style="font-size: 1.1rem; color: #aaa;">If you have any doubt, feel free to inspect and test all the files on <a href="https://www.virustotal.com/gui/home/upload" target="_blank" rel="noopener noreferrer" style="color: var(--primary-yellow); text-decoration: none; font-weight: 700;">VirusTotal</a> or any virus-testing tool.<br>All mods are open-source and community-reviewed.</p>
+</div>
+
+<!-- Community Section -->
+<div class="community-section">
+<h2><i class="fas fa-users"></i> Contribute to the Community</h2>
+<p>Are you a developer? Have an idea for a mod? You have something to ask? You have something to share?<br>Join our community and help make Fading Echo even better!</p>
+<div class="community-buttons">
+<a href="https://discord.com/channels/1262382985844359221/1501975620953968672" target="_blank" rel="noopener noreferrer" class="community-btn discord"><i class="fab fa-discord"></i> Join the Discussion</a>
+<a href="https://www.youtube.com/playlist?list=PLfS_Ge59iHlSnz583JHwopKhzn1ENZPvz&jct=l7ZOhys5h66wlHzp6H8hKg" target="_blank" rel="noopener noreferrer" class="community-btn youtube"><i class="fab fa-youtube"></i> Add to Community Playlist</a>
+</div>
+</div>
+</div>
+
+<section class="contribute-section">
+<div class="contribute-container">
+    <h2 class="section-title">Want to Improve This?</h2>
+    <p style="font-size: 1.3rem; color: #a0a0a0; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+        Found something to fix or have an idea to make this site better? 
+        Contributions are welcome! Submit a pull request on GitHub and help improve the community.
+    </p>
+    <a href="https://github.com/cheapmanga/FadingUtilities" target="_blank" rel="noopener noreferrer" class="contribute-button">
+        <i class="fab fa-github"></i> View on GitHub
+    </a>
+</div>
+</section>
+
+<footer>
+<p>&copy; 2026 Fading Echo Speedrun Community</p>
+<p>Resources maintained by the community</p>
+<p style="margin-top: 20px; font-size: 0.9rem;">
+<i class="fas fa-heart" style="color: var(--primary-pink);"></i> Made by CheapManga and the community
+</p>
+</footer>
+
+<!-- SEARCH MODAL -->
+<div id="searchModal" class="search-modal" role="dialog" aria-label="Search">
+<div class="search-container">
+<div class="search-header">
+<i class="fas fa-search search-icon"></i>
+<input type="text" id="searchInput" placeholder="Search glitches, mods, tools..." autocomplete="off" aria-label="Search input">
+<kbd class="search-shortcut">ESC</kbd>
+</div>
+<div class="search-results" id="searchResults">
+<div class="search-empty">Start typing to search...</div>
+</div>
+<div class="search-footer">
+<span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+<span><kbd>↵</kbd> to select</span>
+<span><kbd>ESC</kbd> to close</span>
+</div>
+</div>
+</div>
+
+<script>
+const pageSearchIndex = [
+{ title: "Void Cancel", category: "Glitch", page: "voidcancel.html", target: "", desc: "Bypass fall limit, Cutscene Skip & Death methods", icon: "fa-ban" },
+{ title: "Hyper Dash (HD)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Wave Dash, Long Jump", icon: "fa-bolt" },
+{ title: "Form Dash (FD)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Water Dash, Drop Dash", icon: "fa-wind" },
+{ title: "Jump Switch (JS)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Element Switch, Switch Boost", icon: "fa-arrow-up" },
+{ title: "Teleport Mod", category: "Mod", page: "mods.html", target: "", desc: "Alternative to Cheat Engine (F6/F7)", icon: "fa-location-arrow" },
+{ title: "Volume Mod", category: "Mod", page: "mods.html", target: "", desc: "See invisible walls and triggers", icon: "fa-border-all" }
+];
+</script>
+<script src="search.js"></script>
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+hamburger.classList.toggle('active');
+hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('active') ? 'true' : 'false');
+mobileMenu.classList.toggle('active');
+document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+function closeMenu() {
+hamburger.classList.remove('active');
+mobileMenu.classList.remove('active');
+hamburger.setAttribute('aria-expanded', 'false');
+document.body.style.overflow = '';
+}
+mobileMenu.addEventListener('click', (e) => { if (e.target === mobileMenu) closeMenu(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMenu(); });
+
+function createWaterParticle() {
+const particle = document.createElement('div');
+particle.className = 'water-particle';
+particle.style.left = Math.random() * 100 + 'vw';
+particle.style.width = Math.random() * 10 + 5 + 'px';
+particle.style.height = particle.style.width;
+particle.style.animationDuration = Math.random() * 3 + 2 + 's';
+document.body.appendChild(particle);
+setTimeout(() => { particle.remove(); }, 5000);
+}
+setInterval(createWaterParticle, 500);
+</script>
+</body>
+</html>
