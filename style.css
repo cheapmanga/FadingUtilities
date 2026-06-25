@@ -1142,3 +1142,210 @@ footer p { margin: 10px 0; }
     .error-code { font-size: 6rem; }
     .error-message { font-size: 1.5rem; }
 }
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        padding: 15px 20px;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    /* Search button - Hide text and shortcut on mobile */
+    .search-trigger {
+        padding: 10px;
+        margin-right: 10px;
+    }
+    
+    .search-text {
+        display: none;
+    }
+    
+    .search-kbd {
+        display: none;
+    }
+    
+    /* Hero section */
+    .hero {
+        margin-top: 70px;
+        padding: 40px 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    /* Page titles */
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    /* Section titles */
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    /* Cards */
+    .feature-card,
+    .content-card,
+    .mod-card,
+    .tool-card {
+        padding: 25px 20px;
+    }
+    
+    .feature-card h3,
+    .content-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    /* Buttons */
+    .contribute-button,
+    .cta-button,
+    .download-btn {
+        padding: 15px 30px;
+        font-size: 1rem;
+        display: inline-block;
+        width: auto;
+        max-width: 90%;
+        word-wrap: break-word;
+    }
+    
+    /* Social links */
+    .social-link {
+        padding: 15px 20px;
+    }
+    
+    .social-text h4 {
+        font-size: 1rem;
+    }
+    
+    .social-text p {
+        font-size: 0.85rem;
+    }
+    
+    /* Community buttons */
+    .community-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Search modal */
+    .search-container {
+        width: 95%;
+        margin: 0 10px;
+    }
+    
+    #searchInput {
+        font-size: 1rem; /* Prevents zoom on iOS */
+    }
+    
+    /* Fix text overflow */
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    .container {
+        padding: 30px 15px;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Grid adjustments */
+    .features-grid,
+    .content-grid,
+    .mods-grid,
+    .social-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Sections selector */
+    .sections-selector {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .section-card {
+        padding: 30px 20px;
+    }
+    
+    .section-card i {
+        font-size: 3rem;
+    }
+    
+    .section-card h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 30px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Contribute section */
+    .contribute-section {
+        padding: 60px 20px;
+    }
+    
+    .contribute-container p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    /* Game banner */
+    .game-banner {
+        margin: 30px auto;
+    }
+    
+    /* Fix long words/links */
+    a, p, h1, h2, h3, h4 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .feature-icon {
+        font-size: 2rem;
+    }
+    
+    .mod-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+}
