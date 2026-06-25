@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FadingUtilities - Void Cancel Guide</title>
-<meta name="description" content="Complete guide to Void Cancel glitch in Fading Echo: bypass fall limits with Cutscene Skip and Death methods">
-<meta property="og:title" content="FadingUtilities - Void Cancel Guide">
-<meta property="og:description" content="Master the ultimate movement exploit to bypass fall limits">
+<title>Void Cancel Guide - FadingUtilities</title>
+<meta name="description" content="Complete guide to master Void Cancel glitch in Fading Echo">
+<meta property="og:title" content="Void Cancel Guide - FadingUtilities">
+<meta property="og:description" content="Master the Void Cancel glitch with detailed tutorials and variations">
 <meta name="theme-color" content="#00F5FF">
 <link rel="icon" type="image/png" href="Images/favicon.png">
 <link rel="manifest" href="manifest.json">
@@ -15,9 +15,210 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
+<style>
+    .guide-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+    
+    .guide-header {
+        text-align: center;
+        margin-bottom: 50px;
+        padding: 40px;
+        background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(0, 245, 255, 0.1));
+        border: 2px solid var(--primary-pink);
+        border-radius: 20px;
+    }
+    
+    .guide-header h1 {
+        font-family: 'Orbitron', sans-serif;
+        color: var(--primary-pink);
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .guide-header .subtitle {
+        font-size: 1.2rem;
+        color: #a0a0a0;
+    }
+    
+    .method-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 2px solid rgba(0, 245, 255, 0.3);
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .method-card h2 {
+        font-family: 'Orbitron', sans-serif;
+        color: var(--primary-cyan);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .method-card.death-method {
+        border-color: var(--primary-yellow);
+    }
+    
+    .method-card.death-method h2 {
+        color: var(--primary-yellow);
+    }
+    
+    .steps {
+        counter-reset: step-counter;
+        margin: 20px 0;
+    }
+    
+    .step {
+        counter-increment: step-counter;
+        margin-bottom: 25px;
+        padding-left: 50px;
+        position: relative;
+    }
+    
+    .step::before {
+        content: counter(step-counter);
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: var(--primary-cyan);
+        color: #000;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-family: 'Orbitron', sans-serif;
+    }
+    
+    .step h4 {
+        color: var(--primary-cyan);
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    
+    .step p {
+        line-height: 1.8;
+        color: #ccc;
+    }
+    
+    .video-section {
+        margin: 40px 0;
+    }
+    
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 20px 0;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    .tips-box {
+        background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(255, 107, 157, 0.05));
+        border-left: 4px solid var(--primary-cyan);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 10px 10px 0;
+    }
+    
+    .tips-box h3 {
+        color: var(--primary-cyan);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .tips-box ul {
+        margin-left: 20px;
+        line-height: 2;
+    }
+    
+    .warning-box {
+        background: rgba(255, 0, 0, 0.1);
+        border-left: 4px solid #ff0000;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 10px 10px 0;
+    }
+    
+    .warning-box h3 {
+        color: #ff0000;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .back-nav {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 30px;
+        color: var(--primary-cyan);
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    
+    .back-nav:hover {
+        color: var(--primary-pink);
+        transform: translateX(-5px);
+    }
+    
+    .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .comparison-table th {
+        background: linear-gradient(135deg, var(--primary-cyan), var(--primary-pink));
+        color: #000;
+        padding: 15px;
+        text-align: left;
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 700;
+    }
+    
+    .comparison-table td {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .comparison-table tr:last-child td {
+        border-bottom: none;
+    }
+    
+    .comparison-table tr:hover {
+        background: rgba(255, 255, 255, 0.03);
+    }
+</style>
 </head>
 <body>
 <div class="bg-animation"></div>
+
 <header>
 <nav>
 <a href="index.html" class="logo">FADING ECHO SPEEDRUNS</a>
@@ -45,90 +246,245 @@
 </ul>
 </div>
 
-<div class="container">
-<a href="speedrun.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Speedrun Resources</a>
-<h1 class="page-title">Void Cancel Guide</h1>
-<p class="page-subtitle">Master the ultimate movement exploit to bypass fall limits</p>
+<div class="guide-container">
+<a href="speedrun.html" class="back-nav">
+<i class="fas fa-arrow-left"></i> Back to Speedrun Resources
+</a>
 
-<div class="content-grid">
-<div class="content-card" style="grid-column: 1 / -1;">
-<h3><i class="fas fa-info-circle" style="color: var(--primary-cyan); margin-right: 10px;"></i> What is Void Cancel?</h3>
-<p>This glitch allows you to bypass the fall limit that respawns you on the ground. You will be able to cover great vertical and horizontal distances in the air. This state resists everything, even rebooting the game. It seems stuck to the save file and you'll have to continue without ever voiding again... <strong>Just be careful not to fall for too long, you'll get a "fatal error" crash</strong>. As said, even after restarting the game the glitch will remain active. Enjoy</p>
+<div class="guide-header">
+<h1><i class="fas fa-ban"></i> Void Cancel Complete Guide</h1>
+<p class="subtitle">Master the glitch that allows you to fall forever and bypass all limits</p>
 </div>
 
-<div class="content-card has-video-preview">
-    <h3>Cutscene Skip Method</h3>
-    <p>This glitch is performed while the Cutscene Skip is active.</p>
-    <h4>How to do:</h4>
-    <ul>
-    <li>Make sure the Cutscene Skip is active by going back to the checkpoint. If you are getting teleported to the normal hard checkpoint, then it is not active. You should respawn right where you were (even in the air).</li>
-    <li>Simply fall into the void, when your character freezes and starts to get damaged, go back to the main menu by mashing and keep mashing to instantly continue the game.</li>
-    <li>You should get teleported back to the last surface you walked on. If you try to fall again, you should now be immune.</li>
-    </ul>
-    <div class="note"><strong>Bravo!</strong> You can now do a void cancel that can be combined to a <a href="https://www.youtube.com/watch?v=cVye6tadL6Q&list=PLfS_Ge59iHlSnz583JHwopKhzn1ENZPvz&index=1" target="_blank" rel="noopener noreferrer" class="inline-link">Void Infinite Dash</a></div>
-    <div class="note"><strong>Note:</strong> This glitch isn't fully understood yet and can fail we don't know why.</div>
-    <div class="warning"><strong>Warning:</strong> If you do it wrong, you can have:<br>• The "create a new save" popup<br>• The option menu popup (If so, you can just Alt+F4, there is nothing to do)</div>
-    
-<!-- YouTube Video Preview -->
-  <div class="glitch-video-wrapper">
-    <div class="glitch-video-inner">
-        <div class="glitch-video-frame">
-            <iframe 
-                src="https://www.youtube.com/embed/h2J_w3ztYZk?rel=0&modestbranding=1&controls=1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen
-                loading="lazy"
-                title="Cutscene Skip Tutorial">
-            </iframe>
-        </div>
-    </div>
-  </div>
+<!-- METHOD 1: CUTSCENE SKIP METHOD -->
+<div class="method-card">
+<h2><i class="fas fa-film"></i> Method 1: Cutscene Skip Method (Recommended)</h2>
+<p>This is the primary method used in Any% speedruns. It requires performing a Cutscene Skip first.</p>
+
+<div class="steps">
+<div class="step">
+<h4>Perform the Cutscene Skip</h4>
+<p>From the main menu, choose new game > difficulty and when you validate, quickly press: <strong>Down > Enter > Hold stick forward > Dash > Jump > Attack</strong>. You should hear these actions during the black-screen.</p>
 </div>
 
-<div class="content-card">
-<h3>Death Method</h3>
-<p>Another way to cancel the void/respawn when falling. It's not adapted to speedrun on the demo yet, but from this could come crazy stuff... Here's a first setup but feel free to improvise around this method, it might be easier to do, somehow:</p>
-<h4>How to do:</h4>
+<div class="step">
+<h4>Fall Until Respawn Attempt</h4>
+<p>After the cutscene skip, fall into the void. The game will try to respawn you but will fail due to the CS state.</p>
+</div>
+
+<div class="step">
+<h4>Continuous Fall Damage</h4>
+<p>Instead of respawning, you'll continuously receive fall damage. This is the sign that the glitch is activating.</p>
+</div>
+
+<div class="step">
+<h4>Menu Navigation</h4>
+<p>While taking damage, go back to the main menu and select "Continue".</p>
+</div>
+
+<div class="step">
+<h4>Void Cancel Activated!</h4>
+<p>You can now fall forever with no void and no respawn. The glitch is permanently attached to your save file.</p>
+</div>
+</div>
+
+<div class="video-section">
+<h3><i class="fas fa-play-circle"></i> Video Tutorial</h3>
+<div class="video-wrapper">
+<iframe 
+    src="https://www.youtube.com/embed/CMLUlUVKSEc?rel=0&modestbranding=1"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen
+    loading="lazy"
+    title="Void Cancel Tutorial">
+</iframe>
+</div>
+</div>
+
+<div class="tips-box">
+<h3><i class="fas fa-lightbulb"></i> Tips & Tricks</h3>
 <ul>
-<li>Lose almost all HP (faster in Hard difficulty).</li>
-<li>Fall to your death.</li>
-<li>Pause buffer to aim the first frames of the death animation (you take the last hit just after being respawned). You may struggle to force the start menu after the respawn, press resume like I do in the clip.</li>
-<li>Sometimes the controller is vibrating on this frame and continuously goes on when you're on the pause menu - but it doesn't seem mandatory, that's just a good sign.</li>
-<li>Go back to the main menu by mashing to quickly continue.</li>
-<li>You should be back with the ability to fall forever.</li>
+<li><strong>Sound ON:</strong> Keep the game sound on to hear your inputs during the cutscene</li>
+<li><strong>Controller vibration:</strong> You should feel a vibration after the attack input - good sign!</li>
+<li><strong>Success indicators:</strong> One doesn't talk after the cutscene and there's no camera movement</li>
+<li><strong>Practice:</strong> Try different timings and find what suits your playstyle</li>
 </ul>
 </div>
 </div>
 
-<div class="community-section">
-<h2><i class="fas fa-users"></i> Contribute to the Community</h2>
-<p>Are you a developer? Have an idea for a mod? You have something to ask? You have something to share?<br>Join our community and help make Fading Echo even better!</p>
-<div class="community-buttons">
-<a href="https://discord.com/channels/1262382985844359221/1501975620953968672" target="_blank" rel="noopener noreferrer" class="community-btn discord"><i class="fab fa-discord"></i> Join the Discussion</a>
-<a href="https://www.youtube.com/playlist?list=PLfS_Ge59iHlSnz583JHwopKhzn1ENZPvz&jct=l7ZOhys5h66wlHzp6H8hKg" target="_blank" rel="noopener noreferrer" class="community-btn youtube"><i class="fab fa-youtube"></i> Add to Community Playlist</a>
+<!-- METHOD 2: DEATH METHOD -->
+<div class="method-card death-method">
+<h2><i class="fas fa-skull"></i> Method 2: Death Method (No CS Required)</h2>
+<p>Alternative method that doesn't require the Cutscene Skip. Useful for practice or specific situations.</p>
+
+<div class="steps">
+<div class="step">
+<h4>Lose Most of Your HP</h4>
+<p>Take damage until you have almost no HP left. This is faster in <strong>Hard difficulty</strong> as enemies deal more damage.</p>
+</div>
+
+<div class="step">
+<h4>Fall to Your Death</h4>
+<p>Jump into the void and let yourself fall. You should die from fall damage.</p>
+</div>
+
+<div class="step">
+<h4>Pause Buffer Timing</h4>
+<p><strong>CRITICAL STEP:</strong> You need to pause buffer to aim the first frames of the death animation. This means taking the last hit just after being respawned.</p>
+</div>
+
+<div class="step">
+<h4>Force the Start Menu</h4>
+<p>After the respawn, quickly try to force the start menu. You may struggle with this - press "Resume" like shown in the video tutorial.</p>
+</div>
+
+<div class="step">
+<h4>Controller Vibration Check</h4>
+<p>Sometimes the controller will be vibrating on this frame and continuously goes on when you're on the pause menu. This is a <strong>good sign</strong> but doesn't seem mandatory.</p>
+</div>
+
+<div class="step">
+<h4>Main Menu > Continue</h4>
+<p>Go back to the main menu and select "Continue". You should now have the ability to fall forever.</p>
+</div>
+</div>
+
+<div class="tips-box">
+<h3><i class="fas fa-info-circle"></i> Important Notes</h3>
+<ul>
+<li>This method is <strong>more difficult</strong> than the CS method</li>
+<li>Requires precise frame-perfect timing</li>
+<li>Good for practicing without resetting your entire run</li>
+<li>Works on any difficulty (easier in Hard mode)</li>
+</ul>
+</div>
+</div>
+
+<!-- COMPARISON TABLE -->
+<h2 style="font-family: 'Orbitron', sans-serif; color: var(--primary-cyan); margin: 40px 0 20px 0; text-align: center;">
+<i class="fas fa-balance-scale"></i> Method Comparison
+</h2>
+
+<table class="comparison-table">
+<thead>
+<tr>
+<th>Feature</th>
+<th>Cutscene Skip Method</th>
+<th>Death Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Difficulty</strong></td>
+<td>Moderate - Comfortable timings</td>
+<td>Hard - Frame-perfect timing</td>
+</tr>
+<tr>
+<td><strong>CS Required</strong></td>
+<td>Yes</td>
+<td>No ✓</td>
+</tr>
+<tr>
+<td><strong>Speedrun Use</strong></td>
+<td>Primary method (Any%)</td>
+<td>Situational</td>
+</tr>
+<tr>
+<td><strong>Practice</strong></td>
+<td>Good</td>
+<td>Excellent for testing</td>
+</tr>
+<tr>
+<td><strong>Consistency</strong></td>
+<td>High with practice</td>
+<td>Lower - very precise</td>
+</tr>
+</tbody>
+</table>
+
+<!-- WHAT IT DOES -->
+<div class="method-card">
+<h2><i class="fas fa-magic"></i> What Does Void Cancel Do?</h2>
+
+<p>Void Cancel is one of the most powerful glitches in Fading Echo. Here's what it allows you to do:</p>
+
+<div class="tips-box">
+<h3><i class="fas fa-check-circle"></i> Capabilities</h3>
+<ul>
+<li><strong>Fall Forever:</strong> Bypass the fall limit that normally respawns you on the ground</li>
+<li><strong>Vertical Freedom:</strong> Cover great vertical distances in the air without restrictions</li>
+<li><strong>Horizontal Movement:</strong> Combine with other glitches for massive horizontal travel</li>
+<li><strong>Persistent State:</strong> The glitch is attached to your save file - resists everything</li>
+<li><strong>Game Reboot:</strong> Even after restarting the game, the glitch remains active</li>
+<li><strong>Foundation:</strong> Base for many advanced glitches (Infinite Dash, etc.)</li>
+</ul>
+</div>
+
+<div class="warning-box">
+<h3><i class="fas fa-exclamation-triangle"></i> Warnings</h3>
+<ul>
+<li><strong>Fatal Error Risk:</strong> Don't fall for too long or you'll get a crash</li>
+<li><strong>No Going Back:</strong> Once activated, you'll have to continue without ever voiding again</li>
+<li><strong>Save File:</strong> The glitch is stuck to your save - you can't disable it</li>
+<li><strong>Continuous Damage:</strong> You'll take fall damage continuously (manage your HP!)</li>
+</ul>
+</div>
+</div>
+
+<!-- USES IN SPEEDRUN -->
+<div class="method-card">
+<h2><i class="fas fa-trophy"></i> Uses in Speedrun</h2>
+
+<p>Void Cancel is a cornerstone glitch for Any% speedruns. Here's how it's used:</p>
+
+<div class="steps">
+<div class="step">
+<h4>Key to World Record</h4>
+<p>The current WR (3:57.04 by @Hulien) heavily relies on Void Cancel combined with other glitches like Cutscene Skip and Infinite Dash.</p>
+</div>
+
+<div class="step">
+<h4>Massive Skips</h4>
+<p>Allows skipping entire sections by falling through the map or flying over obstacles.</p>
+</div>
+
+<div class="step">
+<h4>Route Optimization</h4>
+<p>Enables completely new routing possibilities that weren't intended by the developers.</p>
+</div>
+
+<div class="step">
+<h4>Combination Glitches</h4>
+<p>Works as a foundation for:</p>
+<ul style="margin-top: 10px; margin-left: 20px;">
+<li><strong>Voidless Infinite Dash</strong> - Infinite dashing without losing HP</li>
+<li><strong>Jojo Glitch setups</strong> - Easier to perform with VC active</li>
+<li><strong>Portal escapes</strong> - More freedom of movement</li>
+</ul>
 </div>
 </div>
 </div>
 
-<section class="contribute-section">
-<div class="contribute-container">
-    <h2 class="section-title">Want to Improve This?</h2>
-    <p style="font-size: 1.3rem; color: #a0a0a0; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;">
-        Found something to fix or have an idea to make this site better? 
-        Contributions are welcome! Submit a pull request on GitHub and help improve the community.
-    </p>
-    <a href="https://github.com/cheapmanga/FadingUtilities" target="_blank" rel="noopener noreferrer" class="contribute-button">
-        <i class="fab fa-github"></i> View on GitHub
-    </a>
-</div>
-</section>
-
-<footer>
-<p>&copy; 2026 Fading Echo Speedrun Community</p>
-<p>Resources maintained by the community</p>
-<p style="margin-top: 20px; font-size: 0.9rem;">
-<i class="fas fa-heart" style="color: var(--primary-pink);"></i> Made by CheapManga and the community
+<!-- COMMUNITY SECTION -->
+<div class="community-section" style="margin-top: 50px; text-align: center; padding: 40px; background: rgba(255, 255, 255, 0.02); border-radius: 20px;">
+<h2><i class="fas fa-users"></i> Need Help?</h2>
+<p style="margin: 20px 0; color: #a0a0a0;">
+Having trouble performing the Void Cancel? Join our Discord community for help, tips, and live coaching!
 </p>
+<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+<a href="https://discord.gg/KnjSeWrRPv" target="_blank" rel="noopener noreferrer" class="download-btn">
+<i class="fab fa-discord"></i> Join Discord
+</a>
+<a href="speedrun.html" class="download-btn" style="background: transparent; border: 2px solid var(--primary-cyan);">
+<i class="fas fa-arrow-left"></i> Back to Speedrun
+</a>
+</div>
+</div>
+</div>
+
+<footer style="margin-top: 50px; text-align: center; padding: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
+<p>&copy; 2026 Fading Echo Speedrun Community</p>
+<p style="margin-top: 10px; color: #666;">Resources maintained by the community</p>
 </footer>
 
 <!-- SEARCH MODAL -->
@@ -152,12 +508,10 @@
 
 <script>
 const pageSearchIndex = [
-{ title: "Void Cancel", category: "Glitch", page: "voidcancel.html", target: "", desc: "Bypass fall limit, Cutscene Skip & Death methods", icon: "fa-ban" },
-{ title: "Hyper Dash (HD)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Wave Dash, Long Jump", icon: "fa-bolt" },
-{ title: "Form Dash (FD)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Water Dash, Drop Dash", icon: "fa-wind" },
-{ title: "Jump Switch (JS)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Element Switch, Switch Boost", icon: "fa-arrow-up" },
-{ title: "Teleport Mod", category: "Mod", page: "mods.html", target: "", desc: "Alternative to Cheat Engine", icon: "fa-location-arrow" },
-{ title: "Trigger & Wall Visualizer", category: "Mod", page: "mods.html", target: "", desc: "See triggers and invisible walls", icon: "fa-border-all" }
+{ title: "Void Cancel (CS Method)", category: "Glitch", page: "voidcancel.html", target: "", desc: "Primary method using Cutscene Skip", icon: "fa-film" },
+{ title: "Void Cancel (Death Method)", category: "Glitch", page: "voidcancel.html", target: "", desc: "Alternative method without CS", icon: "fa-skull" },
+{ title: "Cutscene Skip", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Key glitch for Any% runs", icon: "fa-film" },
+{ title: "Infinite Dash", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Void, Voidless, Respawn variations", icon: "fa-infinity" }
 ];
 </script>
 <script src="search.js"></script>
