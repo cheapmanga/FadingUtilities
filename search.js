@@ -64,3 +64,4 @@ if (document.readyState === 'loading') {
 } else {
     initSearchSystem();
 }
+
