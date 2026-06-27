@@ -1418,3 +1418,34 @@ footer p { margin: 10px 0; }
         cursor: default;
     }
 }
+
+/* ===== LANGUAGE TOGGLE ===== */
+.lang-toggle {
+    background: transparent;
+    border: 2px solid var(--primary-cyan);
+    color: var(--primary-cyan);
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    margin-right: 10px;
+    min-width: 50px;
+}
+
+.lang-toggle:hover {
+    background: var(--primary-cyan);
+    color: var(--dark-bg);
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+    .lang-toggle {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        min-width: 42px;
+        margin-right: 5px;
+    }
+}
