@@ -1354,59 +1354,15 @@ footer p { margin: 10px 0; }
     }
 }
 
+/* ===== MOBILE: VIDEOS TOUJOURS VISIBLES ===== */
+@media (max-width: 768px) {
+    .glitch-video-wrapper {
+        grid-template-rows: 1fr;
+        opacity: 1;
+        margin-top: 20px;
+    }
 
-/* ===== GLITCH CARD YOUTUBE HOVER PREVIEW ===== */
-.content-card.has-video-preview {
-    cursor: pointer;
-    transition: box-shadow 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
-}
-.content-card.has-video-preview:hover {
-    border-color: var(--primary-cyan);
-    box-shadow: 0 10px 40px rgba(0, 245, 255, 0.25);
-}
-
-.glitch-video-wrapper {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-                margin-top 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.35s ease;
-    opacity: 0;
-    margin-top: 0;
-}
-
-.glitch-video-inner {
-    overflow: hidden;
-    min-height: 0;
-}
-
-.glitch-video-frame {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #000;
-    border: 1px solid rgba(0, 245, 255, 0.3);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-}
-
-.glitch-video-frame iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-}
-
-.content-card.has-video-preview:hover .glitch-video-wrapper,
-.content-card.has-video-preview:focus-within .glitch-video-wrapper {
-    grid-template-rows: 1fr;
-    margin-top: 20px;
-    opacity: 1;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .glitch-video-wrapper { transition: none; }
+    .content-card.has-video-preview {
+        cursor: default;
+    }
 }
