@@ -1418,3 +1418,14 @@ footer p { margin: 10px 0; }
         cursor: default;
     }
 }
+
+/* ===== VIDEO TOUJOURS VISIBLE (hover_video: false) ===== */
+.content-card.has-video-always .glitch-video-wrapper {
+    grid-template-rows: 1fr !important;
+    opacity: 1 !important;
+    margin-top: 20px !important;
+}
+
+.content-card.has-video-always {
+    cursor: default;
+}
