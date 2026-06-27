@@ -13,7 +13,7 @@
     
     <style>
         .admin-container {
-            max-width: 1400px;
+            max-width: 1800px;
             margin: 120px auto 50px;
             padding: 30px;
         }
@@ -66,7 +66,7 @@
         
         /* CodeMirror Customization */
         .CodeMirror {
-            height: 600px;
+            height: 400px;
             border: 2px solid rgba(0, 245, 255, 0.3);
             border-radius: 10px;
             font-family: 'Courier New', monospace;
@@ -84,10 +84,22 @@
             font-size: 1.1rem;
             cursor: pointer;
             margin-top: 20px;
+            margin-right: 10px;
         }
         .btn-commit:disabled {
             opacity: 0.5;
             cursor: not-allowed;
+        }
+        .btn-preview {
+            background: linear-gradient(135deg, #00ff88, #00ccff);
+            color: var(--dark-bg);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 20px;
         }
         .status-msg {
             margin-top: 20px;
@@ -141,6 +153,93 @@
             justify-content: space-between;
             align-items: center;
         }
+        
+        /* Preview Panel */
+        .preview-container {
+            display: none;
+            margin-top: 30px;
+            border: 2px solid var(--primary-cyan);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .preview-container.active { display: block; }
+        .preview-header {
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-pink));
+            color: var(--dark-bg);
+            padding: 15px 20px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .preview-content {
+            background: var(--dark-bg);
+            padding: 30px;
+            max-height: 800px;
+            overflow-y: auto;
+        }
+        .preview-content h2 {
+            color: var(--primary-cyan);
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-cyan);
+        }
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .preview-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        .preview-card h3 {
+            color: var(--primary-yellow);
+            margin-bottom: 10px;
+        }
+        .preview-card h4 {
+            color: var(--primary-cyan);
+            margin: 15px 0 10px 0;
+            font-size: 1rem;
+        }
+        .preview-card p, .preview-card li {
+            color: #b0b0b0;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        .preview-card .note {
+            background: rgba(255, 230, 0, 0.1);
+            border-left: 4px solid var(--primary-yellow);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.85rem;
+        }
+        .preview-card .warning {
+            background: rgba(255, 0, 110, 0.1);
+            border-left: 4px solid var(--primary-pink);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.85rem;
+        }
+        .validation-error {
+            background: rgba(255, 0, 0, 0.1);
+            border: 2px solid #ff0000;
+            color: #ff0000;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
     </style>
 </head>
 <body>
@@ -149,11 +248,6 @@
     <header>
         <nav>
             <a href="index.html" class="logo">FADING ECHO SPEEDRUNS</a>
-            <div style="display: flex; align-items: center;">
-                <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
         </nav>
     </header>
 
@@ -202,6 +296,7 @@
                 <button class="file-btn" onclick="loadFile('admin.html')">admin.html</button>
                 <button class="file-btn" onclick="loadFile('404.html')">404.html</button>
                 <button class="file-btn" onclick="loadFile('style.css')">style.css</button>
+                <button class="file-btn" onclick="loadFile('glitches.json')" style="background: rgba(255, 230, 0, 0.2); border-color: var(--primary-yellow); color: var(--primary-yellow);">glitches.json</button>
             </div>
 
             <div class="editor-info">
@@ -212,7 +307,19 @@
             <textarea id="editor"></textarea>
 
             <button class="btn-commit" id="commitBtn" onclick="commitChanges()">💾 Commit to GitHub</button>
+            <button class="btn-preview" id="previewBtn" onclick="togglePreview()" style="display: none;">👁️ Preview glitches.json</button>
             <div class="status-msg" id="commitStatus"></div>
+
+            <!-- PREVIEW PANEL -->
+            <div class="preview-container" id="previewContainer">
+                <div class="preview-header">
+                    <span>👁️ Live Preview - glitches.json</span>
+                    <button onclick="togglePreview()" style="background: rgba(0,0,0,0.3); border: none; color: white; padding: 5px 15px; border-radius: 15px; cursor: pointer;">✕ Close</button>
+                </div>
+                <div class="preview-content" id="previewContent">
+                    <!-- Preview will be rendered here -->
+                </div>
+            </div>
         </div>
     </div>
 
@@ -222,6 +329,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/css/css.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
 
     <script>
         // ===== LISTE DES COMPTES ADMIN =====
@@ -275,8 +383,8 @@
                 lineNumbers: true,
                 mode: 'htmlmixed',
                 theme: 'dracula',
-                indentUnit: 4,
-                tabSize: 4,
+                indentUnit: 2,
+                tabSize: 2,
                 indentWithTabs: false,
                 lineWrapping: true,
                 autoCloseTags: true,
@@ -290,13 +398,15 @@
                 }
             });
             
-            // Écouter les changements pour mettre à jour le contenu
             editor.on('change', function() {
-                // Le contenu est automatiquement synchronisé
+                // Mettre à jour le bouton de preview si on édite glitches.json
+                if (currentFile === 'glitches.json') {
+                    const previewBtn = document.getElementById('previewBtn');
+                    if (previewBtn) previewBtn.style.display = 'inline-block';
+                }
             });
         }
 
-        // Détecter le mode en fonction de l'extension
         function getModeFromFilename(filename) {
             if (filename.endsWith('.html')) return 'htmlmixed';
             if (filename.endsWith('.css')) return 'css';
@@ -305,7 +415,6 @@
             return 'htmlmixed';
         }
 
-        // Mettre à jour le mode de l'éditeur
         function updateEditorMode(filename) {
             const mode = getModeFromFilename(filename);
             editor.setOption('mode', mode);
@@ -358,7 +467,6 @@
                 document.getElementById('loginBox').style.display = 'none';
                 document.getElementById('adminPanel').classList.add('active');
 
-                // Initialiser l'éditeur après affichage
                 if (!editor) {
                     initEditor();
                 }
@@ -397,10 +505,18 @@
                 const content = atob(data.content);
                 originalContent = content;
                 
-                // Mettre à jour le contenu de l'éditeur
                 if (editor) {
                     editor.setValue(content);
                     updateEditorMode(filename);
+                    
+                    // Afficher le bouton preview si c'est glitches.json
+                    const previewBtn = document.getElementById('previewBtn');
+                    if (filename === 'glitches.json') {
+                        previewBtn.style.display = 'inline-block';
+                    } else {
+                        previewBtn.style.display = 'none';
+                        document.getElementById('previewContainer').classList.remove('active');
+                    }
                 } else {
                     document.getElementById('editor').value = content;
                 }
@@ -409,12 +525,130 @@
             }
         }
 
+        // ===== PREVIEW FUNCTIONS =====
+        function togglePreview() {
+            const previewContainer = document.getElementById('previewContainer');
+            if (previewContainer.classList.contains('active')) {
+                previewContainer.classList.remove('active');
+            } else {
+                generatePreview();
+            }
+        }
+
+        function generatePreview() {
+            const previewContent = document.getElementById('previewContent');
+            const jsonContent = editor.getValue();
+            
+            try {
+                const data = JSON.parse(jsonContent);
+                
+                if (!data.sections || !Array.isArray(data.sections)) {
+                    throw new Error('Invalid JSON structure: missing "sections" array');
+                }
+                
+                let html = '';
+                
+                data.sections.forEach(section => {
+                    const iconClass = section.icon || 'fa-bug';
+                    const color = section.color || 'var(--primary-cyan)';
+                    
+                    html += `<h2><i class="fas ${iconClass}"></i> ${escapeHtml(section.title)}</h2>`;
+                    html += `<div class="preview-grid">`;
+                    
+                    if (section.glitches && Array.isArray(section.glitches)) {
+                        section.glitches.forEach(glitch => {
+                            html += generateGlitchPreview(glitch);
+                        });
+                    }
+                    
+                    html += `</div>`;
+                });
+                
+                previewContent.innerHTML = html;
+                document.getElementById('previewContainer').classList.add('active');
+                previewContent.scrollTop = 0;
+                
+            } catch (error) {
+                previewContent.innerHTML = `
+                    <div class="validation-error">
+                        <strong>❌ JSON Validation Error:</strong>\n${error.message}
+                    </div>
+                `;
+                document.getElementById('previewContainer').classList.add('active');
+            }
+        }
+
+        function generateGlitchPreview(glitch) {
+            let html = `<div class="preview-card">`;
+            
+            // Title
+            html += `<h3>${glitch.title_prefix || ''}${escapeHtml(glitch.title)}`;
+            if (glitch.alt_names) {
+                html += ` <span style="color: var(--primary-pink); font-size: 0.9rem;">| ${escapeHtml(glitch.alt_names)}</span>`;
+            }
+            html += `</h3>`;
+            
+            // How to
+            if (glitch.how_to) {
+                html += `<h4>How to do:</h4><p>${escapeHtml(glitch.how_to)}</p>`;
+            }
+            
+            // Videos
+            if (glitch.videos && glitch.videos.length > 0) {
+                html += `<h4>Videos:</h4><p style="color: var(--primary-cyan);">📹 ${glitch.videos.join(', ')}</p>`;
+            }
+            
+            // Variations
+            if (glitch.variations && glitch.variations.length > 0) {
+                html += `<h4>Variations:</h4><ul style="margin-left: 20px;">`;
+                glitch.variations.forEach(v => {
+                    html += `<li>${escapeHtml(v.text)}`;
+                    if (v.video_id) {
+                        html += ` <span style="color: var(--primary-cyan);">[📹 Video]</span>`;
+                    }
+                    html += `</li>`;
+                });
+                html += `</ul>`;
+            }
+            
+            // Note
+            if (glitch.note) {
+                const isWarning = glitch.note_type === 'warning' || glitch.note.includes('⚠️');
+                const noteClass = isWarning ? 'warning' : 'note';
+                const noteLabel = isWarning ? 'Warning:' : 'Note:';
+                html += `<div class="${noteClass}"><strong>${noteLabel}</strong> ${escapeHtml(glitch.note)}</div>`;
+            }
+            
+            // Button
+            if (glitch.button_text && glitch.button_link) {
+                html += `<div style="margin-top: 15px;"><strong>Button:</strong> ${escapeHtml(glitch.button_text)} → ${escapeHtml(glitch.button_link)}</div>`;
+            }
+            
+            // Hover video setting
+            if (glitch.hover_video === false) {
+                html += `<div style="margin-top: 10px; color: var(--primary-yellow); font-size: 0.85rem;">👁️ Video: Always visible (hover_video: false)</div>`;
+            }
+            
+            html += `</div>`;
+            return html;
+        }
+
         async function commitChanges() {
             const content = editor ? editor.getValue() : document.getElementById('editor').value;
             
             if (content === originalContent) {
                 showStatus('commitStatus', 'No changes to commit', 'error');
                 return;
+            }
+
+            // Validation JSON avant commit
+            if (currentFile === 'glitches.json') {
+                try {
+                    JSON.parse(content);
+                } catch (error) {
+                    showStatus('commitStatus', `❌ Invalid JSON: ${error.message}. Please fix before committing!`, 'error');
+                    return;
+                }
             }
 
             const commitBtn = document.getElementById('commitBtn');
@@ -451,6 +685,9 @@
 
                 showStatus('commitStatus', '✅ Changes committed successfully! Cloudflare Pages will redeploy automatically.', 'success');
                 originalContent = content;
+                
+                // Fermer la preview après commit réussi
+                document.getElementById('previewContainer').classList.remove('active');
             } catch (error) {
                 showStatus('commitStatus', '❌ Commit failed: ' + error.message, 'error');
             } finally {
@@ -466,6 +703,13 @@
             setTimeout(() => {
                 element.style.display = 'none';
             }, 5000);
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
         }
     </script>
 </body>
