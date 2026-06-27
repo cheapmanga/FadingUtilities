@@ -149,8 +149,22 @@
     <header>
         <nav>
             <a href="index.html" class="logo">FADING ECHO SPEEDRUNS</a>
+            <div style="display: flex; align-items: center;">
+                <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </nav>
     </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="speedrun.html">Speedrun</a></li>
+            <li><a href="mods.html">Mods</a></li>
+            <li><a href="admin.html">Admin</a></li>
+        </ul>
+    </div>
 
     <div class="admin-container">
         <!-- LOGIN -->
@@ -223,6 +237,32 @@
         let currentFile = 'index.html';
         let originalContent = '';
         let editor; // CodeMirror instance
+
+        // ===== HAMBURGER MENU =====
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('active') ? 'true' : 'false');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu || e.target.tagName === 'A') closeMenu();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMenu();
+        });
 
         // Auto-login si token existe
         if (currentToken) {
