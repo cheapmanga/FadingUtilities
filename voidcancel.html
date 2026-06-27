@@ -1,471 +1,475 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Void Cancel Guide - FadingUtilities</title>
-<meta name="description" content="Complete guide to master Void Cancel glitch in Fading Echo">
-<meta property="og:title" content="Void Cancel Guide - FadingUtilities">
-<meta property="og:description" content="Master the Void Cancel glitch with detailed tutorials and variations">
-<meta name="theme-color" content="#00F5FF">
-<link rel="icon" type="image/png" href="Images/favicon.png">
-<link rel="manifest" href="manifest.json">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
-<style>
-    .guide-container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 40px 20px;
-    }
-    
-    .guide-header {
-        text-align: center;
-        margin-bottom: 50px;
-        padding: 40px;
-        background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(0, 245, 255, 0.1));
-        border: 2px solid var(--primary-pink);
-        border-radius: 20px;
-    }
-    
-    .guide-header h1 {
-        font-family: 'Orbitron', sans-serif;
-        color: var(--primary-pink);
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-    }
-    
-    .guide-header .subtitle {
-        font-size: 1.2rem;
-        color: #a0a0a0;
-    }
-    
-    .method-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 2px solid rgba(0, 245, 255, 0.3);
-        border-radius: 15px;
-        padding: 30px;
-        margin-bottom: 30px;
-    }
-    
-    .method-card h2 {
-        font-family: 'Orbitron', sans-serif;
-        color: var(--primary-cyan);
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .method-card.death-method {
-        border-color: var(--primary-yellow);
-    }
-    
-    .method-card.death-method h2 {
-        color: var(--primary-yellow);
-    }
-    
-    .steps {
-        counter-reset: step-counter;
-        margin: 20px 0;
-    }
-    
-    .step {
-        counter-increment: step-counter;
-        margin-bottom: 25px;
-        padding-left: 50px;
-        position: relative;
-    }
-    
-    .step::before {
-        content: counter(step-counter);
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: var(--primary-cyan);
-        color: #000;
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-family: 'Orbitron', sans-serif;
-    }
-    
-    .step h4 {
-        color: var(--primary-cyan);
-        margin-bottom: 10px;
-        font-size: 1.2rem;
-    }
-    
-    .step p {
-        line-height: 1.8;
-        color: #ccc;
-    }
-    
-    .video-section {
-        margin: 40px 0;
-    }
-    
-    .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
-        overflow: hidden;
-        border-radius: 10px;
-        margin: 20px 0;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    }
-    
-    .video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
-    
-    .tips-box {
-        background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(255, 107, 157, 0.05));
-        border-left: 4px solid var(--primary-cyan);
-        padding: 20px;
-        margin: 20px 0;
-        border-radius: 0 10px 10px 0;
-    }
-    
-    .tips-box h3 {
-        color: var(--primary-cyan);
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .tips-box ul {
-        margin-left: 20px;
-        line-height: 2;
-    }
-    
-    .warning-box {
-        background: rgba(255, 0, 0, 0.1);
-        border-left: 4px solid #ff0000;
-        padding: 20px;
-        margin: 20px 0;
-        border-radius: 0 10px 10px 0;
-    }
-    
-    .warning-box h3 {
-        color: #ff0000;
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .back-nav {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 30px;
-        color: var(--primary-cyan);
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
-    
-    .back-nav:hover {
-        color: var(--primary-pink);
-        transform: translateX(-5px);
-    }
-    
-    .comparison-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 30px 0;
-        background: rgba(255, 255, 255, 0.02);
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    
-    .comparison-table th {
-        background: linear-gradient(135deg, var(--primary-cyan), var(--primary-pink));
-        color: #000;
-        padding: 15px;
-        text-align: left;
-        font-family: 'Orbitron', sans-serif;
-        font-weight: 700;
-    }
-    
-    .comparison-table td {
-        padding: 15px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .comparison-table tr:last-child td {
-        border-bottom: none;
-    }
-    
-    .comparison-table tr:hover {
-        background: rgba(255, 255, 255, 0.03);
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Void Cancel Guide - FadingUtilities</title>
+    <meta name="description" content="Complete guide to master Void Cancel glitch in Fading Echo">
+    <meta property="og:title" content="Void Cancel Guide - FadingUtilities">
+    <meta property="og:description" content="Master the Void Cancel glitch with detailed tutorials and variations">
+    <meta name="theme-color" content="#00F5FF">
+    <link rel="icon" type="image/png" href="Images/favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .guide-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(0, 245, 255, 0.1));
+            border: 2px solid var(--primary-pink);
+            border-radius: 20px;
+        }
+
+        .guide-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-pink);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .guide-header .subtitle {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+        }
+
+        .method-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .method-card h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-cyan);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .method-card.death-method {
+            border-color: var(--primary-yellow);
+        }
+
+        .method-card.death-method h2 {
+            color: var(--primary-yellow);
+        }
+
+        .steps {
+            counter-reset: step-counter;
+            margin: 20px 0;
+        }
+
+        .step {
+            counter-increment: step-counter;
+            margin-bottom: 25px;
+            padding-left: 50px;
+            position: relative;
+        }
+
+        .step::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--primary-cyan);
+            color: #000;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .step h4 {
+            color: var(--primary-cyan);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .step p {
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        .video-section {
+            margin: 40px 0;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .tips-box {
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(255, 107, 157, 0.05));
+            border-left: 4px solid var(--primary-cyan);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .tips-box h3 {
+            color: var(--primary-cyan);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tips-box ul {
+            margin-left: 20px;
+            line-height: 2;
+        }
+
+        .warning-box {
+            background: rgba(255, 0, 0, 0.1);
+            border-left: 4px solid #ff0000;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .warning-box h3 {
+            color: #ff0000;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .back-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-nav:hover {
+            color: var(--primary-pink);
+            transform: translateX(-5px);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-pink));
+            color: #000;
+            padding: 15px;
+            text-align: left;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+    </style>
 </head>
 <body>
-<div class="bg-animation"></div>
+    <div class="bg-animation"></div>
 
-<header>
-<nav>
-<a href="index.html" class="logo">FADING ECHO SPEEDRUNS</a>
-<div style="display: flex; align-items: center;">
-<button class="search-trigger" id="searchTrigger">
-<i class="fas fa-search"></i>
-<span>Search</span>
-<kbd>Ctrl+K</kbd>
-</button>
-<button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
-<span></span><span></span><span></span>
-</button>
-</div>
-</nav>
-</header>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">FADING ECHO SPEEDRUNS</a>
+            <div style="display: flex; align-items: center;">
+                <button class="search-trigger" id="searchTrigger">
+                    <i class="fas fa-search"></i>
+                    <span>Search</span>
+                    <kbd>Ctrl+K</kbd>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-<div class="mobile-menu" id="mobileMenu">
-<ul>
-<li><a href="index.html" onclick="closeMenu()">Home</a></li>
-<li><a href="index.html#features" onclick="closeMenu()">Features</a></li>
-<li><a href="speedrun.html" onclick="closeMenu()">Speedrun</a></li>
-<li><a href="mods.html" onclick="closeMenu()">Mods</a></li>
-<li><a href="index.html#social" onclick="closeMenu()">Community</a></li>
-<li><a href="index.html#play" onclick="closeMenu()">Play</a></li>
-</ul>
-</div>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+            <li><a href="index.html#features" onclick="closeMenu()">Features</a></li>
+            <li><a href="speedrun.html" onclick="closeMenu()">Speedrun</a></li>
+            <li><a href="mods.html" onclick="closeMenu()">Mods</a></li>
+            <li><a href="index.html#social" onclick="closeMenu()">Community</a></li>
+            <li><a href="index.html#play" onclick="closeMenu()">Play</a></li>
+        </ul>
+    </div>
 
-<div class="guide-container">
-<a href="speedrun.html" class="back-nav">
-<i class="fas fa-arrow-left"></i> Back to Speedrun Resources
-</a>
+    <div class="guide-container">
+        <a href="speedrun.html" class="back-nav">
+            <i class="fas fa-arrow-left"></i> Back to Speedrun Resources
+        </a>
 
-<div class="guide-header">
-<h1><i class="fas fa-ban"></i> Void Cancel Complete Guide</h1>
-<p class="subtitle">Master the glitch that allows you to fall forever and bypass all limits</p>
-</div>
+        <div class="guide-header">
+            <h1><i class="fas fa-ban"></i> Void Cancel Complete Guide</h1>
+            <p class="subtitle">Master the glitch that allows you to fall forever and bypass all limits</p>
+        </div>
 
-<!-- METHOD 1: CUTSCENE SKIP METHOD -->
-<div class="method-card">
-<h2><i class="fas fa-film"></i> Method 1: Cutscene Skip Method (Recommended)</h2>
-<p>This is the primary method used in Any% speedruns. It requires performing a Cutscene Skip first.</p>
+        <!-- METHOD 1: CUTSCENE SKIP METHOD -->
+        <div class="method-card">
+            <h2><i class="fas fa-film"></i> Method 1: Cutscene Skip Method (Recommended)</h2>
+            <p>This is the primary method used in Any% speedruns. It requires performing a Cutscene Skip first.</p>
 
-<div class="steps">
-<div class="step">
-<h4>Perform the Cutscene Skip</h4>
-<p>From the main menu, choose new game > difficulty and when you validate, quickly press: <strong>Down > Enter > Hold stick forward > Dash > Jump > Attack</strong>. You should hear these actions during the black-screen.</p>
-</div>
+            <div class="steps">
+                <div class="step">
+                    <h4>Perform the Cutscene Skip</h4>
+                    <p>From the main menu, choose new game > difficulty and when you validate, quickly press: <strong>Down > Enter > Hold stick forward > Dash > Jump > Attack</strong>. You should hear these actions during the black-screen.</p>
+                </div>
 
-<div class="step">
-<h4>Fall Until Respawn Attempt</h4>
-<p>After the cutscene skip, fall into the void. The game will try to respawn you but will fail due to the CS state.</p>
-</div>
+                <div class="step">
+                    <h4>Fall Until Respawn Attempt</h4>
+                    <p>After the cutscene skip, fall into the void. The game will try to respawn you but will fail due to the CS state.</p>
+                </div>
 
-<div class="step">
-<h4>Continuous Fall Damage</h4>
-<p>Instead of respawning, you'll continuously receive fall damage. This is the sign that the glitch is activating.</p>
-</div>
+                <div class="step">
+                    <h4>Continuous Fall Damage</h4>
+                    <p>Instead of respawning, you'll continuously receive fall damage. This is the sign that the glitch is activating.</p>
+                </div>
 
-<div class="step">
-<h4>Menu Navigation</h4>
-<p>While taking damage, go back to the main menu and select "Continue".</p>
-</div>
+                <div class="step">
+                    <h4>Menu Navigation</h4>
+                    <p>While taking damage, go back to the main menu and select "Continue".</p>
+                </div>
 
-<div class="step">
-<h4>Void Cancel Activated!</h4>
-<p>You can now fall forever with no void and no respawn. The glitch is permanently attached to your save file.</p>
-</div>
-</div>
+                <div class="step">
+                    <h4>Void Cancel Activated!</h4>
+                    <p>You can now fall forever with no void and no respawn. The glitch is permanently attached to your save file.</p>
+                </div>
+            </div>
 
-<div class="video-section">
-<h3><i class="fas fa-play-circle"></i> Video Tutorial</h3>
-<div class="video-wrapper">
-<iframe 
-    src="https://www.youtube.com/embed/h2J_w3ztYZk?rel=0&modestbranding=1"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen
-    loading="lazy"
-    title="Void Cancel Tutorial">
-</iframe>
-</div>
-</div>
+            <div class="video-section">
+                <h3><i class="fas fa-play-circle"></i> Video Tutorial</h3>
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/h2J_w3ztYZk?rel=0&modestbranding=1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        loading="lazy"
+                        title="Void Cancel Tutorial">
+                    </iframe>
+                </div>
+            </div>
 
-<div class="tips-box">
-<h3><i class="fas fa-info-circle"></i> Important Notes</h3>
-<ul>
-<li><strong>Sound ON:</strong> Keep the game sound on to hear your inputs during the cutscene</li>
-<li><strong>Controller vibration:</strong> You should feel a vibration after the attack input - good sign!</li>
-<li><strong>Success indicators:</strong> One doesn't talk after the cutscene and there's no camera movement</li>
-<li><strong>Practice:</strong> Try different timings and find what suits your playstyle</li>
-</ul>
-</div>
-</div>
+            <div class="tips-box">
+                <h3><i class="fas fa-info-circle"></i> Important Notes</h3>
+                <ul>
+                    <li><strong>Sound ON:</strong> Keep the game sound on to hear your inputs during the cutscene</li>
+                    <li><strong>Controller vibration:</strong> You should feel a vibration after the attack input - good sign!</li>
+                    <li><strong>Success indicators:</strong> One doesn't talk after the cutscene and there's no camera movement</li>
+                    <li><strong>Practice:</strong> Try different timings and find what suits your playstyle</li>
+                </ul>
+            </div>
+        </div>
 
-<!-- METHOD 2: DEATH METHOD -->
-<div class="method-card death-method">
-<h2><i class="fas fa-skull"></i> Method 2: Death Method (No CS Required)</h2>
-<p>Alternative method that doesn't require the Cutscene Skip. Useful for practice or specific situations.</p>
+        <!-- METHOD 2: DEATH METHOD -->
+        <div class="method-card death-method">
+            <h2><i class="fas fa-skull"></i> Method 2: Death Method (No CS Required)</h2>
+            <p>Alternative method that doesn't require the Cutscene Skip. Useful for practice or specific situations.</p>
 
-<div class="steps">
-<div class="step">
-<h4>Lose Most of Your HP</h4>
-<p>Take damage until you have almost no HP left. This is faster in <strong>Hard difficulty</strong> as enemies deal more damage.</p>
-</div>
+            <div class="steps">
+                <div class="step">
+                    <h4>Lose Most of Your HP</h4>
+                    <p>Take damage until you have almost no HP left. This is faster in <strong>Hard difficulty</strong> as enemies deal more damage.</p>
+                </div>
 
-<div class="step">
-<h4>Fall to Your Death</h4>
-<p>Jump into the void and let yourself fall. You should die from fall damage.</p>
-</div>
+                <div class="step">
+                    <h4>Fall to Your Death</h4>
+                    <p>Jump into the void and let yourself fall. You should die from fall damage.</p>
+                </div>
 
-<div class="step">
-<h4>Pause Buffer Timing</h4>
-<p><strong>CRITICAL STEP:</strong> You need to pause buffer to aim the first frames of the death animation. This means taking the last hit just after being respawned.</p>
-</div>
+                <div class="step">
+                    <h4>Pause Buffer Timing</h4>
+                    <p><strong>CRITICAL STEP:</strong> You need to pause buffer to aim the first frames of the death animation. This means taking the last hit just after being respawned.</p>
+                </div>
 
-<div class="step">
-<h4>Force the Start Menu</h4>
-<p>After the respawn, quickly try to force the start menu. You may struggle with this - press "Resume" like shown in the video tutorial.</p>
-</div>
+                <div class="step">
+                    <h4>Force the Start Menu</h4>
+                    <p>After the respawn, quickly try to force the start menu. You may struggle with this - press "Resume" like shown in the video tutorial.</p>
+                </div>
 
-<div class="step">
-<h4>Controller Vibration Check</h4>
-<p>Sometimes the controller will be vibrating on this frame and continuously goes on when you're on the pause menu. This is a <strong>good sign</strong> but doesn't seem mandatory.</p>
-</div>
+                <div class="step">
+                    <h4>Controller Vibration Check</h4>
+                    <p>Sometimes the controller will be vibrating on this frame and continuously goes on when you're on the pause menu. This is a <strong>good sign</strong> but doesn't seem mandatory.</p>
+                </div>
 
-<div class="step">
-<h4>Main Menu > Continue</h4>
-<p>Go back to the main menu and select "Continue". You should now have the ability to fall forever.</p>
-</div>
-</div>
+                <div class="step">
+                    <h4>Main Menu > Continue</h4>
+                    <p>Go back to the main menu and select "Continue". You should now have the ability to fall forever.</p>
+                </div>
+            </div>
 
-<div class="video-section">
-<h3><i class="fas fa-play-circle"></i> Video Tutorial</h3>
-<div class="video-wrapper">
-<iframe 
-    src="https://www.youtube.com/embed/7D3Q1078Xms?rel=0&modestbranding=1"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen
-    loading="lazy"
-    title="Void Cancel Tutorial">
-</iframe>
-</div>
-</div>
+            <div class="video-section">
+                <h3><i class="fas fa-play-circle"></i> Video Tutorial</h3>
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/7D3Q1078Xms?rel=0&modestbranding=1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        loading="lazy"
+                        title="Void Cancel Tutorial">
+                    </iframe>
+                </div>
+            </div>
 
-<div class="tips-box">
-<h3><i class="fas fa-info-circle"></i> Important Notes</h3>
-<ul>
-<li>Requires precise timing</li>
-<li>Good for practicing without resetting your entire run</li>
-</ul>
-</div>
-</div>
+            <div class="tips-box">
+                <h3><i class="fas fa-info-circle"></i> Important Notes</h3>
+                <ul>
+                    <li>Requires precise timing</li>
+                    <li>Good for practicing without resetting your entire run</li>
+                </ul>
+            </div>
+        </div>
 
-<!-- WHAT IT DOES -->
-<div class="method-card">
-<h2><i class="fas fa-magic"></i> Warnings</h2>
+        <!-- WARNINGS -->
+        <div class="method-card">
+            <h2><i class="fas fa-magic"></i> Warnings</h2>
 
-<div class="warning-box">
-<ul>
-<li><strong>Fatal Error Risk:</strong> Don't fall for too long or you'll get a crash</li>
-<li><strong>No Going Back:</strong> The glitch is stuck to your save - you can't disable it</li>
-</ul>
-</div>
-</div>
+            <div class="warning-box">
+                <ul>
+                    <li><strong>Fatal Error Risk:</strong> Don't fall for too long or you'll get a crash</li>
+                    <li><strong>No Going Back:</strong> The glitch is stuck to your save - you can't disable it</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
+    <!-- COMMUNITY SECTION -->
+    <div class="community-section" style="margin-top: 50px; text-align: center; padding: 40px; background: rgba(255, 255, 255, 0.02); border-radius: 20px;">
+        <h2><i class="fas fa-users"></i> Need Help?</h2>
+        <p style="margin: 20px 0; color: #a0a0a0;">
+            Having trouble performing the Void Cancel? Join our Discord community for help, tips, and live coaching!
+        </p>
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+            <a href="https://discord.gg/KnjSeWrRPv" target="_blank" rel="noopener noreferrer" class="download-btn">
+                <i class="fab fa-discord"></i> Join Discord
+            </a>
+            <a href="speedrun.html" class="download-btn" style="background: transparent; border: 2px solid var(--primary-cyan);">
+                <i class="fas fa-arrow-left"></i> Back to Speedrun
+            </a>
+        </div>
+    </div>
 
-</div>
-</div>
+    <footer style="margin-top: 50px; text-align: center; padding: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p>&copy; 2026 Fading Echo Speedrun Community</p>
+        <p style="margin-top: 10px; color: #666;">Resources maintained by the community</p>
+    </footer>
 
-<!-- COMMUNITY SECTION -->
-<div class="community-section" style="margin-top: 50px; text-align: center; padding: 40px; background: rgba(255, 255, 255, 0.02); border-radius: 20px;">
-<h2><i class="fas fa-users"></i> Need Help?</h2>
-<p style="margin: 20px 0; color: #a0a0a0;">
-Having trouble performing the Void Cancel? Join our Discord community for help, tips, and live coaching!
-</p>
-<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
-<a href="https://discord.gg/KnjSeWrRPv" target="_blank" rel="noopener noreferrer" class="download-btn">
-<i class="fab fa-discord"></i> Join Discord
-</a>
-<a href="speedrun.html" class="download-btn" style="background: transparent; border: 2px solid var(--primary-cyan);">
-<i class="fas fa-arrow-left"></i> Back to Speedrun
-</a>
-</div>
-</div>
-</div>
+    <!-- SEARCH MODAL -->
+    <div id="searchModal" class="search-modal" role="dialog" aria-label="Search">
+        <div class="search-container">
+            <div class="search-header">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search glitches, mods, tools..." autocomplete="off" aria-label="Search input">
+                <kbd class="search-shortcut">ESC</kbd>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-empty">Start typing to search...</div>
+            </div>
+            <div class="search-footer">
+                <span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+                <span><kbd>↵</kbd> to select</span>
+                <span><kbd>ESC</kbd> to close</span>
+            </div>
+        </div>
+    </div>
 
-<footer style="margin-top: 50px; text-align: center; padding: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
-<p>&copy; 2026 Fading Echo Speedrun Community</p>
-<p style="margin-top: 10px; color: #666;">Resources maintained by the community</p>
-</footer>
+    <script>
+        const pageSearchIndex = [
+            { title: "Void Cancel (CS Method)", category: "Glitch", page: "voidcancel.html", target: "", desc: "Primary method using Cutscene Skip", icon: "fa-film" },
+            { title: "Void Cancel (Death Method)", category: "Glitch", page: "voidcancel.html", target: "", desc: "Alternative method without CS", icon: "fa-skull" },
+            { title: "Cutscene Skip", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Key glitch for Any% runs", icon: "fa-film" },
+            { title: "Infinite Dash", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Void, Voidless, Respawn variations", icon: "fa-infinity" }
+        ];
+    </script>
+    <script src="search.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
 
-<!-- SEARCH MODAL -->
-<div id="searchModal" class="search-modal" role="dialog" aria-label="Search">
-<div class="search-container">
-<div class="search-header">
-<i class="fas fa-search search-icon"></i>
-<input type="text" id="searchInput" placeholder="Search glitches, mods, tools..." autocomplete="off" aria-label="Search input">
-<kbd class="search-shortcut">ESC</kbd>
-</div>
-<div class="search-results" id="searchResults">
-<div class="search-empty">Start typing to search...</div>
-</div>
-<div class="search-footer">
-<span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
-<span><kbd>↵</kbd> to select</span>
-<span><kbd>ESC</kbd> to close</span>
-</div>
-</div>
-</div>
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('active') ? 'true' : 'false');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
 
-<script>
-const pageSearchIndex = [
-{ title: "Void Cancel (CS Method)", category: "Glitch", page: "voidcancel.html", target: "", desc: "Primary method using Cutscene Skip", icon: "fa-film" },
-{ title: "Void Cancel (Death Method)", category: "Glitch", page: "voidcancel.html", target: "", desc: "Alternative method without CS", icon: "fa-skull" },
-{ title: "Cutscene Skip", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Key glitch for Any% runs", icon: "fa-film" },
-{ title: "Infinite Dash", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Void, Voidless, Respawn variations", icon: "fa-infinity" }
-];
-</script>
-<script src="search.js"></script>
-<script>
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => {
-hamburger.classList.toggle('active');
-hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('active') ? 'true' : 'false');
-mobileMenu.classList.toggle('active');
-document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-});
-function closeMenu() {
-hamburger.classList.remove('active');
-mobileMenu.classList.remove('active');
-hamburger.setAttribute('aria-expanded', 'false');
-document.body.style.overflow = '';
-}
-mobileMenu.addEventListener('click', (e) => { if (e.target === mobileMenu) closeMenu(); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMenu(); });
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
 
-function createWaterParticle() {
-const particle = document.createElement('div');
-particle.className = 'water-particle';
-particle.style.left = Math.random() * 100 + 'vw';
-particle.style.width = Math.random() * 10 + 5 + 'px';
-particle.style.height = particle.style.width;
-particle.style.animationDuration = Math.random() * 3 + 2 + 's';
-document.body.appendChild(particle);
-setTimeout(() => { particle.remove(); }, 5000);
-}
-setInterval(createWaterParticle, 500);
-</script>
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) closeMenu();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMenu();
+        });
+
+        function createWaterParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'water-particle';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.width = Math.random() * 10 + 5 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(particle);
+            setTimeout(() => { particle.remove(); }, 5000);
+        }
+        setInterval(createWaterParticle, 500);
+    </script>
 </body>
 </html>
