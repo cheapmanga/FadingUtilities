@@ -178,6 +178,7 @@
                 <button class="file-btn" onclick="loadFile('speedrun.html')">speedrun.html</button>
                 <button class="file-btn" onclick="loadFile('voidcancel.html')">voidcancel.html</button>
                 <button class="file-btn" onclick="loadFile('mods.html')">mods.html</button>
+                <button class="file-btn" onclick="loadFile('admin.html')">admin.html</button>
                 <button class="file-btn" onclick="loadFile('404.html')">404.html</button>
                 <button class="file-btn" onclick="loadFile('style.css')">style.css</button>
             </div>
@@ -192,8 +193,14 @@
     </div>
 
     <script>
-        // Au lieu d'une seule variable, utilise un tableau
-        const ADMIN_USERNAMES = ["cheapmanga"]; // Ajoute tous les comptes que tu veux
+        // ===== LISTE DES COMPTES ADMIN =====
+        // Ajoute ici tous les usernames GitHub autorisés
+        const ADMIN_USERNAMES = [
+            "cheapmanga",
+            // "autre_compte",  // Décommente et ajoute d'autres comptes ici
+            // "encore_un_autre"
+        ];
+        
         const REPO_NAME = "FadingUtilities";
         const BRANCH = "main";
         const API_BASE = "https://api.github.com";
@@ -232,9 +239,9 @@
 
                 const user = await response.json();
 
-                // Vérifier que c'est bien un compte admin autorisé
+                // ✅ MODIFICATION : Vérifier si le compte est dans la liste des admins
                 if (!ADMIN_USERNAMES.includes(user.login)) {
-                    showStatus('loginStatus', `Account not authorized! Allowed: ${ADMIN_USERNAMES.join(', ')}, got: ${user.login}`, 'error');
+                    showStatus('loginStatus', `Account not authorized! Allowed: ${ADMIN_USERNAMES.join(', ')}. Got: ${user.login}`, 'error');
                     localStorage.removeItem('github_token');
                     return;
                 }
@@ -269,7 +276,7 @@
             });
 
             try {
-                const response = await fetch(`${API_BASE}/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${filename}?ref=${BRANCH}`, {
+                const response = await fetch(`${API_BASE}/repos/${ADMIN_USERNAMES[0]}/${REPO_NAME}/contents/${filename}?ref=${BRANCH}`, {
                     headers: {
                         'Authorization': `token ${currentToken}`,
                         'Accept': 'application/vnd.github.v3+json'
@@ -301,7 +308,7 @@
 
             try {
                 // 1. Récupérer le SHA du fichier actuel
-                const fileResponse = await fetch(`${API_BASE}/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${currentFile}?ref=${BRANCH}`, {
+                const fileResponse = await fetch(`${API_BASE}/repos/${ADMIN_USERNAMES[0]}/${REPO_NAME}/contents/${currentFile}?ref=${BRANCH}`, {
                     headers: {
                         'Authorization': `token ${currentToken}`,
                         'Accept': 'application/vnd.github.v3+json'
@@ -312,7 +319,7 @@
                 const sha = fileData.sha;
 
                 // 2. Commit le nouveau contenu
-                const commitResponse = await fetch(`${API_BASE}/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${currentFile}`, {
+                const commitResponse = await fetch(`${API_BASE}/repos/${ADMIN_USERNAMES[0]}/${REPO_NAME}/contents/${currentFile}`, {
                     method: 'PUT',
                     headers: {
                         'Authorization': `token ${currentToken}`,
@@ -320,7 +327,7 @@
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        message: `Update ${currentFile} via admin panel`,
+                        message: `Update ${currentFile} via admin panel (by ${document.getElementById('userLogin').textContent})`,
                         content: btoa(unescape(encodeURIComponent(content))),
                         sha: sha,
                         branch: BRANCH
