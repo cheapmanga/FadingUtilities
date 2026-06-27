@@ -349,87 +349,93 @@
         }
 
         function createGlitchCard(glitch) {
-            const hasVideos = glitch.videos && glitch.videos.length > 0;
-            const hasVariationsWithVideos = glitch.variations && glitch.variations.some(v => v.video_id);
-            const hasExtraVideos = glitch.videos_extra && glitch.videos_extra.length > 0;
-            const hasAnyVideo = hasVideos || hasVariationsWithVideos || hasExtraVideos;
-            
-            const cardClass = hasAnyVideo ? 'content-card has-video-preview' : 'content-card';
-            const cardStyle = glitch.card_style ? ` style="${glitch.card_style}"` : '';
-            const titleStyle = glitch.title_style ? ` style="${glitch.title_style}"` : '';
+    const hasVideos = glitch.videos && glitch.videos.length > 0;
+    const hasVariationsWithVideos = glitch.variations && glitch.variations.some(v => v.video_id);
+    const hasExtraVideos = glitch.videos_extra && glitch.videos_extra.length > 0;
+    const hasAnyVideo = hasVideos || hasVariationsWithVideos || hasExtraVideos;
+    
+    // Par défaut : true (vidéo au hover)
+    const hoverVideo = glitch.hover_video !== false;
+    
+    let cardClass = 'content-card';
+    if (hasAnyVideo) {
+        cardClass = hoverVideo ? 'content-card has-video-preview' : 'content-card has-video-always';
+    }
+    
+    const cardStyle = glitch.card_style ? ` style="${glitch.card_style}"` : '';
+    const titleStyle = glitch.title_style ? ` style="${glitch.title_style}"` : '';
 
-            let html = `<div class="${cardClass}"${cardStyle}>`;
-            
-            // Le titre est toujours affiché en premier
-            html += `<h3${titleStyle}>${glitch.title_prefix || ''}${glitch.title}`;
-            if (glitch.alt_names) {
-                html += ` <span class="alt-names">| ${escapeHtml(glitch.alt_names)}</span>`;
-            }
-            if (glitch.discord_link) {
-                html += `<a href="${escapeHtml(glitch.discord_link)}" target="_blank" rel="noopener noreferrer" class="glitch-link" title="View on Discord"><i class="fab fa-discord"></i></a>`;
-            }
-            html += `</h3>`;
+    let html = `<div class="${cardClass}"${cardStyle}>`;
+    
+    // Le titre est toujours affiché en premier
+    html += `<h3${titleStyle}>${glitch.title_prefix || ''}${glitch.title}`;
+    if (glitch.alt_names) {
+        html += ` <span class="alt-names">| ${escapeHtml(glitch.alt_names)}</span>`;
+    }
+    if (glitch.discord_link) {
+        html += `<a href="${escapeHtml(glitch.discord_link)}" target="_blank" rel="noopener noreferrer" class="glitch-link" title="View on Discord"><i class="fab fa-discord"></i></a>`;
+    }
+    html += `</h3>`;
 
-            // On parcourt les autres clés DU JSON DANS L'ORDRE où elles sont écrites
-            Object.keys(glitch).forEach(key => {
-                // On ignore les clés qui sont déjà gérées ou qui sont juste des métadonnées
-                const metadataKeys = ['title', 'alt_names', 'discord_link', 'card_style', 'title_style', 'title_prefix', 'note_type', 'button_link'];
-                if (metadataKeys.includes(key)) return;
+    // On parcourt les autres clés DU JSON DANS L'ORDRE où elles sont écrites
+    Object.keys(glitch).forEach(key => {
+        const metadataKeys = ['title', 'alt_names', 'discord_link', 'card_style', 'title_style', 'title_prefix', 'note_type', 'button_link', 'hover_video'];
+        if (metadataKeys.includes(key)) return;
 
-                const val = glitch[key];
-                if (!val) return; // On ignore les valeurs vides
+        const val = glitch[key];
+        if (!val) return;
 
-                switch(key) {
-                    case 'how_to':
-                        html += `<h4>How to do:</h4><p>${val}</p>`;
-                        break;
-                        
-                    case 'note':
-                        const isWarning = glitch.note_type === 'warning' || val.includes('⚠️');
-                        const noteClass = isWarning ? 'warning' : 'note';
-                        const noteLabel = isWarning ? 'Warning:' : 'Note:';
-                        html += `<div class="${noteClass}"><strong>${noteLabel}</strong> ${val}</div>`;
-                        break;
-                        
-                    case 'variations':
-                        html += `<h4>Variations:</h4><ul>`;
-                        val.forEach(v => {
-                            html += `<li>${v.text}`;
-                            if (v.video_id) {
-                                html += createVideoWrapper(v.video_id, glitch.title);
-                            }
-                            html += `</li>`;
-                        });
-                        html += `</ul>`;
-                        break;
-                        
-                    case 'videos':
-                        val.forEach(videoId => {
-                            html += createVideoWrapper(videoId, glitch.title);
-                        });
-                        break;
-                        
-                    case 'videos_extra':
-                        val.forEach(videoId => {
-                            html += createVideoWrapper(videoId, glitch.title);
-                        });
-                        break;
-                        
-                    case 'extra_content':
-                        html += val;
-                        break;
-                        
-                    case 'button_text':
-                        if (glitch.button_link) {
-                            html += `<a href="${escapeHtml(glitch.button_link)}" class="download-btn" style="margin-top: 20px;"><i class="fas fa-book-open"></i> ${escapeHtml(val)}</a>`;
-                        }
-                        break;
+        switch(key) {
+            case 'how_to':
+                html += `<h4>How to do:</h4><p>${val}</p>`;
+                break;
+                
+            case 'note':
+                const isWarning = glitch.note_type === 'warning' || val.includes('⚠️');
+                const noteClass = isWarning ? 'warning' : 'note';
+                const noteLabel = isWarning ? 'Warning:' : 'Note:';
+                html += `<div class="${noteClass}"><strong>${noteLabel}</strong> ${val}</div>`;
+                break;
+                
+            case 'variations':
+                html += `<h4>Variations:</h4><ul>`;
+                val.forEach(v => {
+                    html += `<li>${v.text}`;
+                    if (v.video_id) {
+                        html += createVideoWrapper(v.video_id, glitch.title);
+                    }
+                    html += `</li>`;
+                });
+                html += `</ul>`;
+                break;
+                
+            case 'videos':
+                val.forEach(videoId => {
+                    html += createVideoWrapper(videoId, glitch.title);
+                });
+                break;
+                
+            case 'videos_extra':
+                val.forEach(videoId => {
+                    html += createVideoWrapper(videoId, glitch.title);
+                });
+                break;
+                
+            case 'extra_content':
+                html += val;
+                break;
+                
+            case 'button_text':
+                if (glitch.button_link) {
+                    html += `<a href="${escapeHtml(glitch.button_link)}" class="download-btn" style="margin-top: 20px;"><i class="fas fa-book-open"></i> ${escapeHtml(val)}</a>`;
                 }
-            });
-
-            html += `</div>`;
-            return html;
+                break;
         }
+    });
+
+    html += `</div>`;
+    return html;
+}
 
         function createVideoWrapper(videoId, title) {
             return `<div class="glitch-video-wrapper">

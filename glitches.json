@@ -174,7 +174,8 @@
           "title_style": "color: #ff6b9d;",
           "note": "⚠️ WORK IN PROGRESS: We are currently working on the return of the Infinite Core Glitch!",
           "note_type": "warning",
-          "videos": ["-1wQqhp9bHo"]
+          "videos": ["-1wQqhp9bHo"],
+          "hover_video": false
         },
         {
           "title": "Point Zero",
