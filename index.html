@@ -24,12 +24,9 @@
         <nav>
             <a href="index.html" class="logo">FADING ECHO SPEEDRUNS</a>
             <div style="display: flex; align-items: center;">
-                <!-- Bouton de langue -->
-                <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" aria-label="Switch language">FR</button>
-                
                 <button class="search-trigger" id="searchTrigger">
                     <i class="fas fa-search"></i>
-                    <span class="search-text" data-i18n="nav.search">Search</span>
+                    <span class="search-text">Search</span>
                     <kbd class="search-kbd">Ctrl+K</kbd>
                 </button>
                 <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
@@ -41,12 +38,9 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="index.html" onclick="closeMenu()" data-i18n="nav.home">Home</a></li>
-            <li><a href="index.html#features" onclick="closeMenu()" data-i18n="nav.features">Features</a></li>
-            <li><a href="speedrun.html" onclick="closeMenu()" data-i18n="nav.speedrun">Speedrun</a></li>
-            <li><a href="mods.html" onclick="closeMenu()" data-i18n="nav.mods">Mods</a></li>
-            <li><a href="index.html#social" onclick="closeMenu()" data-i18n="nav.community">Community</a></li>
-            <li><a href="index.html#play" onclick="closeMenu()" data-i18n="nav.play">Play</a></li>
+            <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+            <li><a href="speedrun.html" onclick="closeMenu()">Speedrun</a></li>
+            <li><a href="mods.html" onclick="closeMenu()">Mods</a></li>
         </ul>
     </div>
 
@@ -59,20 +53,20 @@
             </div>
         </h1>
         <a href="https://store.steampowered.com/app/2467880/Fading_Echo/" target="_blank" rel="noopener noreferrer" class="cta-button">
-            <i class="fab fa-steam"></i> <span data-i18n="home.cta">Play the demo on Steam</span>
+            <i class="fab fa-steam"></i> Play the demo on Steam
         </a>
         <br>
         <br>
         <p class="hero-description">
-            <strong>Fading Echo</strong> <span data-i18n="home.description.1">is a fast-paced action-adventure RPG where creativity dictates the battles.</span>
-            <span data-i18n="home.description.2">Manipulate water, trigger chain reactions, and traverse strange worlds with</span> <strong>One</strong>,
-            <span data-i18n="home.description.3">a young Legend on a mission to save lands dying under the grip of the</span> <strong>Paradox</strong>.
+            <strong>Fading Echo</strong> is a fast-paced action-adventure RPG where creativity dictates the battles.
+            Manipulate water, trigger chain reactions, and traverse strange worlds with <strong>One</strong>,
+            a young Legend on a mission to save lands dying under the grip of the <strong>Paradox</strong>.
         </p>
         <div style="background: rgba(0, 245, 255, 0.05); border: 2px solid var(--primary-cyan); border-radius: 15px; padding: 20px; max-width: 800px; margin: 0 auto 50px; text-align: center;">
             <p style="color: var(--primary-cyan); font-size: 1.1rem; margin: 0;">
-                <i class="fas fa-file-alt"></i> <span data-i18n="home.doc.text">This website is based on the community Google Doc.</span>
+                <i class="fas fa-file-alt"></i> This website is based on the community Google Doc.
                 <a href="https://docs.google.com/document/d/1M-i1mLmX0Jkw_8NZJlRj5nv2QdE7_MJ_jspCigwSiqc/edit?tab=t.0" target="_blank" rel="noopener noreferrer" style="color: var(--primary-yellow); text-decoration: none; font-weight: 700;">
-                    <span data-i18n="home.doc.link">View the original document</span> <i class="fas fa-external-link-alt"></i>
+                    View the original document <i class="fas fa-external-link-alt"></i>
                 </a>
             </p>
         </div>
@@ -81,70 +75,43 @@
     <!-- SOCIAL SECTION -->
     <section class="social-section" id="social">
         <div class="social-container">
-            <h2 class="section-title" data-i18n="home.social.title">Resources & Community</h2>
+            <h2 class="section-title">Resources & Community</h2>
             <div class="social-grid">
                 <a href="https://discord.gg/KnjSeWrRPv" target="_blank" rel="noopener noreferrer" class="social-link discord">
                     <i class="fab fa-discord"></i>
-                    <div class="social-text">
-                        <h4 data-i18n="home.social.discord.title">Discord</h4>
-                        <p data-i18n="home.social.discord.desc">Join our server</p>
-                    </div>
+                    <div class="social-text"><h4>Discord</h4><p>Join our server</p></div>
                 </a>
                 <a href="https://www.youtube.com/@FadingEchoGame" target="_blank" rel="noopener noreferrer" class="social-link youtube">
                     <i class="fab fa-youtube"></i>
-                    <div class="social-text">
-                        <h4 data-i18n="home.social.youtube.title">YouTube</h4>
-                        <p data-i18n="home.social.youtube.desc">Videos and gameplay</p>
-                    </div>
+                    <div class="social-text"><h4>YouTube</h4><p>Videos and gameplay</p></div>
                 </a>
                 <a href="https://store.steampowered.com/app/2467880/Fading_Echo/" target="_blank" rel="noopener noreferrer" class="social-link steam">
                     <i class="fab fa-steam"></i>
-                    <div class="social-text">
-                        <h4 data-i18n="home.social.steam.title">Steam</h4>
-                        <p data-i18n="home.social.steam.desc">Available on Steam</p>
-                    </div>
+                    <div class="social-text"><h4>Steam</h4><p>Available on Steam</p></div>
                 </a>
                 <a href="https://www.instagram.com/fadingechogame/" target="_blank" rel="noopener noreferrer" class="social-link instagram">
                     <i class="fab fa-instagram"></i>
-                    <div class="social-text">
-                        <h4 data-i18n="home.social.instagram.title">Instagram</h4>
-                        <p data-i18n="home.social.instagram.desc">Follow us</p>
-                    </div>
+                    <div class="social-text"><h4>Instagram</h4><p>Follow us</p></div>
                 </a>
                 <a href="https://www.tiktok.com/@fadingechogame" target="_blank" rel="noopener noreferrer" class="social-link tiktok">
                     <i class="fab fa-tiktok"></i>
-                    <div class="social-text">
-                        <h4 data-i18n="home.social.tiktok.title">TikTok</h4>
-                        <p data-i18n="home.social.tiktok.desc">Short content</p>
-                    </div>
+                    <div class="social-text"><h4>TikTok</h4><p>Short content</p></div>
                 </a>
                 <a href="https://www.newtales.com/games/fading-echo/en-us" target="_blank" rel="noopener noreferrer" class="social-link website">
                     <i class="fas fa-globe"></i>
-                    <div class="social-text">
-                        <h4 data-i18n="home.social.website.title">Official Website</h4>
-                        <p data-i18n="home.social.website.desc">New Tales</p>
-                    </div>
+                    <div class="social-text"><h4>Official Website</h4><p>New Tales</p></div>
                 </a>
                 <a href="https://www.speedrun.com/Fading_Echo" target="_blank" rel="noopener noreferrer" class="social-link speedrun">
                     <i class="fas fa-stopwatch"></i>
-                    <div class="social-text">
-                        <h4 data-i18n="home.social.speedrun.title">Speedrun</h4>
-                        <p data-i18n="home.social.speedrun.desc">Leaderboards</p>
-                    </div>
+                    <div class="social-text"><h4>Speedrun</h4><p>Leaderboards</p></div>
                 </a>
                 <a href="https://www.speedrun.com/challenges/jkyoj6p9" target="_blank" rel="noopener noreferrer" class="social-link speedrun">
                     <i class="fas fa-medal"></i>
-                    <div class="social-text">
-                        <h4 data-i18n="home.social.challenges.title">Challenges</h4>
-                        <p data-i18n="home.social.challenges.desc">Special challenges</p>
-                    </div>
+                    <div class="social-text"><h4>Challenges</h4><p>Special challenges</p></div>
                 </a>
                 <a href="https://gofile.io/d/CVESBa" target="_blank" rel="noopener noreferrer" class="social-link backups">
                     <i class="fas fa-download"></i>
-                    <div class="social-text">
-                        <h4 data-i18n="home.social.backups.title">Backups</h4>
-                        <p data-i18n="home.social.backups.desc">Download backups</p>
-                    </div>
+                    <div class="social-text"><h4>Backups</h4><p>Download backups</p></div>
                 </a>
             </div>
         </div>
@@ -153,23 +120,21 @@
     <!-- CONTRIBUTE SECTION -->
     <section class="contribute-section">
         <div class="contribute-container">
-            <h2 class="section-title" data-i18n="home.contribute.title">Want to Improve This?</h2>
-            <p style="font-size: 1.3rem; color: #a0a0a0; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;" data-i18n="home.contribute.text">
+            <h2 class="section-title">Want to Improve This?</h2>
+            <p style="font-size: 1.3rem; color: #a0a0a0; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;">
                 Found something to fix or have an idea to make this site better?
                 Contributions are welcome! Submit a pull request on GitHub and help improve the community.
             </p>
             <a href="https://github.com/cheapmanga/FadingUtilities" target="_blank" rel="noopener noreferrer" class="contribute-button">
-                <i class="fab fa-github"></i> <span data-i18n="home.contribute.btn">View on GitHub</span>
+                <i class="fab fa-github"></i> View on GitHub
             </a>
         </div>
     </section>
 
     <footer>
-        <p data-i18n="home.footer.1">&copy; 2026 Fading Echo - Developed by Emeteria Studio / New Tales</p>
-        <p data-i18n="home.footer.2">Release Date: July 21, 2026 on PC</p>
-        <p style="margin-top: 20px; font-size: 0.9rem;">
-            <i class="fas fa-heart" style="color: var(--primary-pink);"></i> <span data-i18n="home.footer.3">Made by CheapManga and the community</span>
-        </p>
+        <p>&copy; 2026 Fading Echo - Developed by Emeteria Studio / New Tales</p>
+        <p>Release Date: July 21, 2026 on PC</p>
+        <p style="margin-top: 20px; font-size: 0.9rem;"><i class="fas fa-heart" style="color: var(--primary-pink);"></i> Made by CheapManga and the community</p>
     </footer>
 
     <!-- SEARCH MODAL -->
@@ -177,7 +142,7 @@
         <div class="search-container">
             <div class="search-header">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" id="searchInput" placeholder="Search glitches, mods, tools..." autocomplete="off" aria-label="Search input" data-i18n-placeholder="nav.search">
+                <input type="text" id="searchInput" placeholder="Search glitches, mods, tools..." autocomplete="off" aria-label="Search input">
                 <kbd class="search-shortcut">ESC</kbd>
             </div>
             <div class="search-results" id="searchResults">
@@ -214,11 +179,7 @@
             { title: "Chain Reactions", category: "Feature", page: "index.html", target: "features", desc: "Spectacular combinations", icon: "fa-bolt" }
         ];
     </script>
-    
-    <!-- Scripts de traduction -->
-    <script src="translations.js"></script>
-    <script src="i18n.js"></script>
-
+    <script src="search.js"></script>
     <script>
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
