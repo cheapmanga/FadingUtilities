@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - FadingUtilities</title>
+    <link rel="icon" type="image/png" href="Images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 120px auto 50px;
+            padding: 30px;
+        }
+        .admin-login {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid var(--primary-cyan);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+        .admin-login input {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--primary-cyan);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 1rem;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 500px;
+        }
+        .admin-panel {
+            display: none;
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid var(--primary-cyan);
+            border-radius: 20px;
+            padding: 40px;
+        }
+        .admin-panel.active { display: block; }
+        .file-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .file-btn {
+            background: rgba(0, 245, 255, 0.1);
+            border: 2px solid var(--primary-cyan);
+            color: var(--primary-cyan);
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        .file-btn:hover, .file-btn.active {
+            background: var(--primary-cyan);
+            color: var(--dark-bg);
+        }
+        .editor-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .editor-container textarea {
+            flex: 1;
+            min-height: 600px;
+            background: rgba(0, 0, 0, 0.5);
+            color: var(--primary-cyan);
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            resize: vertical;
+        }
+        .btn-commit {
+            background: linear-gradient(135deg, var(--primary-yellow), var(--primary-pink));
+            color: var(--dark-bg);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn-commit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .status-msg {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+        }
+        .status-msg.success {
+            background: rgba(0, 255, 0, 0.1);
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            display: block;
+        }
+        .status-msg.error {
+            background: rgba(255, 0, 0, 0.1);
+            border: 2px solid #ff0000;
+            color: #ff0000;
+            display: block;
+        }
+        .user-info {
+            background: rgba(0, 245, 255, 0.1);
+            border: 2px solid var(--primary-cyan);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .user-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-cyan);
+        }
+        .logout-btn {
+            margin-left: auto;
+            background: rgba(255, 0, 110, 0.2);
+            border: 2px solid var(--primary-pink);
+            color: var(--primary-pink);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <header>
+        <nav>
+            <a href="index.html" class="logo">FADING ECHO SPEEDRUNS</a>
+        </nav>
+    </header>
+
+    <div class="admin-container">
+        <!-- LOGIN -->
+        <div class="admin-login" id="loginBox">
+            <h2 style="color: var(--primary-cyan); font-family: 'Orbitron', sans-serif;">🔐 GitHub Authentication</h2>
+            <p style="color: #aaa; margin: 15px 0;">Enter your GitHub Personal Access Token</p>
+            <p style="color: #888; font-size: 0.9rem; margin-bottom: 20px;">
+                Generate one at: <a href="https://github.com/settings/tokens" target="_blank" style="color: var(--primary-yellow);">github.com/settings/tokens</a><br>
+                Required scopes: <code>repo</code>
+            </p>
+            <input type="password" id="tokenInput" placeholder="ghp_xxxxxxxxxxxx">
+            <br>
+            <button class="btn-commit" onclick="authenticate()">Login with GitHub</button>
+            <div class="status-msg" id="loginStatus"></div>
+        </div>
+
+        <!-- PANEL -->
+        <div class="admin-panel" id="adminPanel">
+            <div class="user-info" id="userInfo">
+                <img id="userAvatar" src="" alt="Avatar">
+                <div>
+                    <div style="font-weight: 700; color: var(--primary-cyan);" id="userName"></div>
+                    <div style="font-size: 0.9rem; color: #aaa;" id="userLogin"></div>
+                </div>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+
+            <h2 style="color: var(--primary-cyan); font-family: 'Orbitron', sans-serif; margin-bottom: 20px;">✨ Edit Files</h2>
+            
+            <div class="file-selector" id="fileSelector">
+                <button class="file-btn active" onclick="loadFile('index.html')">index.html</button>
+                <button class="file-btn" onclick="loadFile('speedrun.html')">speedrun.html</button>
+                <button class="file-btn" onclick="loadFile('voidcancel.html')">voidcancel.html</button>
+                <button class="file-btn" onclick="loadFile('mods.html')">mods.html</button>
+                <button class="file-btn" onclick="loadFile('404.html')">404.html</button>
+                <button class="file-btn" onclick="loadFile('style.css')">style.css</button>
+            </div>
+
+            <div class="editor-container">
+                <textarea id="editor" placeholder="Loading file..."></textarea>
+            </div>
+
+            <button class="btn-commit" id="commitBtn" onclick="commitChanges()">💾 Commit to GitHub</button>
+            <div class="status-msg" id="commitStatus"></div>
+        </div>
+    </div>
+
+    <script>
+        // Au lieu d'une seule variable, utilise un tableau
+        const ADMIN_USERNAMES = ["cheapmanga", "ecole0123456789-stack"]; // Ajoute tous les comptes que tu veux
+        const REPO_NAME = "FadingUtilities";
+        const BRANCH = "main";
+        const API_BASE = "https://api.github.com";
+
+        let currentToken = localStorage.getItem('github_token');
+        let currentFile = 'index.html';
+        let originalContent = '';
+
+        // Auto-login si token existe
+        if (currentToken) {
+            verifyToken();
+        }
+
+        async function authenticate() {
+            const token = document.getElementById('tokenInput').value.trim();
+            if (!token) {
+                showStatus('loginStatus', 'Please enter a token', 'error');
+                return;
+            }
+
+            localStorage.setItem('github_token', token);
+            currentToken = token;
+            await verifyToken();
+        }
+
+        async function verifyToken() {
+            try {
+                const response = await fetch(`${API_BASE}/user`, {
+                    headers: {
+                        'Authorization': `token ${currentToken}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (!response.ok) throw new Error('Invalid token');
+
+                const user = await response.json();
+
+                // Vérifier que c'est bien un compte admin autorisé
+                if (!ADMIN_USERNAMES.includes(user.login)) {
+                    showStatus('loginStatus', `Account not authorized! Allowed: ${ADMIN_USERNAMES.join(', ')}, got: ${user.login}`, 'error');
+                    localStorage.removeItem('github_token');
+                    return;
+                }
+
+                // Afficher les infos utilisateur
+                document.getElementById('userAvatar').src = user.avatar_url;
+                document.getElementById('userName').textContent = user.name || user.login;
+                document.getElementById('userLogin').textContent = `@${user.login}`;
+
+                document.getElementById('loginBox').style.display = 'none';
+                document.getElementById('adminPanel').classList.add('active');
+
+                loadFile('index.html');
+            } catch (error) {
+                showStatus('loginStatus', 'Authentication failed: ' + error.message, 'error');
+                localStorage.removeItem('github_token');
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('github_token');
+            location.reload();
+        }
+
+        async function loadFile(filename) {
+            currentFile = filename;
+            
+            // Mettre à jour les boutons actifs
+            document.querySelectorAll('.file-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === filename) btn.classList.add('active');
+            });
+
+            try {
+                const response = await fetch(`${API_BASE}/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${filename}?ref=${BRANCH}`, {
+                    headers: {
+                        'Authorization': `token ${currentToken}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (!response.ok) throw new Error('File not found');
+
+                const data = await response.json();
+                const content = atob(data.content);
+                originalContent = content;
+                document.getElementById('editor').value = content;
+            } catch (error) {
+                showStatus('commitStatus', 'Failed to load file: ' + error.message, 'error');
+            }
+        }
+
+        async function commitChanges() {
+            const content = document.getElementById('editor').value;
+            
+            if (content === originalContent) {
+                showStatus('commitStatus', 'No changes to commit', 'error');
+                return;
+            }
+
+            const commitBtn = document.getElementById('commitBtn');
+            commitBtn.disabled = true;
+            commitBtn.textContent = '⏳ Committing...';
+
+            try {
+                // 1. Récupérer le SHA du fichier actuel
+                const fileResponse = await fetch(`${API_BASE}/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${currentFile}?ref=${BRANCH}`, {
+                    headers: {
+                        'Authorization': `token ${currentToken}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                const fileData = await fileResponse.json();
+                const sha = fileData.sha;
+
+                // 2. Commit le nouveau contenu
+                const commitResponse = await fetch(`${API_BASE}/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${currentFile}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${currentToken}`,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: `Update ${currentFile} via admin panel`,
+                        content: btoa(unescape(encodeURIComponent(content))),
+                        sha: sha,
+                        branch: BRANCH
+                    })
+                });
+
+                if (!commitResponse.ok) throw new Error('Commit failed');
+
+                showStatus('commitStatus', '✅ Changes committed successfully! Cloudflare Pages will redeploy automatically.', 'success');
+                originalContent = content;
+            } catch (error) {
+                showStatus('commitStatus', '❌ Commit failed: ' + error.message, 'error');
+            } finally {
+                commitBtn.disabled = false;
+                commitBtn.textContent = '💾 Commit to GitHub';
+            }
+        }
+
+        function showStatus(elementId, message, type) {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.className = `status-msg ${type}`;
+            setTimeout(() => {
+                element.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
