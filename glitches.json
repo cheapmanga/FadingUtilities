@@ -167,18 +167,21 @@
       "color": "#ff6b9d",
       "glitches": [
         {
-          "title": "Infinite Core Glitch / Point Zero",
+          "title": "Infinite Core Glitch",
           "alt_names": "",
           "title_prefix": "<i class=\"fas fa-star\"></i> ",
           "card_style": "border: 2px solid #ff6b9d; background: linear-gradient(135deg, rgba(255, 107, 157, 0.05), rgba(0, 245, 255, 0.03));",
           "title_style": "color: #ff6b9d;",
-          "how_to": "What we call the <strong>\"Point Zero\"</strong> is located at certain coordinates far from the levels, and can be reached by quickly coming back to the menu (keep mashing to continue quickly). The first frame when One spawns in the game, she will be standing there onto a small platform, before being replaced at the last soft checkpoint.",
-          "extra_content": "<p style=\"margin-top: 10px;\">If you quickly go back to the menu twice in a row, you can actually place your soft checkpoint on the Point Zero and stay there. From that, <strong>many things might be possible!</strong></p>",
-          "variations": [],
           "note": "⚠️ WORK IN PROGRESS: We are currently working on the return of the Infinite Core Glitch!",
           "note_type": "warning",
-          "discord_link": "",
           "videos": ["-1wQqhp9bHo"]
+        },
+        {
+          "title": "Point Zero",
+          "card_style": "border: 2px solid #ff6b9d; background: linear-gradient(135deg, rgba(255, 107, 157, 0.05), rgba(0, 245, 255, 0.03));",
+          "title_style": "color: #ff6b9d;",
+          "how_to": "What we call the <strong>\"Point Zero\"</strong> is located at certain coordinates far from the levels, and can be reached by quickly coming back to the menu (keep mashing to continue quickly). The first frame when One spawns in the game, she will be standing there onto a small platform, before being replaced at the last soft checkpoint.",
+          "extra_content": "<p style=\"margin-top: 10px;\">If you quickly go back to the menu twice in a row, you can actually place your soft checkpoint on the Point Zero and stay there. From that, <strong>many things might be possible!</strong></p>"
         }
       ]
     }
