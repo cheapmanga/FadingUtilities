@@ -1,0 +1,31 @@
+{
+  "mods": [
+    {
+      "title": "Teleport Mod",
+      "version": "v0.1.0",
+      "icon": "fa-location-arrow",
+      "description": "A powerful alternative to Cheat Engine for practicing routes...",
+      "sections": [
+        {
+          "title": "Controls",
+          "icon": "fa-gamepad",
+          "items": [
+            "F6 : save current player position and rotation",
+            "F7 : load saved player position and rotation"
+          ]
+        }
+      ],
+      "warnings": [
+        "The readme is made for the Volume Mod but the Teleport Mod is included."
+      ],
+      "notes": [
+        "Do not create mods with UE4SS Debugging Tools..."
+      ],
+      "download_link": "https://drive.google.com/uc?id=1KaB3u3OKECMud42-oIlTjFKndRZCpx5F",
+      "secondary_button": {
+        "text": "Alternative: Cheat Engine",
+        "link": "speedrun.html#tools"
+      }
+    }
+  ]
+}
