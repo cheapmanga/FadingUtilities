@@ -41,9 +41,9 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="index.html" onclick="closeMenu()">Home</a></li>
-            <li><a href="speedrun.html" onclick="closeMenu()">Speedrun</a></li>
-            <li><a href="mods.html" onclick="closeMenu()">Mods</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="speedrun.html">Speedrun</a></li>
+            <li><a href="mods.html">Mods</a></li>
         </ul>
     </div>
 
@@ -170,54 +170,8 @@
         </div>
     </div>
 
-    <script>
-        const pageSearchIndex = [
-            { title: "Void Cancel", category: "Glitch", page: "voidcancel.html", target: "", desc: "Bypass fall limit, Cutscene Skip & Death methods", icon: "fa-ban" },
-            { title: "Hyper Dash (HD)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Wave Dash, Long Jump", icon: "fa-bolt" },
-            { title: "Form Dash (FD)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Water Dash, Drop Dash", icon: "fa-wind" },
-            { title: "Jump Switch (JS)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Element Switch, Switch Boost", icon: "fa-arrow-up" },
-            { title: "Teleport Mod", category: "Mod", page: "mods.html", target: "", desc: "Alternative to Cheat Engine (F6/F7)", icon: "fa-location-arrow" },
-            { title: "Volume Mod", category: "Mod", page: "mods.html", target: "", desc: "See invisible walls and triggers", icon: "fa-border-all" }
-        ];
-    </script>
+    <script src="search-data.js"></script>
     <script src="search.js"></script>
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('active') ? 'true' : 'false');
-            mobileMenu.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-        });
-
-        function closeMenu() {
-            hamburger.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        }
-
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target === mobileMenu) closeMenu();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMenu();
-        });
-
-        function createWaterParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'water-particle';
-            particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.width = Math.random() * 10 + 5 + 'px';
-            particle.style.height = particle.style.width;
-            particle.style.animationDuration = Math.random() * 3 + 2 + 's';
-            document.body.appendChild(particle);
-            setTimeout(() => { particle.remove(); }, 5000);
-        }
-        setInterval(createWaterParticle, 500);
-    </script>
+    <script src="site.js"></script>
 </body>
 </html>

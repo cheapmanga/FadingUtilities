@@ -32,18 +32,6 @@
         </a>
     </div>
 
-    <script>
-        function createWaterParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'water-particle';
-            particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.width = Math.random() * 10 + 5 + 'px';
-            particle.style.height = particle.style.width;
-            particle.style.animationDuration = Math.random() * 3 + 2 + 's';
-            document.body.appendChild(particle);
-            setTimeout(() => { particle.remove(); }, 5000);
-        }
-        setInterval(createWaterParticle, 500);
-    </script>
+    <script src="/FadingUtilities/site.js"></script>
 </body>
 </html>
