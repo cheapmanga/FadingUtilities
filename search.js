@@ -30,6 +30,11 @@ function initSearchSystem() {
 
     searchModal.addEventListener('click', (e) => { if (e.target === searchModal) closeSearch(); });
 
+    // Ferme la modale au clic sur un résultat (délégation : closeSearch n'est pas globale)
+    searchResults.addEventListener('click', (e) => {
+        if (e.target.closest('.search-result-item')) closeSearch();
+    });
+
     searchInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase().trim();
         if (!query) {
@@ -46,7 +51,7 @@ function initSearchSystem() {
             return;
         }
         searchResults.innerHTML = filtered.map(item => `
-            <a href="${item.page}${item.target ? '#' + item.target : ''}" class="search-result-item" onclick="closeSearch()">
+            <a href="${item.page}${item.target ? '#' + item.target : ''}" class="search-result-item">
                 <div class="search-result-icon"><i class="fas ${item.icon}"></i></div>
                 <div class="search-result-content">
                     <div class="search-result-title">${item.title}</div>
