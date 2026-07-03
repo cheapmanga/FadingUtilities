@@ -41,9 +41,9 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="index.html" onclick="closeMenu()">Home</a></li>
-            <li><a href="speedrun.html" onclick="closeMenu()">Speedrun</a></li>
-            <li><a href="mods.html" onclick="closeMenu()">Mods</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="speedrun.html">Speedrun</a></li>
+            <li><a href="mods.html">Mods</a></li>
         </ul>
     </div>
 
@@ -52,12 +52,12 @@
         <p class="page-subtitle">Master the game with advanced techniques and tools</p>
 
         <div class="sections-selector">
-            <div class="section-card active" onclick="showSection('glitches')">
+            <div class="section-card active" data-section="glitches" role="button" tabindex="0">
                 <i class="fas fa-bug"></i>
                 <h2>Glitches</h2>
                 <p>Discover all movement techniques, skips and exploits to optimize your runs</p>
             </div>
-            <div class="section-card" onclick="showSection('tools')">
+            <div class="section-card" data-section="tools" role="button" tabindex="0">
                 <i class="fas fa-tools"></i>
                 <h2>External Tools</h2>
                 <p>Timing software, practice tools and mods to improve your speedrunning experience</p>
@@ -68,7 +68,7 @@
         <!-- GLITCHES SECTION (100% DYNAMIC)           -->
         <!-- ========================================= -->
         <div id="glitches" class="content-section active">
-            <a href="#" class="back-btn" onclick="showMainSelector(); return false;"><i class="fas fa-arrow-left"></i> Back to sections</a>
+            <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i> Back to sections</a>
 
             <!-- Les sections seront générées ici automatiquement depuis glitches.json -->
             <div id="dynamic-glitches-container"></div>
@@ -88,7 +88,7 @@
         <!-- TOOLS SECTION (STATIC)                    -->
         <!-- ========================================= -->
         <div id="tools" class="content-section">
-            <a href="#" class="back-btn" onclick="showMainSelector(); return false;"><i class="fas fa-arrow-left"></i> Back to sections</a>
+            <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i> Back to sections</a>
 
             <div class="tool-card">
                 <h3><i class="fas fa-stopwatch"></i> LiveSplit - Timing Software</h3>
@@ -206,260 +206,9 @@
         </div>
     </div>
 
-    <script>
-        const pageSearchIndex = [
-            { title: "Hyper Dash (HD)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Wave Dash, Long Jump, Collision Jump, Ricochet", icon: "fa-bolt" },
-            { title: "Form Dash (FD)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Water Dash, Drop Dash, FDP", icon: "fa-wind" },
-            { title: "Jump Switch (JS)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Element Switch, Switch Boost, Poison JS", icon: "fa-arrow-up" },
-            { title: "Hyper Switch (HS)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Combo of Hyper Dash and Jump Switch", icon: "fa-bolt" },
-            { title: "Jump Kick (JK)", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Gain momentum up", icon: "fa-shoe-prints" },
-            { title: "Cutscene Skip (CS)", category: "Any%", page: "speedrun.html", target: "glitches", desc: "Key glitch for Any% runs - WR 3:57.04", icon: "fa-film" },
-            { title: "Void Cancel (VC)", category: "Any%", page: "speedrun.html", target: "glitches", desc: "Fall forever, bypass void/respawn", icon: "fa-ban" },
-            { title: "Void Cancel Guide", category: "Any%", page: "voidcancel.html", target: "", desc: "Complete detailed guide to bypass fall limits", icon: "fa-book-open" },
-            { title: "Infinite Dash (ID)", category: "Any%", page: "speedrun.html", target: "glitches", desc: "Void, Voidless, Respawn variations", icon: "fa-infinity" },
-            { title: "Jojo Glitch", category: "Any%", page: "speedrun.html", target: "glitches", desc: "Tube Glitch, Flying Glitch, Volcano Skip", icon: "fa-bug" },
-            { title: "Portal Glitch", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Portal Wrong Load, OOB", icon: "fa-door-open" },
-            { title: "Glitch²", category: "Glitch", page: "speedrun.html", target: "glitches", desc: "Glitch Glitch, GG, invincibility", icon: "fa-radiation" },
-            { title: "Infinite Core Glitch", category: "Breakthrough", page: "speedrun.html", target: "glitches", desc: "Point Zero, WIP", icon: "fa-star" },
-            { title: "Point Zero", category: "Breakthrough", page: "speedrun.html", target: "glitches", desc: "Coordinates far from levels", icon: "fa-map-pin" },
-            { title: "Teleport Mod", category: "Mod", page: "mods.html", target: "mods", desc: "Alternative to Cheat Engine - F6/F7", icon: "fa-location-arrow" },
-            { title: "Volume Mod", category: "Mod", page: "mods.html", target: "mods", desc: "See invisible walls & triggers", icon: "fa-border-all" },
-            { title: "Trigger & Wall Visualizer", category: "Mod", page: "mods.html", target: "mods", desc: "See triggers and invisible walls", icon: "fa-border-all" },
-            { title: "LiveSplit", category: "Tool", page: "speedrun.html", target: "tools", desc: "Timing software with auto-splitter", icon: "fa-stopwatch" },
-            { title: "Cheat Engine", category: "Tool", page: "speedrun.html", target: "tools", desc: "Practice tool for teleportation", icon: "fa-microchip" },
-            { title: "Infinite Health", category: "Tool", page: "speedrun.html", target: "tools", desc: "Invincibility cheat with Cheat Engine", icon: "fa-heart" },
-            { title: "Older Demo", category: "Tool", page: "speedrun.html", target: "tools", desc: "Previous demo version for glitch hunters", icon: "fa-gamepad" }
-        ];
-    </script>
+    <script src="search-data.js"></script>
     <script src="search.js"></script>
-    <script>
-        // =========================================
-        // HAMBURGER MENU
-        // =========================================
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('active') ? 'true' : 'false');
-            mobileMenu.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-        });
-
-        function closeMenu() {
-            hamburger.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        }
-
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target === mobileMenu) closeMenu();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMenu();
-        });
-
-        // =========================================
-        // WATER PARTICLES
-        // =========================================
-        function createWaterParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'water-particle';
-            particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.width = Math.random() * 10 + 5 + 'px';
-            particle.style.height = particle.style.width;
-            particle.style.animationDuration = Math.random() * 3 + 2 + 's';
-            document.body.appendChild(particle);
-            setTimeout(() => { particle.remove(); }, 5000);
-        }
-        setInterval(createWaterParticle, 500);
-
-        // =========================================
-        // SECTION NAVIGATION
-        // =========================================
-        function showSection(sectionName) {
-            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-            document.querySelectorAll('.section-card').forEach(card => card.classList.remove('active'));
-            const selectedSection = document.getElementById(sectionName);
-            if (selectedSection) selectedSection.classList.add('active');
-            event.currentTarget.classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function showMainSelector() {
-            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-            document.querySelectorAll('.section-card').forEach(card => card.classList.remove('active'));
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // =========================================
-        // DYNAMIC GLITCH LOADER (100% DYNAMIC)
-        // =========================================
-        async function loadGlitches() {
-            try {
-                const response = await fetch('glitches.json');
-                if (!response.ok) throw new Error('Failed to load glitches.json');
-                const data = await response.json();
-
-                const container = document.getElementById('dynamic-glitches-container');
-                container.innerHTML = '';
-
-                if (!data.sections || data.sections.length === 0) {
-                    container.innerHTML = '<p style="color: var(--primary-pink); text-align: center; padding: 40px;">No sections found in glitches.json</p>';
-                    return;
-                }
-
-                // Générer chaque section dynamiquement
-                data.sections.forEach(section => {
-                    const sectionHTML = createSectionHTML(section);
-                    container.innerHTML += sectionHTML;
-                });
-
-            } catch (error) {
-                console.error('Error loading glitches:', error);
-                document.getElementById('dynamic-glitches-container').innerHTML = 
-                    `<p style="color: var(--primary-pink); text-align: center; padding: 40px; font-size: 1.2rem;">
-                        ❌ Failed to load glitches.<br>
-                        <small>Please make sure you're using Live Server (not file:// protocol)</small><br>
-                        <small>Error: ${error.message}</small>
-                    </p>`;
-            }
-        }
-
-        function createSectionHTML(section) {
-            const iconClass = section.icon || 'fa-bug';
-            const color = section.color || 'var(--primary-cyan)';
-            
-            let html = '';
-            html += `<h2 class="category-title" style="margin: 30px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid ${color}; font-family: 'Orbitron', sans-serif; color: ${color};">`;
-            html += `<i class="fas ${iconClass}"></i> ${escapeHtml(section.title)}`;
-            html += `</h2>`;
-            
-            html += `<div class="content-grid">`;
-            
-            if (section.glitches && section.glitches.length > 0) {
-                section.glitches.forEach(glitch => {
-                    html += createGlitchCard(glitch);
-                });
-            } else {
-                html += `<p style="color: #888; text-align: center; padding: 40px; grid-column: 1/-1;">No glitches in this section yet.</p>`;
-            }
-            
-            html += `</div>`;
-            
-            return html;
-        }
-
-        function createGlitchCard(glitch) {
-    const hasVideos = glitch.videos && glitch.videos.length > 0;
-    const hasVariationsWithVideos = glitch.variations && glitch.variations.some(v => v.video_id);
-    const hasExtraVideos = glitch.videos_extra && glitch.videos_extra.length > 0;
-    const hasAnyVideo = hasVideos || hasVariationsWithVideos || hasExtraVideos;
-    
-    // Par défaut : true (vidéo au hover)
-    const hoverVideo = glitch.hover_video !== false;
-    
-    let cardClass = 'content-card';
-    if (hasAnyVideo) {
-        cardClass = hoverVideo ? 'content-card has-video-preview' : 'content-card has-video-always';
-    }
-    
-    const cardStyle = glitch.card_style ? ` style="${glitch.card_style}"` : '';
-    const titleStyle = glitch.title_style ? ` style="${glitch.title_style}"` : '';
-
-    let html = `<div class="${cardClass}"${cardStyle}>`;
-    
-    // Le titre est toujours affiché en premier
-    html += `<h3${titleStyle}>${glitch.title_prefix || ''}${glitch.title}`;
-    if (glitch.alt_names) {
-        html += ` <span class="alt-names">| ${escapeHtml(glitch.alt_names)}</span>`;
-    }
-    if (glitch.discord_link) {
-        html += `<a href="${escapeHtml(glitch.discord_link)}" target="_blank" rel="noopener noreferrer" class="glitch-link" title="View on Discord"><i class="fab fa-discord"></i></a>`;
-    }
-    html += `</h3>`;
-
-    // On parcourt les autres clés DU JSON DANS L'ORDRE où elles sont écrites
-    Object.keys(glitch).forEach(key => {
-        const metadataKeys = ['title', 'alt_names', 'discord_link', 'card_style', 'title_style', 'title_prefix', 'note_type', 'button_link', 'hover_video'];
-        if (metadataKeys.includes(key)) return;
-
-        const val = glitch[key];
-        if (!val) return;
-
-        switch(key) {
-            case 'how_to':
-                html += `<h4>How to do:</h4><p>${val}</p>`;
-                break;
-                
-            case 'note':
-                const isWarning = glitch.note_type === 'warning' || val.includes('⚠️');
-                const noteClass = isWarning ? 'warning' : 'note';
-                const noteLabel = isWarning ? 'Warning:' : 'Note:';
-                html += `<div class="${noteClass}"><strong>${noteLabel}</strong> ${val}</div>`;
-                break;
-                
-            case 'variations':
-                html += `<h4>Variations:</h4><ul>`;
-                val.forEach(v => {
-                    html += `<li>${v.text}`;
-                    if (v.video_id) {
-                        html += createVideoWrapper(v.video_id, glitch.title);
-                    }
-                    html += `</li>`;
-                });
-                html += `</ul>`;
-                break;
-                
-            case 'videos':
-                val.forEach(videoId => {
-                    html += createVideoWrapper(videoId, glitch.title);
-                });
-                break;
-                
-            case 'videos_extra':
-                val.forEach(videoId => {
-                    html += createVideoWrapper(videoId, glitch.title);
-                });
-                break;
-                
-            case 'extra_content':
-                html += val;
-                break;
-                
-            case 'button_text':
-                if (glitch.button_link) {
-                    html += `<a href="${escapeHtml(glitch.button_link)}" class="download-btn" style="margin-top: 20px;"><i class="fas fa-book-open"></i> ${escapeHtml(val)}</a>`;
-                }
-                break;
-        }
-    });
-
-    html += `</div>`;
-    return html;
-}
-
-        function createVideoWrapper(videoId, title) {
-            return `<div class="glitch-video-wrapper">
-                <div class="glitch-video-inner">
-                    <div class="glitch-video-frame">
-                        <iframe src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="${escapeHtml(title)}"></iframe>
-                    </div>
-                </div>
-            </div>`;
-        }
-
-        function escapeHtml(text) {
-            if (!text) return '';
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
-
-        // Charger les glitches au démarrage
-        document.addEventListener('DOMContentLoaded', loadGlitches);
-    </script>
+    <script src="site.js"></script>
+    <script src="speedrun.js"></script>
 </body>
 </html>
