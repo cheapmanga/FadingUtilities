@@ -15,7 +15,7 @@
           "how_to": "From the air (usually after a jump), dash into a walkable surface and quickly press jump. You'll be launched with the speed of the dash on a long distance, like a boosted bunny hop. It is possible on flat surfaces: the flatter it is, the more delay it needs between dash and jump.",
           "variations": [
             {
-              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1512967434791813120\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Element Hyper Dash</a> (Poison/Steam/Nitro...) - As water form, do an Hyper Dash into a liquid to get the corresponding boost. The Poison version seems to be the most useful for now."
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1512967434791813120\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Poison Hyper Dash</a> - As water form, do a Hyper Dash into a liquid to get the corresponding boost. The Poison version seems to be the most useful for now (less efficient as Steam/Nitro)."
             }
           ],
           "note": "Often used in the run, especially in the intro before getting the Form Dash. Seems conditioned to a higher framerate (ideally, 120fps no vsync).",
@@ -58,7 +58,7 @@
         {
           "title": "Form Dash (FD)",
           "search_icon": "fa-wind",
-          "search_desc": "Water Dash, Drop Dash, FDP",
+          "search_desc": "Form Dash Poison, FDP",
           "alt_names": "",
           "how_to": "Dash just before a transformation to reach a very high speed. Usually stands for the aerial version, but works on the ground (quickly alternating each input).",
           "variations": [
