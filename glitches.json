@@ -143,8 +143,8 @@
         {
           "title": "Jojo Glitch",
           "search_icon": "fa-bug",
-          "search_desc": "Tube Glitch, Flying Glitch, Volcano Skip",
-          "alt_names": "Tube Glitch, Flying Glitch, Air-Lock Glitch",
+          "search_desc": "Volcano Skip",
+          "alt_names": "",
           "how_to": "Go into a water tube and simply restart from checkpoint (it needs to be in the same level). This seems to disturb the transition from ground to air and locks you into a walking state, unable to jump. You'll be standing onto an invisible floor with the possibility to work your hitbox up or down by entering in contact with the environment. Find the ideal collisions in the level design to navigate in the available space. It allows the <a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1513257445365907749\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Volcano Skip</a> (follow this routing).",
           "variations": [],
           "note": "The best spot to perform this is the portal going from Bastion to Volcano, in the underwater biome (there is a checkpoint just next to the first tubes). When active, the fastest way to move horizontally is with the ground version of the Form Dash (quickly alternating dash and switch). The best way to go up seems to be by mashing the switch (no dash) while facing an inclined wall.",
