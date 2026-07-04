@@ -26,7 +26,7 @@
           "title": "Jump Switch (JS)",
           "search_icon": "fa-arrow-up",
           "search_desc": "Element Switch, Switch Boost, Poison JS",
-          "alt_names": "",
+          "alt_names": "Element Switch, Switch Boost",
           "how_to": "As water form, jump and switch at the same time, or at least in that order, to get a small boost up.",
           "videos": ["HwfF5NkcpIU"],
           "note": "Mostly used in speedrun as the poison variation, but the basic water Jump Switch still gains a small boost and allows to chain very fast jumps (See Form Dash notes).",
@@ -204,6 +204,14 @@
           "note_type": "warning",
           "videos": ["-1wQqhp9bHo"],
           "hover_video": false
+        },
+        {
+          "title": "Invincibility Glitch",
+          "search_icon": "fa-shield-halved",
+          "search_desc": "Insensible to any type of death blow",
+          "card_style": "border: 2px solid #ff6b9d; background: linear-gradient(135deg, rgba(255, 107, 157, 0.05), rgba(0, 245, 255, 0.03));",
+          "title_style": "color: #ff6b9d;",
+          "how_to": "Doing the setup of the Void Cancel, if you go back to the menu after losing all your HP, it's possible to remain insensible to any type of death blow (you can receive damages, but never die)."
         },
         {
           "title": "Point Zero",
