@@ -122,7 +122,7 @@ function createGlitchCard(glitch) {
     // title_prefix, how_to, note, variations[].text, extra_content.
     // Les titres, styles, liens et ids vidéo sont échappés/encodés.
     Object.keys(glitch).forEach(key => {
-        const metadataKeys = ['title', 'alt_names', 'discord_link', 'card_style', 'title_style', 'title_prefix', 'note_type', 'button_link', 'hover_video'];
+        const metadataKeys = ['title', 'alt_names', 'discord_link', 'card_style', 'title_style', 'title_prefix', 'note_type', 'button_link', 'hover_video', 'search_icon', 'search_desc'];
         if (metadataKeys.includes(key)) return;
 
         const val = glitch[key];
