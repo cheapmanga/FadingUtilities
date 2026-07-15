@@ -31,7 +31,7 @@ document.querySelectorAll('.back-btn[href="#"]').forEach(btn => {
     btn.addEventListener('click', (e) => { e.preventDefault(); showMainSelector(); });
 });
 
-// La page ne contient plus que les glitches (les outils sont sur mods.html).
+// La page ne contient plus que les glitches (les outils sont sur mods-tools.html).
 // La section #glitches est active par défaut : aucun traitement de hash requis.
 
 // =========================================

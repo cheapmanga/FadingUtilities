@@ -15,12 +15,12 @@ const staticSearchIndex = [
     { title: "Void Cancel (Death Method)", category: "Glitch", page: "voidcancel.html", target: "", desc: "Alternative method without CS", icon: "fa-skull" },
 
     // --- Mods ---
-    { title: "Teleport Mod", category: "Mod", page: "mods.html", target: "", desc: "Alternative to Cheat Engine - F6/F7", icon: "fa-location-arrow" },
-    { title: "Volume Mod", category: "Mod", page: "mods.html", target: "", desc: "See invisible walls & triggers", icon: "fa-border-all" },
+    { title: "Teleport Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Alternative to Cheat Engine - F6/F7", icon: "fa-location-arrow" },
+    { title: "Volume Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "See invisible walls & triggers", icon: "fa-border-all" },
 
     // --- Outils (désormais sur la page Mods & Tools) ---
-    { title: "LiveSplit", category: "Tool", page: "mods.html", target: "tools", desc: "Timing software with auto-splitter", icon: "fa-stopwatch" },
-    { title: "Cheat Engine", category: "Tool", page: "mods.html", target: "tools", desc: "Practice tool for teleportation", icon: "fa-microchip" },
-    { title: "Infinite Health", category: "Tool", page: "mods.html", target: "tools", desc: "Invincibility cheat with Cheat Engine", icon: "fa-heart" },
-    { title: "Older Demo", category: "Tool", page: "mods.html", target: "tools", desc: "Previous demo version for glitch hunters", icon: "fa-gamepad" }
+    { title: "LiveSplit", category: "Tool", page: "mods-tools.html", target: "tools", desc: "Timing software with auto-splitter", icon: "fa-stopwatch" },
+    { title: "Cheat Engine", category: "Tool", page: "mods-tools.html", target: "tools", desc: "Practice tool for teleportation", icon: "fa-microchip" },
+    { title: "Infinite Health", category: "Tool", page: "mods-tools.html", target: "tools", desc: "Invincibility cheat with Cheat Engine", icon: "fa-heart" },
+    { title: "Older Demo", category: "Tool", page: "mods-tools.html", target: "tools", desc: "Previous demo version for glitch hunters", icon: "fa-gamepad" }
 ];
