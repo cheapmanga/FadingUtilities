@@ -31,10 +31,8 @@ document.querySelectorAll('.back-btn[href="#"]').forEach(btn => {
     btn.addEventListener('click', (e) => { e.preventDefault(); showMainSelector(); });
 });
 
-// Ouvre directement la section demandée via l'ancre (ex: recherche -> speedrun.html#tools)
-if (location.hash === '#tools' || location.hash === '#glitches') {
-    showSection(location.hash.slice(1));
-}
+// La page ne contient plus que les glitches (les outils sont sur mods.html).
+// La section #glitches est active par défaut : aucun traitement de hash requis.
 
 // =========================================
 // DYNAMIC GLITCH LOADER (100% DYNAMIC)

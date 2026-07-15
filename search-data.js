@@ -18,9 +18,9 @@ const staticSearchIndex = [
     { title: "Teleport Mod", category: "Mod", page: "mods.html", target: "", desc: "Alternative to Cheat Engine - F6/F7", icon: "fa-location-arrow" },
     { title: "Volume Mod", category: "Mod", page: "mods.html", target: "", desc: "See invisible walls & triggers", icon: "fa-border-all" },
 
-    // --- Outils ---
-    { title: "LiveSplit", category: "Tool", page: "speedrun.html", target: "tools", desc: "Timing software with auto-splitter", icon: "fa-stopwatch" },
-    { title: "Cheat Engine", category: "Tool", page: "speedrun.html", target: "tools", desc: "Practice tool for teleportation", icon: "fa-microchip" },
-    { title: "Infinite Health", category: "Tool", page: "speedrun.html", target: "tools", desc: "Invincibility cheat with Cheat Engine", icon: "fa-heart" },
-    { title: "Older Demo", category: "Tool", page: "speedrun.html", target: "tools", desc: "Previous demo version for glitch hunters", icon: "fa-gamepad" }
+    // --- Outils (désormais sur la page Mods & Tools) ---
+    { title: "LiveSplit", category: "Tool", page: "mods.html", target: "tools", desc: "Timing software with auto-splitter", icon: "fa-stopwatch" },
+    { title: "Cheat Engine", category: "Tool", page: "mods.html", target: "tools", desc: "Practice tool for teleportation", icon: "fa-microchip" },
+    { title: "Infinite Health", category: "Tool", page: "mods.html", target: "tools", desc: "Invincibility cheat with Cheat Engine", icon: "fa-heart" },
+    { title: "Older Demo", category: "Tool", page: "mods.html", target: "tools", desc: "Previous demo version for glitch hunters", icon: "fa-gamepad" }
 ];
