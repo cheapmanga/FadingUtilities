@@ -1,38 +1,7 @@
 // ===== PAGE SPEEDRUN =====
-// Navigation entre sections + génération des glitches depuis glitches.json.
-
-// =========================================
-// SECTION NAVIGATION
-// =========================================
-function showSection(sectionName) {
-    document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-    document.querySelectorAll('.section-card').forEach(card => card.classList.remove('active'));
-    const selectedSection = document.getElementById(sectionName);
-    if (selectedSection) selectedSection.classList.add('active');
-    const selectedCard = document.querySelector(`.section-card[data-section="${sectionName}"]`);
-    if (selectedCard) selectedCard.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function showMainSelector() {
-    document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-    document.querySelectorAll('.section-card').forEach(card => card.classList.remove('active'));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-document.querySelectorAll('.section-card[data-section]').forEach(card => {
-    card.addEventListener('click', () => showSection(card.dataset.section));
-    card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showSection(card.dataset.section); }
-    });
-});
-
-document.querySelectorAll('.back-btn[href="#"]').forEach(btn => {
-    btn.addEventListener('click', (e) => { e.preventDefault(); showMainSelector(); });
-});
-
-// La page ne contient plus que les glitches (les outils sont sur mods-tools.html).
-// La section #glitches est active par défaut : aucun traitement de hash requis.
+// Génération des glitches depuis glitches.json.
+// La page ne contient que les glitches (les outils sont sur mods-tools.html) :
+// la section #glitches est active par défaut, aucune navigation de sections.
 
 // =========================================
 // DYNAMIC GLITCH LOADER (100% DYNAMIC)
