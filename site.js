@@ -1,38 +1,8 @@
 // ===== SCRIPTS COMMUNS =====
-// Menu hamburger, particules d'eau et défilement doux.
+// Particules d'eau et défilement doux.
 // Chargé sur toutes les pages. Aucun handler inline (compatible CSP).
 
 (function () {
-    // ----- Menu hamburger -----
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    function closeMenu() {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-    }
-
-    if (hamburger && mobileMenu) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            const open = mobileMenu.classList.contains('active');
-            hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-            document.body.style.overflow = open ? 'hidden' : '';
-        });
-
-        // Ferme au clic sur le fond ou sur un lien du menu
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target === mobileMenu || e.target.closest('a')) closeMenu();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) closeMenu();
-        });
-    }
-
     // ----- Particules d'eau -----
     function createWaterParticle() {
         const particle = document.createElement('div');
