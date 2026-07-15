@@ -52,7 +52,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px;
+    max-width: none;
     margin: 0 auto;
 }
 
@@ -112,7 +112,7 @@ nav {
 .container {
     margin-top: 100px;
     padding: 50px;
-    max-width: 1400px;
+    max-width: none;
     margin-left: auto;
     margin-right: auto;
 }
@@ -144,7 +144,7 @@ nav {
 /* ===== CONTENT CARDS ===== */
 .content-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 460px));
     gap: 30px;
     margin-top: 40px;
     align-items: stretch;
@@ -707,6 +707,7 @@ footer p { margin: 10px 0; }
     border-radius: 20px;
     padding: 40px;
     margin-bottom: 30px;
+    max-width: 1000px;
     transition: all 0.3s;
 }
 
@@ -731,7 +732,7 @@ footer p { margin: 10px 0; }
 /* ===== MODS PAGE ===== */
 .mods-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(360px, 480px));
     gap: 40px;
     margin-bottom: 60px;
 }
