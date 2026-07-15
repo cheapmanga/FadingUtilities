@@ -148,6 +148,7 @@ nav {
     gap: 30px;
     margin-top: 40px;
     align-items: stretch;
+    justify-content: center;
 }
 
 .content-card {
@@ -706,7 +707,7 @@ footer p { margin: 10px 0; }
     border: 2px solid var(--primary-cyan);
     border-radius: 20px;
     padding: 40px;
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
     max-width: 1000px;
     transition: all 0.3s;
 }
@@ -735,6 +736,7 @@ footer p { margin: 10px 0; }
     grid-template-columns: repeat(auto-fit, minmax(360px, 480px));
     gap: 40px;
     margin-bottom: 60px;
+    justify-content: center;
 }
 
 .mod-card {
