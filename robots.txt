@@ -1,6 +1,5 @@
 # robots.txt for FadingUtilities
 User-agent: *
 Allow: /
-Disallow: /tracker.html
 
 Sitemap: https://cheapmanga.github.io/FadingUtilities/sitemap.xml
