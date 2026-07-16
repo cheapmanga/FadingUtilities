@@ -14,13 +14,5 @@ Thumbs.db
 
 # Logs
 *.log
-
-# Artefacts temporaires du tracker (generes par la GitHub Action)
-new_updates.json
-email_body.html
 # Artefacts Windows/WSL
 *Zone.Identifier
-
-# Python
-__pycache__/
-*.pyc
