@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-18T12:44:14.726214+00:00",
+ "generated": "2026-07-18T13:11:21.251552+00:00",
  "appid": "2467880",
  "events": [
   {
@@ -209,7 +209,9 @@
         },
         {
          "t": "ins",
-         "v": "dd1ff96afb648464bef34a44f1ba2b5b…/library_capsule_schinese.jpg"
+         "v": "dd1ff96afb648464bef34a44f1ba2b5b…/library_capsule_schinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/dd1ff96afb648464bef34a44f1ba2b5bd2f73a5f/library_capsule_schinese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -227,7 +229,9 @@
         },
         {
          "t": "ins",
-         "v": "dd1ff96afb648464bef34a44f1ba2…/library_capsule_schinese_2x.jpg"
+         "v": "dd1ff96afb648464bef34a44f1ba2…/library_capsule_schinese_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/dd1ff96afb648464bef34a44f1ba2b5bd2f73a5f/library_capsule_schinese_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -245,7 +249,9 @@
         },
         {
          "t": "ins",
-         "v": "64d7a877c399405bfa9159f523dcaedab…/library_header_schinese.jpg"
+         "v": "64d7a877c399405bfa9159f523dcaedab…/library_header_schinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/64d7a877c399405bfa9159f523dcaedab6bd690f/library_header_schinese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -263,7 +269,9 @@
         },
         {
          "t": "ins",
-         "v": "64d7a877c399405bfa9159f523dcae…/library_header_schinese_2x.jpg"
+         "v": "64d7a877c399405bfa9159f523dcae…/library_header_schinese_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/64d7a877c399405bfa9159f523dcaedab6bd690f/library_header_schinese_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -355,7 +363,9 @@
         },
         {
          "t": "ins",
-         "v": "64d7a877c399405bfa9159f523dcaedab6bd690f/header_schinese.jpg"
+         "v": "64d7a877c399405bfa9159f523dcaedab6bd690f/header_schinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/64d7a877c399405bfa9159f523dcaedab6bd690f/header_schinese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -388,7 +398,9 @@
         },
         {
          "t": "ins",
-         "v": "0d866606ea43aedc4c9120e2820c2f139…/capsule_231x87_schinese.jpg"
+         "v": "0d866606ea43aedc4c9120e2820c2f139…/capsule_231x87_schinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/0d866606ea43aedc4c9120e2820c2f13950b9465/capsule_231x87_schinese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -1456,7 +1468,9 @@
         },
         {
          "t": "ins",
-         "v": "2467880/1722454261/a6953013ccdc13c7fd37ecbc3…/microtrailer.mp4"
+         "v": "2467880/1722454261/a6953013ccdc13c7fd37ecbc3…/microtrailer.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/2467880/1722454261/a6953013ccdc13c7fd37ecbc36ce63d128f7e4f9/1780996349/microtrailer.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -1474,7 +1488,9 @@
         },
         {
          "t": "ins",
-         "v": "2467880/1722454261/a6953013ccdc13c7fd37ecbc…/microtrailer.webm"
+         "v": "2467880/1722454261/a6953013ccdc13c7fd37ecbc…/microtrailer.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/2467880/1722454261/a6953013ccdc13c7fd37ecbc36ce63d128f7e4f9/1780996349/microtrailer.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -1492,7 +1508,9 @@
         },
         {
          "t": "ins",
-         "v": "25735…/eb629434e8c71c32a55efaa1d1df18be12f9eb64/movie_full.jpg"
+         "v": "25735…/eb629434e8c71c32a55efaa1d1df18be12f9eb64/movie_full.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257354138/eb629434e8c71c32a55efaa1d1df18be12f9eb64/movie_full.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -1510,7 +1528,9 @@
         },
         {
          "t": "ins",
-         "v": "25…/eb629434e8c71c32a55efaa1d1df18be12f9eb64/movie_600x337.jpg"
+         "v": "25…/eb629434e8c71c32a55efaa1d1df18be12f9eb64/movie_600x337.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257354138/eb629434e8c71c32a55efaa1d1df18be12f9eb64/movie_600x337.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -4319,7 +4339,9 @@
         },
         {
          "t": "ins",
-         "v": "e39036b077d6aee96e3e0b2e7929a55c4735957e/header_2x.jpg"
+         "v": "e39036b077d6aee96e3e0b2e7929a55c4735957e/header_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/e39036b077d6aee96e3e0b2e7929a55c4735957e/header_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -4337,7 +4359,9 @@
         },
         {
          "t": "ins",
-         "v": "3614102fddb7cb681289e27a506fb76d683a2b1a/capsule_616x353_2x.jpg"
+         "v": "3614102fddb7cb681289e27a506fb76d683a2b1a/capsule_616x353_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/3614102fddb7cb681289e27a506fb76d683a2b1a/capsule_616x353_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -4355,7 +4379,9 @@
         },
         {
          "t": "ins",
-         "v": "8911f722ab88dd638c48a2a8c2d305899beb2952/capsule_231x87_2x.jpg"
+         "v": "8911f722ab88dd638c48a2a8c2d305899beb2952/capsule_231x87_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/8911f722ab88dd638c48a2a8c2d305899beb2952/capsule_231x87_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5334,7 +5360,9 @@
         },
         {
          "t": "del",
-         "v": "c1182b8958b224fc04b24de2d1c7262341aace09/header_japanese.jpg"
+         "v": "c1182b8958b224fc04b24de2d1c7262341aace09/header_japanese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c1182b8958b224fc04b24de2d1c7262341aace09/header_japanese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5352,7 +5380,9 @@
         },
         {
          "t": "del",
-         "v": "4ca8c532304ceb9286e4b5eb3381a6c03f1a18d4/header_koreana.jpg"
+         "v": "4ca8c532304ceb9286e4b5eb3381a6c03f1a18d4/header_koreana.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/4ca8c532304ceb9286e4b5eb3381a6c03f1a18d4/header_koreana.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5370,7 +5400,9 @@
         },
         {
          "t": "del",
-         "v": "dd50ee590ff2876d3c34c0a170cf35dc79c989b0/header_schinese.jpg"
+         "v": "dd50ee590ff2876d3c34c0a170cf35dc79c989b0/header_schinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/dd50ee590ff2876d3c34c0a170cf35dc79c989b0/header_schinese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5388,7 +5420,9 @@
         },
         {
          "t": "del",
-         "v": "39d91bbccafc86b0aaf9d35d23d532cc14e8c351/header_tchinese.jpg"
+         "v": "39d91bbccafc86b0aaf9d35d23d532cc14e8c351/header_tchinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/39d91bbccafc86b0aaf9d35d23d532cc14e8c351/header_tchinese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5421,7 +5455,9 @@
         },
         {
          "t": "del",
-         "v": "21f68c302941092340d5c37787d3b25bf…/capsule_231x87_japanese.jpg"
+         "v": "21f68c302941092340d5c37787d3b25bf…/capsule_231x87_japanese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/21f68c302941092340d5c37787d3b25bf249412b/capsule_231x87_japanese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5439,7 +5475,9 @@
         },
         {
          "t": "del",
-         "v": "b89ae8350515ed1864cd9d37dbfc43c874…/capsule_231x87_koreana.jpg"
+         "v": "b89ae8350515ed1864cd9d37dbfc43c874…/capsule_231x87_koreana.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/b89ae8350515ed1864cd9d37dbfc43c874ccb16c/capsule_231x87_koreana.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5457,7 +5495,9 @@
         },
         {
          "t": "del",
-         "v": "7d7812fe7b286b8bf1430d0e2671df559…/capsule_231x87_schinese.jpg"
+         "v": "7d7812fe7b286b8bf1430d0e2671df559…/capsule_231x87_schinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/7d7812fe7b286b8bf1430d0e2671df5596e37c8a/capsule_231x87_schinese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5475,7 +5515,9 @@
         },
         {
          "t": "del",
-         "v": "cfafa067e2cadeb61199da6ae9c14f062…/capsule_231x87_tchinese.jpg"
+         "v": "cfafa067e2cadeb61199da6ae9c14f062…/capsule_231x87_tchinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/cfafa067e2cadeb61199da6ae9c14f06231c6963/capsule_231x87_tchinese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5768,7 +5810,9 @@
         },
         {
          "t": "del",
-         "v": "d869721615c02af8b3ed292293…/header.jpg "
+         "v": "d869721615c02af8b3ed292293…/header.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/d869721615c02af8b3ed292293c5275de109c93a/header.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -5776,7 +5820,9 @@
         },
         {
          "t": "ins",
-         "v": "e39036b077d6aee96e3e0b2e79…/header.jpg"
+         "v": "e39036b077d6aee96e3e0b2e79…/header.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/e39036b077d6aee96e3e0b2e7929a55c4735957e/header.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5790,7 +5836,9 @@
         },
         {
          "t": "del",
-         "v": "15cfbd02671cbb9d3617…/hero_capsule.jpg "
+         "v": "15cfbd02671cbb9d3617…/hero_capsule.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/15cfbd02671cbb9d36172258fcdd3d720ce0222e/hero_capsule.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -5798,7 +5846,9 @@
         },
         {
          "t": "ins",
-         "v": "dd5b3ad58a88a9bbbadd…/hero_capsule.jpg"
+         "v": "dd5b3ad58a88a9bbbadd…/hero_capsule.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/dd5b3ad58a88a9bbbadd8196efb70dc8408cd6be/hero_capsule.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5812,7 +5862,9 @@
         },
         {
          "t": "del",
-         "v": "15cfbd02671cbb9d3…/hero_capsule_2x.jpg "
+         "v": "15cfbd02671cbb9d3…/hero_capsule_2x.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/15cfbd02671cbb9d36172258fcdd3d720ce0222e/hero_capsule_2x.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -5820,7 +5872,9 @@
         },
         {
          "t": "ins",
-         "v": "dd5b3ad58a88a9bbb…/hero_capsule_2x.jpg"
+         "v": "dd5b3ad58a88a9bbb…/hero_capsule_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/dd5b3ad58a88a9bbbadd8196efb70dc8408cd6be/hero_capsule_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5834,7 +5888,9 @@
         },
         {
          "t": "del",
-         "v": "241dcf13ad179b318…/library_600x900.jpg "
+         "v": "241dcf13ad179b318…/library_600x900.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/241dcf13ad179b318d8e4b108380907950db588a/library_600x900.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -5842,7 +5898,9 @@
         },
         {
          "t": "ins",
-         "v": "91aac599e20628958…/library_capsule.jpg"
+         "v": "91aac599e20628958…/library_capsule.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/91aac599e20628958faaa92860c0776dc69ebef1/library_capsule.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5856,7 +5914,9 @@
         },
         {
          "t": "del",
-         "v": "241dcf13ad179b…/library_600x900_2x.jpg "
+         "v": "241dcf13ad179b…/library_600x900_2x.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/241dcf13ad179b318d8e4b108380907950db588a/library_600x900_2x.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -5864,7 +5924,9 @@
         },
         {
          "t": "ins",
-         "v": "91aac599e20628…/library_capsule_2x.jpg"
+         "v": "91aac599e20628…/library_capsule_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/91aac599e20628958faaa92860c0776dc69ebef1/library_capsule_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5878,7 +5940,9 @@
         },
         {
          "t": "del",
-         "v": "c9424c084b346ce15260…/library_hero.jpg "
+         "v": "c9424c084b346ce15260…/library_hero.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c9424c084b346ce15260aea1a8a368be0643df82/library_hero.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -5886,7 +5950,9 @@
         },
         {
          "t": "ins",
-         "v": "a5d48e3f87d235918701…/library_hero.jpg"
+         "v": "a5d48e3f87d235918701…/library_hero.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/a5d48e3f87d235918701570b0099601d5453b909/library_hero.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5900,7 +5966,9 @@
         },
         {
          "t": "del",
-         "v": "c9424c084b346ce15…/library_hero_2x.jpg "
+         "v": "c9424c084b346ce15…/library_hero_2x.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c9424c084b346ce15260aea1a8a368be0643df82/library_hero_2x.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -5908,7 +5976,9 @@
         },
         {
          "t": "ins",
-         "v": "a5d48e3f87d235918…/library_hero_2x.jpg"
+         "v": "a5d48e3f87d235918…/library_hero_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/a5d48e3f87d235918701570b0099601d5453b909/library_hero_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5922,7 +5992,9 @@
         },
         {
          "t": "del",
-         "v": "b25ce4f893f3fd6cb…/capsule_616x353.jpg "
+         "v": "b25ce4f893f3fd6cb…/capsule_616x353.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/b25ce4f893f3fd6cbc58015233325aa824e29034/capsule_616x353.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -5930,7 +6002,9 @@
         },
         {
          "t": "ins",
-         "v": "3614102fddb7cb681…/capsule_616x353.jpg"
+         "v": "3614102fddb7cb681…/capsule_616x353.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/3614102fddb7cb681289e27a506fb76d683a2b1a/capsule_616x353.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -5944,7 +6018,9 @@
         },
         {
          "t": "del",
-         "v": "50aff42020f189e220…/capsule_231x87.jpg "
+         "v": "50aff42020f189e220…/capsule_231x87.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/50aff42020f189e2205325c7ad936af99203af9f/capsule_231x87.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -5952,7 +6028,9 @@
         },
         {
          "t": "ins",
-         "v": "8911f722ab88dd638c…/capsule_231x87.jpg"
+         "v": "8911f722ab88dd638c…/capsule_231x87.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/8911f722ab88dd638c48a2a8c2d305899beb2952/capsule_231x87.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -6044,7 +6122,9 @@
         },
         {
          "t": "del",
-         "v": "241dcf13ad179b318…/library_600x900.jpg "
+         "v": "241dcf13ad179b318…/library_600x900.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/241dcf13ad179b318d8e4b108380907950db588a/library_600x900.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -6052,7 +6132,9 @@
         },
         {
          "t": "ins",
-         "v": "91aac599e20628958…/library_capsule.jpg"
+         "v": "91aac599e20628958…/library_capsule.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/91aac599e20628958faaa92860c0776dc69ebef1/library_capsule.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -6066,7 +6148,9 @@
         },
         {
          "t": "del",
-         "v": "241dcf13ad179b…/library_600x900_2x.jpg "
+         "v": "241dcf13ad179b…/library_600x900_2x.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/241dcf13ad179b318d8e4b108380907950db588a/library_600x900_2x.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -6074,7 +6158,9 @@
         },
         {
          "t": "ins",
-         "v": "91aac599e20628…/library_capsule_2x.jpg"
+         "v": "91aac599e20628…/library_capsule_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/91aac599e20628958faaa92860c0776dc69ebef1/library_capsule_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -6088,7 +6174,9 @@
         },
         {
          "t": "del",
-         "v": "b3cee42438f669b295…/library_header.jpg "
+         "v": "b3cee42438f669b295…/library_header.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/b3cee42438f669b295f489a7e09c6a9e438704b9/library_header.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -6096,7 +6184,9 @@
         },
         {
          "t": "ins",
-         "v": "e39036b077d6aee96e…/library_header.jpg"
+         "v": "e39036b077d6aee96e…/library_header.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/e39036b077d6aee96e3e0b2e7929a55c4735957e/library_header.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -6110,7 +6200,9 @@
         },
         {
          "t": "del",
-         "v": "b3cee42438f669b…/library_header_2x.jpg "
+         "v": "b3cee42438f669b…/library_header_2x.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/b3cee42438f669b295f489a7e09c6a9e438704b9/library_header_2x.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -6118,7 +6210,9 @@
         },
         {
          "t": "ins",
-         "v": "e39036b077d6aee…/library_header_2x.jpg"
+         "v": "e39036b077d6aee…/library_header_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/e39036b077d6aee96e3e0b2e7929a55c4735957e/library_header_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -6132,7 +6226,9 @@
         },
         {
          "t": "del",
-         "v": "c9424c084b346ce15260…/library_hero.jpg "
+         "v": "c9424c084b346ce15260…/library_hero.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c9424c084b346ce15260aea1a8a368be0643df82/library_hero.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -6140,7 +6236,9 @@
         },
         {
          "t": "ins",
-         "v": "a5d48e3f87d235918701…/library_hero.jpg"
+         "v": "a5d48e3f87d235918701…/library_hero.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/a5d48e3f87d235918701570b0099601d5453b909/library_hero.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -6154,7 +6252,9 @@
         },
         {
          "t": "del",
-         "v": "c9424c084b346ce15…/library_hero_2x.jpg "
+         "v": "c9424c084b346ce15…/library_hero_2x.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c9424c084b346ce15260aea1a8a368be0643df82/library_hero_2x.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -6162,7 +6262,9 @@
         },
         {
          "t": "ins",
-         "v": "a5d48e3f87d235918…/library_hero_2x.jpg"
+         "v": "a5d48e3f87d235918…/library_hero_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/a5d48e3f87d235918701570b0099601d5453b909/library_hero_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -6176,7 +6278,9 @@
         },
         {
          "t": "del",
-         "v": "c9424c084b346ce…/library_hero_blur.jpg "
+         "v": "c9424c084b346ce…/library_hero_blur.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c9424c084b346ce15260aea1a8a368be0643df82/library_hero_blur.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -6184,7 +6288,9 @@
         },
         {
          "t": "ins",
-         "v": "a5d48e3f87d2359…/library_hero_blur.jpg"
+         "v": "a5d48e3f87d2359…/library_hero_blur.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/a5d48e3f87d235918701570b0099601d5453b909/library_hero_blur.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -6198,7 +6304,9 @@
         },
         {
          "t": "del",
-         "v": "6bc82bf36411b7107351db6afef5…/logo.png "
+         "v": "6bc82bf36411b7107351db6afef5…/logo.png ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/6bc82bf36411b7107351db6afef51e8513ce0938/logo.png",
+         "media": "image"
         },
         {
          "t": "text",
@@ -6206,7 +6314,9 @@
         },
         {
          "t": "ins",
-         "v": "20406355e2f46f749f7ad0a34bb6…/logo.png"
+         "v": "20406355e2f46f749f7ad0a34bb6…/logo.png",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/20406355e2f46f749f7ad0a34bb6307c1a8b06c2/logo.png",
+         "media": "image"
         }
        ],
        "children": []
@@ -6220,7 +6330,9 @@
         },
         {
          "t": "del",
-         "v": "6bc82bf36411b7107351db6af…/logo_2x.png "
+         "v": "6bc82bf36411b7107351db6af…/logo_2x.png ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/6bc82bf36411b7107351db6afef51e8513ce0938/logo_2x.png",
+         "media": "image"
         },
         {
          "t": "text",
@@ -6228,7 +6340,9 @@
         },
         {
          "t": "ins",
-         "v": "20406355e2f46f749f7ad0a34…/logo_2x.png"
+         "v": "20406355e2f46f749f7ad0a34…/logo_2x.png",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/20406355e2f46f749f7ad0a34bb6307c1a8b06c2/logo_2x.png",
+         "media": "image"
         }
        ],
        "children": []
@@ -6257,7 +6371,9 @@
         },
         {
          "t": "del",
-         "v": "d869721615c02af8b3ed292293…/header.jpg "
+         "v": "d869721615c02af8b3ed292293…/header.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/d869721615c02af8b3ed292293c5275de109c93a/header.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -6265,7 +6381,9 @@
         },
         {
          "t": "ins",
-         "v": "e39036b077d6aee96e3e0b2e79…/header.jpg"
+         "v": "e39036b077d6aee96e3e0b2e79…/header.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/e39036b077d6aee96e3e0b2e7929a55c4735957e/header.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -6294,7 +6412,9 @@
         },
         {
          "t": "del",
-         "v": "50aff42020f189e220…/capsule_231x87.jpg "
+         "v": "50aff42020f189e220…/capsule_231x87.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/50aff42020f189e2205325c7ad936af99203af9f/capsule_231x87.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -6302,7 +6422,9 @@
         },
         {
          "t": "ins",
-         "v": "8911f722ab88dd638c…/capsule_231x87.jpg"
+         "v": "8911f722ab88dd638c…/capsule_231x87.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/8911f722ab88dd638c48a2a8c2d305899beb2952/capsule_231x87.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -7946,7 +8068,9 @@
         },
         {
          "t": "del",
-         "v": "2467880/215058713/30…/microtrailer.mp4 "
+         "v": "2467880/215058713/30…/microtrailer.mp4 ",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/2467880/215058713/30d62663b7617579b1c18d11d82d96e65cb758c6/1759158869/microtrailer.mp4",
+         "media": "video"
         },
         {
          "t": "text",
@@ -7954,7 +8078,9 @@
         },
         {
          "t": "ins",
-         "v": "2467880/564887758/6f…/microtrailer.mp4"
+         "v": "2467880/564887758/6f…/microtrailer.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/2467880/564887758/6f78a717ef16a8ddc2e561cf4bb5f9797125b058/1771234894/microtrailer.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -7968,7 +8094,9 @@
         },
         {
          "t": "del",
-         "v": "2467880/215058713/3…/microtrailer.webm "
+         "v": "2467880/215058713/3…/microtrailer.webm ",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/2467880/215058713/30d62663b7617579b1c18d11d82d96e65cb758c6/1759158869/microtrailer.webm",
+         "media": "video"
         },
         {
          "t": "text",
@@ -7976,7 +8104,9 @@
         },
         {
          "t": "ins",
-         "v": "2467880/564887758/6…/microtrailer.webm"
+         "v": "2467880/564887758/6…/microtrailer.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/2467880/564887758/6f78a717ef16a8ddc2e561cf4bb5f9797125b058/1771234894/microtrailer.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -9898,7 +10028,9 @@
         },
         {
          "t": "del",
-         "v": "9b4ed73ae2985…/ss_9b4ed73ae298545baf3bd9eedc4e5f8a3481a24d.jpg"
+         "v": "9b4ed73ae2985…/ss_9b4ed73ae298545baf3bd9eedc4e5f8a3481a24d.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/9b4ed73ae298545baf3bd9eedc4e5f8a3481a24d/ss_9b4ed73ae298545baf3bd9eedc4e5f8a3481a24d.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -9912,7 +10044,9 @@
         },
         {
          "t": "del",
-         "v": "0dbf3821a4f43…/ss_0dbf3821a4f43b55aebc561650f6588a9ccec5a1.jpg"
+         "v": "0dbf3821a4f43…/ss_0dbf3821a4f43b55aebc561650f6588a9ccec5a1.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/0dbf3821a4f43b55aebc561650f6588a9ccec5a1/ss_0dbf3821a4f43b55aebc561650f6588a9ccec5a1.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -9926,7 +10060,9 @@
         },
         {
          "t": "del",
-         "v": "4f4886c34dd9d…/ss_4f4886c34dd9dcb016f59dcee690d0e3c2361ada.jpg"
+         "v": "4f4886c34dd9d…/ss_4f4886c34dd9dcb016f59dcee690d0e3c2361ada.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/4f4886c34dd9dcb016f59dcee690d0e3c2361ada/ss_4f4886c34dd9dcb016f59dcee690d0e3c2361ada.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -9940,7 +10076,9 @@
         },
         {
          "t": "del",
-         "v": "a5edd0a897739…/ss_a5edd0a897739af30675b49efabe910710014766.jpg"
+         "v": "a5edd0a897739…/ss_a5edd0a897739af30675b49efabe910710014766.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/a5edd0a897739af30675b49efabe910710014766/ss_a5edd0a897739af30675b49efabe910710014766.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -9954,7 +10092,9 @@
         },
         {
          "t": "ins",
-         "v": "1432b3122b253…/ss_1432b3122b25397d3b0abfc5466db1986bac1322.jpg"
+         "v": "1432b3122b253…/ss_1432b3122b25397d3b0abfc5466db1986bac1322.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/1432b3122b25397d3b0abfc5466db1986bac1322/ss_1432b3122b25397d3b0abfc5466db1986bac1322.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -9968,7 +10108,9 @@
         },
         {
          "t": "ins",
-         "v": "8b99c96d1e6a5…/ss_8b99c96d1e6a54aa009ee17c608d2ee1319f6679.jpg"
+         "v": "8b99c96d1e6a5…/ss_8b99c96d1e6a54aa009ee17c608d2ee1319f6679.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/8b99c96d1e6a54aa009ee17c608d2ee1319f6679/ss_8b99c96d1e6a54aa009ee17c608d2ee1319f6679.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -9982,7 +10124,9 @@
         },
         {
          "t": "ins",
-         "v": "cae1e6472d832…/ss_cae1e6472d83216d441c66a71d9085b1f19f83dc.jpg"
+         "v": "cae1e6472d832…/ss_cae1e6472d83216d441c66a71d9085b1f19f83dc.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/cae1e6472d83216d441c66a71d9085b1f19f83dc/ss_cae1e6472d83216d441c66a71d9085b1f19f83dc.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -9996,7 +10140,9 @@
         },
         {
          "t": "ins",
-         "v": "2db88d1c75400…/ss_2db88d1c75400daa96f7afd8d171f330a9fa008d.jpg"
+         "v": "2db88d1c75400…/ss_2db88d1c75400daa96f7afd8d171f330a9fa008d.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/2db88d1c75400daa96f7afd8d171f330a9fa008d/ss_2db88d1c75400daa96f7afd8d171f330a9fa008d.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -10010,7 +10156,9 @@
         },
         {
          "t": "ins",
-         "v": "8ab2c4a3a32b3…/ss_8ab2c4a3a32b30e794e90810abdc1c20257fe388.jpg"
+         "v": "8ab2c4a3a32b3…/ss_8ab2c4a3a32b30e794e90810abdc1c20257fe388.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/8ab2c4a3a32b30e794e90810abdc1c20257fe388/ss_8ab2c4a3a32b30e794e90810abdc1c20257fe388.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -10282,7 +10430,9 @@
         },
         {
          "t": "del",
-         "v": "257143220/movie480.mp4"
+         "v": "257143220/movie480.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/257143220/movie480.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -10300,7 +10450,9 @@
         },
         {
          "t": "del",
-         "v": "257143220/movie480_vp9.webm"
+         "v": "257143220/movie480_vp9.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/257143220/movie480_vp9.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -10318,7 +10470,9 @@
         },
         {
          "t": "del",
-         "v": "257143220/movie_max.mp4"
+         "v": "257143220/movie_max.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/257143220/movie_max.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -10336,7 +10490,9 @@
         },
         {
          "t": "del",
-         "v": "257143220/movie_max_vp9.webm"
+         "v": "257143220/movie_max_vp9.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/257143220/movie_max_vp9.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -10896,7 +11052,9 @@
         },
         {
          "t": "ins",
-         "v": "2467880/534322520/806128a50da2cc3ca2846e1561…/microtrailer.mp4"
+         "v": "2467880/534322520/806128a50da2cc3ca2846e1561…/microtrailer.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/2467880/534322520/806128a50da2cc3ca2846e15613d0f2d9b7404ce/1769001133/microtrailer.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -10914,7 +11072,9 @@
         },
         {
          "t": "ins",
-         "v": "2467880/534322520/806128a50da2cc3ca2846e156…/microtrailer.webm"
+         "v": "2467880/534322520/806128a50da2cc3ca2846e156…/microtrailer.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/2467880/534322520/806128a50da2cc3ca2846e15613d0f2d9b7404ce/1769001133/microtrailer.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -10932,7 +11092,9 @@
         },
         {
          "t": "ins",
-         "v": "25726…/02f21fc445f5b5f1bc664b8f7685a7bff5b50b1e/movie_full.jpg"
+         "v": "25726…/02f21fc445f5b5f1bc664b8f7685a7bff5b50b1e/movie_full.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257269405/02f21fc445f5b5f1bc664b8f7685a7bff5b50b1e/movie_full.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -10950,7 +11112,9 @@
         },
         {
          "t": "ins",
-         "v": "25…/02f21fc445f5b5f1bc664b8f7685a7bff5b50b1e/movie_600x337.jpg"
+         "v": "25…/02f21fc445f5b5f1bc664b8f7685a7bff5b50b1e/movie_600x337.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257269405/02f21fc445f5b5f1bc664b8f7685a7bff5b50b1e/movie_600x337.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -11263,7 +11427,9 @@
         },
         {
          "t": "ins",
-         "v": "2467880/1420880445/d5957447c4983c6e8fe9c7959…/microtrailer.mp4"
+         "v": "2467880/1420880445/d5957447c4983c6e8fe9c7959…/microtrailer.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/2467880/1420880445/d5957447c4983c6e8fe9c79591777c8419a4c7a5/1750922154/microtrailer.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -11281,7 +11447,9 @@
         },
         {
          "t": "ins",
-         "v": "2467880/1420880445/d5957447c4983c6e8fe9c795…/microtrailer.webm"
+         "v": "2467880/1420880445/d5957447c4983c6e8fe9c795…/microtrailer.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/2467880/1420880445/d5957447c4983c6e8fe9c79591777c8419a4c7a5/1750922154/microtrailer.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -11299,7 +11467,9 @@
         },
         {
          "t": "ins",
-         "v": "25714…/7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_full.jpg"
+         "v": "25714…/7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_full.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257143220/7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_full.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -11317,7 +11487,9 @@
         },
         {
          "t": "ins",
-         "v": "25…/7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_600x337.jpg"
+         "v": "25…/7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_600x337.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257143220/7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_600x337.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -11353,7 +11525,9 @@
         },
         {
          "t": "ins",
-         "v": "257143220/movie480.mp4"
+         "v": "257143220/movie480.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/257143220/movie480.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -11371,7 +11545,9 @@
         },
         {
          "t": "ins",
-         "v": "257143220/movie480_vp9.webm"
+         "v": "257143220/movie480_vp9.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/257143220/movie480_vp9.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -11407,7 +11583,9 @@
         },
         {
          "t": "ins",
-         "v": "257143220/movie_max.mp4"
+         "v": "257143220/movie_max.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/257143220/movie_max.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -11425,7 +11603,9 @@
         },
         {
          "t": "ins",
-         "v": "257143220/movie_max_vp9.webm"
+         "v": "257143220/movie_max_vp9.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/257143220/movie_max_vp9.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -11605,7 +11785,9 @@
         },
         {
          "t": "del",
-         "v": "2467880/1420880445/d5957447c4983c6e8fe9c7959…/microtrailer.mp4"
+         "v": "2467880/1420880445/d5957447c4983c6e8fe9c7959…/microtrailer.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/2467880/1420880445/d5957447c4983c6e8fe9c79591777c8419a4c7a5/1750922154/microtrailer.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -11623,7 +11805,9 @@
         },
         {
          "t": "del",
-         "v": "2467880/1420880445/d5957447c4983c6e8fe9c795…/microtrailer.webm"
+         "v": "2467880/1420880445/d5957447c4983c6e8fe9c795…/microtrailer.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/2467880/1420880445/d5957447c4983c6e8fe9c79591777c8419a4c7a5/1750922154/microtrailer.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -11641,7 +11825,9 @@
         },
         {
          "t": "del",
-         "v": "25714…/7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_full.jpg"
+         "v": "25714…/7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_full.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257143220/7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_full.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -11659,7 +11845,9 @@
         },
         {
          "t": "del",
-         "v": "25…/7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_600x337.jpg"
+         "v": "25…/7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_600x337.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/257143220/7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_600x337.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -11695,7 +11883,9 @@
         },
         {
          "t": "del",
-         "v": "257143220/movie480.mp4"
+         "v": "257143220/movie480.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/257143220/movie480.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -11713,7 +11903,9 @@
         },
         {
          "t": "del",
-         "v": "257143220/movie480_vp9.webm"
+         "v": "257143220/movie480_vp9.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/257143220/movie480_vp9.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -11749,7 +11941,9 @@
         },
         {
          "t": "del",
-         "v": "257143220/movie_max.mp4"
+         "v": "257143220/movie_max.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/257143220/movie_max.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -11767,7 +11961,9 @@
         },
         {
          "t": "del",
-         "v": "257143220/movie_max_vp9.webm"
+         "v": "257143220/movie_max_vp9.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/257143220/movie_max_vp9.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -12675,7 +12871,9 @@
         },
         {
          "t": "ins",
-         "v": "ff20bcba24feb1d95be3037ca446dd19de653562/page_bg_v6.jpg"
+         "v": "ff20bcba24feb1d95be3037ca446dd19de653562/page_bg_v6.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/ff20bcba24feb1d95be3037ca446dd19de653562/page_bg_v6.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -12693,7 +12891,9 @@
         },
         {
          "t": "ins",
-         "v": "ff20bcba24feb1d95be3037ca446dd19de653562/page_bg_raw.jpg"
+         "v": "ff20bcba24feb1d95be3037ca446dd19de653562/page_bg_raw.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/ff20bcba24feb1d95be3037ca446dd19de653562/page_bg_raw.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -12939,7 +13139,9 @@
       },
       {
        "t": "del",
-       "v": "a0525afc749600b62b4f20a3d71ea8d74982aef8 "
+       "v": "a0525afc749600b62b4f20a3d71ea8d74982aef8 ",
+       "href": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2467880/a0525afc749600b62b4f20a3d71ea8d74982aef8.ico",
+       "media": "image"
       },
       {
        "t": "text",
@@ -12947,7 +13149,9 @@
       },
       {
        "t": "ins",
-       "v": "c8a157a7cbcabe83c58f5511c787eff2dad4af99"
+       "v": "c8a157a7cbcabe83c58f5511c787eff2dad4af99",
+       "href": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2467880/c8a157a7cbcabe83c58f5511c787eff2dad4af99.ico",
+       "media": "image"
       }
      ],
      "children": []
@@ -12969,7 +13173,9 @@
       },
       {
        "t": "del",
-       "v": "0bcbcbe3c649ea966cbf3d2fd08b2289c79322ed "
+       "v": "0bcbcbe3c649ea966cbf3d2fd08b2289c79322ed ",
+       "href": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2467880/0bcbcbe3c649ea966cbf3d2fd08b2289c79322ed.jpg",
+       "media": "image"
       },
       {
        "t": "text",
@@ -14103,7 +14309,9 @@
         },
         {
          "t": "del",
-         "v": "803c26d0c3108…/ss_803c26d0c31089a12a8b61658a12669d74e54db3.jpg"
+         "v": "803c26d0c3108…/ss_803c26d0c31089a12a8b61658a12669d74e54db3.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/803c26d0c31089a12a8b61658a12669d74e54db3/ss_803c26d0c31089a12a8b61658a12669d74e54db3.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14117,7 +14325,9 @@
         },
         {
          "t": "del",
-         "v": "f1b5f2b25a41b…/ss_f1b5f2b25a41b8f1a827496c7fa128972ac55d31.jpg"
+         "v": "f1b5f2b25a41b…/ss_f1b5f2b25a41b8f1a827496c7fa128972ac55d31.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/f1b5f2b25a41b8f1a827496c7fa128972ac55d31/ss_f1b5f2b25a41b8f1a827496c7fa128972ac55d31.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14131,7 +14341,9 @@
         },
         {
          "t": "del",
-         "v": "808100b79bbf4…/ss_808100b79bbf4de62601885e934fc5dfb39b0498.jpg"
+         "v": "808100b79bbf4…/ss_808100b79bbf4de62601885e934fc5dfb39b0498.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/808100b79bbf4de62601885e934fc5dfb39b0498/ss_808100b79bbf4de62601885e934fc5dfb39b0498.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14145,7 +14357,9 @@
         },
         {
          "t": "del",
-         "v": "44fe979a03403…/ss_44fe979a0340326f5204ce03866a1e608c3e2ea6.jpg"
+         "v": "44fe979a03403…/ss_44fe979a0340326f5204ce03866a1e608c3e2ea6.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/44fe979a0340326f5204ce03866a1e608c3e2ea6/ss_44fe979a0340326f5204ce03866a1e608c3e2ea6.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14159,7 +14373,9 @@
         },
         {
          "t": "del",
-         "v": "877ec1a5839db…/ss_877ec1a5839db52c537781d770be4c8852e09183.jpg"
+         "v": "877ec1a5839db…/ss_877ec1a5839db52c537781d770be4c8852e09183.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/877ec1a5839db52c537781d770be4c8852e09183/ss_877ec1a5839db52c537781d770be4c8852e09183.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14173,7 +14389,9 @@
         },
         {
          "t": "del",
-         "v": "f6c93bcd9b6a1…/ss_f6c93bcd9b6a14164bc90575c5def2bfc1608b07.jpg"
+         "v": "f6c93bcd9b6a1…/ss_f6c93bcd9b6a14164bc90575c5def2bfc1608b07.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/f6c93bcd9b6a14164bc90575c5def2bfc1608b07/ss_f6c93bcd9b6a14164bc90575c5def2bfc1608b07.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14187,7 +14405,9 @@
         },
         {
          "t": "del",
-         "v": "6d30b0995a0d2…/ss_6d30b0995a0d2fa310cdfc3ff425533587e3c614.jpg"
+         "v": "6d30b0995a0d2…/ss_6d30b0995a0d2fa310cdfc3ff425533587e3c614.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/6d30b0995a0d2fa310cdfc3ff425533587e3c614/ss_6d30b0995a0d2fa310cdfc3ff425533587e3c614.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14201,7 +14421,9 @@
         },
         {
          "t": "del",
-         "v": "75f9c38ce293a…/ss_75f9c38ce293a13ef2e49ad04fc276e8e4250a96.jpg"
+         "v": "75f9c38ce293a…/ss_75f9c38ce293a13ef2e49ad04fc276e8e4250a96.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/75f9c38ce293a13ef2e49ad04fc276e8e4250a96/ss_75f9c38ce293a13ef2e49ad04fc276e8e4250a96.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14215,7 +14437,9 @@
         },
         {
          "t": "del",
-         "v": "1d47e385e3dc3…/ss_1d47e385e3dc37d49eccbf15883ed5c67c5a050d.jpg"
+         "v": "1d47e385e3dc3…/ss_1d47e385e3dc37d49eccbf15883ed5c67c5a050d.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/1d47e385e3dc37d49eccbf15883ed5c67c5a050d/ss_1d47e385e3dc37d49eccbf15883ed5c67c5a050d.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14229,7 +14453,9 @@
         },
         {
          "t": "del",
-         "v": "468af35cfbcd3…/ss_468af35cfbcd364b7d8868cf185d2c00d6f002bb.jpg"
+         "v": "468af35cfbcd3…/ss_468af35cfbcd364b7d8868cf185d2c00d6f002bb.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/468af35cfbcd364b7d8868cf185d2c00d6f002bb/ss_468af35cfbcd364b7d8868cf185d2c00d6f002bb.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14243,7 +14469,9 @@
         },
         {
          "t": "del",
-         "v": "dc2dd57c41ec8…/ss_dc2dd57c41ec88037a290fa21c799a2a08c9ce03.jpg"
+         "v": "dc2dd57c41ec8…/ss_dc2dd57c41ec88037a290fa21c799a2a08c9ce03.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/dc2dd57c41ec88037a290fa21c799a2a08c9ce03/ss_dc2dd57c41ec88037a290fa21c799a2a08c9ce03.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14257,7 +14485,9 @@
         },
         {
          "t": "ins",
-         "v": "dc2b805430d35…/ss_dc2b805430d35d7679a4194cc16a64de5f6231c8.jpg"
+         "v": "dc2b805430d35…/ss_dc2b805430d35d7679a4194cc16a64de5f6231c8.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/dc2b805430d35d7679a4194cc16a64de5f6231c8/ss_dc2b805430d35d7679a4194cc16a64de5f6231c8.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14271,7 +14501,9 @@
         },
         {
          "t": "ins",
-         "v": "74a349db00fa1…/ss_74a349db00fa17d4c42aa104ca6e4859e05fd29c.jpg"
+         "v": "74a349db00fa1…/ss_74a349db00fa17d4c42aa104ca6e4859e05fd29c.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/74a349db00fa17d4c42aa104ca6e4859e05fd29c/ss_74a349db00fa17d4c42aa104ca6e4859e05fd29c.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14285,7 +14517,9 @@
         },
         {
          "t": "ins",
-         "v": "e05bf075b2d6f…/ss_e05bf075b2d6feafad1783862a73dd0504d386fb.jpg"
+         "v": "e05bf075b2d6f…/ss_e05bf075b2d6feafad1783862a73dd0504d386fb.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/e05bf075b2d6feafad1783862a73dd0504d386fb/ss_e05bf075b2d6feafad1783862a73dd0504d386fb.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14299,7 +14533,9 @@
         },
         {
          "t": "ins",
-         "v": "9b4ed73ae2985…/ss_9b4ed73ae298545baf3bd9eedc4e5f8a3481a24d.jpg"
+         "v": "9b4ed73ae2985…/ss_9b4ed73ae298545baf3bd9eedc4e5f8a3481a24d.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/9b4ed73ae298545baf3bd9eedc4e5f8a3481a24d/ss_9b4ed73ae298545baf3bd9eedc4e5f8a3481a24d.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14313,7 +14549,9 @@
         },
         {
          "t": "ins",
-         "v": "a5edd0a897739…/ss_a5edd0a897739af30675b49efabe910710014766.jpg"
+         "v": "a5edd0a897739…/ss_a5edd0a897739af30675b49efabe910710014766.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/a5edd0a897739af30675b49efabe910710014766/ss_a5edd0a897739af30675b49efabe910710014766.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14327,7 +14565,9 @@
         },
         {
          "t": "ins",
-         "v": "0dbf3821a4f43…/ss_0dbf3821a4f43b55aebc561650f6588a9ccec5a1.jpg"
+         "v": "0dbf3821a4f43…/ss_0dbf3821a4f43b55aebc561650f6588a9ccec5a1.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/0dbf3821a4f43b55aebc561650f6588a9ccec5a1/ss_0dbf3821a4f43b55aebc561650f6588a9ccec5a1.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14341,7 +14581,9 @@
         },
         {
          "t": "ins",
-         "v": "4f4886c34dd9d…/ss_4f4886c34dd9dcb016f59dcee690d0e3c2361ada.jpg"
+         "v": "4f4886c34dd9d…/ss_4f4886c34dd9dcb016f59dcee690d0e3c2361ada.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/4f4886c34dd9dcb016f59dcee690d0e3c2361ada/ss_4f4886c34dd9dcb016f59dcee690d0e3c2361ada.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14355,7 +14597,9 @@
         },
         {
          "t": "ins",
-         "v": "b7ffa455d39f4…/ss_b7ffa455d39f41525b841afbeabb4e79f6704c4c.jpg"
+         "v": "b7ffa455d39f4…/ss_b7ffa455d39f41525b841afbeabb4e79f6704c4c.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/b7ffa455d39f41525b841afbeabb4e79f6704c4c/ss_b7ffa455d39f41525b841afbeabb4e79f6704c4c.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -14984,7 +15228,9 @@
         },
         {
          "t": "del",
-         "v": "b3cee42438f669b295f489a7e0…/header.jpg "
+         "v": "b3cee42438f669b295f489a7e0…/header.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/b3cee42438f669b295f489a7e09c6a9e438704b9/header.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -14992,7 +15238,9 @@
         },
         {
          "t": "ins",
-         "v": "d869721615c02af8b3ed292293…/header.jpg"
+         "v": "d869721615c02af8b3ed292293…/header.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/d869721615c02af8b3ed292293c5275de109c93a/header.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -15006,7 +15254,9 @@
         },
         {
          "t": "del",
-         "v": "ceb6bc9944a723454…/capsule_616x353.jpg "
+         "v": "ceb6bc9944a723454…/capsule_616x353.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/ceb6bc9944a7234543a756816997e387eab8d79c/capsule_616x353.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -15014,7 +15264,9 @@
         },
         {
          "t": "ins",
-         "v": "b25ce4f893f3fd6cb…/capsule_616x353.jpg"
+         "v": "b25ce4f893f3fd6cb…/capsule_616x353.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/b25ce4f893f3fd6cbc58015233325aa824e29034/capsule_616x353.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -15028,7 +15280,9 @@
         },
         {
          "t": "del",
-         "v": "c34c27762439bb9b4d…/capsule_231x87.jpg "
+         "v": "c34c27762439bb9b4d…/capsule_231x87.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c34c27762439bb9b4d334d53f0c4af9d05f55efb/capsule_231x87.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -15036,7 +15290,9 @@
         },
         {
          "t": "ins",
-         "v": "50aff42020f189e220…/capsule_231x87.jpg"
+         "v": "50aff42020f189e220…/capsule_231x87.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/50aff42020f189e2205325c7ad936af99203af9f/capsule_231x87.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -15128,7 +15384,9 @@
         },
         {
          "t": "del",
-         "v": "b3cee42438f669b295f489a7e0…/header.jpg "
+         "v": "b3cee42438f669b295f489a7e0…/header.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/b3cee42438f669b295f489a7e09c6a9e438704b9/header.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -15136,7 +15394,9 @@
         },
         {
          "t": "ins",
-         "v": "d869721615c02af8b3ed292293…/header.jpg"
+         "v": "d869721615c02af8b3ed292293…/header.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/d869721615c02af8b3ed292293c5275de109c93a/header.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -15165,7 +15425,9 @@
         },
         {
          "t": "del",
-         "v": "c34c27762439bb9b4d…/capsule_231x87.jpg "
+         "v": "c34c27762439bb9b4d…/capsule_231x87.jpg ",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c34c27762439bb9b4d334d53f0c4af9d05f55efb/capsule_231x87.jpg",
+         "media": "image"
         },
         {
          "t": "text",
@@ -15173,7 +15435,9 @@
         },
         {
          "t": "ins",
-         "v": "50aff42020f189e220…/capsule_231x87.jpg"
+         "v": "50aff42020f189e220…/capsule_231x87.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/50aff42020f189e2205325c7ad936af99203af9f/capsule_231x87.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -17665,7 +17929,9 @@
         },
         {
          "t": "del",
-         "v": "257143220/microtrailer.mp4 "
+         "v": "257143220/microtrailer.mp4 ",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/257143220/microtrailer.mp4",
+         "media": "video"
         },
         {
          "t": "text",
@@ -17673,7 +17939,9 @@
         },
         {
          "t": "ins",
-         "v": "2467880/1420880445/d…/microtrailer.mp4"
+         "v": "2467880/1420880445/d…/microtrailer.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/2467880/1420880445/d5957447c4983c6e8fe9c79591777c8419a4c7a5/1750922154/microtrailer.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -17687,7 +17955,9 @@
         },
         {
          "t": "del",
-         "v": "257143220/microtrailer.webm "
+         "v": "257143220/microtrailer.webm ",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/257143220/microtrailer.webm",
+         "media": "video"
         },
         {
          "t": "text",
@@ -17695,7 +17965,9 @@
         },
         {
          "t": "ins",
-         "v": "2467880/1420880445/…/microtrailer.webm"
+         "v": "2467880/1420880445/…/microtrailer.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/2467880/1420880445/d5957447c4983c6e8fe9c79591777c8419a4c7a5/1750922154/microtrailer.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -18544,7 +18816,9 @@
         },
         {
          "t": "ins",
-         "v": "microtrailer.mp4"
+         "v": "microtrailer.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/microtrailer.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -18562,7 +18836,9 @@
         },
         {
          "t": "ins",
-         "v": "microtrailer.webm"
+         "v": "microtrailer.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/microtrailer.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -18580,7 +18856,9 @@
         },
         {
          "t": "ins",
-         "v": "7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_full.jpg"
+         "v": "7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_full.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_full.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -18598,7 +18876,9 @@
         },
         {
          "t": "ins",
-         "v": "7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_600x337.jpg"
+         "v": "7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_600x337.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/7934b7dd324f0ee67c48c0958454539a076fa6d8/movie_600x337.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -18634,7 +18914,9 @@
         },
         {
          "t": "ins",
-         "v": "movie480.mp4"
+         "v": "movie480.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/movie480.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -18652,7 +18934,9 @@
         },
         {
          "t": "ins",
-         "v": "movie480_vp9.webm"
+         "v": "movie480_vp9.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/movie480_vp9.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -18706,7 +18990,9 @@
         },
         {
          "t": "ins",
-         "v": "movie_max.mp4"
+         "v": "movie_max.mp4",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/movie_max.mp4",
+         "media": "video"
         }
        ],
        "children": []
@@ -18724,7 +19010,9 @@
         },
         {
          "t": "ins",
-         "v": "movie_max_vp9.webm"
+         "v": "movie_max_vp9.webm",
+         "href": "https://video.fastly.steamstatic.com/store_trailers/movie_max_vp9.webm",
+         "media": "video"
         }
        ],
        "children": []
@@ -18782,7 +19070,9 @@
         },
         {
          "t": "ins",
-         "v": "803c26d0c3108…/ss_803c26d0c31089a12a8b61658a12669d74e54db3.jpg"
+         "v": "803c26d0c3108…/ss_803c26d0c31089a12a8b61658a12669d74e54db3.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/803c26d0c31089a12a8b61658a12669d74e54db3/ss_803c26d0c31089a12a8b61658a12669d74e54db3.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -18796,7 +19086,9 @@
         },
         {
          "t": "ins",
-         "v": "f1b5f2b25a41b…/ss_f1b5f2b25a41b8f1a827496c7fa128972ac55d31.jpg"
+         "v": "f1b5f2b25a41b…/ss_f1b5f2b25a41b8f1a827496c7fa128972ac55d31.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/f1b5f2b25a41b8f1a827496c7fa128972ac55d31/ss_f1b5f2b25a41b8f1a827496c7fa128972ac55d31.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -18810,7 +19102,9 @@
         },
         {
          "t": "ins",
-         "v": "808100b79bbf4…/ss_808100b79bbf4de62601885e934fc5dfb39b0498.jpg"
+         "v": "808100b79bbf4…/ss_808100b79bbf4de62601885e934fc5dfb39b0498.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/808100b79bbf4de62601885e934fc5dfb39b0498/ss_808100b79bbf4de62601885e934fc5dfb39b0498.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -18824,7 +19118,9 @@
         },
         {
          "t": "ins",
-         "v": "44fe979a03403…/ss_44fe979a0340326f5204ce03866a1e608c3e2ea6.jpg"
+         "v": "44fe979a03403…/ss_44fe979a0340326f5204ce03866a1e608c3e2ea6.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/44fe979a0340326f5204ce03866a1e608c3e2ea6/ss_44fe979a0340326f5204ce03866a1e608c3e2ea6.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -18838,7 +19134,9 @@
         },
         {
          "t": "ins",
-         "v": "877ec1a5839db…/ss_877ec1a5839db52c537781d770be4c8852e09183.jpg"
+         "v": "877ec1a5839db…/ss_877ec1a5839db52c537781d770be4c8852e09183.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/877ec1a5839db52c537781d770be4c8852e09183/ss_877ec1a5839db52c537781d770be4c8852e09183.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -18852,7 +19150,9 @@
         },
         {
          "t": "ins",
-         "v": "f6c93bcd9b6a1…/ss_f6c93bcd9b6a14164bc90575c5def2bfc1608b07.jpg"
+         "v": "f6c93bcd9b6a1…/ss_f6c93bcd9b6a14164bc90575c5def2bfc1608b07.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/f6c93bcd9b6a14164bc90575c5def2bfc1608b07/ss_f6c93bcd9b6a14164bc90575c5def2bfc1608b07.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -18866,7 +19166,9 @@
         },
         {
          "t": "ins",
-         "v": "6d30b0995a0d2…/ss_6d30b0995a0d2fa310cdfc3ff425533587e3c614.jpg"
+         "v": "6d30b0995a0d2…/ss_6d30b0995a0d2fa310cdfc3ff425533587e3c614.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/6d30b0995a0d2fa310cdfc3ff425533587e3c614/ss_6d30b0995a0d2fa310cdfc3ff425533587e3c614.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -18880,7 +19182,9 @@
         },
         {
          "t": "ins",
-         "v": "75f9c38ce293a…/ss_75f9c38ce293a13ef2e49ad04fc276e8e4250a96.jpg"
+         "v": "75f9c38ce293a…/ss_75f9c38ce293a13ef2e49ad04fc276e8e4250a96.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/75f9c38ce293a13ef2e49ad04fc276e8e4250a96/ss_75f9c38ce293a13ef2e49ad04fc276e8e4250a96.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -18894,7 +19198,9 @@
         },
         {
          "t": "ins",
-         "v": "1d47e385e3dc3…/ss_1d47e385e3dc37d49eccbf15883ed5c67c5a050d.jpg"
+         "v": "1d47e385e3dc3…/ss_1d47e385e3dc37d49eccbf15883ed5c67c5a050d.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/1d47e385e3dc37d49eccbf15883ed5c67c5a050d/ss_1d47e385e3dc37d49eccbf15883ed5c67c5a050d.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -18908,7 +19214,9 @@
         },
         {
          "t": "ins",
-         "v": "468af35cfbcd3…/ss_468af35cfbcd364b7d8868cf185d2c00d6f002bb.jpg"
+         "v": "468af35cfbcd3…/ss_468af35cfbcd364b7d8868cf185d2c00d6f002bb.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/468af35cfbcd364b7d8868cf185d2c00d6f002bb/ss_468af35cfbcd364b7d8868cf185d2c00d6f002bb.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -18922,7 +19230,9 @@
         },
         {
          "t": "ins",
-         "v": "dc2dd57c41ec8…/ss_dc2dd57c41ec88037a290fa21c799a2a08c9ce03.jpg"
+         "v": "dc2dd57c41ec8…/ss_dc2dd57c41ec88037a290fa21c799a2a08c9ce03.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/dc2dd57c41ec88037a290fa21c799a2a08c9ce03/ss_dc2dd57c41ec88037a290fa21c799a2a08c9ce03.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -18984,7 +19294,9 @@
         },
         {
          "t": "ins",
-         "v": "b3cee42438f669b295f489a7e09c6a9e438704b9/header.jpg"
+         "v": "b3cee42438f669b295f489a7e09c6a9e438704b9/header.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/b3cee42438f669b295f489a7e09c6a9e438704b9/header.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -19002,7 +19314,9 @@
         },
         {
          "t": "ins",
-         "v": "15cfbd02671cbb9d36172258fcdd3d720ce0222e/hero_capsule.jpg"
+         "v": "15cfbd02671cbb9d36172258fcdd3d720ce0222e/hero_capsule.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/15cfbd02671cbb9d36172258fcdd3d720ce0222e/hero_capsule.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -19020,7 +19334,9 @@
         },
         {
          "t": "ins",
-         "v": "15cfbd02671cbb9d36172258fcdd3d720ce0222e/hero_capsule_2x.jpg"
+         "v": "15cfbd02671cbb9d36172258fcdd3d720ce0222e/hero_capsule_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/15cfbd02671cbb9d36172258fcdd3d720ce0222e/hero_capsule_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -19038,7 +19354,9 @@
         },
         {
          "t": "ins",
-         "v": "241dcf13ad179b318d8e4b108380907950db588a/library_600x900.jpg"
+         "v": "241dcf13ad179b318d8e4b108380907950db588a/library_600x900.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/241dcf13ad179b318d8e4b108380907950db588a/library_600x900.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -19056,7 +19374,9 @@
         },
         {
          "t": "ins",
-         "v": "241dcf13ad179b318d8e4b108380907950db588a/library_600x900_2x.jpg"
+         "v": "241dcf13ad179b318d8e4b108380907950db588a/library_600x900_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/241dcf13ad179b318d8e4b108380907950db588a/library_600x900_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -19074,7 +19394,9 @@
         },
         {
          "t": "ins",
-         "v": "c9424c084b346ce15260aea1a8a368be0643df82/library_hero.jpg"
+         "v": "c9424c084b346ce15260aea1a8a368be0643df82/library_hero.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c9424c084b346ce15260aea1a8a368be0643df82/library_hero.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -19092,7 +19414,9 @@
         },
         {
          "t": "ins",
-         "v": "c9424c084b346ce15260aea1a8a368be0643df82/library_hero_2x.jpg"
+         "v": "c9424c084b346ce15260aea1a8a368be0643df82/library_hero_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c9424c084b346ce15260aea1a8a368be0643df82/library_hero_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -19110,7 +19434,9 @@
         },
         {
          "t": "ins",
-         "v": "ceb6bc9944a7234543a756816997e387eab8d79c/capsule_616x353.jpg"
+         "v": "ceb6bc9944a7234543a756816997e387eab8d79c/capsule_616x353.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/ceb6bc9944a7234543a756816997e387eab8d79c/capsule_616x353.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -19146,7 +19472,9 @@
         },
         {
          "t": "ins",
-         "v": "c34c27762439bb9b4d334d53f0c4af9d05f55efb/capsule_231x87.jpg"
+         "v": "c34c27762439bb9b4d334d53f0c4af9d05f55efb/capsule_231x87.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c34c27762439bb9b4d334d53f0c4af9d05f55efb/capsule_231x87.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -19953,7 +20281,9 @@
         },
         {
          "t": "ins",
-         "v": "241dcf13ad179b318d8e4b108380907950db588a/library_600x900.jpg"
+         "v": "241dcf13ad179b318d8e4b108380907950db588a/library_600x900.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/241dcf13ad179b318d8e4b108380907950db588a/library_600x900.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -19971,7 +20301,9 @@
         },
         {
          "t": "ins",
-         "v": "241dcf13ad179b318d8e4b108380907950db588a/library_600x900_2x.jpg"
+         "v": "241dcf13ad179b318d8e4b108380907950db588a/library_600x900_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/241dcf13ad179b318d8e4b108380907950db588a/library_600x900_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -19989,7 +20321,9 @@
         },
         {
          "t": "ins",
-         "v": "b3cee42438f669b295f489a7e09c6a9e438704b9/library_header.jpg"
+         "v": "b3cee42438f669b295f489a7e09c6a9e438704b9/library_header.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/b3cee42438f669b295f489a7e09c6a9e438704b9/library_header.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -20007,7 +20341,9 @@
         },
         {
          "t": "ins",
-         "v": "b3cee42438f669b295f489a7e09c6a9e438704b9/library_header_2x.jpg"
+         "v": "b3cee42438f669b295f489a7e09c6a9e438704b9/library_header_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/b3cee42438f669b295f489a7e09c6a9e438704b9/library_header_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -20025,7 +20361,9 @@
         },
         {
          "t": "ins",
-         "v": "c9424c084b346ce15260aea1a8a368be0643df82/library_hero.jpg"
+         "v": "c9424c084b346ce15260aea1a8a368be0643df82/library_hero.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c9424c084b346ce15260aea1a8a368be0643df82/library_hero.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -20043,7 +20381,9 @@
         },
         {
          "t": "ins",
-         "v": "c9424c084b346ce15260aea1a8a368be0643df82/library_hero_2x.jpg"
+         "v": "c9424c084b346ce15260aea1a8a368be0643df82/library_hero_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c9424c084b346ce15260aea1a8a368be0643df82/library_hero_2x.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -20061,7 +20401,9 @@
         },
         {
          "t": "ins",
-         "v": "c9424c084b346ce15260aea1a8a368be0643df82/library_hero_blur.jpg"
+         "v": "c9424c084b346ce15260aea1a8a368be0643df82/library_hero_blur.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c9424c084b346ce15260aea1a8a368be0643df82/library_hero_blur.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -20079,7 +20421,9 @@
         },
         {
          "t": "ins",
-         "v": "6bc82bf36411b7107351db6afef51e8513ce0938/logo.png"
+         "v": "6bc82bf36411b7107351db6afef51e8513ce0938/logo.png",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/6bc82bf36411b7107351db6afef51e8513ce0938/logo.png",
+         "media": "image"
         }
        ],
        "children": []
@@ -20097,7 +20441,9 @@
         },
         {
          "t": "ins",
-         "v": "6bc82bf36411b7107351db6afef51e8513ce0938/logo_2x.png"
+         "v": "6bc82bf36411b7107351db6afef51e8513ce0938/logo_2x.png",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/6bc82bf36411b7107351db6afef51e8513ce0938/logo_2x.png",
+         "media": "image"
         }
        ],
        "children": []
@@ -20343,7 +20689,9 @@
         },
         {
          "t": "ins",
-         "v": "b3cee42438f669b295f489a7e09c6a9e438704b9/header.jpg"
+         "v": "b3cee42438f669b295f489a7e09c6a9e438704b9/header.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/b3cee42438f669b295f489a7e09c6a9e438704b9/header.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -20361,7 +20709,9 @@
         },
         {
          "t": "ins",
-         "v": "c1182b8958b224fc04b24de2d1c7262341aace09/header_japanese.jpg"
+         "v": "c1182b8958b224fc04b24de2d1c7262341aace09/header_japanese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c1182b8958b224fc04b24de2d1c7262341aace09/header_japanese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -20379,7 +20729,9 @@
         },
         {
          "t": "ins",
-         "v": "4ca8c532304ceb9286e4b5eb3381a6c03f1a18d4/header_koreana.jpg"
+         "v": "4ca8c532304ceb9286e4b5eb3381a6c03f1a18d4/header_koreana.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/4ca8c532304ceb9286e4b5eb3381a6c03f1a18d4/header_koreana.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -20397,7 +20749,9 @@
         },
         {
          "t": "ins",
-         "v": "dd50ee590ff2876d3c34c0a170cf35dc79c989b0/header_schinese.jpg"
+         "v": "dd50ee590ff2876d3c34c0a170cf35dc79c989b0/header_schinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/dd50ee590ff2876d3c34c0a170cf35dc79c989b0/header_schinese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -20415,7 +20769,9 @@
         },
         {
          "t": "ins",
-         "v": "39d91bbccafc86b0aaf9d35d23d532cc14e8c351/header_tchinese.jpg"
+         "v": "39d91bbccafc86b0aaf9d35d23d532cc14e8c351/header_tchinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/39d91bbccafc86b0aaf9d35d23d532cc14e8c351/header_tchinese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -20448,7 +20804,9 @@
         },
         {
          "t": "ins",
-         "v": "c34c27762439bb9b4d334d53f0c4af9d05f55efb/capsule_231x87.jpg"
+         "v": "c34c27762439bb9b4d334d53f0c4af9d05f55efb/capsule_231x87.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c34c27762439bb9b4d334d53f0c4af9d05f55efb/capsule_231x87.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -20466,7 +20824,9 @@
         },
         {
          "t": "ins",
-         "v": "21f68c302941092340d5c37787d3b25bf…/capsule_231x87_japanese.jpg"
+         "v": "21f68c302941092340d5c37787d3b25bf…/capsule_231x87_japanese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/21f68c302941092340d5c37787d3b25bf249412b/capsule_231x87_japanese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -20484,7 +20844,9 @@
         },
         {
          "t": "ins",
-         "v": "b89ae8350515ed1864cd9d37dbfc43c874…/capsule_231x87_koreana.jpg"
+         "v": "b89ae8350515ed1864cd9d37dbfc43c874…/capsule_231x87_koreana.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/b89ae8350515ed1864cd9d37dbfc43c874ccb16c/capsule_231x87_koreana.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -20502,7 +20864,9 @@
         },
         {
          "t": "ins",
-         "v": "7d7812fe7b286b8bf1430d0e2671df559…/capsule_231x87_schinese.jpg"
+         "v": "7d7812fe7b286b8bf1430d0e2671df559…/capsule_231x87_schinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/7d7812fe7b286b8bf1430d0e2671df5596e37c8a/capsule_231x87_schinese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -20520,7 +20884,9 @@
         },
         {
          "t": "ins",
-         "v": "cfafa067e2cadeb61199da6ae9c14f062…/capsule_231x87_tchinese.jpg"
+         "v": "cfafa067e2cadeb61199da6ae9c14f062…/capsule_231x87_tchinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/cfafa067e2cadeb61199da6ae9c14f06231c6963/capsule_231x87_tchinese.jpg",
+         "media": "image"
         }
        ],
        "children": []
@@ -21269,7 +21635,9 @@
       },
       {
        "t": "ins",
-       "v": "a0525afc749600b62b4f20a3d71ea8d74982aef8"
+       "v": "a0525afc749600b62b4f20a3d71ea8d74982aef8",
+       "href": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2467880/a0525afc749600b62b4f20a3d71ea8d74982aef8.ico",
+       "media": "image"
       }
      ],
      "children": []
@@ -21313,7 +21681,9 @@
       },
       {
        "t": "ins",
-       "v": "0bcbcbe3c649ea966cbf3d2fd08b2289c79322ed"
+       "v": "0bcbcbe3c649ea966cbf3d2fd08b2289c79322ed",
+       "href": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2467880/0bcbcbe3c649ea966cbf3d2fd08b2289c79322ed.jpg",
+       "media": "image"
       }
      ],
      "children": []

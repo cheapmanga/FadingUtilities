@@ -28,6 +28,32 @@ UPDATES_FILE = ROOT / "updates.json"
 # Balises dont le contenu textuel devient un segment type dans le rendu.
 SEGMENT_TAGS = {"del": "del", "ins": "ins"}
 
+# Medias previsualisables. Les CDN Steam repondent avec
+# 'access-control-allow-origin: *', ce qui autorise le telechargement par fetch
+# cote navigateur. Les manifestes de streaming adaptatif (.mpd, .m3u8) sont
+# volontairement absents : ils ne sont pas lisibles sans bibliotheque dediee.
+IMAGE_EXT = (".jpg", ".jpeg", ".png", ".gif", ".webp", ".ico", ".bmp")
+VIDEO_EXT = (".mp4", ".webm")
+MEDIA_HOSTS = ("steamstatic.com", "akamaihd.net", "steamcdn-a.akamaihd.net")
+
+
+def media_kind(url):
+    """'image', 'video', ou None si l'URL ne pointe pas un media affichable."""
+    if not url or not url.startswith("https://"):
+        return None
+    if not any(host in url.split("/")[2] for host in MEDIA_HOSTS):
+        return None
+    path = url.split("?")[0].lower()
+    if path.endswith(IMAGE_EXT):
+        return "image"
+    if path.endswith(VIDEO_EXT):
+        return "video"
+    return None
+
+
+def is_media(url):
+    return media_kind(url) is not None
+
 # Mot-cle rencontre dans un evenement -> categorie affichee par le tracker.
 # L'ordre compte : le premier match gagne, du plus specifique au plus general.
 CATEGORY_RULES = [
@@ -59,7 +85,7 @@ class PanelParser(HTMLParser):
         self.root = {"children": []}
         self.stack = [self.root]        # <li> ouverts, du plus externe au plus interne
         self.fmt = []                   # balises de formatage ouvertes (del/ins/i/span muted)
-        self.depth_since_li = []
+        self.hrefs = []                 # pile parallele : URL du <a> englobant, si media
 
     # -- helpers ----------------------------------------------------------
     def _current(self):
@@ -71,13 +97,18 @@ class PanelParser(HTMLParser):
             return
         if kind is None:
             kind = self._active_kind()
+        href = self._active_href()
         segs = node["seg"]
-        # Fusionne avec le segment precedent s'il est du meme type : evite un
-        # emiettement en dizaines de fragments pour une seule phrase.
-        if segs and segs[-1]["t"] == kind:
+        # Fusionne avec le segment precedent s'il est du meme type ET pointe le
+        # meme media : evite un emiettement en dizaines de fragments pour une
+        # seule phrase, sans coller deux liens differents l'un a l'autre.
+        if segs and segs[-1]["t"] == kind and segs[-1].get("href") == href:
             segs[-1]["v"] += text
         else:
-            segs.append({"t": kind, "v": text})
+            seg = {"t": kind, "v": text}
+            if href:
+                seg["href"] = href
+            segs.append(seg)
 
     def _active_kind(self):
         for kind in reversed(self.fmt):
@@ -85,7 +116,18 @@ class PanelParser(HTMLParser):
                 return kind
         return "text"
 
+    def _active_href(self):
+        for href in reversed(self.hrefs):
+            if href:
+                return href
+        return None
+
     # -- HTMLParser -------------------------------------------------------
+    def _open(self, kind, href=None):
+        """Ouvre une balise de formatage. Les deux piles avancent ensemble."""
+        self.fmt.append(kind)
+        self.hrefs.append(href)
+
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         cls = attrs.get("class", "")
@@ -101,44 +143,48 @@ class PanelParser(HTMLParser):
             return
 
         if tag in SEGMENT_TAGS:
-            self.fmt.append(SEGMENT_TAGS[tag])
+            self._open(SEGMENT_TAGS[tag])
             return
 
         if tag == "i":
             # <i class="history-icon"> est une puce decorative, sans texte.
             # <i class="muted"> porte les tailles lisibles ("(4.53 GiB)").
             if "history-icon" in cls:
-                self.fmt.append("skip")
+                self._open("skip")
             elif "muted" in cls:
-                self.fmt.append("muted")
+                self._open("muted")
             else:
-                self.fmt.append("field")
+                self._open("field")
             return
 
         if tag == "a":
             href = attrs.get("href", "")
+            # Seuls les liens vers un media sont conserves : ceux vers SteamDB
+            # (changelist, depot, patchnotes) n'ont rien a previsualiser et
+            # alourdiraient le JSON pour rien.
+            media = href if is_media(href) else None
             # Les liens "?" vers la FAQ sont du bruit dans un flux condense.
             if "/faq/" in href:
-                self.fmt.append("skip")
+                self._open("skip")
             elif "del" in cls:
-                self.fmt.append("del")
+                self._open("del", media)
             elif "ins" in cls:
-                self.fmt.append("ins")
+                self._open("ins", media)
             else:
-                self.fmt.append(None)
+                self._open(None, media)
             return
 
         if tag == "span":
             if "muted" in cls:
-                self.fmt.append("muted")
+                self._open("muted")
             elif "branch-name" in cls:
-                self.fmt.append("branch")
+                self._open("branch")
             else:
-                self.fmt.append(None)
+                self._open(None)
             return
 
         if tag in ("svg", "path", "template"):
-            self.fmt.append("skip")
+            self._open("skip")
 
     def handle_endtag(self, tag):
         if tag == "li":
@@ -148,6 +194,7 @@ class PanelParser(HTMLParser):
         if tag in ("del", "ins", "i", "a", "span", "svg", "path", "template"):
             if self.fmt:
                 self.fmt.pop()
+                self.hrefs.pop()
 
     def handle_data(self, data):
         if self._active_kind() == "skip":
@@ -180,6 +227,10 @@ def clean_tree(nodes):
             if seg["t"] == "field":
                 seg["v"] = seg["v"].lstrip()
             if seg["v"].strip():
+                # Le type de media est resolu ici, une fois, plutot qu'a chaque
+                # rendu cote navigateur.
+                if seg.get("href"):
+                    seg["media"] = media_kind(seg["href"])
                 segs.append(seg)
         # Rogne les espaces en bord de ligne.
         if segs:
