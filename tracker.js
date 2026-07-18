@@ -47,6 +47,7 @@
     // Etat de l'auto-refresh.
     let autoEl = null;      // <span id="autoStatus">, cree par le JS
     let nextAt = 0;         // horodatage du prochain rafraichissement
+    let lastFetch = 0;      // horodatage du dernier chargement reussi
     let flashUntil = 0;     // fin d'affichage du message transitoire
     let flashText = '';
     let loading = false;
@@ -74,6 +75,7 @@
             if (!resp.ok) throw new Error('HTTP ' + resp.status);
             const data = await resp.json();
 
+            lastFetch = Date.now();
             const known = new Set(allEvents.map(eventId));
             const events = (data.events || []).filter(e => e && e.date);
             events.sort((a, b) => b.date.localeCompare(a.date));
@@ -160,8 +162,12 @@
         }));
 
         if (data.generated) {
+            // Cette date est celle du serveur : quand la tache automatique a
+            // interroge Steam. Elle ne bouge donc pas quand la page se
+            // rafraichit, d'ou le libelle explicite -- "Last checked" laissait
+            // croire qu'un clic sur Refresh allait la mettre a jour.
             statsEl.append(el('p', 'tracker-generated',
-                'Last checked: ' + absolute(data.generated)));
+                `Steam checked ${relative(data.generated)} (${absolute(data.generated)})`));
         }
 
         // replaceChildren vient de vider le conteneur : l'indicateur d'auto-refresh
@@ -217,7 +223,13 @@
         const left = Math.max(0, Math.round((nextAt - Date.now()) / 1000));
         const mins = Math.floor(left / 60);
         const secs = left % 60;
-        status(`Next refresh in ${mins}:${String(secs).padStart(2, '0')}`);
+        const countdown = `next in ${mins}:${String(secs).padStart(2, '0')}`;
+
+        // L'heure du dernier chargement reussi, elle, bouge a chaque clic sur
+        // Refresh : c'est le retour visible que l'action a bien eu lieu.
+        status(lastFetch
+            ? `Page refreshed at ${clock(lastFetch)} - ${countdown}`
+            : `Next refresh in ${mins}:${String(secs).padStart(2, '0')}`);
     }
 
     // Categories d'un evenement. types[] est le format courant ; le repli sur
@@ -429,6 +441,14 @@
         [3600, 'hour', 'hours'],
         [60, 'minute', 'minutes'],
     ];
+
+    // Les secondes ne sont pas du detail : sans elles, deux rafraichissements
+    // dans la meme minute affichent la meme heure, et le bouton parait inerte.
+    function clock(stamp) {
+        return new Date(stamp).toLocaleTimeString('en-GB', {
+            hour: '2-digit', minute: '2-digit', second: '2-digit',
+        });
+    }
 
     function relative(iso) {
         const d = new Date(iso);
