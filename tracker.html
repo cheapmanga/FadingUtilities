@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <title>Tracker - FadingUtilities</title>
+    <meta name="description" content="Historique des mises a jour de Fading Echo : builds, depots, branches, metadonnees Steam et patch notes.">
+    <meta name="theme-color" content="#00F5FF">
+    <link rel="icon" type="image/png" href="Images/favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="canonical" href="https://cheapmanga.github.io/FadingUtilities/tracker.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tracker.css">
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">FADING ECHO SPEEDRUNS</a>
+            <div class="nav-actions">
+                <a href="speedrun.html" class="nav-btn"><i class="fas fa-stopwatch"></i><span>Speedrun</span></a>
+                <a href="mods-tools.html" class="nav-btn"><i class="fas fa-cubes"></i><span>Mods &amp; Tools</span></a>
+                <a href="tracker.html" class="nav-btn active"><i class="fas fa-satellite-dish"></i><span>Tracker</span></a>
+                <button class="search-trigger" id="searchTrigger">
+                    <i class="fas fa-search"></i>
+                    <span class="search-text">Search</span>
+                    <kbd class="search-kbd">Ctrl+K</kbd>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="tracker-page">
+        <section class="tracker-header">
+            <h1><i class="fas fa-satellite-dish"></i> Update Tracker</h1>
+            <p class="tracker-sub">
+                Chaque changement pousse par Steam sur
+                <a href="https://store.steampowered.com/app/2467880/Fading_Echo/" target="_blank" rel="noopener noreferrer">Fading Echo</a>
+                (app 2467880) : builds, depots, branches, metadonnees du store et patch notes.
+            </p>
+
+            <div class="tracker-stats" id="trackerStats"></div>
+        </section>
+
+        <section class="tracker-toolbar">
+            <div class="tracker-filters" id="trackerFilters" role="group" aria-label="Filtrer par type"></div>
+            <div class="tracker-tools">
+                <label class="tracker-search">
+                    <i class="fas fa-magnifying-glass"></i>
+                    <input type="search" id="trackerSearch" placeholder="Filtrer (buildid, tags, depot...)" aria-label="Filtrer les evenements">
+                </label>
+                <label class="tracker-toggle">
+                    <input type="checkbox" id="showNoise">
+                    <span>Afficher les changenumbers seuls</span>
+                </label>
+            </div>
+        </section>
+
+        <section class="tracker-feed" id="trackerFeed" aria-live="polite">
+            <p class="tracker-empty">Chargement de l'historique...</p>
+        </section>
+
+        <div class="tracker-more">
+            <button id="loadMore" class="tracker-btn" type="button" hidden>Afficher plus</button>
+        </div>
+
+        <section class="tracker-note">
+            <h2><i class="fas fa-circle-info"></i> Comment ca marche</h2>
+            <p>
+                L'historique anterieur au 18 juillet 2026 provient d'un export de
+                <a href="https://steamdb.info/app/2467880/history/" target="_blank" rel="noopener noreferrer">SteamDB</a>.
+                Depuis, une tache automatique interroge l'API Steam toutes les 15 minutes
+                et enregistre les changements ici.
+            </p>
+            <p class="tracker-caveat">
+                <strong>Limite connue :</strong> l'API publique de Steam ne renvoie pas la section
+                <code>depots</code> de ce jeu (elle demande un jeton que seul un compte Steam possede).
+                Quand une build est poussee, le tracker la detecte via le changenumber mais ne peut pas
+                en lire le <code>buildid</code>. Ces entrees sont marquees
+                <span class="tracker-tag build">BUILD</span> avec la mention
+                <em>contenu non public</em> ; le detail reste consultable sur SteamDB.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>FadingUtilities - Community resources for Fading Echo</p>
+    </footer>
+
+    <!-- SEARCH MODAL -->
+    <div id="searchModal" class="search-modal" role="dialog" aria-label="Search">
+        <div class="search-container">
+            <div class="search-header">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search glitches, mods, tools..." autocomplete="off" aria-label="Search input">
+                <kbd class="search-shortcut">ESC</kbd>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-empty">Start typing to search...</div>
+            </div>
+            <div class="search-footer">
+                <span><kbd>ESC</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="search-data.js"></script>
+    <script src="search.js"></script>
+    <script src="site.js"></script>
+    <script src="tracker.js"></script>
+</body>
+</html>

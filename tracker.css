@@ -1,0 +1,407 @@
+/* ===== TRACKER =====
+   Historique des changements Steam, facon SteamDB, avec la palette du site.
+   Complete style.css : seules les regles propres au tracker sont ici. */
+
+.tracker-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 120px 20px 60px;
+}
+
+/* ----- En-tete ----- */
+.tracker-header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--primary-cyan);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.tracker-header h1 i { margin-right: 10px; }
+
+.tracker-sub {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 720px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.tracker-sub a { color: var(--primary-cyan); }
+
+.tracker-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+    margin-bottom: 34px;
+}
+
+.tracker-stat {
+    background: rgba(0, 245, 255, 0.04);
+    border: 1px solid rgba(0, 245, 255, 0.22);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tracker-stat-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.tracker-stat-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.15rem;
+    color: var(--primary-cyan);
+}
+
+.tracker-stat-hint {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.45);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tracker-generated {
+    grid-column: 1 / -1;
+    text-align: right;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+}
+
+/* ----- Barre d'outils ----- */
+.tracker-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.tracker-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tracker-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.75);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tracker-filter:hover {
+    border-color: var(--primary-cyan);
+    color: white;
+}
+
+.tracker-filter.active {
+    background: rgba(0, 245, 255, 0.14);
+    border-color: var(--primary-cyan);
+    color: var(--primary-cyan);
+}
+
+.tracker-count {
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 999px;
+    padding: 1px 8px;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.tracker-filter.active .tracker-count { color: var(--primary-cyan); }
+
+.tracker-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+}
+
+.tracker-search {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    padding: 7px 14px;
+}
+
+.tracker-search:focus-within { border-color: var(--primary-cyan); }
+.tracker-search i { color: rgba(255, 255, 255, 0.45); }
+
+.tracker-search input {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
+    width: 210px;
+}
+
+.tracker-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}
+
+.tracker-toggle input { accent-color: var(--primary-cyan); cursor: pointer; }
+
+/* ----- Panneaux ----- */
+.tracker-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tracker-panel {
+    background: rgba(10, 10, 20, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 3px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    padding: 16px 20px;
+}
+
+/* Liseres colores : le type se lit d'un coup d'oeil dans le flux. */
+.tracker-panel.build { border-left-color: var(--primary-pink); }
+.tracker-panel.news { border-left-color: var(--primary-yellow); }
+.tracker-panel.depot,
+.tracker-panel.branch { border-left-color: var(--primary-cyan); }
+.tracker-panel.changenumber { opacity: 0.6; }
+
+.tracker-panel-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.tracker-panel-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px;
+    min-width: 0;
+}
+
+.tracker-panel-title h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.tracker-tag {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.09em;
+    padding: 3px 9px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+}
+
+.tracker-tag.build { background: rgba(255, 0, 110, 0.18); color: var(--primary-pink); }
+.tracker-tag.news { background: rgba(255, 230, 0, 0.16); color: var(--primary-yellow); }
+.tracker-tag.depot,
+.tracker-tag.branch { background: rgba(0, 245, 255, 0.15); color: var(--primary-cyan); }
+
+.tracker-panel-time {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 0.84rem;
+    color: rgba(255, 255, 255, 0.45);
+    white-space: nowrap;
+}
+
+.tracker-rel { cursor: help; }
+
+.tracker-permalink {
+    color: rgba(255, 255, 255, 0.35);
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.72rem;
+}
+
+.tracker-permalink:hover { color: var(--primary-cyan); }
+
+/* ----- Arbre de diff ----- */
+.tracker-changes {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    font-size: 0.92rem;
+}
+
+.tracker-changes .tracker-changes {
+    margin-top: 4px;
+    padding-left: 18px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tracker-changes li {
+    padding: 2px 0;
+    line-height: 1.55;
+}
+
+.tracker-line {
+    display: inline;
+    word-break: break-word;
+}
+
+/* Puces de diff, dans l'esprit d'un changelog git. */
+.tracker-changes li.op-added > .tracker-line::before { content: '+ '; color: #4ade80; font-weight: 700; }
+.tracker-changes li.op-removed > .tracker-line::before { content: '- '; color: #f87171; font-weight: 700; }
+.tracker-changes li.op-modified > .tracker-line::before { content: '~ '; color: var(--primary-cyan); font-weight: 700; }
+
+.seg-text { color: rgba(255, 255, 255, 0.7); }
+.seg-field { color: white; font-weight: 600; }
+.seg-muted { color: rgba(255, 255, 255, 0.4); font-size: 0.88em; }
+
+.seg-del {
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.1);
+    padding: 0 4px;
+    border-radius: 3px;
+    text-decoration: line-through;
+    text-decoration-color: rgba(248, 113, 113, 0.5);
+}
+
+.seg-ins {
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.1);
+    padding: 0 4px;
+    border-radius: 3px;
+}
+
+.seg-branch {
+    color: var(--primary-cyan);
+    background: rgba(0, 245, 255, 0.12);
+    padding: 0 6px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+/* ----- Corps des annonces ----- */
+.tracker-body {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.65;
+    white-space: pre-wrap;
+    font-size: 0.94rem;
+}
+
+.tracker-body.clamped {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.tracker-expand {
+    background: none;
+    border: none;
+    color: var(--primary-cyan);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 6px 0 0;
+}
+
+.tracker-source {
+    margin: 10px 0 0;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ----- Divers ----- */
+.tracker-empty {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 40px 20px;
+}
+
+.tracker-empty.error { color: var(--primary-pink); }
+
+.tracker-more {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.tracker-btn {
+    background: rgba(0, 245, 255, 0.1);
+    border: 1px solid var(--primary-cyan);
+    color: var(--primary-cyan);
+    border-radius: 999px;
+    padding: 10px 26px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tracker-btn:hover { background: rgba(0, 245, 255, 0.2); }
+
+.tracker-note {
+    margin-top: 50px;
+    padding: 22px 26px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.tracker-note h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: var(--primary-cyan);
+    margin: 0 0 12px;
+}
+
+.tracker-note a { color: var(--primary-cyan); }
+.tracker-note code {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 0.88em;
+}
+
+.tracker-caveat { border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 12px; }
+.tracker-caveat strong { color: var(--primary-yellow); }
+
+@media (max-width: 640px) {
+    .tracker-page { padding-top: 100px; }
+    .tracker-toolbar { flex-direction: column; align-items: stretch; }
+    .tracker-search input { width: 100%; }
+    .tracker-panel-head { flex-direction: column; }
+}
