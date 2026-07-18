@@ -1,0 +1,60 @@
+name: Fading Echo update tracker
+
+on:
+  schedule:
+    # Toutes les 15 minutes. GitHub peut retarder les crons en periode de charge :
+    # le tracker se rattrape au run suivant, aucun changement n'est perdu puisque
+    # le diff se fait contre le dernier snapshot commite.
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Deux runs simultanes commiteraient des snapshots divergents.
+concurrency:
+  group: fe-tracker
+  cancel-in-progress: false
+
+env:
+  # Branche qui recoit updates.json. Doit etre celle servie par GitHub Pages,
+  # sinon le tracker en ligne reste fige sur l'historique importe.
+  TARGET_BRANCH: dev
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Verifier les updates
+        id: check
+        run: python scripts/check_updates.py
+
+      # Pas d'alerte pour l'instant : le workflow se contente de publier le
+      # flux. Pour ajouter l'email plus tard, rendre scripts/format_email.py
+      # (deja ecrit) puis envoyer email_body.html, sous condition
+      # steps.check.outputs.has_new == 'true'.
+
+      - name: Publier updates.json
+        run: |
+          rm -f new_updates.json email_body.html
+          # Le snapshot PICS est commite avec le flux : c'est lui qui sert de
+          # base au diff du prochain run.
+          if [ -z "$(git status --porcelain updates.json data/pics_snapshot.json)" ]; then
+            echo "Aucun changement a publier."
+            exit 0
+          fi
+          git config user.name "fe-tracker[bot]"
+          git config user.email "fe-tracker@users.noreply.github.com"
+          git add updates.json data/pics_snapshot.json
+          git commit -m "tracker: maj des updates Fading Echo"
+          # Un run concurrent ou un push manuel a pu avancer la branche.
+          git pull --rebase origin "$TARGET_BRANCH"
+          git push origin HEAD:"$TARGET_BRANCH"

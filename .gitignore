@@ -14,5 +14,15 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Tracker : artefacts d'un run, regeneres a chaque fois.
+# updates.json et data/pics_snapshot.json sont au contraire versionnes :
+# ils portent l'historique et l'etat de reference du diff.
+new_updates.json
+email_body.html
 # Artefacts Windows/WSL
 *Zone.Identifier
+
+# Python
+__pycache__/
+*.pyc

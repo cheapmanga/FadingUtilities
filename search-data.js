@@ -18,6 +18,9 @@ const staticSearchIndex = [
     { title: "Teleport Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Alternative to Cheat Engine - F6/F7", icon: "fa-location-arrow" },
     { title: "Volume Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "See invisible walls & triggers", icon: "fa-border-all" },
 
+    // --- Tracker ---
+    { title: "Update Tracker", category: "Tracker", page: "tracker.html", target: "", desc: "Steam update history: builds, depots, branches and patch notes", icon: "fa-satellite-dish" },
+
     // --- Outils (désormais sur la page Mods & Tools) ---
     { title: "LiveSplit", category: "Tool", page: "mods-tools.html", target: "tools", desc: "Timing software with auto-splitter", icon: "fa-stopwatch" },
     { title: "Cheat Engine", category: "Tool", page: "mods-tools.html", target: "tools", desc: "Practice tool for teleportation", icon: "fa-microchip" },
