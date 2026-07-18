@@ -19,6 +19,7 @@ import argparse
 import json
 import re
 import sys
+from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -406,7 +407,10 @@ def main():
     events.sort(key=lambda e: e["date"], reverse=True)
 
     payload = {
-        "generated": events[0]["date"],
+        # Date de generation, pas date du dernier evenement : la page affiche
+        # ce champ comme l'heure de la derniere verification. Y mettre la date
+        # du dernier changement Steam faisait passer un import pour un controle.
+        "generated": datetime.now(timezone.utc).isoformat(),
         "appid": "2467880",
         "events": events,
     }
