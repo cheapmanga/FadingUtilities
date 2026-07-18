@@ -19,7 +19,7 @@ const staticSearchIndex = [
     { title: "Volume Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "See invisible walls & triggers", icon: "fa-border-all" },
 
     // --- Tracker ---
-    { title: "Update Tracker", category: "Tracker", page: "tracker.html", target: "", desc: "Steam update history: builds, depots, branches and patch notes", icon: "fa-satellite-dish" },
+    { title: "Updates", category: "Steam", page: "tracker.html", target: "", desc: "Steam update tracker: builds, depots, branches and patch notes", icon: "fa-satellite-dish" },
 
     // --- Outils (désormais sur la page Mods & Tools) ---
     { title: "LiveSplit", category: "Tool", page: "mods-tools.html", target: "tools", desc: "Timing software with auto-splitter", icon: "fa-stopwatch" },

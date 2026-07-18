@@ -7,8 +7,8 @@
          d'ouvrir img-src, media-src et connect-src aux CDN Steam. La portee
          reste limitee a ces hotes : ni script ni style ne sont elargis. -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://*.steamstatic.com https://*.akamaihd.net; media-src https://*.steamstatic.com https://*.akamaihd.net; connect-src 'self' https://*.steamstatic.com https://*.akamaihd.net; object-src 'none'; base-uri 'self'; form-action 'none'">
-    <title>Tracker - FadingUtilities</title>
-    <meta name="description" content="Historique des mises a jour de Fading Echo : builds, depots, branches, metadonnees Steam et patch notes.">
+    <title>Updates - FadingUtilities</title>
+    <meta name="description" content="Update history for Fading Echo: builds, depots, branches, Steam metadata and patch notes.">
     <meta name="theme-color" content="#00F5FF">
     <link rel="icon" type="image/png" href="Images/favicon.png">
     <link rel="manifest" href="manifest.json">
@@ -29,7 +29,7 @@
             <div class="nav-actions">
                 <a href="speedrun.html" class="nav-btn"><i class="fas fa-stopwatch"></i><span>Speedrun</span></a>
                 <a href="mods-tools.html" class="nav-btn"><i class="fas fa-cubes"></i><span>Mods &amp; Tools</span></a>
-                <a href="tracker.html" class="nav-btn active"><i class="fas fa-satellite-dish"></i><span>Tracker</span></a>
+                <a href="tracker.html" class="nav-btn active"><i class="fas fa-satellite-dish"></i><span>Updates</span></a>
                 <button class="search-trigger" id="searchTrigger">
                     <i class="fas fa-search"></i>
                     <span class="search-text">Search</span>
@@ -41,53 +41,54 @@
 
     <main class="tracker-page">
         <section class="tracker-header">
-            <h1><i class="fas fa-satellite-dish"></i> Update Tracker</h1>
+            <h1><i class="fas fa-satellite-dish"></i> Updates</h1>
             <p class="tracker-sub">
-                Chaque changement pousse par Steam sur
+                Every change pushed by Steam to
                 <a href="https://store.steampowered.com/app/2467880/Fading_Echo/" target="_blank" rel="noopener noreferrer">Fading Echo</a>
-                (app 2467880) : builds, depots, branches, metadonnees du store et patch notes.
+                (app 2467880): builds, depots, branches, store metadata and patch notes.
             </p>
 
             <div class="tracker-stats" id="trackerStats"></div>
         </section>
 
         <section class="tracker-toolbar">
-            <div class="tracker-filters" id="trackerFilters" role="group" aria-label="Filtrer par type"></div>
+            <div class="tracker-filters" id="trackerFilters" role="group" aria-label="Filter by type"></div>
             <div class="tracker-tools">
                 <label class="tracker-search">
                     <i class="fas fa-magnifying-glass"></i>
-                    <input type="search" id="trackerSearch" placeholder="Filtrer (buildid, tags, depot...)" aria-label="Filtrer les evenements">
+                    <input type="search" id="trackerSearch" placeholder="Filter (buildid, tags, depot...)" aria-label="Filter events">
                 </label>
                 <label class="tracker-toggle">
                     <input type="checkbox" id="showNoise">
-                    <span>Afficher les changenumbers seuls</span>
+                    <span>Show changenumber-only entries</span>
                 </label>
+                <button id="refreshBtn" class="tracker-refresh" type="button"><i class="fas fa-rotate"></i><span>Refresh</span></button>
             </div>
         </section>
 
         <section class="tracker-feed" id="trackerFeed" aria-live="polite">
-            <p class="tracker-empty">Chargement de l'historique...</p>
+            <p class="tracker-empty">Loading history...</p>
         </section>
 
         <div class="tracker-more">
-            <button id="loadMore" class="tracker-btn" type="button" hidden>Afficher plus</button>
+            <button id="loadMore" class="tracker-btn" type="button" hidden>Show more</button>
         </div>
 
         <section class="tracker-note">
-            <h2><i class="fas fa-circle-info"></i> Comment ca marche</h2>
+            <h2><i class="fas fa-circle-info"></i> How it works</h2>
             <p>
-                L'historique anterieur au 18 juillet 2026 provient d'un export de
-                <a href="https://steamdb.info/app/2467880/history/" target="_blank" rel="noopener noreferrer">SteamDB</a>.
-                Depuis, une tache automatique interroge l'API Steam toutes les 15 minutes
-                et enregistre les changements ici.
+                History before 18 July 2026 comes from a
+                <a href="https://steamdb.info/app/2467880/history/" target="_blank" rel="noopener noreferrer">SteamDB</a>
+                export. Since then, an automated task queries the Steam API every 10 minutes
+                and records the changes here.
             </p>
             <p class="tracker-caveat">
-                <strong>Limite connue :</strong> l'API publique de Steam ne renvoie pas la section
-                <code>depots</code> de ce jeu (elle demande un jeton que seul un compte Steam possede).
-                Quand une build est poussee, le tracker la detecte via le changenumber mais ne peut pas
-                en lire le <code>buildid</code>. Ces entrees sont marquees
-                <span class="tracker-tag build">BUILD</span> avec la mention
-                <em>contenu non public</em> ; le detail reste consultable sur SteamDB.
+                <strong>Known limitation:</strong> Steam's public API does not return the
+                <code>depots</code> section for this game (it requires a token that only a Steam
+                account has). When a build is pushed, the tracker detects it through the changenumber
+                but cannot read its <code>buildid</code>. Those entries are marked
+                <span class="tracker-tag build">BUILDS</span> with the note
+                <em>content not public</em>; the details remain available on SteamDB.
             </p>
         </section>
     </main>

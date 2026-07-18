@@ -2,10 +2,13 @@ name: Fading Echo update tracker
 
 on:
   schedule:
-    # Toutes les 15 minutes. GitHub peut retarder les crons en periode de charge :
-    # le tracker se rattrape au run suivant, aucun changement n'est perdu puisque
+    # Toutes les 10 minutes. Attention : GitHub Actions ne garantit PAS la
+    # ponctualite des crons planifies et peut les retarder en periode de charge.
+    # Cette valeur est donc une cible, pas une garantie : c'est aussi pour cela
+    # que la page se rafraichit d'elle-meme toutes les 5 minutes cote navigateur.
+    # Le tracker se rattrape au run suivant, aucun changement n'est perdu puisque
     # le diff se fait contre le dernier snapshot commite.
-    - cron: '*/15 * * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 permissions:

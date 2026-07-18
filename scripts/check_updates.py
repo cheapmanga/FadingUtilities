@@ -241,7 +241,7 @@ def build_opaque_event(previous, changenumber, now):
         "id": f"change:{changeid}",
         "type": "build",
         "changeid": changeid,
-        "title": "Build poussee (contenu non public)",
+        "title": "Build pushed (content not public)",
         "url": f"https://steamdb.info/app/{APPID}/history/?changeid={changeid}",
         "source": "pics",
         "date": now,
