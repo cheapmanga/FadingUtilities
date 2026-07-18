@@ -50,6 +50,11 @@ jobs:
           rm -f new_updates.json email_body.html
           # Le snapshot PICS est commite avec le flux : c'est lui qui sert de
           # base au diff du prochain run.
+          #
+          # check_updates.py ne reecrit ces deux fichiers que lorsqu'ils
+          # changent vraiment, donc un controle sans nouveaute ne laisse aucune
+          # trace ici. Le depot ne recoit un commit que quand Fading Echo bouge,
+          # au lieu d'un toutes les dix minutes ne portant qu'un horodatage.
           if [ -z "$(git status --porcelain updates.json data/pics_snapshot.json)" ]; then
             echo "Aucun changement a publier."
             exit 0

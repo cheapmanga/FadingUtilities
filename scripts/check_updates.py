@@ -410,11 +410,14 @@ def main():
                 fresh.append(event)
                 log(f"PICS : {event['title']}")
 
-        SNAPSHOT_FILE.parent.mkdir(parents=True, exist_ok=True)
-        SNAPSHOT_FILE.write_text(
-            json.dumps(appinfo, indent=1, ensure_ascii=False, sort_keys=True) + "\n",
-            encoding="utf-8",
-        )
+        # Meme logique que pour updates.json : reecrire un snapshot identique
+        # ne ferait que produire un commit vide de sens.
+        snapshot = json.dumps(appinfo, indent=1, ensure_ascii=False,
+                              sort_keys=True) + "\n"
+        if not SNAPSHOT_FILE.exists() or SNAPSHOT_FILE.read_text(encoding="utf-8") != snapshot:
+            SNAPSHOT_FILE.parent.mkdir(parents=True, exist_ok=True)
+            SNAPSHOT_FILE.write_text(snapshot, encoding="utf-8")
+            log("Snapshot PICS mis a jour.")
 
     news = [e for e in fetch_news() if e["id"] not in known]
     if news:
@@ -439,11 +442,22 @@ def main():
         log("Amorcage des news : enregistrees sans notification.")
 
     merged = sorted(fresh + existing, key=lambda e: e["date"], reverse=True)[:MAX_EVENTS]
-    UPDATES_FILE.write_text(
-        json.dumps({"generated": now, "appid": APPID, "events": merged},
-                   indent=1, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
+
+    # Le fichier n'est reecrit que si les evenements ont reellement change.
+    # Y estampiller l'heure du run a chaque passage suffisait a le faire
+    # differer, donc a produire un commit toutes les dix minutes -- une
+    # centaine par jour ne portant qu'un horodatage. "generated" designe donc
+    # la derniere mise a jour effective des donnees, pas le dernier controle.
+    if merged != existing:
+        UPDATES_FILE.write_text(
+            json.dumps({"generated": now, "appid": APPID, "events": merged},
+                       indent=1, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+        log(f"updates.json mis a jour ({len(fresh)} nouveaux evenements).")
+    else:
+        log("Aucun changement : updates.json laisse intact.")
+
     NEW_FILE.write_text(json.dumps(notify, indent=1, ensure_ascii=False) + "\n",
                         encoding="utf-8")
 
