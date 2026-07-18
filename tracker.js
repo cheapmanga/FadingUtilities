@@ -162,12 +162,13 @@
         }));
 
         if (data.generated) {
-            // Cette date est celle du serveur : quand la tache automatique a
-            // interroge Steam. Elle ne bouge donc pas quand la page se
-            // rafraichit, d'ou le libelle explicite -- "Last checked" laissait
-            // croire qu'un clic sur Refresh allait la mettre a jour.
+            // Date cote serveur, et date de la derniere mise a jour REELLE des
+            // donnees : le fichier n'est reecrit que lorsqu'il change. Elle ne
+            // bouge donc pas a chaque controle, ni au clic sur Refresh -- d'ou
+            // "Data updated" plutot que "Last checked", qui laissait croire
+            // l'inverse. Le controle, lui, a lieu toutes les 10 minutes.
             statsEl.append(el('p', 'tracker-generated',
-                `Steam checked ${relative(data.generated)} (${absolute(data.generated)})`));
+                `Data updated ${relative(data.generated)} (${absolute(data.generated)})`));
         }
 
         // replaceChildren vient de vider le conteneur : l'indicateur d'auto-refresh
