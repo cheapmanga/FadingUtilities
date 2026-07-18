@@ -54,14 +54,16 @@ NOISE_PATHS = (
     "common/community_hub_visible",
 )
 
-# Prefixe de chemin PICS -> categorie affichee. Premier match gagnant.
+# Fragment de chemin PICS -> categorie. L'ordre fixe la categorie principale
+# (badge et couleur) ; un evenement peut en porter plusieurs, comme dans
+# parse_steamdb_history.py, pour rester trouvable sous chaque filtre concerne.
 CATEGORY_RULES = [
     ("build", ("buildid", "timebuildupdated")),
     ("branch", ("branches", "privatebranches")),
     ("depot", ("depots", "manifests")),
     ("assets", (
         "library_assets", "header_image", "small_capsule", "library_capsule",
-        "movie", "screenshots", "logo", "store_asset",
+        "movie", "screenshots", "logo", "store_asset", "icon", "trailer",
     )),
     ("store", (
         "common/name", "store_tags", "genres", "associations", "release",
@@ -109,12 +111,27 @@ def flatten(obj, prefix=""):
     return flat
 
 
-def categorize(paths):
+def categorize(paths, changes=None):
+    """Toutes les categories applicables, la principale en premier."""
     joined = " ".join(paths).lower()
-    for name, keywords in CATEGORY_RULES:
-        if any(kw in joined for kw in keywords):
-            return name
-    return "meta"
+    found = [name for name, keywords in CATEGORY_RULES
+             if any(kw in joined for kw in keywords)]
+
+    # Un asset reellement present prime sur le nom du chemin : c'est ce que
+    # l'utilisateur cherche sous le filtre Assets.
+    if "assets" not in found and changes and has_media(changes):
+        found.append("assets")
+
+    return found or ["meta"]
+
+
+def has_media(nodes):
+    for node in nodes:
+        if any(seg.get("href") for seg in node.get("seg", [])):
+            return True
+        if has_media(node.get("children", [])):
+            return True
+    return False
 
 
 def pretty_path(path):
@@ -240,6 +257,7 @@ def build_opaque_event(previous, changenumber, now):
     return {
         "id": f"change:{changeid}",
         "type": "build",
+        "types": ["build"],
         "changeid": changeid,
         "title": "Build pushed (content not public)",
         "url": f"https://steamdb.info/app/{APPID}/history/?changeid={changeid}",
@@ -290,7 +308,8 @@ def build_pics_event(diff, changenumber, now):
     changeid = str(changenumber or int(datetime.now(timezone.utc).timestamp()))
     return {
         "id": f"change:{changeid}",
-        "type": categorize(diff["paths"]),
+        "type": categorize(diff["paths"], diff["changes"])[0],
+        "types": categorize(diff["paths"], diff["changes"]),
         "changeid": changeid,
         "title": f"Build {buildid}" if buildid else f"Changed {head}",
         "url": f"https://steamdb.info/app/{APPID}/history/?changeid={changeid}",
@@ -322,6 +341,7 @@ def fetch_news():
         events.append({
             "id": f"news:{item['gid']}",
             "type": "news",
+            "types": ["news"],
             "changeid": item["gid"],
             "title": item.get("title", "(sans titre)"),
             "url": item.get("url", ""),
