@@ -233,13 +233,24 @@
                     del: 'seg-del', ins: 'seg-ins', field: 'seg-field',
                     muted: 'seg-muted', branch: 'seg-branch',
                 }[seg.t] || 'seg-text';
-                line.append(el('span', cls, seg.v));
+                line.append(seg.href ? mediaLink(seg, cls) : el('span', cls, seg.v));
             });
             li.append(line);
             if (node.children && node.children.length) li.append(tree(node.children));
             ul.append(li);
         });
         return ul;
+    }
+
+    // Asset Steam : apercu au survol, telechargement au clic.
+    function mediaLink(seg, cls) {
+        const a = el('a', cls + ' seg-media is-' + (seg.media || 'file'), seg.v);
+        a.href = seg.href;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.dataset.media = seg.media || '';
+        a.title = 'Survoler pour previsualiser, cliquer pour telecharger';
+        return a;
     }
 
     // ----- Dates -----
@@ -282,6 +293,143 @@
         if (text !== undefined) node.textContent = text;
         return node;
     }
+
+    // ----- Apercu des assets -----
+    // Un seul popover reutilise, et des ecouteurs delegues : le flux compte
+    // des centaines de liens, en equiper chacun serait du gaspillage.
+
+    let hover = null;       // popover courant
+    let hoverTimer = null;
+
+    function showPreview(link) {
+        hidePreview();
+
+        const url = link.href;
+        const kind = link.dataset.media;
+
+        hover = el('div', 'tracker-preview loading');
+        const frame = el('div', 'tracker-preview-frame');
+
+        if (kind === 'video') {
+            const video = document.createElement('video');
+            video.src = url;
+            video.autoplay = true;
+            video.loop = true;
+            video.muted = true;
+            video.playsInline = true;
+            video.addEventListener('loadeddata', () => ready(video.videoWidth, video.videoHeight));
+            video.addEventListener('error', fail);
+            frame.append(video);
+        } else {
+            const img = document.createElement('img');
+            img.src = url;
+            img.alt = '';
+            img.addEventListener('load', () => ready(img.naturalWidth, img.naturalHeight));
+            img.addEventListener('error', fail);
+            frame.append(img);
+        }
+
+        const caption = el('span', 'tracker-preview-caption', 'Chargement...');
+        hover.append(frame, caption);
+        document.body.append(hover);
+        place(link);
+
+        function ready(w, h) {
+            if (!hover) return;
+            hover.classList.remove('loading');
+            caption.textContent = (w && h ? `${w}x${h} - ` : '') + 'clic pour telecharger';
+            place(link);
+        }
+        function fail() {
+            if (!hover) return;
+            hover.classList.remove('loading');
+            hover.classList.add('failed');
+            caption.textContent = 'Apercu indisponible';
+        }
+    }
+
+    // Ancre le popover au lien, en le rabattant s'il sort de l'ecran.
+    function place(link) {
+        if (!hover) return;
+        const r = link.getBoundingClientRect();
+        const box = hover.getBoundingClientRect();
+        const margin = 12;
+
+        let left = r.left;
+        if (left + box.width > window.innerWidth - margin) {
+            left = window.innerWidth - box.width - margin;
+        }
+        left = Math.max(margin, left);
+
+        // Au-dessus du lien par defaut, en dessous s'il n'y a pas la place.
+        let top = r.top - box.height - 8;
+        if (top < margin) top = r.bottom + 8;
+
+        hover.style.left = left + 'px';
+        hover.style.top = top + 'px';
+    }
+
+    function hidePreview() {
+        clearTimeout(hoverTimer);
+        if (hover) {
+            hover.remove();
+            hover = null;
+        }
+    }
+
+    feedEl.addEventListener('mouseover', ev => {
+        const link = ev.target.closest('.seg-media');
+        if (!link || !feedEl.contains(link)) return;
+        clearTimeout(hoverTimer);
+        // Petit delai : traverser le flux ne doit pas faire clignoter des apercus.
+        hoverTimer = setTimeout(() => showPreview(link), 180);
+    });
+
+    feedEl.addEventListener('mouseout', ev => {
+        const link = ev.target.closest('.seg-media');
+        if (!link) return;
+        if (ev.relatedTarget && link.contains(ev.relatedTarget)) return;
+        hidePreview();
+    });
+
+    window.addEventListener('scroll', hidePreview, { passive: true });
+
+    // ----- Telechargement -----
+    // L'attribut download est ignore en cross-origin : le navigateur navigue
+    // au lieu d'enregistrer. On passe donc par fetch + blob, ce que les CDN
+    // Steam autorisent (access-control-allow-origin: *).
+    feedEl.addEventListener('click', async ev => {
+        const link = ev.target.closest('.seg-media');
+        if (!link || !feedEl.contains(link)) return;
+        ev.preventDefault();
+        hidePreview();
+
+        const url = link.href;
+        const name = decodeURIComponent(url.split('/').pop().split('?')[0]) || 'asset';
+
+        link.classList.add('downloading');
+        try {
+            const resp = await fetch(url, { mode: 'cors' });
+            if (!resp.ok) throw new Error('HTTP ' + resp.status);
+            const blob = await resp.blob();
+            const objectUrl = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = objectUrl;
+            a.download = name;
+            document.body.append(a);
+            a.click();
+            a.remove();
+            // Laisse au navigateur le temps de lire le blob avant liberation.
+            setTimeout(() => URL.revokeObjectURL(objectUrl), 10000);
+        } catch (err) {
+            // Hors ligne, CORS refuse, asset supprime : ouvrir l'original
+            // reste plus utile que de ne rien faire.
+            window.open(url, '_blank', 'noopener,noreferrer');
+        } finally {
+            link.classList.remove('downloading');
+        }
+    });
 
     // ----- Evenements -----
     let searchTimer = null;

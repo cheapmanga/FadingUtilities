@@ -123,6 +123,43 @@ def pretty_path(path):
     return " > ".join(parts[:-1]) if len(parts) > 1 else ""
 
 
+# PICS stocke les assets en chemin relatif ("<hash>/header.jpg") ; le CDN les
+# sert sous cette racine. La reconstruire permet a la page de previsualiser les
+# assets detectes en direct, comme ceux importes de SteamDB.
+ASSET_ROOT = f"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/{APPID}/"
+IMAGE_EXT = (".jpg", ".jpeg", ".png", ".gif", ".webp", ".ico", ".bmp")
+VIDEO_EXT = (".mp4", ".webm")
+
+
+def asset_media(value):
+    """('url', 'image'|'video') si la valeur designe un asset, sinon (None, None)."""
+    if not isinstance(value, str) or "/" not in value or len(value) > 300:
+        return None, None
+    lowered = value.split("?")[0].lower()
+    if lowered.endswith(IMAGE_EXT):
+        kind = "image"
+    elif lowered.endswith(VIDEO_EXT):
+        kind = "video"
+    else:
+        return None, None
+    # Une URL deja absolue (les trailers en donnent) se suffit a elle-meme.
+    if value.startswith("https://"):
+        return value, kind
+    if value.startswith("http://"):
+        return None, None
+    return ASSET_ROOT + value.lstrip("/"), kind
+
+
+def value_seg(kind, value):
+    """Segment de valeur, enrichi de son URL quand c'est un asset."""
+    seg = {"t": kind, "v": str(value)}
+    url, media = asset_media(value)
+    if url:
+        seg["href"] = url
+        seg["media"] = media
+    return seg
+
+
 def diff_appinfo(old, new):
     """Compare deux snapshots PICS et rend des noeuds au format du tracker."""
     old_flat, new_flat = flatten(old), flatten(new)
@@ -160,11 +197,11 @@ def diff_appinfo(old, new):
             buildid = str(after)
         seg = [{"t": "text", "v": f"{verb} "}, {"t": "field", "v": f"{field}:"}]
         if before is not None:
-            seg.append({"t": "del", "v": str(before)})
+            seg.append(value_seg("del", before))
         if before is not None and after is not None:
             seg.append({"t": "text", "v": " › "})
         if after is not None:
-            seg.append({"t": "ins", "v": str(after)})
+            seg.append(value_seg("ins", after))
 
         groups.setdefault(pretty_path(path), []).append(
             {"op": op, "seg": seg, "children": []}
