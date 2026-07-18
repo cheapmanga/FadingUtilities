@@ -294,7 +294,7 @@ def summarize(nodes, text):
                 break
     labels = [lab for lab in labels if lab != "ChangeNumber"]
     if not labels:
-        return "Changenumber uniquement"
+        return "Changenumber only"
     head = ", ".join(labels[:3])
     if len(labels) > 3:
         head += f" +{len(labels) - 3}"
@@ -340,7 +340,7 @@ def parse_panels(html_text):
             "id": f"change:{changeid}",
             "type": category,
             "changeid": changeid,
-            "title": summarize(changes, text) if changes else "Changenumber uniquement",
+            "title": summarize(changes, text) if changes else "Changenumber only",
             "url": f"https://steamdb.info/app/2467880/history/?changeid={changeid}",
             "source": "steamdb-history",
             "date": date,

@@ -2,12 +2,21 @@
 // Rend l'historique des changements Steam de Fading Echo, facon SteamDB.
 //
 // updates.json est ecrit par scripts/check_updates.py (GitHub Action toutes les
-// 15 min) et amorce par scripts/parse_steamdb_history.py. Le fichier est servi
+// 10 min) et amorce par scripts/parse_steamdb_history.py. Le fichier est servi
 // en same-origin : la CSP du site reste inchangee.
 
 (function () {
     const PAGE_SIZE = 40;
     const NOISE_KEY = 'fe-tracker-noise';
+    // Intervalle du rafraichissement automatique cote navigateur (5 min).
+    const AUTO_MS = 300000;
+    // Apres un echec reseau on retente plus tot que le cycle nominal.
+    const RETRY_MS = 30000;
+    // Delai au-dela duquel une requete pendante est abandonnee : sans cela un
+    // fetch qui ne se resout jamais laisserait loading a true pour toujours.
+    const FETCH_MS = 20000;
+    // Duree d'affichage d'un message transitoire dans l'indicateur.
+    const FLASH_MS = 8000;
 
     // L'ordre fixe l'ordre des boutons de filtre.
     const TYPES = {
@@ -17,7 +26,7 @@
         store: { label: 'Store', icon: 'fa-tags' },
         assets: { label: 'Assets', icon: 'fa-image' },
         news: { label: 'News', icon: 'fa-newspaper' },
-        meta: { label: 'Divers', icon: 'fa-cube' },
+        meta: { label: 'Other', icon: 'fa-cube' },
         changenumber: { label: 'Changenumber', icon: 'fa-hashtag' },
     };
 
@@ -27,29 +36,102 @@
     const searchEl = document.getElementById('trackerSearch');
     const noiseEl = document.getElementById('showNoise');
     const moreBtn = document.getElementById('loadMore');
+    // Peut ne pas exister : le bouton n'est present que sur la page tracker.
+    const refreshBtn = document.getElementById('refreshBtn');
 
     let allEvents = [];
     let visible = [];
     let shown = 0;
     let activeType = 'all';
 
+    // Etat de l'auto-refresh.
+    let autoEl = null;      // <span id="autoStatus">, cree par le JS
+    let nextAt = 0;         // horodatage du prochain rafraichissement
+    let flashUntil = 0;     // fin d'affichage du message transitoire
+    let flashText = '';
+    let loading = false;
+
     noiseEl.checked = localStorage.getItem(NOISE_KEY) === '1';
 
     // ----- Chargement -----
-    async function load() {
+    // silent : rafraichissement en arriere-plan, on ne detruit ni le flux deja
+    // rendu ni la position de lecture si le reseau tombe.
+    async function load(silent) {
+        if (loading) return;
+        loading = true;
+        setBusy(true);
+        if (silent) status('Refreshing...');
+
         try {
-            const resp = await fetch('updates.json', { cache: 'no-store' });
+            // Sans delai maximum, un fetch qui ne se resout jamais (portail
+            // captif, reprise de veille) laisserait loading a true pour
+            // toujours : le compte a rebours gelerait et le bouton resterait
+            // desactive jusqu'au rechargement de la page.
+            const resp = await fetch('updates.json', {
+                cache: 'no-store',
+                signal: AbortSignal.timeout(FETCH_MS),
+            });
             if (!resp.ok) throw new Error('HTTP ' + resp.status);
             const data = await resp.json();
-            allEvents = (data.events || []).filter(e => e && e.date);
-            allEvents.sort((a, b) => b.date.localeCompare(a.date));
+
+            const known = new Set(allEvents.map(eventId));
+            const events = (data.events || []).filter(e => e && e.date);
+            events.sort((a, b) => b.date.localeCompare(a.date));
+            // Le premier chargement reussi n'est pas une nouveaute : sans ce
+            // garde, un echec initial suivi d'un retour du reseau annoncerait
+            // tout le flux comme inedit ("815 new changes").
+            const fresh = silent && allEvents.length
+                ? events.filter(e => !known.has(eventId(e))).length
+                : 0;
+
+            allEvents = events;
+
+            // On restaure la position de lecture : un rafraichissement ne doit
+            // jamais ramener l'utilisateur en haut du flux.
+            const scrollY = window.scrollY;
             renderStats(data);
             renderFilters();
-            apply();
+            apply(silent);
+            if (silent) window.scrollTo(0, scrollY);
+
+            if (fresh) {
+                flash(fresh + (fresh > 1 ? ' new changes' : ' new change'), true);
+            }
+            schedule();
         } catch (err) {
-            feedEl.replaceChildren(el('p', 'tracker-empty error',
-                "Impossible de charger l'historique : " + err.message));
+            // Apres un echec on retente bien plus tot que le cycle nominal :
+            // annoncer "retrying" pour ne rien faire pendant cinq minutes
+            // serait mensonger, et une page ouverte sur un flux vide le
+            // resterait tout ce temps.
+            if (silent) {
+                flash('Refresh failed, retrying');
+            } else {
+                feedEl.replaceChildren(el('p', 'tracker-empty error',
+                    'Could not load history: ' + err.message));
+                // renderStats n'a pas tourne : l'indicateur n'est pas encore dans
+                // le DOM, on l'y place pour que le compte a rebours reste visible.
+                if (!autoStatus().isConnected) statsEl.append(autoStatus());
+            }
+            schedule(RETRY_MS);
+        } finally {
+            loading = false;
+            setBusy(false);
+            // Affiche le compte a rebours sans attendre le prochain battement :
+            // sinon l'indicateur reste vide pres d'une seconde apres le rendu.
+            tick();
         }
+    }
+
+    // Identite d'un evenement : le changenumber quand il existe, sinon la paire
+    // date + titre, suffisante pour reperer une entree inedite.
+    function eventId(event) {
+        return event.changeid ? 'c' + event.changeid : event.date + '|' + (event.title || '');
+    }
+
+    function setBusy(on) {
+        if (!refreshBtn) return;
+        refreshBtn.classList.toggle('refreshing', on);
+        refreshBtn.disabled = on;
     }
 
     // ----- En-tete -----
@@ -59,14 +141,14 @@
         const real = allEvents.filter(e => e.type !== 'changenumber');
 
         const cards = [
-            ['Dernier changement', allEvents.length ? relative(allEvents[0].date) : '-',
+            ['Latest change', allEvents.length ? relative(allEvents[0].date) : '-',
                 allEvents.length ? absolute(allEvents[0].date) : ''],
-            ['Derniere build', lastBuild ? relative(lastBuild.date) : 'aucune',
+            ['Latest build', lastBuild ? relative(lastBuild.date) : 'none',
                 lastBuild ? absolute(lastBuild.date) : ''],
-            ['Derniere annonce', lastNews ? relative(lastNews.date) : 'aucune',
+            ['Latest announcement', lastNews ? relative(lastNews.date) : 'none',
                 lastNews ? lastNews.title : ''],
-            ['Changements suivis', String(real.length),
-                allEvents.length + ' entrees au total'],
+            ['Tracked changes', String(real.length),
+                allEvents.length + ' entries total'],
         ];
 
         statsEl.replaceChildren(...cards.map(([label, value, hint]) => {
@@ -79,8 +161,63 @@
 
         if (data.generated) {
             statsEl.append(el('p', 'tracker-generated',
-                'Derniere verification : ' + absolute(data.generated)));
+                'Last checked: ' + absolute(data.generated)));
         }
+
+        // replaceChildren vient de vider le conteneur : l'indicateur d'auto-refresh
+        // est reattache ici pour survivre a chaque rendu de l'en-tete.
+        statsEl.append(autoStatus());
+    }
+
+    // ----- Indicateur d'auto-refresh -----
+    function autoStatus() {
+        if (!autoEl) {
+            autoEl = el('span', 'tracker-auto');
+            autoEl.id = 'autoStatus';
+        }
+        return autoEl;
+    }
+
+    function status(text) {
+        autoStatus().textContent = text;
+    }
+
+    // Message transitoire : il masque le compte a rebours quelques secondes.
+    // highlight n'est vrai que pour une bonne nouvelle (des changements
+    // inedits) : un echec passe aussi par ici et ne doit pas s'afficher en
+    // cyan comme une reussite.
+    function flash(text, highlight) {
+        flashText = text;
+        flashUntil = Date.now() + FLASH_MS;
+        status(text);
+        autoStatus().classList.toggle('fresh', !!highlight);
+    }
+
+    function schedule(delay) {
+        nextAt = Date.now() + (delay || AUTO_MS);
+    }
+
+    function tick() {
+        if (loading) return;
+
+        if (nextAt && Date.now() >= nextAt) {
+            load(true);
+            return;
+        }
+        if (Date.now() < flashUntil) {
+            status(flashText);
+            return;
+        }
+        if (!nextAt) return;
+
+        // Le message transitoire a expire : on rend la main au compte a rebours,
+        // donc l'accentuation n'a plus lieu d'etre.
+        autoStatus().classList.remove('fresh');
+
+        const left = Math.max(0, Math.round((nextAt - Date.now()) / 1000));
+        const mins = Math.floor(left / 60);
+        const secs = left % 60;
+        status(`Next refresh in ${mins}:${String(secs).padStart(2, '0')}`);
     }
 
     // ----- Filtres -----
@@ -88,7 +225,7 @@
         const counts = {};
         allEvents.forEach(e => { counts[e.type] = (counts[e.type] || 0) + 1; });
 
-        const buttons = [makeFilter('all', 'Tout', 'fa-layer-group',
+        const buttons = [makeFilter('all', 'All', 'fa-layer-group',
             allEvents.length)];
         Object.entries(TYPES).forEach(([type, meta]) => {
             if (!counts[type]) return;
@@ -118,7 +255,9 @@
     }
 
     // ----- Selection -----
-    function apply() {
+    // keepCount : conserve le nombre d'elements deja depiles par l'utilisateur,
+    // pour qu'un rafraichissement automatique ne reduise pas la pagination.
+    function apply(keepCount) {
         const query = searchEl.value.trim().toLowerCase();
         const noise = noiseEl.checked;
 
@@ -131,14 +270,16 @@
             return true;
         });
 
+        const target = keepCount ? Math.max(shown, PAGE_SIZE) : PAGE_SIZE;
+
         shown = 0;
         feedEl.replaceChildren();
         if (!visible.length) {
-            feedEl.append(el('p', 'tracker-empty', 'Aucun evenement ne correspond.'));
+            feedEl.append(el('p', 'tracker-empty', 'No matching events.'));
             moreBtn.hidden = true;
             return;
         }
-        more();
+        do { more(); } while (shown < target && shown < visible.length);
     }
 
     function haystack(event) {
@@ -166,7 +307,7 @@
         feedEl.append(frag);
         shown += slice.length;
         moreBtn.hidden = shown >= visible.length;
-        moreBtn.textContent = `Afficher plus (${visible.length - shown} restants)`;
+        moreBtn.textContent = `Show more (${visible.length - shown} remaining)`;
     }
 
     function panel(event) {
@@ -176,7 +317,7 @@
         const left = el('div', 'tracker-panel-title');
         const meta = TYPES[event.type] || TYPES.meta;
         left.append(el('span', 'tracker-tag ' + event.type, meta.label.toUpperCase()));
-        left.append(el('h3', '', event.title || 'Changement'));
+        left.append(el('h3', '', event.title || 'Change'));
         head.append(left);
 
         const time = el('div', 'tracker-panel-time');
@@ -188,7 +329,7 @@
             link.href = event.url;
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
-            link.title = 'Voir le detail sur la source';
+            link.title = 'View the details on the source';
             time.append(link);
         }
         head.append(time);
@@ -206,11 +347,11 @@
             // Les patch notes sont longs : on les replie pour ne pas noyer le flux.
             if (event.body.length > 400) {
                 body.classList.add('clamped');
-                const toggle = el('button', 'tracker-expand', 'Lire la suite');
+                const toggle = el('button', 'tracker-expand', 'Read more');
                 toggle.type = 'button';
                 toggle.addEventListener('click', () => {
                     const open = body.classList.toggle('clamped');
-                    toggle.textContent = open ? 'Lire la suite' : 'Replier';
+                    toggle.textContent = open ? 'Read more' : 'Show less';
                 });
                 box.append(toggle);
             }
@@ -249,14 +390,14 @@
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
         a.dataset.media = seg.media || '';
-        a.title = 'Survoler pour previsualiser, cliquer pour telecharger';
+        a.title = 'Hover to preview, click to download';
         return a;
     }
 
     // ----- Dates -----
     function absolute(iso) {
         const d = new Date(iso);
-        return isNaN(d) ? iso : d.toLocaleString('fr-FR', {
+        return isNaN(d) ? iso : d.toLocaleString('en-GB', {
             day: '2-digit', month: 'long', year: 'numeric',
             hour: '2-digit', minute: '2-digit',
         });
@@ -264,10 +405,10 @@
 
     // [duree d'une unite en secondes, singulier, pluriel]
     const UNITS = [
-        [31536000, 'an', 'ans'],
-        [2592000, 'mois', 'mois'],
-        [86400, 'jour', 'jours'],
-        [3600, 'heure', 'heures'],
+        [31536000, 'year', 'years'],
+        [2592000, 'month', 'months'],
+        [86400, 'day', 'days'],
+        [3600, 'hour', 'hours'],
         [60, 'minute', 'minutes'],
     ];
 
@@ -275,14 +416,14 @@
         const d = new Date(iso);
         if (isNaN(d)) return iso;
         const secs = (Date.now() - d.getTime()) / 1000;
-        if (secs < 60) return "a l'instant";
+        if (secs < 60) return 'just now';
         for (const [size, one, many] of UNITS) {
             if (secs >= size) {
                 const n = Math.floor(secs / size);
-                return `il y a ${n} ${n > 1 ? many : one}`;
+                return `${n} ${n > 1 ? many : one} ago`;
             }
         }
-        return "a l'instant";
+        return 'just now';
     }
 
     // ----- Utilitaire DOM -----
@@ -309,27 +450,41 @@
 
         hover = el('div', 'tracker-preview loading');
         const frame = el('div', 'tracker-preview-frame');
+        // Declaree avant le chargement : une ressource en cache appelle ready()
+        // de façon synchrone, et la legende doit deja exister a ce moment-la.
+        const caption = el('span', 'tracker-preview-caption', 'Loading...');
 
+        // Les ecouteurs sont poses AVANT src : une ressource deja en cache se
+        // charge de façon synchrone, et l'evenement partirait avant l'ecoute.
+        // C'est le cas des le deuxieme survol du meme asset, qui resterait
+        // sinon bloque sur "Loading..." indefiniment.
         if (kind === 'video') {
             const video = document.createElement('video');
-            video.src = url;
             video.autoplay = true;
             video.loop = true;
             video.muted = true;
             video.playsInline = true;
             video.addEventListener('loadeddata', () => ready(video.videoWidth, video.videoHeight));
             video.addEventListener('error', fail);
+            video.src = url;
             frame.append(video);
+            // Filet pour le cas ou les donnees sont deja la malgre tout.
+            if (video.readyState >= 2) ready(video.videoWidth, video.videoHeight);
         } else {
             const img = document.createElement('img');
-            img.src = url;
             img.alt = '';
             img.addEventListener('load', () => ready(img.naturalWidth, img.naturalHeight));
             img.addEventListener('error', fail);
+            img.src = url;
             frame.append(img);
+            if (img.complete) {
+                // complete vaut aussi true sur une image en erreur : c'est
+                // naturalWidth qui distingue les deux.
+                if (img.naturalWidth) ready(img.naturalWidth, img.naturalHeight);
+                else fail();
+            }
         }
 
-        const caption = el('span', 'tracker-preview-caption', 'Chargement...');
         hover.append(frame, caption);
         document.body.append(hover);
         place(link);
@@ -337,14 +492,14 @@
         function ready(w, h) {
             if (!hover) return;
             hover.classList.remove('loading');
-            caption.textContent = (w && h ? `${w}x${h} - ` : '') + 'clic pour telecharger';
+            caption.textContent = (w && h ? `${w}x${h} - ` : '') + 'click to download';
             place(link);
         }
         function fail() {
             if (!hover) return;
             hover.classList.remove('loading');
             hover.classList.add('failed');
-            caption.textContent = 'Apercu indisponible';
+            caption.textContent = 'Preview unavailable';
         }
     }
 
@@ -444,6 +599,16 @@
     });
 
     moreBtn.addEventListener('click', more);
+
+    // Rafraichissement manuel : meme chemin que l'auto, et le compte a rebours
+    // repart de zero puisque load() replanifie en sortie.
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', () => load(true));
+    }
+
+    // Un seul intervalle d'une seconde pilote a la fois le compte a rebours et
+    // le declenchement du rechargement : pas de second timer a resynchroniser.
+    setInterval(tick, 1000);
 
     load();
 })();

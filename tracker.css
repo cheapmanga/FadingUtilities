@@ -75,6 +75,32 @@
     margin: 0;
 }
 
+/* Compte a rebours de l'auto-refresh : meme colonne et meme alignement que
+   .tracker-generated, qui le precede immediatement dans la grille de stats. */
+.tracker-auto {
+    grid-column: 1 / -1;
+    display: block;
+    text-align: right;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 2px;
+    transition: color 0.3s ease;
+}
+
+.tracker-auto i { margin-right: 6px; }
+
+/* Nouveaux changements detectes : on accentue sans clignoter (une seule pulsation). */
+.tracker-auto.fresh {
+    color: var(--primary-cyan);
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.35);
+    animation: trackerFreshIn 0.5s ease-out;
+}
+
+@keyframes trackerFreshIn {
+    from { opacity: 0.4; transform: translateY(-2px); }
+    to { opacity: 1; transform: none; }
+}
+
 /* ----- Barre d'outils ----- */
 .tracker-toolbar {
     display: flex;
@@ -168,6 +194,47 @@
 }
 
 .tracker-toggle input { accent-color: var(--primary-cyan); cursor: pointer; }
+
+/* Rafraichissement manuel : meme pilule et meme hauteur que .tracker-search
+   (padding 7px 14px + bordure 1px), pour rester aligne dans .tracker-tools. */
+.tracker-refresh {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 245, 255, 0.08);
+    border: 1px solid rgba(0, 245, 255, 0.35);
+    color: var(--primary-cyan);
+    border-radius: 999px;
+    padding: 7px 16px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.35;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tracker-refresh:hover {
+    background: rgba(0, 245, 255, 0.18);
+    border-color: var(--primary-cyan);
+}
+
+.tracker-refresh:focus-visible { outline: 2px solid var(--primary-cyan); outline-offset: 2px; }
+
+.tracker-refresh i { font-size: 0.9em; }
+
+/* Rotation continue pendant la requete : on reutilise trackerSpin. */
+.tracker-refresh.refreshing i { animation: trackerSpin 0.8s linear infinite; }
+
+.tracker-refresh:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+.tracker-refresh:disabled:hover {
+    background: rgba(0, 245, 255, 0.08);
+    border-color: rgba(0, 245, 255, 0.35);
+}
 
 /* ----- Panneaux ----- */
 .tracker-feed {
@@ -496,5 +563,7 @@
     .tracker-page { padding-top: 100px; }
     .tracker-toolbar { flex-direction: column; align-items: stretch; }
     .tracker-search input { width: 100%; }
+    .tracker-tools { flex-direction: column; align-items: stretch; }
+    .tracker-refresh { width: 100%; justify-content: center; }
     .tracker-panel-head { flex-direction: column; }
 }
