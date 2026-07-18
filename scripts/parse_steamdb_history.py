@@ -55,19 +55,26 @@ def is_media(url):
     return media_kind(url) is not None
 
 # Mot-cle rencontre dans un evenement -> categorie affichee par le tracker.
-# L'ordre compte : le premier match gagne, du plus specifique au plus general.
+# L'ordre fixe la categorie principale (badge et couleur) quand plusieurs
+# s'appliquent : le technique prime sur l'editorial, et un changement visuel
+# prime sur une retouche de fiche store.
+#
+# Les mots-cles sont cherches en MOT ENTIER : en sous-chaine, "name" matchait
+# jusque dans les URL de trailers et classait des lots d'images en "store".
 CATEGORY_RULES = [
     ("build", ("buildid", "timebuildupdated")),
-    ("branch", ("branch", "privatebranches")),
-    ("depot", ("depot", "manifest")),
+    ("branch", ("branch", "branches", "privatebranches")),
+    ("depot", ("depot", "depots", "manifest", "manifests")),
+    ("assets", (
+        "assets", "screenshots", "trailers", "header_image", "small_capsule",
+        "library_capsule", "library_assets", "library_assets_full", "capsule",
+        "movie", "logo", "icon", "clienticon",
+    )),
     ("store", (
         "store genres", "user tags", "store description", "store release date",
         "supported languages", "name", "associations", "store asset",
         "has a playtest", "price", "franchise", "publisher", "developer",
-    )),
-    ("assets", (
-        "assets", "screenshots", "trailers", "header_image", "small_capsule",
-        "library_capsule", "capsule", "movie", "logo",
+        "store categories",
     )),
 ]
 
@@ -251,12 +258,35 @@ def flatten_text(nodes):
     return " ".join(parts)
 
 
-def categorize(text):
+def has_media(nodes):
+    """Vrai si l'arbre porte au moins une image ou video."""
+    for node in nodes:
+        if any(seg.get("href") for seg in node.get("seg", [])):
+            return True
+        if has_media(node.get("children", [])):
+            return True
+    return False
+
+
+def categorize(nodes, text):
+    """Toutes les categories applicables, la principale en premier.
+
+    Un changelist Steam touche souvent plusieurs sections a la fois : n'en
+    retenir qu'une rendait les filtres menteurs, un lot de capsules classe
+    "store" restant introuvable sous "assets".
+    """
     lowered = text.lower()
+    found = []
     for name, keywords in CATEGORY_RULES:
-        if any(kw in lowered for kw in keywords):
-            return name
-    return "meta"
+        if any(re.search(rf"\b{re.escape(kw)}\b", lowered) for kw in keywords):
+            found.append(name)
+
+    # La presence reelle d'un media est un signal plus sur qu'un mot-cle : les
+    # icones, par exemple, ne declenchent aucune regle textuelle.
+    if "assets" not in found and has_media(nodes):
+        found.append("assets")
+
+    return found or ["meta"]
 
 
 def find_buildid(nodes):
@@ -334,11 +364,15 @@ def parse_panels(html_text):
         changes = [n for n in tree if not flatten_text([n]).strip().startswith("ChangeNumber")]
 
         text = flatten_text(changes)
-        category = categorize(text) if changes else "changenumber"
+        types = categorize(changes, text) if changes else ["changenumber"]
 
         events.append({
             "id": f"change:{changeid}",
-            "type": category,
+            # type : categorie principale, celle du badge et de la couleur.
+            # types : toutes les categories applicables, sur lesquelles filtre
+            # la page, pour qu'un changement mixte reste trouvable sous chacune.
+            "type": types[0],
+            "types": types,
             "changeid": changeid,
             "title": summarize(changes, text) if changes else "Changenumber only",
             "url": f"https://steamdb.info/app/2467880/history/?changeid={changeid}",

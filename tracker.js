@@ -220,13 +220,31 @@
         status(`Next refresh in ${mins}:${String(secs).padStart(2, '0')}`);
     }
 
+    // Categories d'un evenement. types[] est le format courant ; le repli sur
+    // type couvre les entrees ecrites avant son introduction.
+    function typesOf(event) {
+        return Array.isArray(event.types) && event.types.length
+            ? event.types
+            : [event.type];
+    }
+
     // ----- Filtres -----
     function renderFilters() {
         const counts = {};
-        allEvents.forEach(e => { counts[e.type] = (counts[e.type] || 0) + 1; });
+        // Un evenement mixte compte dans chaque categorie ou il apparait : la
+        // somme des compteurs depasse donc le total, comme pour des etiquettes.
+        allEvents.forEach(e => {
+            typesOf(e).forEach(t => { counts[t] = (counts[t] || 0) + 1; });
+        });
 
-        const buttons = [makeFilter('all', 'All', 'fa-layer-group',
-            allEvents.length)];
+        // "All" annonce ce qui sera reellement affiche : compter les
+        // changenumbers alors qu'ils sont masques donnait un badge a 815 pour
+        // 173 entrees a l'ecran.
+        const all = noiseEl.checked
+            ? allEvents.length
+            : allEvents.filter(e => e.type !== 'changenumber').length;
+
+        const buttons = [makeFilter('all', 'All', 'fa-layer-group', all)];
         Object.entries(TYPES).forEach(([type, meta]) => {
             if (!counts[type]) return;
             buttons.push(makeFilter(type, meta.label, meta.icon, counts[type]));
@@ -265,7 +283,7 @@
             // Les changenumbers seuls sont 80% du flux et ne disent rien :
             // masques par defaut, comme le fait SteamDB.
             if (e.type === 'changenumber' && !noise && activeType !== 'changenumber') return false;
-            if (activeType !== 'all' && e.type !== activeType) return false;
+            if (activeType !== 'all' && !typesOf(e).includes(activeType)) return false;
             if (query && !haystack(e).includes(query)) return false;
             return true;
         });
@@ -595,6 +613,8 @@
 
     noiseEl.addEventListener('change', () => {
         localStorage.setItem(NOISE_KEY, noiseEl.checked ? '1' : '0');
+        // Le badge "All" depend de cette case : il doit etre recalcule.
+        renderFilters();
         apply();
     });
 
