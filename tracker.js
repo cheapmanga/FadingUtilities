@@ -50,10 +50,11 @@
     const TUNNEL_JSON =
         'https://raw.githubusercontent.com/cheapmanga/SteamTrack/main/tunnel.json';
     // Passerelle steamtrack : point d'entree stable, heberge sur Cloudflare
-    // Workers. Elle lit la meme tunnel.json que ci-dessus, verifie que le
-    // service repond, et redirige. C'est la seule adresse du service qui ne
-    // change jamais -- donc la seule a pouvoir figurer en dur dans un lien.
-    const STATUS_URL = 'https://steamtrack-status.cheapmangafr.workers.dev';
+    // Pages (depot cheapmanga/steamtrack-status, redeploye a chaque commit).
+    // Elle lit la meme adresse que ci-dessus, verifie que le service repond,
+    // et redirige. C'est la seule adresse du service qui ne change jamais --
+    // donc la seule a pouvoir figurer en dur dans un lien.
+    const STATUS_URL = 'https://steamtrack-status.pages.dev';
     // Derniere adresse connue de l'API. La retenir evite de relire tunnel.json
     // a chaque chargement, et fait gagner un aller-retour au demarrage.
     const API_CACHE = 'fe-tracker-api-base';
