@@ -32,11 +32,20 @@
     // on retombe sur le fichier sans que le visiteur voie autre chose qu'un
     // flux complet -- simplement moins frais.
     //
-    // L'appel est ANONYME et le restera. L'API accorde 600 requetes/heure par
-    // IP sans cle, tres au-dela des 1 a 2 requetes par chargement d'ici. Les
-    // cles illimitees de steamtrack sont des cles d'administration : elles
-    // autorisent la suppression d'un jeu avec tout son historique, et n'ont
-    // donc rien a faire dans le JavaScript d'un site public.
+    // La cle ci-dessous est PUBLIQUE par construction : tout ce qui est servi
+    // au navigateur est lisible. Elle est donc choisie pour que sa divulgation
+    // ne coute rien --
+    //
+    //   - lecture seule : elle ne peut ni ajouter ni retirer un jeu, les deux
+    //     seuls endpoints d'ecriture la refusent en 403 ;
+    //   - quota borne (5000/h) : un abus reste plafonne, la ou une cle
+    //     illimitee publierait un droit d'aspiration sans frein ;
+    //   - dediee a ce site : elle se revoque sans toucher aux autres acces.
+    //
+    // Les cles illimitees de steamtrack sont des cles d'administration --
+    // elles autorisent la suppression d'un jeu avec tout son historique -- et
+    // n'ont rien a faire dans le JavaScript d'un site public.
+    const API_KEY = 'st_wKGo181hDZTAWdyiv0jeXszQUiTjGfmC';
     const API_APPID = 2467880;
     const TUNNEL_JSON =
         'https://raw.githubusercontent.com/cheapmanga/SteamTrack/main/tunnel.json';
@@ -85,9 +94,13 @@
 
     // ----- Acces a l'API -----
 
-    function jsonFetch(url, ms) {
+    // auth : n'envoyer la cle qu'a l'API steamtrack. X-API-Key est un en-tete
+    // non standard, donc soumis au preflight CORS ; l'ajouter a la lecture de
+    // tunnel.json ferait echouer une requete que GitHub sert tres bien sans.
+    function jsonFetch(url, ms, auth) {
         return fetch(url, {
             cache: 'no-store',
+            headers: auth ? { 'X-API-Key': API_KEY } : undefined,
             signal: AbortSignal.timeout(ms || FETCH_MS),
         }).then(resp => {
             if (!resp.ok) throw new Error('HTTP ' + resp.status);
@@ -141,14 +154,15 @@
         const path = `${base}/v1/apps/${API_APPID}/changes?limit=${API_PAGE}`;
         let data;
         try {
-            data = await jsonFetch(path + (since ? '&since=' + encodeURIComponent(since) : ''));
+            data = await jsonFetch(path + (since ? '&since=' + encodeURIComponent(since) : ''),
+                                   FETCH_MS, true);
         } catch (err) {
             // L'adresse en cache peut dater d'avant un redemarrage de la VM :
             // on relit tunnel.json une fois avant de conclure a une panne.
             const fresh = await apiBase(true);
             data = await jsonFetch(
                 `${fresh}/v1/apps/${API_APPID}/changes?limit=${API_PAGE}` +
-                (since ? '&since=' + encodeURIComponent(since) : ''));
+                (since ? '&since=' + encodeURIComponent(since) : ''), FETCH_MS, true);
         }
 
         const events = (data.changes || []).map(adaptEvent);
@@ -159,7 +173,7 @@
         while (!since && offset < (data.total || 0) && offset < 5000) {
             const page = await jsonFetch(
                 `${await apiBase(false)}/v1/apps/${API_APPID}/changes` +
-                `?limit=${API_PAGE}&offset=${offset}`);
+                `?limit=${API_PAGE}&offset=${offset}`, FETCH_MS, true);
             const more = (page.changes || []).map(adaptEvent);
             if (!more.length) break;
             events.push(...more);
