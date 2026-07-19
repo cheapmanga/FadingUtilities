@@ -18,6 +18,34 @@
     // Duree d'affichage d'un message transitoire dans l'indicateur.
     const FLASH_MS = 8000;
 
+    // ----- Sources de donnees -----
+    //
+    // Deux sources, par ordre de preference :
+    //
+    //   1. l'API steamtrack, qui suit le flux PICS en continu et donne donc
+    //      l'etat en direct ;
+    //   2. updates.json, ecrit par la GitHub Action, servi same-origin.
+    //
+    // L'API n'est pas toujours joignable : elle tourne sur une VM qui peut
+    // etre eteinte, derriere un tunnel dont l'adresse change a chaque
+    // redemarrage. updates.json, lui, est toujours la. On tente donc l'API et
+    // on retombe sur le fichier sans que le visiteur voie autre chose qu'un
+    // flux complet -- simplement moins frais.
+    //
+    // L'appel est ANONYME et le restera. L'API accorde 600 requetes/heure par
+    // IP sans cle, tres au-dela des 1 a 2 requetes par chargement d'ici. Les
+    // cles illimitees de steamtrack sont des cles d'administration : elles
+    // autorisent la suppression d'un jeu avec tout son historique, et n'ont
+    // donc rien a faire dans le JavaScript d'un site public.
+    const API_APPID = 2467880;
+    const TUNNEL_JSON =
+        'https://raw.githubusercontent.com/cheapmanga/SteamTrack/main/tunnel.json';
+    // Derniere adresse connue de l'API. La retenir evite de relire tunnel.json
+    // a chaque chargement, et fait gagner un aller-retour au demarrage.
+    const API_CACHE = 'fe-tracker-api-base';
+    // Plafond impose par l'endpoint /changes.
+    const API_PAGE = 500;
+
     // L'ordre fixe l'ordre des boutons de filtre.
     const TYPES = {
         build: { label: 'Builds', icon: 'fa-hammer' },
@@ -51,8 +79,106 @@
     let flashUntil = 0;     // fin d'affichage du message transitoire
     let flashText = '';
     let loading = false;
+    let lastLive = false;   // le dernier chargement venait-il de l'API ?
 
     noiseEl.checked = localStorage.getItem(NOISE_KEY) === '1';
+
+    // ----- Acces a l'API -----
+
+    function jsonFetch(url, ms) {
+        return fetch(url, {
+            cache: 'no-store',
+            signal: AbortSignal.timeout(ms || FETCH_MS),
+        }).then(resp => {
+            if (!resp.ok) throw new Error('HTTP ' + resp.status);
+            return resp.json();
+        });
+    }
+
+    // Adresse courante de l'API. L'adresse en cache est tentee d'abord : quand
+    // elle est encore valide (le cas courant), le chargement ne coute pas la
+    // lecture de tunnel.json.
+    async function apiBase(force) {
+        const cached = localStorage.getItem(API_CACHE);
+        if (cached && !force) return cached;
+        // Delai court : tunnel.json n'est qu'un aiguillage, et le repli sur
+        // updates.json doit rester rapide si GitHub ne repond pas.
+        const data = await jsonFetch(TUNNEL_JSON, 8000);
+        const url = (data && data.url || '').replace(/\/$/, '');
+        if (!url) throw new Error('no tunnel address published');
+        localStorage.setItem(API_CACHE, url);
+        return url;
+    }
+
+    // L'API expose kind/occurred_at/change_number la ou le tracker attend
+    // type/date/changeid. Pour les annonces, le corps vit dans `changes`.
+    function adaptEvent(e) {
+        const payload = e.changes;
+        const out = {
+            id: e.source + ':' + (e.change_number || e.id),
+            type: e.kind,
+            types: e.types || [e.kind],
+            changeid: e.change_number,
+            title: e.title,
+            source: e.source,
+            date: e.occurred_at,
+            changes: Array.isArray(payload) ? payload : [],
+        };
+        if (!Array.isArray(payload) && payload) {
+            out.url = payload.url;
+            out.author = payload.author;
+            out.feed = payload.feed;
+            out.body = payload.body;
+        }
+        return out;
+    }
+
+    // Charge depuis l'API. `since` permet aux rafraichissements de ne demander
+    // que l'inedit : une requete au lieu des deux que coute la pagination
+    // complete des 850+ evenements.
+    async function loadFromApi(since) {
+        const base = await apiBase(false);
+        const path = `${base}/v1/apps/${API_APPID}/changes?limit=${API_PAGE}`;
+        let data;
+        try {
+            data = await jsonFetch(path + (since ? '&since=' + encodeURIComponent(since) : ''));
+        } catch (err) {
+            // L'adresse en cache peut dater d'avant un redemarrage de la VM :
+            // on relit tunnel.json une fois avant de conclure a une panne.
+            const fresh = await apiBase(true);
+            data = await jsonFetch(
+                `${fresh}/v1/apps/${API_APPID}/changes?limit=${API_PAGE}` +
+                (since ? '&since=' + encodeURIComponent(since) : ''));
+        }
+
+        const events = (data.changes || []).map(adaptEvent);
+        // Pagination : l'endpoint plafonne a 500. Sur un chargement complet on
+        // va chercher la suite, sur un rafraichissement incremental il n'y a
+        // presque jamais de seconde page.
+        let offset = events.length;
+        while (!since && offset < (data.total || 0) && offset < 5000) {
+            const page = await jsonFetch(
+                `${await apiBase(false)}/v1/apps/${API_APPID}/changes` +
+                `?limit=${API_PAGE}&offset=${offset}`);
+            const more = (page.changes || []).map(adaptEvent);
+            if (!more.length) break;
+            events.push(...more);
+            offset += more.length;
+        }
+        return { generated: new Date().toISOString(), events, live: true };
+    }
+
+    // Tente l'API, retombe sur le fichier statique. Le repli n'est pas une
+    // erreur : c'est le mode nominal quand la VM est eteinte.
+    async function fetchData(since) {
+        try {
+            return await loadFromApi(since);
+        } catch (err) {
+            const data = await jsonFetch('updates.json');
+            data.live = false;
+            return data;
+        }
+    }
 
     // ----- Chargement -----
     // silent : rafraichissement en arriere-plan, on ne detruit ni le flux deja
@@ -68,16 +194,26 @@
             // captif, reprise de veille) laisserait loading a true pour
             // toujours : le compte a rebours gelerait et le bouton resterait
             // desactive jusqu'au rechargement de la page.
-            const resp = await fetch('updates.json', {
-                cache: 'no-store',
-                signal: AbortSignal.timeout(FETCH_MS),
-            });
-            if (!resp.ok) throw new Error('HTTP ' + resp.status);
-            const data = await resp.json();
+            // Rafraichissement incremental : quand un flux est deja rendu et
+            // que la derniere source etait l'API, ne demander que l'inedit.
+            const since = silent && allEvents.length && lastLive
+                ? allEvents[0].date
+                : null;
+            const data = await fetchData(since);
 
             lastFetch = Date.now();
+            lastLive = !!data.live;
             const known = new Set(allEvents.map(eventId));
-            const events = (data.events || []).filter(e => e && e.date);
+            let events = (data.events || []).filter(e => e && e.date);
+
+            if (since) {
+                // Reponse partielle : elle complete le flux, elle ne le
+                // remplace pas. Sans cette fusion un rafraichissement sans
+                // nouveaute viderait la page.
+                const seen = new Set(events.map(eventId));
+                events = events.concat(
+                    allEvents.filter(e => !seen.has(eventId(e))));
+            }
             events.sort((a, b) => b.date.localeCompare(a.date));
             // Le premier chargement reussi n'est pas une nouveaute : sans ce
             // garde, un echec initial suivi d'un retour du reseau annoncerait
@@ -167,8 +303,15 @@
             // bouge donc pas a chaque controle, ni au clic sur Refresh -- d'ou
             // "Data updated" plutot que "Last checked", qui laissait croire
             // l'inverse. Le controle, lui, a lieu toutes les 10 minutes.
+            // La provenance est dite explicitement : servi par l'API, le flux
+            // est celui du collecteur en direct ; servi par le fichier, il
+            // date du dernier passage de la GitHub Action. Deux fraicheurs
+            // differentes ne doivent pas s'afficher de la meme facon.
+            const origin = data.live ? 'live from the steamtrack API'
+                                     : 'from the published snapshot';
             statsEl.append(el('p', 'tracker-generated',
-                `Data updated ${relative(data.generated)} (${absolute(data.generated)})`));
+                `Data updated ${relative(data.generated)} ` +
+                `(${absolute(data.generated)}) — ${origin}`));
         }
 
         // replaceChildren vient de vider le conteneur : l'indicateur d'auto-refresh
