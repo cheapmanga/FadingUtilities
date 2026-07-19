@@ -75,6 +75,21 @@
     margin: 0;
 }
 
+/* Le lien vers steamtrack reste discret comme le reste de la ligne : il n'est
+   souligne qu'au survol, pour ne pas attirer l'oeil avant la donnee elle-meme. */
+.tracker-source-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.25);
+    text-underline-offset: 2px;
+}
+
+.tracker-source-link:hover,
+.tracker-source-link:focus-visible {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration-color: currentColor;
+}
+
 /* Compte a rebours de l'auto-refresh : meme colonne et meme alignement que
    .tracker-generated, qui le precede immediatement dans la grille de stats. */
 .tracker-auto {
