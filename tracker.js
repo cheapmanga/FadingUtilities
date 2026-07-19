@@ -49,6 +49,11 @@
     const API_APPID = 2467880;
     const TUNNEL_JSON =
         'https://raw.githubusercontent.com/cheapmanga/SteamTrack/main/tunnel.json';
+    // Passerelle steamtrack : point d'entree stable, heberge sur Cloudflare
+    // Workers. Elle lit la meme tunnel.json que ci-dessus, verifie que le
+    // service repond, et redirige. C'est la seule adresse du service qui ne
+    // change jamais -- donc la seule a pouvoir figurer en dur dans un lien.
+    const STATUS_URL = 'https://steamtrack-status.cheapmangafr.workers.dev';
     // Derniere adresse connue de l'API. La retenir evite de relire tunnel.json
     // a chaque chargement, et fait gagner un aller-retour au demarrage.
     const API_CACHE = 'fe-tracker-api-base';
@@ -89,10 +94,6 @@
     let flashText = '';
     let loading = false;
     let lastLive = false;   // le dernier chargement venait-il de l'API ?
-    // Adresse de l'API effectivement utilisee, retenue pour pouvoir lier vers
-    // le site steamtrack : le tunnel change d'adresse, un lien en dur mourrait
-    // au premier redemarrage de la VM.
-    let apiOrigin = localStorage.getItem(API_CACHE) || '';
 
     noiseEl.checked = localStorage.getItem(NOISE_KEY) === '1';
 
@@ -117,14 +118,13 @@
     // lecture de tunnel.json.
     async function apiBase(force) {
         const cached = localStorage.getItem(API_CACHE);
-        if (cached && !force) { apiOrigin = cached; return cached; }
+        if (cached && !force) return cached;
         // Delai court : tunnel.json n'est qu'un aiguillage, et le repli sur
         // updates.json doit rester rapide si GitHub ne repond pas.
         const data = await jsonFetch(TUNNEL_JSON, 8000);
         const url = (data && data.url || '').replace(/\/$/, '');
         if (!url) throw new Error('no tunnel address published');
         localStorage.setItem(API_CACHE, url);
-        apiOrigin = url;
         return url;
     }
 
@@ -352,22 +352,23 @@
             const line = el('p', 'tracker-generated',
                 `Data updated ${relative(data.generated)} ` +
                 `(${absolute(data.generated)}) — `);
-            if (data.live && apiOrigin) {
-                // La mention de la source devient un lien vers la page que
-                // steamtrack consacre au jeu. L'adresse est celle qui vient de
-                // repondre, pas une constante : le tunnel en change a chaque
-                // redemarrage.
-                line.append('live from the ');
-                const link = el('a', 'tracker-source-link', 'steamtrack API');
-                link.href = `${apiOrigin}/app.html?appid=${API_APPID}`;
-                link.target = '_blank';
-                link.rel = 'noopener';
-                link.title = 'Open Fading Echo on steamtrack';
-                line.append(link);
-            } else {
-                line.append(data.live ? 'live from the steamtrack API'
-                                      : 'from the published snapshot');
-            }
+            // La mention de la source devient un lien vers la passerelle
+            // steamtrack, et non vers le tunnel : l'adresse du tunnel change a
+            // chaque redemarrage de la VM, celle-ci est stable. La passerelle
+            // annonce l'etat du service et redirige vers l'adresse courante --
+            // c'est donc la seule qu'on puisse ecrire en dur.
+            //
+            // Le lien est pose dans les deux modes, y compris sur le repli :
+            // c'est precisement quand les donnees ne sont PAS en direct qu'on
+            // veut pouvoir aller voir si le service est tombe.
+            line.append(data.live ? 'live from the ' : 'from the published snapshot — ');
+            const link = el('a', 'tracker-source-link',
+                data.live ? 'steamtrack API' : 'steamtrack status');
+            link.href = STATUS_URL;
+            link.target = '_blank';
+            link.rel = 'noopener';
+            link.title = 'steamtrack service status';
+            line.append(link);
             statsEl.append(line);
         }
 
