@@ -89,6 +89,10 @@
     let flashText = '';
     let loading = false;
     let lastLive = false;   // le dernier chargement venait-il de l'API ?
+    // Adresse de l'API effectivement utilisee, retenue pour pouvoir lier vers
+    // le site steamtrack : le tunnel change d'adresse, un lien en dur mourrait
+    // au premier redemarrage de la VM.
+    let apiOrigin = localStorage.getItem(API_CACHE) || '';
 
     noiseEl.checked = localStorage.getItem(NOISE_KEY) === '1';
 
@@ -113,13 +117,14 @@
     // lecture de tunnel.json.
     async function apiBase(force) {
         const cached = localStorage.getItem(API_CACHE);
-        if (cached && !force) return cached;
+        if (cached && !force) { apiOrigin = cached; return cached; }
         // Delai court : tunnel.json n'est qu'un aiguillage, et le repli sur
         // updates.json doit rester rapide si GitHub ne repond pas.
         const data = await jsonFetch(TUNNEL_JSON, 8000);
         const url = (data && data.url || '').replace(/\/$/, '');
         if (!url) throw new Error('no tunnel address published');
         localStorage.setItem(API_CACHE, url);
+        apiOrigin = url;
         return url;
     }
 
@@ -129,6 +134,12 @@
         const payload = e.changes;
         const out = {
             id: e.source + ':' + (e.change_number || e.id),
+            // Rang d'enregistrement cote API. Retenu pour que le
+            // rafraichissement incremental suive l'ordre de DECOUVERTE et non
+            // la date de publication : une annonce parue hier et detectee
+            // aujourd'hui porte la date d'hier, donc un filtre sur la date ne
+            // la ramene jamais.
+            rowid: e.id,
             type: e.kind,
             types: e.types || [e.kind],
             changeid: e.change_number,
@@ -146,23 +157,23 @@
         return out;
     }
 
-    // Charge depuis l'API. `since` permet aux rafraichissements de ne demander
+    // Charge depuis l'API. `sinceId` permet aux rafraichissements de ne demander
     // que l'inedit : une requete au lieu des deux que coute la pagination
     // complete des 850+ evenements.
-    async function loadFromApi(since) {
+    async function loadFromApi(sinceId) {
         const base = await apiBase(false);
         const path = `${base}/v1/apps/${API_APPID}/changes?limit=${API_PAGE}`;
+        const inc = sinceId ? '&since_id=' + encodeURIComponent(sinceId) : '';
         let data;
         try {
-            data = await jsonFetch(path + (since ? '&since=' + encodeURIComponent(since) : ''),
-                                   FETCH_MS, true);
+            data = await jsonFetch(path + inc, FETCH_MS, true);
         } catch (err) {
             // L'adresse en cache peut dater d'avant un redemarrage de la VM :
             // on relit tunnel.json une fois avant de conclure a une panne.
             const fresh = await apiBase(true);
             data = await jsonFetch(
-                `${fresh}/v1/apps/${API_APPID}/changes?limit=${API_PAGE}` +
-                (since ? '&since=' + encodeURIComponent(since) : ''), FETCH_MS, true);
+                `${fresh}/v1/apps/${API_APPID}/changes?limit=${API_PAGE}` + inc,
+                FETCH_MS, true);
         }
 
         const events = (data.changes || []).map(adaptEvent);
@@ -170,7 +181,7 @@
         // va chercher la suite, sur un rafraichissement incremental il n'y a
         // presque jamais de seconde page.
         let offset = events.length;
-        while (!since && offset < (data.total || 0) && offset < 5000) {
+        while (!sinceId && offset < (data.total || 0) && offset < 5000) {
             const page = await jsonFetch(
                 `${await apiBase(false)}/v1/apps/${API_APPID}/changes` +
                 `?limit=${API_PAGE}&offset=${offset}`, FETCH_MS, true);
@@ -182,11 +193,23 @@
         return { generated: new Date().toISOString(), events, live: true };
     }
 
+    // Plus grand rang d'enregistrement connu, curseur du suivi incremental.
+    // Renvoie 0 si aucun evenement n'en porte : c'est le cas d'un flux venu
+    // d'updates.json, qui n'a pas ces identifiants -- on repart alors sur un
+    // chargement complet plutot que sur un curseur invente.
+    function maxRowId(events) {
+        let max = 0;
+        for (const e of events) {
+            if (typeof e.rowid === 'number' && e.rowid > max) max = e.rowid;
+        }
+        return max;
+    }
+
     // Tente l'API, retombe sur le fichier statique. Le repli n'est pas une
     // erreur : c'est le mode nominal quand la VM est eteinte.
-    async function fetchData(since) {
+    async function fetchData(sinceId) {
         try {
-            return await loadFromApi(since);
+            return await loadFromApi(sinceId);
         } catch (err) {
             const data = await jsonFetch('updates.json');
             data.live = false;
@@ -210,17 +233,22 @@
             // desactive jusqu'au rechargement de la page.
             // Rafraichissement incremental : quand un flux est deja rendu et
             // que la derniere source etait l'API, ne demander que l'inedit.
-            const since = silent && allEvents.length && lastLive
-                ? allEvents[0].date
+            // Le curseur est le plus grand rowid connu, pas la date la plus
+            // recente : un evenement enregistre apres coup -- une annonce
+            // Steam detectee le lendemain de sa parution -- porte une date
+            // ancienne et resterait invisible jusqu'au prochain rechargement
+            // complet de la page.
+            const sinceId = silent && allEvents.length && lastLive
+                ? maxRowId(allEvents)
                 : null;
-            const data = await fetchData(since);
+            const data = await fetchData(sinceId);
 
             lastFetch = Date.now();
             lastLive = !!data.live;
             const known = new Set(allEvents.map(eventId));
             let events = (data.events || []).filter(e => e && e.date);
 
-            if (since) {
+            if (sinceId) {
                 // Reponse partielle : elle complete le flux, elle ne le
                 // remplace pas. Sans cette fusion un rafraichissement sans
                 // nouveaute viderait la page.
@@ -321,11 +349,26 @@
             // est celui du collecteur en direct ; servi par le fichier, il
             // date du dernier passage de la GitHub Action. Deux fraicheurs
             // differentes ne doivent pas s'afficher de la meme facon.
-            const origin = data.live ? 'live from the steamtrack API'
-                                     : 'from the published snapshot';
-            statsEl.append(el('p', 'tracker-generated',
+            const line = el('p', 'tracker-generated',
                 `Data updated ${relative(data.generated)} ` +
-                `(${absolute(data.generated)}) — ${origin}`));
+                `(${absolute(data.generated)}) — `);
+            if (data.live && apiOrigin) {
+                // La mention de la source devient un lien vers la page que
+                // steamtrack consacre au jeu. L'adresse est celle qui vient de
+                // repondre, pas une constante : le tunnel en change a chaque
+                // redemarrage.
+                line.append('live from the ');
+                const link = el('a', 'tracker-source-link', 'steamtrack API');
+                link.href = `${apiOrigin}/app.html?appid=${API_APPID}`;
+                link.target = '_blank';
+                link.rel = 'noopener';
+                link.title = 'Open Fading Echo on steamtrack';
+                line.append(link);
+            } else {
+                line.append(data.live ? 'live from the steamtrack API'
+                                      : 'from the published snapshot');
+            }
+            statsEl.append(line);
         }
 
         // replaceChildren vient de vider le conteneur : l'indicateur d'auto-refresh
