@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <title>Backups - FadingUtilities</title>
+    <meta name="description" content="Archived Fading Echo demo builds and backups, available on request">
+    <!-- Page volontairement non referencee : aucun lien du site n'y mene, elle
+         ne figure pas au sitemap, et ce noindex la tient hors des resultats de
+         recherche. Sans lui, un moteur finit par la trouver malgre l'absence de
+         liens (barres d'adresse, historiques de navigateur, partages) et elle
+         se retrouverait mise en avant sans que personne l'ait voulu.
+         Ne PAS l'ajouter a robots.txt : ce fichier est public et interdire un
+         chemin revient a en publier l'existence. -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Backups - FadingUtilities">
+    <meta property="og:description" content="Archived Fading Echo demo builds and backups, available on request">
+    <meta property="og:image" content="https://cheapmanga.github.io/FadingUtilities/Images/FE-banner.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cheapmanga.github.io/FadingUtilities/backups.html">
+    <link rel="canonical" href="https://cheapmanga.github.io/FadingUtilities/backups.html">
+    <meta name="theme-color" content="#00F5FF">
+    <link rel="icon" type="image/png" href="Images/favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Le header du site est en position fixe : sans marge haute, le
+           premier bloc passe dessous. 100px est la valeur qu'utilise deja
+           .container dans style.css, a toutes les tailles d'ecran. */
+        .guide-container {
+            max-width: 1000px;
+            margin: 100px auto 0;
+            padding: 40px 20px;
+        }
+
+        .guide-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(0, 245, 255, 0.1));
+            border: 2px solid var(--primary-cyan);
+            border-radius: 20px;
+        }
+
+        .guide-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-cyan);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .guide-header .subtitle {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+        }
+
+        /* Encart de contact. C'est l'action attendue de la page : rien ne se
+           telecharge ici, tout passe par une demande. Il est donc traite comme
+           l'element principal et non comme une note de bas de page. */
+        .contact-card {
+            background: rgba(0, 245, 255, 0.06);
+            border: 2px solid var(--primary-cyan);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .contact-card h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-cyan);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            color: #c0c0c0;
+            line-height: 1.8;
+            max-width: 640px;
+            margin: 0 auto 12px;
+        }
+
+        .handle {
+            display: inline-block;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: var(--primary-yellow);
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 4px 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-actions {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .backup-list {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .backup-list h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-cyan);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .requirement {
+            margin-top: 18px !important;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 0.95rem;
+            color: #9a9a9a !important;
+        }
+
+        .requirement i { color: var(--primary-yellow); margin-right: 6px; }
+
+        .backup-list > p.hint {
+            color: #a0a0a0;
+            margin-bottom: 25px;
+        }
+
+        /* Une liste, pas un tableau : sur telephone un tableau a trois colonnes
+           deborde ou se tasse, alors que ces cartes se replient toutes seules. */
+        .backup-item {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 16px 18px;
+            margin-bottom: 12px;
+            background: rgba(0, 0, 0, 0.25);
+            border-left: 3px solid var(--primary-cyan);
+            border-radius: 8px;
+        }
+
+        .backup-item .name {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            font-size: 1.05rem;
+        }
+
+        .backup-item .meta {
+            color: #8a8a8a;
+            font-size: 0.9rem;
+        }
+
+        .backup-item .desc {
+            flex-basis: 100%;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">FADING ECHO SPEEDRUNS</a>
+            <div class="nav-actions">
+                <a href="speedrun.html" class="nav-btn"><i class="fas fa-stopwatch"></i><span>Speedrun</span></a>
+                <a href="mods-tools.html" class="nav-btn"><i class="fas fa-cubes"></i><span>Mods &amp; Tools</span></a>
+                <a href="tracker.html" class="nav-btn"><i class="fas fa-satellite-dish"></i><span>Updates</span></a>
+                <button class="search-trigger" id="searchTrigger">
+                    <i class="fas fa-search"></i>
+                    <span class="search-text">Search</span>
+                    <kbd class="search-kbd">Ctrl+K</kbd>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="guide-container">
+
+        <div class="guide-header">
+            <h1><i class="fas fa-box-archive"></i> Backups</h1>
+            <p class="subtitle">Archived demo builds and older versions of Fading Echo</p>
+        </div>
+
+        <div class="contact-card">
+            <h2><i class="fab fa-discord"></i> Ask me for a copy</h2>
+            <!-- C'est l'identifiant qui est mis en avant, pas le pseudo
+                 affiche : sur Discord seul l'identifiant permet de retrouver
+                 quelqu'un par la recherche. Le pseudo n'est la que pour
+                 confirmer qu'on est tombe sur la bonne personne. -->
+            <p>
+                Nothing is downloadable here. Message me on Discord
+                &mdash; <span class="handle">cheapmanga_89714</span> &mdash; and tell me
+                which one you want. You will see me as <strong>cheapmanga</strong>.
+            </p>
+            <!-- La condition est annoncee ici plutot que decouverte en message
+                 prive : elle evite les demandes de gens qui ne possedent pas le
+                 jeu, et dit clairement que ce n'est pas un moyen de l'obtenir
+                 sans l'acheter. -->
+            <p class="requirement">
+                <i class="fas fa-circle-info"></i>
+                Full game builds go to owners only &mdash; I check before sending.
+                Demo builds are free, so just ask.
+            </p>
+            <div class="contact-actions">
+                <a href="https://discord.gg/KnjSeWrRPv" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fab fa-discord"></i> Join the Discord</a>
+            </div>
+        </div>
+
+        <!-- POUR AJOUTER UNE SAUVEGARDE : copier un bloc .backup-item et le
+             placer dans la bonne section. Seul .name est indispensable, .meta
+             est facultatif. La page ne distribue aucun fichier, elle annonce
+             seulement ce qui existe. -->
+
+        <div class="backup-list">
+            <h2><i class="fas fa-gamepad"></i> Demo builds</h2>
+            <!-- Ne pas vanter ce qu'on atteint dans la demo qui ne devrait pas
+                 l'etre : ce serait donner une raison de s'en contenter plutot
+                 que d'acheter le jeu. On s'en tient a l'usage speedrun. -->
+            <p class="hint">
+                Free to grab, just ask. Useful for practising older strats and for
+                comparing how a glitch behaves from one build to the next.
+            </p>
+
+            <div class="backup-item"><span class="name">Demo v. 1.0.21988</span></div>
+            <div class="backup-item"><span class="name">Demo v. 1.0.22530</span></div>
+            <div class="backup-item"><span class="name">Demo v. 1.0.23360</span></div>
+            <div class="backup-item"><span class="name">Demo v. 1.0.23642</span></div>
+            <div class="backup-item"><span class="name">Demo v. 1.0.24388</span></div>
+            <div class="backup-item"><span class="name">Demo v. 1.0.26037</span></div>
+            <div class="backup-item"><span class="name">Demo v. 1.0.27280</span></div>
+            <div class="backup-item"><span class="name">Demo v. 1.0.27551</span></div>
+
+        </div>
+
+        <div class="backup-list">
+            <h2><i class="fas fa-compact-disc"></i> Full game versions</h2>
+            <p class="hint">Owners only &mdash; I verify before sending.</p>
+
+            <div class="backup-item">
+                <span class="name">Project Ygro v. 1.0.27797</span>
+                <span class="meta">Project Ygro is the game&rsquo;s internal name</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer style="margin-top: 50px; text-align: center; padding: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p>&copy; 2026 Fading Echo — Developed by Emeteria Studio / New Tales</p>
+        <p>Release Date: July 21, 2026 on PC</p>
+        <p style="margin-top: 20px; font-size: 0.9rem;"><i class="fas fa-heart" style="color: var(--primary-pink);"></i> Made by CheapManga and the community &nbsp;·&nbsp; <a href="https://discord.gg/KnjSeWrRPv" target="_blank" rel="noopener noreferrer" style="color: var(--primary-cyan); text-decoration: none;"><i class="fab fa-discord"></i> Join our Discord</a></p>
+    </footer>
+
+    <!-- SEARCH MODAL -->
+    <div id="searchModal" class="search-modal" role="dialog" aria-label="Search">
+        <div class="search-container">
+            <div class="search-header">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search glitches, mods, tools..." autocomplete="off" aria-label="Search input">
+                <kbd class="search-shortcut">ESC</kbd>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-empty">Start typing to search...</div>
+            </div>
+            <div class="search-footer">
+                <span><kbd>ESC</kbd> to close</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="search-data.js"></script>
+    <script src="search.js"></script>
+    <script src="site.js"></script>
+</body>
+</html>
