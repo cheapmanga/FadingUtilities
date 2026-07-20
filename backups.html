@@ -112,6 +112,16 @@
             margin-bottom: 8px;
         }
 
+        .requirement {
+            margin-top: 18px !important;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 0.95rem;
+            color: #9a9a9a !important;
+        }
+
+        .requirement i { color: var(--primary-yellow); margin-right: 6px; }
+
         .backup-list > p.hint {
             color: #a0a0a0;
             margin-bottom: 25px;
@@ -188,24 +198,42 @@
                 &mdash; <span class="handle">cheapmanga_89714</span> &mdash; and tell me
                 which one you want. You will see me as <strong>cheapmanga</strong>.
             </p>
+            <!-- La condition est annoncee ici plutot que decouverte en message
+                 prive : elle evite les demandes de gens qui ne possedent pas le
+                 jeu, et dit clairement que ce n'est pas un moyen de l'obtenir
+                 sans l'acheter. -->
+            <p class="requirement">
+                <i class="fas fa-circle-info"></i>
+                Full game builds go to owners only &mdash; I check before sending.
+                Demo builds are free, so just ask.
+            </p>
             <div class="contact-actions">
                 <a href="https://discord.gg/KnjSeWrRPv" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fab fa-discord"></i> Join the Discord</a>
             </div>
         </div>
 
-        <div class="backup-list">
-            <h2><i class="fas fa-list"></i> What is archived</h2>
+        <!-- POUR AJOUTER UNE SAUVEGARDE : copier un bloc .backup-item et le
+             placer dans la bonne section. Seul .name est indispensable, .meta
+             est facultatif. La page ne distribue aucun fichier, elle annonce
+             seulement ce qui existe. -->
 
-            <!-- POUR AJOUTER UNE SAUVEGARDE : copier un bloc .backup-item
-                 ci-dessous et remplir les trois champs. Seul .name est
-                 indispensable ; .meta et .desc peuvent etre retires si on n'a
-                 rien a y mettre. Ne rien mettre d'autre ici : la page ne
-                 distribue aucun fichier, elle ne fait qu'annoncer ce qui
-                 existe. -->
+        <div class="backup-list">
+            <h2><i class="fas fa-gamepad"></i> Demo builds</h2>
 
             <div class="backup-item">
                 <span class="name">Old demo (pre-release)</span>
                 <span class="meta">Hidden levels reachable, some glitches behave differently</span>
+            </div>
+
+        </div>
+
+        <div class="backup-list">
+            <h2><i class="fas fa-compact-disc"></i> Full game versions</h2>
+            <p class="hint">Owners only &mdash; I verify before sending.</p>
+
+            <div class="backup-item">
+                <span class="name">Add your versions here</span>
+                <span class="meta">Patch or build name, and what changed</span>
             </div>
 
         </div>
