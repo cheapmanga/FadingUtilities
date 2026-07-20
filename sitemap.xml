@@ -20,8 +20,4 @@
         <loc>https://cheapmanga.github.io/FadingUtilities/tracker.html</loc>
         <priority>0.8</priority>
     </url>
-    <url>
-        <loc>https://cheapmanga.github.io/FadingUtilities/backups.html</loc>
-        <priority>0.6</priority>
-    </url>
 </urlset>
