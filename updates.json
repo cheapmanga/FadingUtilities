@@ -1,7 +1,91 @@
 {
- "generated": "2026-07-18T14:05:27.986651+00:00",
+ "generated": "2026-07-20T16:04:41.822944+00:00",
  "appid": "2467880",
  "events": [
+  {
+   "id": "change:37390081",
+   "type": "build",
+   "types": [
+    "build"
+   ],
+   "changeid": "37390081",
+   "title": "Build pushed (content not public)",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37390081",
+   "source": "pics",
+   "date": "2026-07-20T16:04:41.822944+00:00",
+   "opaque": true,
+   "changes": [
+    {
+     "op": "modified",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "ChangeNumber:"
+      },
+      {
+       "t": "del",
+       "v": "37340713"
+      },
+      {
+       "t": "text",
+       "v": " › "
+      },
+      {
+       "t": "ins",
+       "v": "37390081"
+      }
+     ],
+     "children": [
+      {
+       "op": "none",
+       "seg": [
+        {
+         "t": "muted",
+         "v": "Aucun changement dans l'appinfo public : le patch porte sur les depots, que l'API anonyme ne renvoie pas. Le buildid n'est lisible que sur SteamDB."
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "news:1838407329264073",
+   "type": "news",
+   "types": [
+    "news"
+   ],
+   "changeid": "1838407329264073",
+   "title": "2 DAYS TO GO — Cayrn is warming up",
+   "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1838407329264073",
+   "source": "news",
+   "author": "KDR1819NT",
+   "feed": "Community Announcements",
+   "body": "Two days. Cayrn is warming up, and Liam O’Brien wants you ready.We’re incredibly excited to welcome you to Corel on July 21, and we can’t wait to hear about your adventures.💙 If you haven’t already, make sure to add Fading Echo to your wishlist — and try the free demo while you wait for the full release!💬 Don’t forget to join us on Discord (\"https://discord.com/invite/fadingechogame\") to share your thoughts and feedback.— The Fading Echo Team",
+   "date": "2026-07-19T18:19:24+00:00",
+   "changes": []
+  },
+  {
+   "id": "news:1838407329262400",
+   "type": "news",
+   "types": [
+    "news"
+   ],
+   "changeid": "1838407329262400",
+   "title": "3 DAYS TO GO — Vellum is almost in the wild",
+   "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1838407329262400",
+   "source": "news",
+   "author": "KDR1819NT",
+   "feed": "Community Announcements",
+   "body": "Three days. Vellum is almost in the wild, and Laura Bailey wants you there with her.We’re incredibly excited to welcome you to Corel on July 21, and we can’t wait to hear about your adventures.💙 If you haven’t already, make sure to add Fading Echo to your wishlist — and try the free demo while you wait for the full release!💬 Don’t forget to join us on Discord (\"https://discord.com/invite/fadingechogame\") to share your thoughts and feedback.— The Fading Echo Team",
+   "date": "2026-07-18T18:25:13+00:00",
+   "changes": []
+  },
   {
    "id": "news:1838407329260402",
    "type": "news",
