@@ -25,5 +25,8 @@ const staticSearchIndex = [
     { title: "LiveSplit", category: "Tool", page: "mods-tools.html", target: "tools", desc: "Timing software with auto-splitter", icon: "fa-stopwatch" },
     { title: "Cheat Engine", category: "Tool", page: "mods-tools.html", target: "tools", desc: "Practice tool for teleportation", icon: "fa-microchip" },
     { title: "Infinite Health", category: "Tool", page: "mods-tools.html", target: "tools", desc: "Invincibility cheat with Cheat Engine", icon: "fa-heart" },
-    { title: "Older Demo", category: "Tool", page: "mods-tools.html", target: "tools", desc: "Previous demo version for glitch hunters", icon: "fa-gamepad" }
+    { title: "Older Demo", category: "Tool", page: "backups.html", target: "", desc: "Previous demo version for glitch hunters", icon: "fa-gamepad" },
+
+    // --- Backups ---
+    { title: "Backups", category: "Archive", page: "backups.html", target: "", desc: "Archived demo builds, available on request via Discord", icon: "fa-box-archive" }
 ];
