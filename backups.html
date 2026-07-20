@@ -21,9 +21,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Le header du site est en position fixe : sans marge haute, le
+           premier bloc passe dessous. 100px est la valeur qu'utilise deja
+           .container dans style.css, a toutes les tailles d'ecran. */
         .guide-container {
             max-width: 1000px;
-            margin: 0 auto;
+            margin: 100px auto 0;
             padding: 40px 20px;
         }
 
