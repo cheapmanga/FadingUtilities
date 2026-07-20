@@ -1,7 +1,23 @@
 {
- "generated": "2026-07-20T16:04:41.822944+00:00",
+ "generated": "2026-07-20T20:01:58.692437+00:00",
  "appid": "2467880",
  "events": [
+  {
+   "id": "news:1838407329266811",
+   "type": "news",
+   "types": [
+    "news"
+   ],
+   "changeid": "1838407329266811",
+   "title": "24 HOURS TO GO — Bob Le Critter is about to become your problem",
+   "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1838407329266811",
+   "source": "news",
+   "author": "KDR1819NT",
+   "feed": "Community Announcements",
+   "body": "Just 24 hours until Bob Le Critter, voiced by Sam Riegel, becomes your problem.We’re incredibly excited to welcome you to Corel tomorrow, and we can’t wait to hear about your adventures.💙 If you haven’t already, make sure to add Fading Echo to your wishlist — and try the free demo while you wait for the full release!💬 Don’t forget to join us on Discord (\"https://discord.com/invite/fadingechogame\") to share your thoughts and feedback.— The Fading Echo Team",
+   "date": "2026-07-20T18:47:16+00:00",
+   "changes": []
+  },
   {
    "id": "change:37390081",
    "type": "build",
