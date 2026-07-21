@@ -1,8 +1,8 @@
 {
- "_change_number": 37390081,
- "_missing_token": true,
- "_sha": "b95a3f111507eab25dcd0885cc4c48a28c7aaeae",
- "_size": 5053,
+ "_change_number": 37412793,
+ "_missing_token": false,
+ "_sha": "f51ec148892edf7812c765ae66be2dc5e48266bc",
+ "_size": 6373,
  "appid": "2467880",
  "common": {
   "associations": {
@@ -28,6 +28,7 @@
   "clienticon": "c8a157a7cbcabe83c58f5511c787eff2dad4af99",
   "clienttga": "03029536ca670bd9e47e79e0d9c5c12a7ce6b677",
   "community_hub_visible": "1",
+  "community_visible_stats": "1",
   "controller_support": "full",
   "controllertagwizard": "1",
   "eulas": {
@@ -38,7 +39,6 @@
     "version": "1"
    }
   },
-  "exfgls": "8",
   "gameid": "2467880",
   "genres": {
    "0": "1",
@@ -137,12 +137,13 @@
   "osextended": "",
   "oslist": "windows",
   "primary_genre": "1",
-  "releasestate": "prerelease",
+  "releasestate": "released",
   "small_capsule": {
    "english": "8911f722ab88dd638c48a2a8c2d305899beb2952/capsule_231x87.jpg",
    "schinese": "0d866606ea43aedc4c9120e2820c2f13950b9465/capsule_231x87_schinese.jpg"
   },
-  "store_asset_mtime": "1784206267",
+  "steam_release_date": "1784620812",
+  "store_asset_mtime": "1784622692",
   "store_tags": {
    "0": "4106",
    "1": "19",
@@ -215,5 +216,76 @@
   },
   "type": "Game"
  },
- "public_only": "1"
+ "config": {
+  "installdir": "Project Ygrό",
+  "launch": {
+   "0": {
+    "executable": "FadingEcho.exe"
+   }
+  }
+ },
+ "depots": {
+  "228989": {
+   "config": {
+    "oslist": "windows"
+   },
+   "depotfromapp": "228980",
+   "sharedinstall": "1"
+  },
+  "228990": {
+   "config": {
+    "oslist": "windows"
+   },
+   "depotfromapp": "228980",
+   "sharedinstall": "1"
+  },
+  "2467881": {
+   "config": {
+    "language": "english",
+    "osarch": "64",
+    "oslist": "windows"
+   },
+   "manifests": {
+    "public": {
+     "download": "4931533312",
+     "gid": "5874854129064005239",
+     "size": "5230006440"
+    }
+   }
+  },
+  "2467882": {
+   "config": {
+    "osarch": "64",
+    "oslist": "windows"
+   },
+   "manifests": {}
+  },
+  "branches": {
+   "public": {
+    "buildid": "24261641",
+    "timebuildupdated": "1784301490",
+    "timeupdated": "1784549580"
+   }
+  },
+  "hasdepotsindlc": "1",
+  "privatebranches": "1"
+ },
+ "extended": {
+  "developer": "Emeteria",
+  "dlcavailableonstore": "1",
+  "homepage": "https://www.fading-echo.com/",
+  "listofdlc": "4814570",
+  "publisher": "New Tales"
+ },
+ "ufs": {
+  "maxnumfiles": "3",
+  "quota": "50000000",
+  "savefiles": {
+   "0": {
+    "path": "UE_YGRO/Saved/SaveGames/{64BitSteamID}",
+    "pattern": "*.sav",
+    "root": "WinAppDataLocal"
+   }
+  }
+ }
 }

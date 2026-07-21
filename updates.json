@@ -1,7 +1,930 @@
 {
- "generated": "2026-07-20T20:01:58.692437+00:00",
+ "generated": "2026-07-21T10:04:17.924595+00:00",
  "appid": "2467880",
  "events": [
+  {
+   "id": "change:37412793",
+   "type": "build",
+   "types": [
+    "build",
+    "branch",
+    "depot",
+    "assets",
+    "store"
+   ],
+   "changeid": "37412793",
+   "title": "Build 24261641",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37412793",
+   "source": "pics",
+   "date": "2026-07-21T10:04:17.924595+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "community_visible_stats:"
+        },
+        {
+         "t": "ins",
+         "v": "1"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "removed",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Removed "
+        },
+        {
+         "t": "field",
+         "v": "exfgls:"
+        },
+        {
+         "t": "del",
+         "v": "8"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "releasestate:"
+        },
+        {
+         "t": "del",
+         "v": "prerelease"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "released"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "steam_release_date:"
+        },
+        {
+         "t": "ins",
+         "v": "1784620812"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "store_asset_mtime:"
+        },
+        {
+         "t": "del",
+         "v": "1784206267"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "1784622692"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "config"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "installdir:"
+        },
+        {
+         "t": "ins",
+         "v": "Project Ygrό"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "config > launch > 0"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "executable:"
+        },
+        {
+         "t": "ins",
+         "v": "FadingEcho.exe"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "depots"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "hasdepotsindlc:"
+        },
+        {
+         "t": "ins",
+         "v": "1"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "privatebranches:"
+        },
+        {
+         "t": "ins",
+         "v": "1"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "depots > 228989"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "depotfromapp:"
+        },
+        {
+         "t": "ins",
+         "v": "228980"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "sharedinstall:"
+        },
+        {
+         "t": "ins",
+         "v": "1"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "depots > 228989 > config"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "oslist:"
+        },
+        {
+         "t": "ins",
+         "v": "windows"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "depots > 228990"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "depotfromapp:"
+        },
+        {
+         "t": "ins",
+         "v": "228980"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "sharedinstall:"
+        },
+        {
+         "t": "ins",
+         "v": "1"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "depots > 228990 > config"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "oslist:"
+        },
+        {
+         "t": "ins",
+         "v": "windows"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "depots > 2467881 > config"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "language:"
+        },
+        {
+         "t": "ins",
+         "v": "english"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "osarch:"
+        },
+        {
+         "t": "ins",
+         "v": "64"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "oslist:"
+        },
+        {
+         "t": "ins",
+         "v": "windows"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "depots > 2467881 > manifests > public"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "download:"
+        },
+        {
+         "t": "ins",
+         "v": "4931533312"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "gid:"
+        },
+        {
+         "t": "ins",
+         "v": "5874854129064005239"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "size:"
+        },
+        {
+         "t": "ins",
+         "v": "5230006440"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "depots > 2467882 > config"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "osarch:"
+        },
+        {
+         "t": "ins",
+         "v": "64"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "oslist:"
+        },
+        {
+         "t": "ins",
+         "v": "windows"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "depots > branches > public"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "buildid:"
+        },
+        {
+         "t": "ins",
+         "v": "24261641"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "timebuildupdated:"
+        },
+        {
+         "t": "ins",
+         "v": "1784301490"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "timeupdated:"
+        },
+        {
+         "t": "ins",
+         "v": "1784549580"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "extended"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "developer:"
+        },
+        {
+         "t": "ins",
+         "v": "Emeteria"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "dlcavailableonstore:"
+        },
+        {
+         "t": "ins",
+         "v": "1"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "homepage:"
+        },
+        {
+         "t": "ins",
+         "v": "https://www.fading-echo.com/"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "listofdlc:"
+        },
+        {
+         "t": "ins",
+         "v": "4814570"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "publisher:"
+        },
+        {
+         "t": "ins",
+         "v": "New Tales"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "ufs"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "maxnumfiles:"
+        },
+        {
+         "t": "ins",
+         "v": "3"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "quota:"
+        },
+        {
+         "t": "ins",
+         "v": "50000000"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "ufs > savefiles > 0"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "path:"
+        },
+        {
+         "t": "ins",
+         "v": "UE_YGRO/Saved/SaveGames/{64BitSteamID}"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "pattern:"
+        },
+        {
+         "t": "ins",
+         "v": "*.sav"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "root:"
+        },
+        {
+         "t": "ins",
+         "v": "WinAppDataLocal"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "news:1838407329268402",
+   "type": "news",
+   "types": [
+    "news"
+   ],
+   "changeid": "1838407329268402",
+   "title": "Fading Echo is OUT NOW!",
+   "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1838407329268402",
+   "source": "news",
+   "author": "Galathée",
+   "feed": "Community Announcements",
+   "body": "Step into Fading Echo, a fast-paced elemental action-adventure RPG. Developed by an independent French studio, you'll unleash spectacular elemental abilities, meet unforgettable characters, and explore the scorched floating isles and shattered dimensions of Corel.Play as One, a young Legend with a tangled past and precious little time left to save her world. The Paradox Corruption is spreading, reality is collapsing, and Corel is slowly disappearing. Master powerful Ætheric abilities, transform water into a devastating weapon, and slide, shift, and smash your way through breathtaking environments in an epic quest to stop the world's decay.🎙️ An unforgettable adventure deserves an unforgettable cast!\nSamantha Béart stars as One, joined by an incredible lineup featuring Jasmine Bhullar, Laura Bailey, Liam O'Brien, Sam Riegel, and Matt Mercer, who delivers a chilling performance as the game's main antagonist.🎮 Console releases are planned for later this year.See you soon in Corel!💬 Don’t forget to join us on Discord (\"https://discord.gg/fadingechogame\") to share your thoughts & feedbacks!- The Fading Echo Team🌊 Flow with us✨ Buy Fading Echo (\"https://store.steampowered.com/app/2467880/Fading_Echo/?snr=1_5_9_\")And follow the adventure:YouTube (\"http://www.youtube.com/@FadingEchoGame?sub_confirmation=1\") | TikTok (\"https://www.tiktok.com/@fadingechogame\") | Instagram (\"https://www.instagram.com/fadingechogame/\")",
+   "date": "2026-07-21T08:08:13+00:00",
+   "changes": []
+  },
   {
    "id": "news:1838407329266811",
    "type": "news",
