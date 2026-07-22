@@ -1,7 +1,88 @@
 {
- "generated": "2026-07-22T01:11:39.641662+00:00",
+ "generated": "2026-07-22T10:02:59.849958+00:00",
  "appid": "2467880",
  "events": [
+  {
+   "id": "change:37440726",
+   "type": "assets",
+   "types": [
+    "assets"
+   ],
+   "changeid": "37440726",
+   "title": "Changed review_percentage, store_asset_mtime",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37440726",
+   "source": "pics",
+   "date": "2026-07-22T10:02:59.849958+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "review_percentage:"
+        },
+        {
+         "t": "del",
+         "v": "91"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "92"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "store_asset_mtime:"
+        },
+        {
+         "t": "del",
+         "v": "1784622692"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "1784706080"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
   {
    "id": "change:37433342",
    "type": "meta",
