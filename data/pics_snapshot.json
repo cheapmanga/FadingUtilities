@@ -1,8 +1,8 @@
 {
- "_change_number": 37462689,
+ "_change_number": 37469439,
  "_missing_token": false,
- "_sha": "374ad1f8e0e0b5a8e2283d7d388f8ecbf35e758e",
- "_size": 6423,
+ "_sha": "ac1c68dfb6b9fc54185f3376e1213ea96ed91220",
+ "_size": 6424,
  "appid": "2467880",
  "common": {
   "associations": {
@@ -44,7 +44,7 @@
    "0": "1",
    "1": "25",
    "2": "23",
-   "3": "3"
+   "3": "37"
   },
   "header_image": {
    "english": "e39036b077d6aee96e3e0b2e7929a55c4735957e/header.jpg",
@@ -145,7 +145,7 @@
    "schinese": "0d866606ea43aedc4c9120e2820c2f13950b9465/capsule_231x87_schinese.jpg"
   },
   "steam_release_date": "1784620812",
-  "store_asset_mtime": "1784706080",
+  "store_asset_mtime": "1784798068",
   "store_tags": {
    "0": "4106",
    "1": "19",

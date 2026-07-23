@@ -1,7 +1,104 @@
 {
- "generated": "2026-07-23T04:44:23.525845+00:00",
+ "generated": "2026-07-23T10:01:46.184675+00:00",
  "appid": "2467880",
  "events": [
+  {
+   "id": "change:37469439",
+   "type": "assets",
+   "types": [
+    "assets",
+    "store"
+   ],
+   "changeid": "37469439",
+   "title": "Changed genres, store_asset_mtime",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37469439",
+   "source": "pics",
+   "date": "2026-07-23T10:01:46.184675+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "store_asset_mtime:"
+        },
+        {
+         "t": "del",
+         "v": "1784706080"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "1784798068"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > genres"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "3:"
+        },
+        {
+         "t": "del",
+         "v": "3"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "37"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
   {
    "id": "change:37462689",
    "type": "meta",
