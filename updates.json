@@ -1,7 +1,467 @@
 {
- "generated": "2026-07-23T10:01:46.184675+00:00",
+ "generated": "2026-07-23T12:02:04.662175+00:00",
  "appid": "2467880",
  "events": [
+  {
+   "id": "change:37471905",
+   "type": "store",
+   "types": [
+    "store"
+   ],
+   "changeid": "37471905",
+   "title": "Changed review_percentage, store_tags",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37471905",
+   "source": "pics",
+   "date": "2026-07-23T12:02:04.662175+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "review_percentage:"
+        },
+        {
+         "t": "del",
+         "v": "97"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "94"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > store_tags"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "10:"
+        },
+        {
+         "t": "del",
+         "v": "3810"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "6869"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "11:"
+        },
+        {
+         "t": "del",
+         "v": "6869"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "1684"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "12:"
+        },
+        {
+         "t": "del",
+         "v": "1684"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "4252"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "13:"
+        },
+        {
+         "t": "del",
+         "v": "4252"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "4085"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "14:"
+        },
+        {
+         "t": "del",
+         "v": "4085"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "4166"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "15:"
+        },
+        {
+         "t": "del",
+         "v": "4166"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "7208"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "16:"
+        },
+        {
+         "t": "del",
+         "v": "7208"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "3835"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "17:"
+        },
+        {
+         "t": "del",
+         "v": "122"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "1751"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "18:"
+        },
+        {
+         "t": "del",
+         "v": "3835"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "21"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "19:"
+        },
+        {
+         "t": "del",
+         "v": "1751"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "4158"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "5:"
+        },
+        {
+         "t": "del",
+         "v": "4231"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "3834"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "6:"
+        },
+        {
+         "t": "del",
+         "v": "3834"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "4182"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "7:"
+        },
+        {
+         "t": "del",
+         "v": "4182"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "1742"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "8:"
+        },
+        {
+         "t": "del",
+         "v": "1742"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "1734"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "9:"
+        },
+        {
+         "t": "del",
+         "v": "1734"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "3810"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
   {
    "id": "change:37469439",
    "type": "assets",
