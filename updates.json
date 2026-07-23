@@ -1,7 +1,62 @@
 {
- "generated": "2026-07-23T12:02:04.662175+00:00",
+ "generated": "2026-07-23T21:50:05.037663+00:00",
  "appid": "2467880",
  "events": [
+  {
+   "id": "change:37485536",
+   "type": "meta",
+   "types": [
+    "meta"
+   ],
+   "changeid": "37485536",
+   "title": "Changed review_percentage",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37485536",
+   "source": "pics",
+   "date": "2026-07-23T21:50:05.037663+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "review_percentage:"
+        },
+        {
+         "t": "del",
+         "v": "94"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "95"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
   {
    "id": "change:37471905",
    "type": "store",
