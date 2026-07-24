@@ -1,7 +1,225 @@
 {
- "generated": "2026-07-23T21:50:05.037663+00:00",
+ "generated": "2026-07-24T09:00:38.632782+00:00",
  "appid": "2467880",
  "events": [
+  {
+   "id": "change:37496817",
+   "type": "build",
+   "types": [
+    "build",
+    "branch",
+    "depot"
+   ],
+   "changeid": "37496817",
+   "title": "Build 24333427",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37496817",
+   "source": "pics",
+   "date": "2026-07-24T09:00:38.632782+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "depots > 2467881 > manifests > public"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "download:"
+        },
+        {
+         "t": "del",
+         "v": "4931533312"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "4931402832"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "gid:"
+        },
+        {
+         "t": "del",
+         "v": "5874854129064005239"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "4088194719045019993"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "size:"
+        },
+        {
+         "t": "del",
+         "v": "5230006440"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "5229992088"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "depots > branches > public"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "buildid:"
+        },
+        {
+         "t": "del",
+         "v": "24261641"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "24333427"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "timebuildupdated:"
+        },
+        {
+         "t": "del",
+         "v": "1784301490"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "1784721334"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "timeupdated:"
+        },
+        {
+         "t": "del",
+         "v": "1784549580"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "1784880900"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "news:1839041357028873",
+   "type": "news",
+   "types": [
+    "news"
+   ],
+   "changeid": "1839041357028873",
+   "title": "Fading Echo Update - Hotfix V.1.0.27953",
+   "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1839041357028873",
+   "source": "news",
+   "author": "nt_arrowhead",
+   "feed": "Community Announcements",
+   "body": "Hello Legends! First of all, the entire team would like to thank you for the incredible welcome you've given Fading Echo. Your support means the world to us! We've been carefully reading all of your feedback-both the kind words (thank you ) and your suggestions for improvement. Every comment helps us make the game even better!  Today, we're deploying our first hotfix, which includes:[*]Updated localization for Japanese, Korean, Simplified Chinese, and Traditional Chinese, including character customization.[/*][*]Fixed an issue where XP could disappear after dying during the final battles.[/*][*]Fixed an issue where dying to Corruption during the final battles could send players back to the main menu.[/*]  Please keep sharing your feedback with us! We're listening, and we'll continue improving the game with your help  Feel free to join our Discord to chat with other players, as well as the game's developers: https://discord.com/invite/fadingechogame (\"https://discord.com/invite/fadingechogame\")  Have a wonderful journey through the Echoverse! – The Fading Echo Team",
+   "date": "2026-07-24T08:24:12+00:00",
+   "changes": []
+  },
   {
    "id": "change:37485536",
    "type": "meta",

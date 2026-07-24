@@ -1,7 +1,7 @@
 {
- "_change_number": 37485536,
+ "_change_number": 37496817,
  "_missing_token": false,
- "_sha": "85f24ad919da09daedd4cfe3fe86f19262950627",
+ "_sha": "c08ac260e26b2baa27f4aaea1b46b91e323911a7",
  "_size": 6423,
  "appid": "2467880",
  "common": {
@@ -249,9 +249,9 @@
    },
    "manifests": {
     "public": {
-     "download": "4931533312",
-     "gid": "5874854129064005239",
-     "size": "5230006440"
+     "download": "4931402832",
+     "gid": "4088194719045019993",
+     "size": "5229992088"
     }
    }
   },
@@ -264,9 +264,9 @@
   },
   "branches": {
    "public": {
-    "buildid": "24261641",
-    "timebuildupdated": "1784301490",
-    "timeupdated": "1784549580"
+    "buildid": "24333427",
+    "timebuildupdated": "1784721334",
+    "timeupdated": "1784880900"
    }
   },
   "hasdepotsindlc": "1",
