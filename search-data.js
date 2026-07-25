@@ -17,6 +17,14 @@ const staticSearchIndex = [
     // --- Mods ---
     { title: "Teleport Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Alternative to Cheat Engine - F6/F7", icon: "fa-location-arrow" },
     { title: "Volume Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "See invisible walls & triggers", icon: "fa-border-all" },
+    { title: "Core Giver Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Give yourself elemental cores (water, waste, fire, glitch, power)", icon: "fa-atom" },
+    { title: "MoonJump Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Infinite jump / BotW-style flight", icon: "fa-feather" },
+    { title: "Chest Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Teleport yourself to all loaded chests", icon: "fa-box-open" },
+    { title: "KillAll Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Kills all loaded enemies", icon: "fa-skull-crossbones" },
+    { title: "Source Giver Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Give yourself connected sources - at 12 opens the ending", icon: "fa-plug-circle-bolt" },
+    { title: "XP Giver Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Give yourself Ætherfact points (skill points)", icon: "fa-star" },
+    { title: "Skins Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Access One's hidden skins, swap her model or strip the outline", icon: "fa-shirt" },
+    { title: "Bad Apple Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Play Bad Apple rendered live by the game's own cubes", icon: "fa-play" },
 
     // --- Tracker ---
     { title: "Updates", category: "Steam", page: "tracker.html", target: "", desc: "Steam update tracker: builds, depots, branches and patch notes", icon: "fa-satellite-dish" },

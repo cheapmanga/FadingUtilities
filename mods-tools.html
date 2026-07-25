@@ -47,6 +47,12 @@
 
         <h2 class="category-title" style="margin: 20px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid var(--primary-cyan); font-family: 'Orbitron', sans-serif; color: var(--primary-cyan);"><i class="fas fa-cubes"></i> Mods</h2>
 
+        <div class="warning" style="margin-bottom: 30px;">
+            <strong>ALL THE MODS BELOW NEED UE4SS INSTALLED.</strong> If you need help with the installation process or if mods are not working, contact me on Discord: <strong>cheapmanga_89714</strong>.<br>
+            All mods, with their READMEs, are also on GitHub: <a href="https://github.com/cheapmanga/FE-UE4SS-Mods" target="_blank" rel="noopener noreferrer" style="color: var(--primary-cyan); text-decoration: none;">github.com/cheapmanga/FE-UE4SS-Mods</a><br>
+            <span style="display:block; margin-top:10px;"><strong>Note:</strong> Do not create mods with <code>UE4SS Debugging Tools (OpenGL 3) - External Thread</code> or it will ask for administrator rights to remove it — and you will not be able to remove it even with them. You will have to remove it using the console.</span>
+        </div>
+
         <div class="mods-grid">
 
             <!-- Teleport Mod -->
@@ -103,6 +109,179 @@
 
                 <a href="https://drive.google.com/uc?id=1KaB3u3OKECMud42-oIlTjFKndRZCpx5F" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
             </div>
+
+            <!-- Core Giver Mod -->
+            <div class="mod-card">
+                <div class="mod-icon"><i class="fas fa-atom"></i></div>
+                <h2>Core Giver Mod</h2>
+                <p>Give yourself elemental cores, useful for exploration and glitch hunting.</p>
+
+                <h3><i class="fas fa-terminal"></i> Commands</h3>
+                <ul>
+                    <li><code>core water</code> : spawns a water core and puts it in your "hands"</li>
+                    <li><code>core waste</code> : same, waste</li>
+                    <li><code>core fire</code> : same, lava</li>
+                    <li><code>core glitch</code> : same, corruption</li>
+                    <li><code>core power</code> : same, powercore</li>
+                    <li><code>core &lt;element&gt; nograb</code> : places it in front of you <strong>without</strong> picking it up</li>
+                    <li><code>core list</code> : reminder of the commands</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Note:</strong> Check the README in the .ZIP for a tutorial.
+                </div>
+
+                <a href="https://raw.githubusercontent.com/cheapmanga/FE-UE4SS-Mods/main/dist/FECoreGiver.zip" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
+            </div>
+
+            <!-- MoonJump Mod -->
+            <div class="mod-card">
+                <div class="mod-icon"><i class="fas fa-feather"></i></div>
+                <h2>MoonJump Mod</h2>
+                <p>Infinite jump / BotW-style flight.</p>
+
+                <h3><i class="fas fa-gamepad"></i> Controls &amp; Commands</h3>
+                <ul>
+                    <li><code>F7</code> : toggle MoonJump — <strong>hold jump</strong> to keep rising</li>
+                    <li><code>F6</code> : toggle MultiJump — re-jump in mid-air, indefinitely</li>
+                    <li><code>moonjump</code> : toggle from the console</li>
+                    <li><code>moonjump speed &lt;n&gt;</code> : rise speed, cm/s (default 700)</li>
+                    <li><code>moonjump key &lt;FKey&gt;</code> : watched key (default SpaceBar; use a Gamepad FKey on pad)</li>
+                    <li><code>moonjump status</code> : current state</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Note:</strong> Check the README in the .ZIP for a tutorial.
+                </div>
+
+                <a href="https://raw.githubusercontent.com/cheapmanga/FE-UE4SS-Mods/main/dist/FEMoonJump.zip" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
+            </div>
+
+            <!-- Chest Mod -->
+            <div class="mod-card">
+                <div class="mod-icon"><i class="fas fa-box-open"></i></div>
+                <h2>Chest Mod</h2>
+                <p>Teleport yourself to all loaded chests.</p>
+
+                <h3><i class="fas fa-terminal"></i> Commands</h3>
+                <ul>
+                    <li><code>chest</code> : teleports to the next chest — the 1st call goes to the <strong>nearest</strong> one</li>
+                    <li><code>chest reset</code> : rebuilds the route from your current position</li>
+                    <li><code>chest prev</code> : returns to the previous chest</li>
+                    <li><code>chest &lt;n&gt;</code> : jumps directly to the n-th chest in the route</li>
+                    <li><code>chest list</code> : lists the loaded chests with their distance (in meters)</li>
+                    <li><code>chest help</code> : reminder of the commands</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Note:</strong> Check the README in the .ZIP for a tutorial.
+                </div>
+
+                <a href="https://raw.githubusercontent.com/cheapmanga/FE-UE4SS-Mods/main/dist/FEChestHopper.zip" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
+            </div>
+
+            <!-- KillAll Mod -->
+            <div class="mod-card">
+                <div class="mod-icon"><i class="fas fa-skull-crossbones"></i></div>
+                <h2>KillAll Mod</h2>
+                <p>A simple mod that kills all loaded enemies.</p>
+
+                <h3><i class="fas fa-terminal"></i> Commands</h3>
+                <ul>
+                    <li><code>killall</code> : kill every currently loaded enemy</li>
+                    <li><code>killall count</code> : count the loaded enemies without killing anything</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Note:</strong> Check the README in the .ZIP for a tutorial.
+                </div>
+
+                <a href="https://raw.githubusercontent.com/cheapmanga/FE-UE4SS-Mods/main/dist/FEKillAll.zip" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
+            </div>
+
+            <!-- Source Giver Mod -->
+            <div class="mod-card">
+                <div class="mod-icon"><i class="fas fa-plug-circle-bolt"></i></div>
+                <h2>Source Giver Mod</h2>
+                <p>Give yourself connected sources — opens gates and, at 12, the ending.</p>
+
+                <h3><i class="fas fa-terminal"></i> Commands</h3>
+                <ul>
+                    <li><code>source</code> : +1 connected source</li>
+                    <li><code>source &lt;n&gt;</code> : +n sources (e.g. <code>source 3</code>)</li>
+                    <li><code>source set &lt;n&gt;</code> : set the total to n (<code>source set 12</code> opens the ending)</li>
+                    <li><code>source status</code> : show the current total without changing anything</li>
+                    <li><code>source unlocked &lt;n&gt;</code> : +n <em>found</em> sources (the other stat, milestones 1/3/6/9)</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Note:</strong> Check the README in the .ZIP for a tutorial.
+                </div>
+
+                <a href="https://raw.githubusercontent.com/cheapmanga/FE-UE4SS-Mods/main/dist/FESourceGiver.zip" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
+            </div>
+
+            <!-- XP Giver Mod -->
+            <div class="mod-card">
+                <div class="mod-icon"><i class="fas fa-star"></i></div>
+                <h2>XP Giver Mod</h2>
+                <p>Give yourself Ætherfact points (skill points).</p>
+
+                <h3><i class="fas fa-terminal"></i> Commands</h3>
+                <ul>
+                    <li><code>xp</code> : +1 Ætherfact point</li>
+                    <li><code>xp &lt;n&gt;</code> : +n points (e.g. <code>xp 5</code>)</li>
+                    <li><code>xp status</code> : show the balance, granting nothing</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Note:</strong> Check the README in the .ZIP for a tutorial.
+                </div>
+
+                <a href="https://raw.githubusercontent.com/cheapmanga/FE-UE4SS-Mods/main/dist/FEXpGiver.zip" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
+            </div>
+
+            <!-- Skins Mod -->
+            <div class="mod-card">
+                <div class="mod-icon"><i class="fas fa-shirt"></i></div>
+                <h2>Skins Mod</h2>
+                <p>Access One's hidden skins, swap her whole model, or strip the outline.</p>
+
+                <h3><i class="fas fa-terminal"></i> Commands</h3>
+                <ul>
+                    <li><code>skin one &lt;0-4&gt;</code> : apply a skin (Skin0 = default, Skin1 = Hellgur One, Skin2/3/4 never shown in the menu)</li>
+                    <li><code>skin mesh &lt;alias&gt;</code> : swap One's model (<code>skin mesh list</code> for the aliases, <code>skin mesh reset</code> to restore)</li>
+                    <li><code>skin outline off</code> / <code>skin outline on</code> : remove or restore the character outline</li>
+                    <li><code>skin reset</code> : restore the original materials</li>
+                    <li><code>skin</code> : reminder of the commands</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Note:</strong> Check the README in the .ZIP for a tutorial.
+                </div>
+
+                <a href="https://raw.githubusercontent.com/cheapmanga/FE-UE4SS-Mods/main/dist/FESkins.zip" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
+            </div>
+
+            <!-- Bad Apple Mod -->
+            <div class="mod-card">
+                <div class="mod-icon"><i class="fas fa-play"></i></div>
+                <h2>Bad Apple Mod</h2>
+                <p>Play Bad Apple in front of you — the video is rendered live by the game's own cubes!</p>
+
+                <h3><i class="fas fa-terminal"></i> Commands</h3>
+                <ul>
+                    <li><code>badapple play ism</code> : start playback (recommended mode, no trailing)</li>
+                    <li><code>badapple stop</code> : stop and clean</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Note:</strong> Check the README in the .ZIP for a tutorial.
+                </div>
+
+                <a href="https://www.youtube.com/watch?v=N81xduMaXXY" target="_blank" rel="noopener noreferrer" class="secondary-btn"><i class="fab fa-youtube"></i> Watch Demo</a>
+                <a href="https://raw.githubusercontent.com/cheapmanga/FE-UE4SS-Mods/main/dist/FEBadApple.zip" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
+            </div>
         </div>
 
         <!-- ========================================= -->
@@ -113,7 +292,8 @@
         <div class="tool-card">
             <h3><i class="fas fa-stopwatch"></i> LiveSplit - Timing Software</h3>
             <p>We use a software called <strong>LiveSplit</strong>, it allows us to precisely time our runs.</p>
-            <p style="margin-top: 15px;">There is an auto-splitter out there, just type <strong>"Fading Echo"</strong> in the name section and you'll see an auto-splitter made by Streetbackguy.</p>
+            <p style="margin-top: 15px;">It has an auto-splitter — just type <strong>"Fading Echo"</strong> in the name section to find the one made by <strong>CheapManga</strong>.</p>
+            <p style="margin-top: 10px;">If you want to do runs on the demo, type <strong>"Fading Echo Demo"</strong> in the name section to find the one made by <strong>StreetBackGuy</strong>.</p>
             <a href="https://livesplit.org/" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download LiveSplit</a>
         </div>
 
