@@ -79,26 +79,35 @@
             <div class="mod-card">
                 <div class="mod-icon"><i class="fas fa-border-all"></i></div>
                 <h2>Volume Mod</h2>
-                <span class="mod-version">v0.1.0</span>
-                <p>See invisible walls and triggers in the game world. Perfect for understanding level boundaries and planning optimized routes for speedrunning.</p>
+                <p>See invisible walls, triggers and collision volumes in the game world. Perfect for understanding level boundaries and planning optimized routes for speedrunning.</p>
+
+                <div class="note">
+                    <strong>Not a Lua mod:</strong> this is an <code>Engine.ini</code> that switches on Unreal's built-in <strong>debug-draw / debug view modes</strong>, complementing the console that ships with UE4SS. Nothing to compile — the whole thing is one config file.
+                </div>
 
                 <h3><i class="fas fa-eye"></i> Features</h3>
                 <ul>
                     <li>Visualize most invisible walls and collision volumes</li>
                     <li>See trigger zones and interactive areas</li>
+                    <li>On-screen debug messages and verbose logging</li>
                     <li>Essential for route planning and optimization</li>
-                    <li>Helps understand level design and boundaries</li>
+                </ul>
+
+                <h3><i class="fas fa-folder-open"></i> Where it goes</h3>
+                <ul>
+                    <li>Copy <code>Engine.ini</code> into <code>%LOCALAPPDATA%\UE_YGRO\Saved\Config\Windows\</code></li>
+                    <li>The bundled <code>apply-engine-ini.bat</code> does this copy for you</li>
                 </ul>
 
                 <div class="warning">
-                    <strong>IMPORTANT:</strong> PLEASE READ THE README IN THE .ZIP FOR TUTORIAL
+                    <strong>⚠️ Steam wipes it on every launch.</strong> The game regenerates this <code>Engine.ini</code> each time it starts, so you must re-apply it <strong>every session</strong>: launch the game once, then run <code>apply-engine-ini.bat</code> (or copy the file back in). Keeping the master copy + the .bat together in a small backup folder makes it a one double-click job. Full routine in the README.
                 </div>
 
                 <div class="note">
-                    <strong>Note:</strong> The readme is made for the Volume Mod but the Teleport Mod is also included in the same package.
+                    <strong>Tip:</strong> Setting the copied <code>Engine.ini</code> to read-only can stop the game overwriting it on some builds — if the debug draw disappears, it got wiped anyway and you're back to re-applying each launch.
                 </div>
 
-                <a href="https://drive.google.com/uc?id=1KaB3u3OKECMud42-oIlTjFKndRZCpx5F" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
+                <a href="https://raw.githubusercontent.com/cheapmanga/FE-UE4SS-Mods/main/dist/FEVolume.zip" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
             </div>
 
             <!-- Core Giver Mod -->
