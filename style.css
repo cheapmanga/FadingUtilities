@@ -11,6 +11,9 @@
 }
 
 /* ===== SCROLLBAR ===== */
+/* Firefox (uses the standard properties; WebKit rules below are ignored there) */
+html { scrollbar-width: thin; scrollbar-color: var(--primary-cyan) rgba(0, 0, 0, 0.1); }
+/* WebKit / Chromium */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.1); }
 ::-webkit-scrollbar-thumb { background: var(--primary-cyan); border-radius: 3px; }
