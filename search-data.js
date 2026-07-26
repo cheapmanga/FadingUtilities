@@ -1,15 +1,15 @@
-// ===== INDEX DE RECHERCHE — ENTRÉES STATIQUES =====
-// Ne contient QUE les entrées qui ne sont pas des glitches (pages dédiées,
-// mods, outils). Les glitches sont générés automatiquement depuis
-// glitches.json par search.js — plus de doublon à maintenir ici.
+// ===== SEARCH INDEX — STATIC ENTRIES =====
+// Contains ONLY the entries that are not glitches (dedicated pages,
+// mods, tools). Glitches are generated automatically from
+// glitches.json by search.js — no more duplicates to maintain here.
 //
-// Pour rendre un glitch cherchable : il suffit de l'ajouter à glitches.json.
-// Champs optionnels dans glitches.json pour soigner l'affichage dans la
-// recherche : "search_icon", "search_desc" (par glitch) et "search_category"
-// (par section). À défaut, repli sur l'icône de section, alt_names/how_to.
+// To make a glitch searchable: just add it to glitches.json.
+// Optional fields in glitches.json to refine how it appears in the
+// search: "search_icon", "search_desc" (per glitch) and "search_category"
+// (per section). Otherwise, falls back to the section icon, alt_names/how_to.
 
 const staticSearchIndex = [
-    // --- Void Cancel (page dédiée) ---
+    // --- Void Cancel (dedicated page) ---
     { title: "Void Cancel Guide", category: "Any%", page: "voidcancel.html", target: "", desc: "Complete detailed guide to bypass fall limits", icon: "fa-book-open" },
     { title: "Void Cancel (CS Method)", category: "Glitch", page: "voidcancel.html", target: "", desc: "Primary method using Cutscene Skip", icon: "fa-film" },
     { title: "Void Cancel (Death Method)", category: "Glitch", page: "voidcancel.html", target: "", desc: "Alternative method without CS", icon: "fa-skull" },
@@ -29,7 +29,7 @@ const staticSearchIndex = [
     // --- Tracker ---
     { title: "Updates", category: "Steam", page: "tracker.html", target: "", desc: "Steam update tracker: builds, depots, branches and patch notes", icon: "fa-satellite-dish" },
 
-    // --- Outils (désormais sur la page Mods & Tools) ---
+    // --- Tools (now on the Mods & Tools page) ---
     { title: "LiveSplit", category: "Tool", page: "mods-tools.html", target: "tools", desc: "Timing software with auto-splitter", icon: "fa-stopwatch" },
     { title: "Cheat Engine", category: "Tool", page: "mods-tools.html", target: "tools", desc: "Practice tool for teleportation", icon: "fa-microchip" },
     { title: "Infinite Health", category: "Tool", page: "mods-tools.html", target: "tools", desc: "Invincibility cheat with Cheat Engine", icon: "fa-heart" },

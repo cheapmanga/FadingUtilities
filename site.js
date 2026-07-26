@@ -1,9 +1,9 @@
-// ===== SCRIPTS COMMUNS =====
-// Particules d'eau et défilement doux.
-// Chargé sur toutes les pages. Aucun handler inline (compatible CSP).
+// ===== SHARED SCRIPTS =====
+// Water particles and smooth scrolling.
+// Loaded on every page. No inline handlers (CSP-compatible).
 
 (function () {
-    // ----- Particules d'eau -----
+    // ----- Water particles -----
     function createWaterParticle() {
         const particle = document.createElement('div');
         particle.className = 'water-particle';
@@ -16,10 +16,10 @@
     }
     setInterval(createWaterParticle, 500);
 
-    // ----- Défilement doux vers les ancres -----
+    // ----- Smooth scrolling to anchors -----
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const href = anchor.getAttribute('href');
-        if (href === '#') return; // liens gérés en JS (ex: back-btn)
+        if (href === '#') return; // links handled in JS (e.g. back-btn)
         anchor.addEventListener('click', function (e) {
             const target = document.querySelector(href);
             if (target) {

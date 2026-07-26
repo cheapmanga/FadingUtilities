@@ -1,67 +1,67 @@
 // ===== PAGE TRACKER =====
-// Rend l'historique des changements Steam de Fading Echo, facon SteamDB.
+// Renders the Steam change history for Fading Echo, SteamDB-style.
 //
-// updates.json est ecrit par scripts/check_updates.py (GitHub Action toutes les
-// 10 min) et amorce par scripts/parse_steamdb_history.py. Le fichier est servi
-// en same-origin : la CSP du site reste inchangee.
+// updates.json is written by scripts/check_updates.py (GitHub Action every
+// 10 min) and seeded by scripts/parse_steamdb_history.py. The file is served
+// same-origin: the site's CSP stays unchanged.
 
 (function () {
     const PAGE_SIZE = 40;
     const NOISE_KEY = 'fe-tracker-noise';
-    // Intervalle du rafraichissement automatique cote navigateur (5 min).
+    // Interval of the automatic browser-side refresh (5 min).
     const AUTO_MS = 300000;
-    // Apres un echec reseau on retente plus tot que le cycle nominal.
+    // After a network failure we retry sooner than the nominal cycle.
     const RETRY_MS = 30000;
-    // Delai au-dela duquel une requete pendante est abandonnee : sans cela un
-    // fetch qui ne se resout jamais laisserait loading a true pour toujours.
+    // Delay beyond which a pending request is abandoned: without it a fetch
+    // that never resolves would leave loading at true forever.
     const FETCH_MS = 20000;
-    // Duree d'affichage d'un message transitoire dans l'indicateur.
+    // How long a transient message is shown in the indicator.
     const FLASH_MS = 8000;
 
-    // ----- Sources de donnees -----
+    // ----- Data sources -----
     //
-    // Deux sources, par ordre de preference :
+    // Two sources, in order of preference:
     //
-    //   1. l'API steamtrack, qui suit le flux PICS en continu et donne donc
-    //      l'etat en direct ;
-    //   2. updates.json, ecrit par la GitHub Action, servi same-origin.
+    //   1. the steamtrack API, which follows the PICS feed continuously and so
+    //      gives the live state;
+    //   2. updates.json, written by the GitHub Action, served same-origin.
     //
-    // L'API n'est pas toujours joignable : elle tourne sur une VM qui peut
-    // etre eteinte, derriere un tunnel dont l'adresse change a chaque
-    // redemarrage. updates.json, lui, est toujours la. On tente donc l'API et
-    // on retombe sur le fichier sans que le visiteur voie autre chose qu'un
-    // flux complet -- simplement moins frais.
+    // The API is not always reachable: it runs on a VM that may be powered
+    // off, behind a tunnel whose address changes on every restart.
+    // updates.json, on the other hand, is always there. So we try the API and
+    // fall back to the file without the visitor seeing anything other than a
+    // complete feed -- simply less fresh.
     //
-    // La cle ci-dessous est PUBLIQUE par construction : tout ce qui est servi
-    // au navigateur est lisible. Elle est donc choisie pour que sa divulgation
-    // ne coute rien --
+    // The key below is PUBLIC by construction: everything served to the
+    // browser is readable. It is therefore chosen so that its disclosure costs
+    // nothing --
     //
-    //   - lecture seule : elle ne peut ni ajouter ni retirer un jeu, les deux
-    //     seuls endpoints d'ecriture la refusent en 403 ;
-    //   - quota borne (5000/h) : un abus reste plafonne, la ou une cle
-    //     illimitee publierait un droit d'aspiration sans frein ;
-    //   - dediee a ce site : elle se revoque sans toucher aux autres acces.
+    //   - read-only: it can neither add nor remove a game, the two only
+    //     write endpoints refuse it with a 403;
+    //   - bounded quota (5000/h): abuse stays capped, whereas an unlimited key
+    //     would publish an unthrottled right to scrape;
+    //   - dedicated to this site: it can be revoked without touching other access.
     //
-    // Les cles illimitees de steamtrack sont des cles d'administration --
-    // elles autorisent la suppression d'un jeu avec tout son historique -- et
-    // n'ont rien a faire dans le JavaScript d'un site public.
+    // The unlimited steamtrack keys are administration keys -- they allow
+    // deleting a game along with its entire history -- and have no business
+    // being in the JavaScript of a public site.
     const API_KEY = 'st_wKGo181hDZTAWdyiv0jeXszQUiTjGfmC';
     const API_APPID = 2467880;
     const TUNNEL_JSON =
         'https://raw.githubusercontent.com/cheapmanga/SteamTrack/main/tunnel.json';
-    // Passerelle steamtrack : point d'entree stable, heberge sur Cloudflare
-    // Pages (depot cheapmanga/steamtrack-status, redeploye a chaque commit).
-    // Elle lit la meme adresse que ci-dessus, verifie que le service repond,
-    // et redirige. C'est la seule adresse du service qui ne change jamais --
-    // donc la seule a pouvoir figurer en dur dans un lien.
+    // steamtrack gateway: stable entry point, hosted on Cloudflare Pages
+    // (repository cheapmanga/steamtrack-status, redeployed on every commit).
+    // It reads the same address as above, checks that the service responds,
+    // and redirects. It's the only address of the service that never changes --
+    // hence the only one that can be hard-coded in a link.
     const STATUS_URL = 'https://steamtrack-status.pages.dev';
-    // Derniere adresse connue de l'API. La retenir evite de relire tunnel.json
-    // a chaque chargement, et fait gagner un aller-retour au demarrage.
+    // Last known address of the API. Keeping it avoids re-reading tunnel.json
+    // on every load, and saves a round-trip at startup.
     const API_CACHE = 'fe-tracker-api-base';
-    // Plafond impose par l'endpoint /changes.
+    // Cap imposed by the /changes endpoint.
     const API_PAGE = 500;
 
-    // L'ordre fixe l'ordre des boutons de filtre.
+    // The order fixes the order of the filter buttons.
     const TYPES = {
         build: { label: 'Builds', icon: 'fa-hammer' },
         depot: { label: 'Depots', icon: 'fa-hard-drive' },
@@ -79,7 +79,7 @@
     const searchEl = document.getElementById('trackerSearch');
     const noiseEl = document.getElementById('showNoise');
     const moreBtn = document.getElementById('loadMore');
-    // Peut ne pas exister : le bouton n'est present que sur la page tracker.
+    // May not exist: the button is only present on the tracker page.
     const refreshBtn = document.getElementById('refreshBtn');
 
     let allEvents = [];
@@ -87,22 +87,23 @@
     let shown = 0;
     let activeType = 'all';
 
-    // Etat de l'auto-refresh.
-    let autoEl = null;      // <span id="autoStatus">, cree par le JS
-    let nextAt = 0;         // horodatage du prochain rafraichissement
-    let lastFetch = 0;      // horodatage du dernier chargement reussi
-    let flashUntil = 0;     // fin d'affichage du message transitoire
+    // Auto-refresh state.
+    let autoEl = null;      // <span id="autoStatus">, created by the JS
+    let nextAt = 0;         // timestamp of the next refresh
+    let lastFetch = 0;      // timestamp of the last successful load
+    let flashUntil = 0;     // end of the transient message display
     let flashText = '';
     let loading = false;
-    let lastLive = false;   // le dernier chargement venait-il de l'API ?
+    let lastLive = false;   // did the last load come from the API?
 
     noiseEl.checked = localStorage.getItem(NOISE_KEY) === '1';
 
-    // ----- Acces a l'API -----
+    // ----- API access -----
 
-    // auth : n'envoyer la cle qu'a l'API steamtrack. X-API-Key est un en-tete
-    // non standard, donc soumis au preflight CORS ; l'ajouter a la lecture de
-    // tunnel.json ferait echouer une requete que GitHub sert tres bien sans.
+    // auth: only send the key to the steamtrack API. X-API-Key is a
+    // non-standard header, hence subject to the CORS preflight; adding it to
+    // the read of tunnel.json would break a request that GitHub serves just
+    // fine without it.
     function jsonFetch(url, ms, auth) {
         return fetch(url, {
             cache: 'no-store',
@@ -114,14 +115,14 @@
         });
     }
 
-    // Adresse courante de l'API. L'adresse en cache est tentee d'abord : quand
-    // elle est encore valide (le cas courant), le chargement ne coute pas la
-    // lecture de tunnel.json.
+    // Current address of the API. The cached address is tried first: when it
+    // is still valid (the common case), the load does not cost the read of
+    // tunnel.json.
     async function apiBase(force) {
         const cached = localStorage.getItem(API_CACHE);
         if (cached && !force) return cached;
-        // Delai court : tunnel.json n'est qu'un aiguillage, et le repli sur
-        // updates.json doit rester rapide si GitHub ne repond pas.
+        // Short delay: tunnel.json is only a switchboard, and the fallback to
+        // updates.json must stay fast if GitHub does not respond.
         const data = await jsonFetch(TUNNEL_JSON, 8000);
         const url = (data && data.url || '').replace(/\/$/, '');
         if (!url) throw new Error('no tunnel address published');
@@ -129,17 +130,17 @@
         return url;
     }
 
-    // L'API expose kind/occurred_at/change_number la ou le tracker attend
-    // type/date/changeid. Pour les annonces, le corps vit dans `changes`.
+    // The API exposes kind/occurred_at/change_number where the tracker expects
+    // type/date/changeid. For announcements, the body lives in `changes`.
     function adaptEvent(e) {
         const payload = e.changes;
         const out = {
             id: e.source + ':' + (e.change_number || e.id),
-            // Rang d'enregistrement cote API. Retenu pour que le
-            // rafraichissement incremental suive l'ordre de DECOUVERTE et non
-            // la date de publication : une annonce parue hier et detectee
-            // aujourd'hui porte la date d'hier, donc un filtre sur la date ne
-            // la ramene jamais.
+            // Record rank on the API side. Kept so that the incremental
+            // refresh follows the order of DISCOVERY and not the publication
+            // date: an announcement posted yesterday and detected today
+            // carries yesterday's date, so a filter on the date never brings
+            // it back.
             rowid: e.id,
             type: e.kind,
             types: e.types || [e.kind],
@@ -158,9 +159,9 @@
         return out;
     }
 
-    // Charge depuis l'API. `sinceId` permet aux rafraichissements de ne demander
-    // que l'inedit : une requete au lieu des deux que coute la pagination
-    // complete des 850+ evenements.
+    // Loads from the API. `sinceId` lets refreshes request only what's new:
+    // one request instead of the two that the full pagination of the 850+
+    // events costs.
     async function loadFromApi(sinceId) {
         const base = await apiBase(false);
         const path = `${base}/v1/apps/${API_APPID}/changes?limit=${API_PAGE}`;
@@ -169,8 +170,8 @@
         try {
             data = await jsonFetch(path + inc, FETCH_MS, true);
         } catch (err) {
-            // L'adresse en cache peut dater d'avant un redemarrage de la VM :
-            // on relit tunnel.json une fois avant de conclure a une panne.
+            // The cached address may predate a VM restart: we re-read
+            // tunnel.json once before concluding there's an outage.
             const fresh = await apiBase(true);
             data = await jsonFetch(
                 `${fresh}/v1/apps/${API_APPID}/changes?limit=${API_PAGE}` + inc,
@@ -178,9 +179,8 @@
         }
 
         const events = (data.changes || []).map(adaptEvent);
-        // Pagination : l'endpoint plafonne a 500. Sur un chargement complet on
-        // va chercher la suite, sur un rafraichissement incremental il n'y a
-        // presque jamais de seconde page.
+        // Pagination: the endpoint caps at 500. On a full load we go fetch the
+        // rest, on an incremental refresh there is almost never a second page.
         let offset = events.length;
         while (!sinceId && offset < (data.total || 0) && offset < 5000) {
             const page = await jsonFetch(
@@ -194,10 +194,10 @@
         return { generated: new Date().toISOString(), events, live: true };
     }
 
-    // Plus grand rang d'enregistrement connu, curseur du suivi incremental.
-    // Renvoie 0 si aucun evenement n'en porte : c'est le cas d'un flux venu
-    // d'updates.json, qui n'a pas ces identifiants -- on repart alors sur un
-    // chargement complet plutot que sur un curseur invente.
+    // Largest known record rank, cursor of the incremental tracking.
+    // Returns 0 if no event carries one: that's the case for a feed coming
+    // from updates.json, which lacks these identifiers -- we then restart from
+    // a full load rather than from an invented cursor.
     function maxRowId(events) {
         let max = 0;
         for (const e of events) {
@@ -206,8 +206,8 @@
         return max;
     }
 
-    // Tente l'API, retombe sur le fichier statique. Le repli n'est pas une
-    // erreur : c'est le mode nominal quand la VM est eteinte.
+    // Tries the API, falls back to the static file. The fallback is not an
+    // error: it's the nominal mode when the VM is powered off.
     async function fetchData(sinceId) {
         try {
             return await loadFromApi(sinceId);
@@ -218,9 +218,9 @@
         }
     }
 
-    // ----- Chargement -----
-    // silent : rafraichissement en arriere-plan, on ne detruit ni le flux deja
-    // rendu ni la position de lecture si le reseau tombe.
+    // ----- Loading -----
+    // silent: background refresh, we destroy neither the already-rendered feed
+    // nor the reading position if the network goes down.
     async function load(silent) {
         if (loading) return;
         loading = true;
@@ -228,17 +228,16 @@
         if (silent) status('Refreshing...');
 
         try {
-            // Sans delai maximum, un fetch qui ne se resout jamais (portail
-            // captif, reprise de veille) laisserait loading a true pour
-            // toujours : le compte a rebours gelerait et le bouton resterait
-            // desactive jusqu'au rechargement de la page.
-            // Rafraichissement incremental : quand un flux est deja rendu et
-            // que la derniere source etait l'API, ne demander que l'inedit.
-            // Le curseur est le plus grand rowid connu, pas la date la plus
-            // recente : un evenement enregistre apres coup -- une annonce
-            // Steam detectee le lendemain de sa parution -- porte une date
-            // ancienne et resterait invisible jusqu'au prochain rechargement
-            // complet de la page.
+            // Without a maximum delay, a fetch that never resolves (captive
+            // portal, wake from sleep) would leave loading at true forever:
+            // the countdown would freeze and the button would stay disabled
+            // until the page is reloaded.
+            // Incremental refresh: when a feed is already rendered and the
+            // last source was the API, request only what's new.
+            // The cursor is the largest known rowid, not the most recent
+            // date: an event recorded after the fact -- a Steam announcement
+            // detected the day after it was posted -- carries an old date and
+            // would stay invisible until the next full reload of the page.
             const sinceId = silent && allEvents.length && lastLive
                 ? maxRowId(allEvents)
                 : null;
@@ -250,25 +249,25 @@
             let events = (data.events || []).filter(e => e && e.date);
 
             if (sinceId) {
-                // Reponse partielle : elle complete le flux, elle ne le
-                // remplace pas. Sans cette fusion un rafraichissement sans
-                // nouveaute viderait la page.
+                // Partial response: it completes the feed, it does not replace
+                // it. Without this merge a refresh with no new items would
+                // empty the page.
                 const seen = new Set(events.map(eventId));
                 events = events.concat(
                     allEvents.filter(e => !seen.has(eventId(e))));
             }
             events.sort((a, b) => b.date.localeCompare(a.date));
-            // Le premier chargement reussi n'est pas une nouveaute : sans ce
-            // garde, un echec initial suivi d'un retour du reseau annoncerait
-            // tout le flux comme inedit ("815 new changes").
+            // The first successful load is not a new item: without this guard,
+            // an initial failure followed by the network returning would
+            // announce the whole feed as new ("815 new changes").
             const fresh = silent && allEvents.length
                 ? events.filter(e => !known.has(eventId(e))).length
                 : 0;
 
             allEvents = events;
 
-            // On restaure la position de lecture : un rafraichissement ne doit
-            // jamais ramener l'utilisateur en haut du flux.
+            // We restore the reading position: a refresh must never bring the
+            // user back to the top of the feed.
             const scrollY = window.scrollY;
             renderStats(data);
             renderFilters();
@@ -280,31 +279,31 @@
             }
             schedule();
         } catch (err) {
-            // Apres un echec on retente bien plus tot que le cycle nominal :
-            // annoncer "retrying" pour ne rien faire pendant cinq minutes
-            // serait mensonger, et une page ouverte sur un flux vide le
-            // resterait tout ce temps.
+            // After a failure we retry much sooner than the nominal cycle:
+            // announcing "retrying" to then do nothing for five minutes would
+            // be misleading, and a page opened on an empty feed would stay
+            // that way the whole time.
             if (silent) {
                 flash('Refresh failed, retrying');
             } else {
                 feedEl.replaceChildren(el('p', 'tracker-empty error',
                     'Could not load history: ' + err.message));
-                // renderStats n'a pas tourne : l'indicateur n'est pas encore dans
-                // le DOM, on l'y place pour que le compte a rebours reste visible.
+                // renderStats didn't run: the indicator isn't in the DOM yet,
+                // we place it there so the countdown stays visible.
                 if (!autoStatus().isConnected) statsEl.append(autoStatus());
             }
             schedule(RETRY_MS);
         } finally {
             loading = false;
             setBusy(false);
-            // Affiche le compte a rebours sans attendre le prochain battement :
-            // sinon l'indicateur reste vide pres d'une seconde apres le rendu.
+            // Show the countdown without waiting for the next beat: otherwise
+            // the indicator stays empty for nearly a second after the render.
             tick();
         }
     }
 
-    // Identite d'un evenement : le changenumber quand il existe, sinon la paire
-    // date + titre, suffisante pour reperer une entree inedite.
+    // Identity of an event: the changenumber when it exists, otherwise the
+    // date + title pair, enough to spot a new entry.
     function eventId(event) {
         return event.changeid ? 'c' + event.changeid : event.date + '|' + (event.title || '');
     }
@@ -315,7 +314,7 @@
         refreshBtn.disabled = on;
     }
 
-    // ----- En-tete -----
+    // ----- Header -----
     function renderStats(data) {
         const lastBuild = allEvents.find(e => e.type === 'build');
         const lastNews = allEvents.find(e => e.type === 'news');
@@ -341,27 +340,27 @@
         }));
 
         if (data.generated) {
-            // Date cote serveur, et date de la derniere mise a jour REELLE des
-            // donnees : le fichier n'est reecrit que lorsqu'il change. Elle ne
-            // bouge donc pas a chaque controle, ni au clic sur Refresh -- d'ou
-            // "Data updated" plutot que "Last checked", qui laissait croire
-            // l'inverse. Le controle, lui, a lieu toutes les 10 minutes.
-            // La provenance est dite explicitement : servi par l'API, le flux
-            // est celui du collecteur en direct ; servi par le fichier, il
-            // date du dernier passage de la GitHub Action. Deux fraicheurs
-            // differentes ne doivent pas s'afficher de la meme facon.
+            // Server-side date, and date of the last REAL update of the data:
+            // the file is only rewritten when it changes. So it does not move
+            // on every check, nor on clicking Refresh -- hence "Data updated"
+            // rather than "Last checked", which suggested the opposite. The
+            // check, for its part, happens every 10 minutes.
+            // The provenance is stated explicitly: served by the API, the feed
+            // is the one from the live collector; served by the file, it dates
+            // from the last run of the GitHub Action. Two different freshness
+            // levels must not be shown the same way.
             const line = el('p', 'tracker-generated',
                 `Data updated ${relative(data.generated)} ` +
                 `(${absolute(data.generated)}) — `);
-            // La mention de la source devient un lien vers la passerelle
-            // steamtrack, et non vers le tunnel : l'adresse du tunnel change a
-            // chaque redemarrage de la VM, celle-ci est stable. La passerelle
-            // annonce l'etat du service et redirige vers l'adresse courante --
-            // c'est donc la seule qu'on puisse ecrire en dur.
+            // The source mention becomes a link to the steamtrack gateway,
+            // and not to the tunnel: the tunnel's address changes on every VM
+            // restart, this one is stable. The gateway announces the service
+            // state and redirects to the current address -- so it's the only
+            // one we can hard-code.
             //
-            // Le lien est pose dans les deux modes, y compris sur le repli :
-            // c'est precisement quand les donnees ne sont PAS en direct qu'on
-            // veut pouvoir aller voir si le service est tombe.
+            // The link is placed in both modes, including on the fallback:
+            // it's precisely when the data is NOT live that we want to be able
+            // to go check whether the service is down.
             line.append(data.live ? 'live from the ' : 'from the published snapshot — ');
             const link = el('a', 'tracker-source-link',
                 data.live ? 'steamtrack API' : 'steamtrack status');
@@ -373,12 +372,12 @@
             statsEl.append(line);
         }
 
-        // replaceChildren vient de vider le conteneur : l'indicateur d'auto-refresh
-        // est reattache ici pour survivre a chaque rendu de l'en-tete.
+        // replaceChildren just emptied the container: the auto-refresh
+        // indicator is reattached here to survive every render of the header.
         statsEl.append(autoStatus());
     }
 
-    // ----- Indicateur d'auto-refresh -----
+    // ----- Auto-refresh indicator -----
     function autoStatus() {
         if (!autoEl) {
             autoEl = el('span', 'tracker-auto');
@@ -391,10 +390,9 @@
         autoStatus().textContent = text;
     }
 
-    // Message transitoire : il masque le compte a rebours quelques secondes.
-    // highlight n'est vrai que pour une bonne nouvelle (des changements
-    // inedits) : un echec passe aussi par ici et ne doit pas s'afficher en
-    // cyan comme une reussite.
+    // Transient message: it hides the countdown for a few seconds.
+    // highlight is only true for good news (new changes): a failure also goes
+    // through here and must not show in cyan like a success.
     function flash(text, highlight) {
         flashText = text;
         flashUntil = Date.now() + FLASH_MS;
@@ -419,8 +417,8 @@
         }
         if (!nextAt) return;
 
-        // Le message transitoire a expire : on rend la main au compte a rebours,
-        // donc l'accentuation n'a plus lieu d'etre.
+        // The transient message has expired: we hand control back to the
+        // countdown, so the highlight no longer has any reason to be.
         autoStatus().classList.remove('fresh');
 
         const left = Math.max(0, Math.round((nextAt - Date.now()) / 1000));
@@ -428,33 +426,33 @@
         const secs = left % 60;
         const countdown = `next in ${mins}:${String(secs).padStart(2, '0')}`;
 
-        // L'heure du dernier chargement reussi, elle, bouge a chaque clic sur
-        // Refresh : c'est le retour visible que l'action a bien eu lieu.
+        // The time of the last successful load, for its part, moves on every
+        // click on Refresh: it's the visible feedback that the action did happen.
         status(lastFetch
             ? `Page refreshed at ${clock(lastFetch)} - ${countdown}`
             : `Next refresh in ${mins}:${String(secs).padStart(2, '0')}`);
     }
 
-    // Categories d'un evenement. types[] est le format courant ; le repli sur
-    // type couvre les entrees ecrites avant son introduction.
+    // Categories of an event. types[] is the current format; the fallback to
+    // type covers entries written before it was introduced.
     function typesOf(event) {
         return Array.isArray(event.types) && event.types.length
             ? event.types
             : [event.type];
     }
 
-    // ----- Filtres -----
+    // ----- Filters -----
     function renderFilters() {
         const counts = {};
-        // Un evenement mixte compte dans chaque categorie ou il apparait : la
-        // somme des compteurs depasse donc le total, comme pour des etiquettes.
+        // A mixed event counts in each category where it appears: the sum of
+        // the counters therefore exceeds the total, as with tags.
         allEvents.forEach(e => {
             typesOf(e).forEach(t => { counts[t] = (counts[t] || 0) + 1; });
         });
 
-        // "All" annonce ce qui sera reellement affiche : compter les
-        // changenumbers alors qu'ils sont masques donnait un badge a 815 pour
-        // 173 entrees a l'ecran.
+        // "All" announces what will actually be shown: counting the
+        // changenumbers while they are hidden gave a badge of 815 for 173
+        // entries on screen.
         const all = noiseEl.checked
             ? allEvents.length
             : allEvents.filter(e => e.type !== 'changenumber').length;
@@ -488,15 +486,15 @@
     }
 
     // ----- Selection -----
-    // keepCount : conserve le nombre d'elements deja depiles par l'utilisateur,
-    // pour qu'un rafraichissement automatique ne reduise pas la pagination.
+    // keepCount: preserves the number of items already unrolled by the user,
+    // so that an automatic refresh does not shrink the pagination.
     function apply(keepCount) {
         const query = searchEl.value.trim().toLowerCase();
         const noise = noiseEl.checked;
 
         visible = allEvents.filter(e => {
-            // Les changenumbers seuls sont 80% du flux et ne disent rien :
-            // masques par defaut, comme le fait SteamDB.
+            // Changenumbers alone are 80% of the feed and say nothing:
+            // hidden by default, as SteamDB does.
             if (e.type === 'changenumber' && !noise && activeType !== 'changenumber') return false;
             if (activeType !== 'all' && !typesOf(e).includes(activeType)) return false;
             if (query && !haystack(e).includes(query)) return false;
@@ -530,9 +528,9 @@
         ).join(' ');
     }
 
-    // ----- Rendu par lots -----
-    // 795 evenements d'un coup, ce sont des milliers de noeuds : on rend par
-    // paquets pour garder la page reactive.
+    // ----- Batch rendering -----
+    // 795 events at once are thousands of nodes: we render in batches to keep
+    // the page responsive.
     function more() {
         const slice = visible.slice(shown, shown + PAGE_SIZE);
         const frag = document.createDocumentFragment();
@@ -577,7 +575,7 @@
             body.textContent = event.body;
             box.append(body);
 
-            // Les patch notes sont longs : on les replie pour ne pas noyer le flux.
+            // Patch notes are long: we collapse them so they don't drown the feed.
             if (event.body.length > 400) {
                 body.classList.add('clamped');
                 const toggle = el('button', 'tracker-expand', 'Read more');
@@ -616,7 +614,7 @@
         return ul;
     }
 
-    // Asset Steam : apercu au survol, telechargement au clic.
+    // Steam asset: preview on hover, download on click.
     function mediaLink(seg, cls) {
         const a = el('a', cls + ' seg-media is-' + (seg.media || 'file'), seg.v);
         a.href = seg.href;
@@ -636,7 +634,7 @@
         });
     }
 
-    // [duree d'une unite en secondes, singulier, pluriel]
+    // [duration of one unit in seconds, singular, plural]
     const UNITS = [
         [31536000, 'year', 'years'],
         [2592000, 'month', 'months'],
@@ -645,8 +643,8 @@
         [60, 'minute', 'minutes'],
     ];
 
-    // Les secondes ne sont pas du detail : sans elles, deux rafraichissements
-    // dans la meme minute affichent la meme heure, et le bouton parait inerte.
+    // The seconds are not a detail: without them, two refreshes in the same
+    // minute show the same time, and the button looks inert.
     function clock(stamp) {
         return new Date(stamp).toLocaleTimeString('en-GB', {
             hour: '2-digit', minute: '2-digit', second: '2-digit',
@@ -667,8 +665,8 @@
         return 'just now';
     }
 
-    // ----- Utilitaire DOM -----
-    // textContent partout : le contenu vient de Steam, jamais d'innerHTML.
+    // ----- DOM utility -----
+    // textContent everywhere: the content comes from Steam, never innerHTML.
     function el(tag, className, text) {
         const node = document.createElement(tag);
         if (className) node.className = className;
@@ -676,11 +674,11 @@
         return node;
     }
 
-    // ----- Apercu des assets -----
-    // Un seul popover reutilise, et des ecouteurs delegues : le flux compte
-    // des centaines de liens, en equiper chacun serait du gaspillage.
+    // ----- Asset preview -----
+    // A single reused popover, and delegated listeners: the feed has hundreds
+    // of links, equipping each one would be wasteful.
 
-    let hover = null;       // popover courant
+    let hover = null;       // current popover
     let hoverTimer = null;
 
     function showPreview(link) {
@@ -691,14 +689,14 @@
 
         hover = el('div', 'tracker-preview loading');
         const frame = el('div', 'tracker-preview-frame');
-        // Declaree avant le chargement : une ressource en cache appelle ready()
-        // de façon synchrone, et la legende doit deja exister a ce moment-la.
+        // Declared before loading: a cached resource calls ready()
+        // synchronously, and the caption must already exist at that point.
         const caption = el('span', 'tracker-preview-caption', 'Loading...');
 
-        // Les ecouteurs sont poses AVANT src : une ressource deja en cache se
-        // charge de façon synchrone, et l'evenement partirait avant l'ecoute.
-        // C'est le cas des le deuxieme survol du meme asset, qui resterait
-        // sinon bloque sur "Loading..." indefiniment.
+        // The listeners are set up BEFORE src: an already-cached resource
+        // loads synchronously, and the event would fire before the listening.
+        // This happens from the second hover on the same asset onward, which
+        // would otherwise stay stuck on "Loading..." indefinitely.
         if (kind === 'video') {
             const video = document.createElement('video');
             video.autoplay = true;
@@ -709,7 +707,7 @@
             video.addEventListener('error', fail);
             video.src = url;
             frame.append(video);
-            // Filet pour le cas ou les donnees sont deja la malgre tout.
+            // Safety net for the case where the data is already there anyway.
             if (video.readyState >= 2) ready(video.videoWidth, video.videoHeight);
         } else {
             const img = document.createElement('img');
@@ -719,8 +717,8 @@
             img.src = url;
             frame.append(img);
             if (img.complete) {
-                // complete vaut aussi true sur une image en erreur : c'est
-                // naturalWidth qui distingue les deux.
+                // complete is also true on an errored image: it's
+                // naturalWidth that tells the two apart.
                 if (img.naturalWidth) ready(img.naturalWidth, img.naturalHeight);
                 else fail();
             }
@@ -744,7 +742,7 @@
         }
     }
 
-    // Ancre le popover au lien, en le rabattant s'il sort de l'ecran.
+    // Anchors the popover to the link, folding it back if it goes off screen.
     function place(link) {
         if (!hover) return;
         const r = link.getBoundingClientRect();
@@ -757,7 +755,7 @@
         }
         left = Math.max(margin, left);
 
-        // Au-dessus du lien par defaut, en dessous s'il n'y a pas la place.
+        // Above the link by default, below it if there's no room.
         let top = r.top - box.height - 8;
         if (top < margin) top = r.bottom + 8;
 
@@ -777,7 +775,7 @@
         const link = ev.target.closest('.seg-media');
         if (!link || !feedEl.contains(link)) return;
         clearTimeout(hoverTimer);
-        // Petit delai : traverser le flux ne doit pas faire clignoter des apercus.
+        // Small delay: sweeping across the feed must not flicker previews.
         hoverTimer = setTimeout(() => showPreview(link), 180);
     });
 
@@ -790,10 +788,10 @@
 
     window.addEventListener('scroll', hidePreview, { passive: true });
 
-    // ----- Telechargement -----
-    // L'attribut download est ignore en cross-origin : le navigateur navigue
-    // au lieu d'enregistrer. On passe donc par fetch + blob, ce que les CDN
-    // Steam autorisent (access-control-allow-origin: *).
+    // ----- Download -----
+    // The download attribute is ignored cross-origin: the browser navigates
+    // instead of saving. So we go through fetch + blob, which the Steam CDNs
+    // allow (access-control-allow-origin: *).
     feedEl.addEventListener('click', async ev => {
         const link = ev.target.closest('.seg-media');
         if (!link || !feedEl.contains(link)) return;
@@ -816,18 +814,18 @@
             document.body.append(a);
             a.click();
             a.remove();
-            // Laisse au navigateur le temps de lire le blob avant liberation.
+            // Give the browser time to read the blob before releasing it.
             setTimeout(() => URL.revokeObjectURL(objectUrl), 10000);
         } catch (err) {
-            // Hors ligne, CORS refuse, asset supprime : ouvrir l'original
-            // reste plus utile que de ne rien faire.
+            // Offline, CORS refused, asset deleted: opening the original
+            // is still more useful than doing nothing.
             window.open(url, '_blank', 'noopener,noreferrer');
         } finally {
             link.classList.remove('downloading');
         }
     });
 
-    // ----- Evenements -----
+    // ----- Events -----
     let searchTimer = null;
     searchEl.addEventListener('input', () => {
         clearTimeout(searchTimer);
@@ -836,21 +834,21 @@
 
     noiseEl.addEventListener('change', () => {
         localStorage.setItem(NOISE_KEY, noiseEl.checked ? '1' : '0');
-        // Le badge "All" depend de cette case : il doit etre recalcule.
+        // The "All" badge depends on this checkbox: it must be recomputed.
         renderFilters();
         apply();
     });
 
     moreBtn.addEventListener('click', more);
 
-    // Rafraichissement manuel : meme chemin que l'auto, et le compte a rebours
-    // repart de zero puisque load() replanifie en sortie.
+    // Manual refresh: same path as the auto one, and the countdown restarts
+    // from zero since load() reschedules on the way out.
     if (refreshBtn) {
         refreshBtn.addEventListener('click', () => load(true));
     }
 
-    // Un seul intervalle d'une seconde pilote a la fois le compte a rebours et
-    // le declenchement du rechargement : pas de second timer a resynchroniser.
+    // A single one-second interval drives both the countdown and the
+    // triggering of the reload: no second timer to resynchronize.
     setInterval(tick, 1000);
 
     load();

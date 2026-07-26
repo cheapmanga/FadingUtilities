@@ -1,24 +1,24 @@
 // ===== SEARCH SYSTEM =====
-// Chargé par toutes les pages, APRÈS search-data.js (qui définit staticSearchIndex).
+// Loaded by every page, AFTER search-data.js (which defines staticSearchIndex).
 //
-// L'index de recherche = entrées statiques (pages/mods/outils) + entrées de
-// glitches générées à la volée depuis glitches.json (source unique de vérité).
-// Ajouter un glitch dans glitches.json le rend donc automatiquement cherchable.
+// The search index = static entries (pages/mods/tools) + glitch entries
+// generated on the fly from glitches.json (single source of truth).
+// Adding a glitch to glitches.json therefore makes it automatically searchable.
 
-// Index vivant : on part des entrées statiques, les glitches sont insérés en
-// tête dès que glitches.json est chargé. Le handler de recherche lit cet index
-// à chaque frappe, donc l'ajout asynchrone est transparent.
+// Live index: we start from the static entries, glitches are inserted at the
+// front as soon as glitches.json is loaded. The search handler reads this index
+// on every keystroke, so the asynchronous addition is transparent.
 let pageSearchIndex = staticSearchIndex.slice();
 
-// Échappe le texte avant injection (les données viennent d'un JSON éditable).
+// Escapes the text before injection (the data comes from an editable JSON file).
 function escapeSearchHtml(text) {
     const div = document.createElement('div');
     div.textContent = text == null ? '' : String(text);
     return div.innerHTML;
 }
 
-// Construit la description d'un glitch pour la recherche : search_desc explicite,
-// sinon alt_names, sinon un extrait nettoyé de how_to.
+// Builds a glitch's description for the search: explicit search_desc,
+// otherwise alt_names, otherwise a cleaned-up excerpt from how_to.
 function deriveGlitchDesc(glitch) {
     if (glitch.search_desc) return glitch.search_desc;
     if (glitch.alt_names) return glitch.alt_names;
@@ -31,7 +31,7 @@ function deriveGlitchDesc(glitch) {
     return '';
 }
 
-// Récupère glitches.json et ajoute les glitches à l'index de recherche.
+// Fetches glitches.json and adds the glitches to the search index.
 async function loadGlitchSearchEntries() {
     try {
         const response = await fetch('glitches.json');
@@ -53,10 +53,10 @@ async function loadGlitchSearchEntries() {
                 });
             });
         });
-        // Glitches en tête (ordre historique de l'index).
+        // Glitches at the front (historical order of the index).
         pageSearchIndex.unshift(...entries);
     } catch (error) {
-        // Hors-ligne / file:// : on garde l'index statique, la recherche marche quand même.
+        // Offline / file:// : we keep the static index, the search works anyway.
         console.warn('Search: unable to load glitches.json for the search index.', error);
     }
 }
@@ -89,7 +89,7 @@ function initSearchSystem() {
 
     searchModal.addEventListener('click', (e) => { if (e.target === searchModal) closeSearch(); });
 
-    // Ferme la modale au clic sur un résultat (délégation : closeSearch n'est pas globale)
+    // Closes the modal when a result is clicked (delegation: closeSearch is not global)
     searchResults.addEventListener('click', (e) => {
         if (e.target.closest('.search-result-item')) closeSearch();
     });
@@ -122,7 +122,7 @@ function initSearchSystem() {
     });
 }
 
-// Charge les glitches dans l'index (asynchrone) puis initialise la recherche.
+// Loads the glitches into the index (asynchronous) then initializes the search.
 loadGlitchSearchEntries();
 
 if (document.readyState === 'loading') {
