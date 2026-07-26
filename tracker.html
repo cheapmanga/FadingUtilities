@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Les assets Steam (apercu au survol, telechargement au clic) imposent
-         d'ouvrir img-src, media-src et connect-src aux CDN Steam. La portee
-         reste limitee a ces hotes : ni script ni style ne sont elargis. -->
+    <!-- The Steam assets (preview on hover, download on click) require
+         opening img-src, media-src and connect-src to the Steam CDNs. The scope
+         stays limited to these hosts: neither script nor style is widened. -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://*.steamstatic.com https://*.akamaihd.net; media-src https://*.steamstatic.com https://*.akamaihd.net; connect-src 'self' https://*.steamstatic.com https://*.akamaihd.net https://raw.githubusercontent.com https://*.trycloudflare.com; object-src 'none'; base-uri 'self'; form-action 'none'">
     <title>Updates - FadingUtilities</title>
     <meta name="description" content="Update history for Fading Echo: builds, depots, branches, Steam metadata and patch notes.">

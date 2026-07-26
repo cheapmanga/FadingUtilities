@@ -72,7 +72,7 @@ nav {
     z-index: 1001;
 }
 
-/* ===== NAV ACTIONS (boutons d'accès direct) ===== */
+/* ===== NAV ACTIONS (direct-access buttons) ===== */
 .nav-actions {
     display: flex;
     align-items: center;
@@ -108,7 +108,7 @@ nav {
     color: #fff;
 }
 
-/* dans le groupe d'actions, la recherche ne pousse plus vers un bouton à droite */
+/* within the actions group, the search no longer pushes toward a button on the right */
 .nav-actions .search-trigger { margin-right: 0; }
 
 /* ===== PAGE CONTAINER ===== */
@@ -1324,7 +1324,7 @@ footer p { margin: 10px 0; }
         font-size: 1.8rem;
     }
 
-    /* Boutons de nav : icône seule pour gagner de la place */
+    /* Nav buttons: icon only to save space */
     .nav-btn span { display: none; }
     .nav-btn { padding: 10px; }
 }
@@ -1386,7 +1386,7 @@ footer p { margin: 10px 0; }
     .glitch-video-wrapper { transition: none; }
 }
 
-/* ===== MOBILE: VIDEOS TOUJOURS VISIBLES ===== */
+/* ===== MOBILE: VIDEOS ALWAYS VISIBLE ===== */
 @media (max-width: 768px) {
     .glitch-video-wrapper {
         grid-template-rows: 1fr !important;
@@ -1399,7 +1399,7 @@ footer p { margin: 10px 0; }
     }
 }
 
-/* ===== VIDEO TOUJOURS VISIBLE (hover_video: false) ===== */
+/* ===== VIDEO ALWAYS VISIBLE (hover_video: false) ===== */
 .content-card.has-video-always .glitch-video-wrapper {
     grid-template-rows: 1fr !important;
     opacity: 1 !important;

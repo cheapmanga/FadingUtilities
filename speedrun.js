@@ -1,7 +1,7 @@
-// ===== PAGE SPEEDRUN =====
-// Génération des glitches depuis glitches.json.
-// La page ne contient que les glitches (les outils sont sur mods-tools.html) :
-// la section #glitches est active par défaut, aucune navigation de sections.
+// ===== SPEEDRUN PAGE =====
+// Generates the glitches from glitches.json.
+// The page contains only the glitches (the tools are on mods-tools.html):
+// the #glitches section is active by default, no section navigation.
 
 // =========================================
 // DYNAMIC GLITCH LOADER (100% DYNAMIC)
@@ -19,7 +19,7 @@ async function loadGlitches() {
             return;
         }
 
-        // Générer chaque section (concaténation en mémoire, une seule écriture DOM)
+        // Generate each section (concatenated in memory, a single DOM write)
         container.innerHTML = data.sections.map(createSectionHTML).join('');
 
     } catch (error) {
@@ -61,7 +61,7 @@ function createGlitchCard(glitch) {
     const hasExtraVideos = glitch.videos_extra && glitch.videos_extra.length > 0;
     const hasAnyVideo = hasVideos || hasVariationsWithVideos || hasExtraVideos;
 
-    // Par défaut : true (vidéo au hover)
+    // Default: true (video on hover)
     const hoverVideo = glitch.hover_video !== false;
 
     let cardClass = 'content-card';
@@ -74,7 +74,7 @@ function createGlitchCard(glitch) {
 
     let html = `<div class="${cardClass}"${cardStyle}>`;
 
-    // Le titre est toujours affiché en premier (title_prefix peut contenir une icône HTML)
+    // The title is always displayed first (title_prefix may contain an HTML icon)
     html += `<h3${titleStyle}>${glitch.title_prefix || ''}${escapeHtml(glitch.title)}`;
     if (glitch.alt_names) {
         html += ` <span class="alt-names">| ${escapeHtml(glitch.alt_names)}</span>`;
@@ -84,10 +84,10 @@ function createGlitchCard(glitch) {
     }
     html += `</h3>`;
 
-    // On parcourt les autres clés DU JSON DANS L'ORDRE où elles sont écrites.
-    // Champs autorisés à contenir du HTML (liens riches, mise en forme) :
+    // We iterate over the other JSON keys IN THE ORDER they are written.
+    // Fields allowed to contain HTML (rich links, formatting):
     // title_prefix, how_to, note, variations[].text, extra_content.
-    // Les titres, styles, liens et ids vidéo sont échappés/encodés.
+    // Titles, styles, links and video ids are escaped/encoded.
     Object.keys(glitch).forEach(key => {
         const metadataKeys = ['title', 'alt_names', 'discord_link', 'card_style', 'title_style', 'title_prefix', 'note_type', 'button_link', 'hover_video', 'search_icon', 'search_desc'];
         if (metadataKeys.includes(key)) return;
@@ -159,10 +159,10 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-// Pour les valeurs placées dans un attribut HTML (échappe aussi les guillemets)
+// For values placed inside an HTML attribute (also escapes quotes)
 function escapeAttr(text) {
     return escapeHtml(text).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-// Charger les glitches au démarrage
+// Load the glitches on startup
 loadGlitches();

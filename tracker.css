@@ -1,6 +1,6 @@
 /* ===== TRACKER =====
-   Historique des changements Steam, facon SteamDB, avec la palette du site.
-   Complete style.css : seules les regles propres au tracker sont ici. */
+   Steam change history, SteamDB-style, using the site's palette.
+   Complements style.css: only the tracker-specific rules live here. */
 
 .tracker-page {
     max-width: 1100px;
@@ -8,7 +8,7 @@
     padding: 120px 20px 60px;
 }
 
-/* ----- En-tete ----- */
+/* ----- Header ----- */
 .tracker-header h1 {
     font-family: 'Orbitron', sans-serif;
     font-size: clamp(1.8rem, 4vw, 2.6rem);
@@ -75,8 +75,8 @@
     margin: 0;
 }
 
-/* Le lien vers steamtrack reste discret comme le reste de la ligne : il n'est
-   souligne qu'au survol, pour ne pas attirer l'oeil avant la donnee elle-meme. */
+/* The link to steamtrack stays as discreet as the rest of the line: it is
+   underlined only on hover, so it doesn't draw the eye before the data itself. */
 .tracker-source-link {
     color: inherit;
     text-decoration: underline;
@@ -90,8 +90,8 @@
     text-decoration-color: currentColor;
 }
 
-/* Compte a rebours de l'auto-refresh : meme colonne et meme alignement que
-   .tracker-generated, qui le precede immediatement dans la grille de stats. */
+/* Auto-refresh countdown: same column and same alignment as
+   .tracker-generated, which immediately precedes it in the stats grid. */
 .tracker-auto {
     grid-column: 1 / -1;
     display: block;
@@ -104,7 +104,7 @@
 
 .tracker-auto i { margin-right: 6px; }
 
-/* Nouveaux changements detectes : on accentue sans clignoter (une seule pulsation). */
+/* Newly detected changes: emphasized without blinking (a single pulse). */
 .tracker-auto.fresh {
     color: var(--primary-cyan);
     text-shadow: 0 0 10px rgba(0, 245, 255, 0.35);
@@ -116,7 +116,7 @@
     to { opacity: 1; transform: none; }
 }
 
-/* ----- Barre d'outils ----- */
+/* ----- Toolbar ----- */
 .tracker-toolbar {
     display: flex;
     flex-wrap: wrap;
@@ -210,8 +210,8 @@
 
 .tracker-toggle input { accent-color: var(--primary-cyan); cursor: pointer; }
 
-/* Rafraichissement manuel : meme pilule et meme hauteur que .tracker-search
-   (padding 7px 14px + bordure 1px), pour rester aligne dans .tracker-tools. */
+/* Manual refresh: same pill and same height as .tracker-search
+   (padding 7px 14px + 1px border), to stay aligned within .tracker-tools. */
 .tracker-refresh {
     display: inline-flex;
     align-items: center;
@@ -238,7 +238,7 @@
 
 .tracker-refresh i { font-size: 0.9em; }
 
-/* Rotation continue pendant la requete : on reutilise trackerSpin. */
+/* Continuous rotation during the request: we reuse trackerSpin. */
 .tracker-refresh.refreshing i { animation: trackerSpin 0.8s linear infinite; }
 
 .tracker-refresh:disabled {
@@ -251,7 +251,7 @@
     border-color: rgba(0, 245, 255, 0.35);
 }
 
-/* ----- Panneaux ----- */
+/* ----- Panels ----- */
 .tracker-feed {
     display: flex;
     flex-direction: column;
@@ -266,7 +266,7 @@
     padding: 16px 20px;
 }
 
-/* Liseres colores : le type se lit d'un coup d'oeil dans le flux. */
+/* Colored left borders: the type reads at a glance in the feed. */
 .tracker-panel.build { border-left-color: var(--primary-pink); }
 .tracker-panel.news { border-left-color: var(--primary-yellow); }
 .tracker-panel.depot,
@@ -333,7 +333,7 @@
 
 .tracker-permalink:hover { color: var(--primary-cyan); }
 
-/* ----- Arbre de diff ----- */
+/* ----- Diff tree ----- */
 .tracker-changes {
     list-style: none;
     margin: 12px 0 0;
@@ -357,7 +357,7 @@
     word-break: break-word;
 }
 
-/* Puces de diff, dans l'esprit d'un changelog git. */
+/* Diff bullets, in the spirit of a git changelog. */
 .tracker-changes li.op-added > .tracker-line::before { content: '+ '; color: #4ade80; font-weight: 700; }
 .tracker-changes li.op-removed > .tracker-line::before { content: '- '; color: #f87171; font-weight: 700; }
 .tracker-changes li.op-modified > .tracker-line::before { content: '~ '; color: var(--primary-cyan); font-weight: 700; }
@@ -390,7 +390,7 @@
     font-weight: 600;
 }
 
-/* ----- Assets previsualisables ----- */
+/* ----- Previewable assets ----- */
 .seg-media {
     cursor: pointer;
     text-decoration: none;
@@ -424,7 +424,7 @@
     border-radius: 10px;
     padding: 8px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 24px rgba(0, 245, 255, 0.15);
-    pointer-events: none;                  /* ne doit jamais voler le survol */
+    pointer-events: none;                  /* must never steal the hover */
     max-width: min(460px, 90vw);
     animation: trackerPreviewIn 0.14s ease-out;
 }
@@ -478,12 +478,12 @@
 .tracker-preview.failed { border-color: var(--primary-pink); }
 .tracker-preview.failed .tracker-preview-caption { color: var(--primary-pink); }
 
-/* Le survol n'a pas de sens au doigt : on s'en tient au telechargement. */
+/* Hovering makes no sense with a finger: we stick to downloading. */
 @media (hover: none) {
     .tracker-preview { display: none; }
 }
 
-/* ----- Corps des annonces ----- */
+/* ----- Announcement body ----- */
 .tracker-body {
     margin-top: 12px;
     color: rgba(255, 255, 255, 0.72);
@@ -516,7 +516,7 @@
     color: rgba(255, 255, 255, 0.4);
 }
 
-/* ----- Divers ----- */
+/* ----- Miscellaneous ----- */
 .tracker-empty {
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
