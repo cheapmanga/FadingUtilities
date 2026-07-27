@@ -25,6 +25,8 @@ const staticSearchIndex = [
     { title: "XP Giver Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Give yourself Ætherfact points (skill points)", icon: "fa-star" },
     { title: "Skins Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Access One's hidden skins, swap her model or strip the outline", icon: "fa-shirt" },
     { title: "Bad Apple Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Play Bad Apple rendered live by the game's own cubes", icon: "fa-play" },
+    { title: "Void Cancel Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "F9/F10 toggle: fall forever, no void, no respawn — and turn it back off", icon: "fa-arrow-down-long" },
+    { title: "HUD Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Show or hide the HUD for clean screenshots and capture", icon: "fa-eye-slash" },
 
     // --- Tracker ---
     { title: "Updates", category: "Steam", page: "tracker.html", target: "", desc: "Steam update tracker: builds, depots, branches and patch notes", icon: "fa-satellite-dish" },
