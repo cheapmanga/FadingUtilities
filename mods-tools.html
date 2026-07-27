@@ -57,48 +57,26 @@
       <div class="mod-card">
         <div class="mod-icon"><i class="fas fa-location-arrow"></i></div>
         <h2>Teleport Mod</h2>
-        <p>A lightweight alternative to Cheat Engine for practicing routes and exploring the game world. Save your position and rotation anywhere, then teleport back instantly with a single key press.</p>
+        <p>Save your position anywhere, then teleport back instantly. A lightweight alternative to Cheat Engine for practising routes.</p>
         <h3><i class="fas fa-gamepad"></i> Controls</h3>
         <ul>
-          <li><code>F6</code> : save current player position and rotation</li>
-          <li><code>F7</code> : load saved player position and rotation</li>
+          <li><code>F6</code> : save your position and rotation</li>
+          <li><code>F7</code> : teleport back to it</li>
         </ul>
-        <div class="note">
-          <strong>Note:</strong> Only one slot is kept — pressing <code>F6</code> again overwrites it, and the slot is cleared when the game is closed. Full reference in the <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FETeleport" target="_blank" rel="noopener noreferrer">README on GitHub</a>.
-        </div>
+        <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FETeleport" target="_blank" rel="noopener noreferrer" class="secondary-btn"><i class="fas fa-book-open"></i> README</a>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods#fe-ue4ss-mods" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
-        <a href="#tools" class="secondary-btn"><i class="fas fa-info-circle"></i> Alternative: Cheat Engine</a>
       </div>
       <!-- Volume Mod -->
       <div class="mod-card">
         <div class="mod-icon"><i class="fas fa-border-all"></i></div>
         <h2>Volume Mod</h2>
-        <p>See invisible walls, triggers and collision volumes in the game world. Perfect for understanding level boundaries and planning optimized routes for speedrunning.</p>
-        <div class="note">
-          <strong>Not a Lua mod:</strong> this is an <code>Engine.ini</code> that switches on Unreal's built-in <strong>debug-draw / debug view modes</strong>, complementing the console that ships with UE4SS. Nothing to compile — the whole thing is one config file.
-        </div>
+        <p>See invisible walls, triggers and collision volumes — ideal for route planning and glitch hunting.</p>
         <h3><i class="fas fa-terminal"></i> Commands</h3>
         <ul>
-          <li><code>show volumes</code> : show invisible walls, triggers &amp; collision volumes</li>
-        </ul>
-        <h3><i class="fas fa-eye"></i> Features</h3>
-        <ul>
-          <li>Visualize most invisible walls and collision volumes</li>
-          <li>See trigger zones and interactive areas</li>
-          <li>On-screen debug messages and verbose logging</li>
-          <li>Essential for route planning and optimization</li>
-        </ul>
-        <h3><i class="fas fa-folder-open"></i> Where it goes</h3>
-        <ul>
-          <li>Copy <code>Engine.ini</code> into <code>%LOCALAPPDATA%\UE_YGRO\Saved\Config\Windows\</code></li>
-          <li>The bundled <code>apply-engine-ini.bat</code> does this copy for you</li>
-          <li>Launch the game once <strong>and close it</strong>, run the .bat, then launch again</li>
+          <li><code>show volumes</code> : reveal the invisible geometry</li>
         </ul>
         <div class="warning">
-          <strong>⚠️ Steam wipes it on every launch.</strong> The game regenerates this <code>Engine.ini</code> each time it starts, so you must re-apply it <strong>every session</strong>: launch the game once, then run <code>apply-engine-ini.bat</code> (or copy the file back in). Keeping the master copy + the .bat together in a small backup folder makes it a one double-click job. Full routine in the README.
-        </div>
-        <div class="note">
-          <strong>Tip:</strong> Setting the copied <code>Engine.ini</code> to read-only can stop the game overwriting it on some builds — if the debug draw disappears, it got wiped anyway and you're back to re-applying each launch.
+          <strong>⚠️ Steam wipes it on every launch.</strong> This is an <code>Engine.ini</code>, not a Lua mod: you must re-apply it each session with the bundled <code>apply-engine-ini.bat</code>. Full routine in the README.
         </div>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FEVolume" target="_blank" rel="noopener noreferrer" class="secondary-btn"><i class="fas fa-book-open"></i> README</a>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods#fe-ue4ss-mods" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
@@ -107,17 +85,14 @@
       <div class="mod-card">
         <div class="mod-icon"><i class="fas fa-arrow-down-long"></i></div>
         <h2>Void Cancel Mod</h2>
-        <p>Toggle the <strong>Void Cancel</strong> on demand: fall forever, no void, no respawn — and, unlike the glitch setup, turn it back off whenever you want.</p>
+        <p>Fall forever — no void, no respawn. Unlike the glitch setup, it doesn't touch your save and you can turn it back off.</p>
         <h3><i class="fas fa-gamepad"></i> Controls</h3>
         <ul>
-          <li><code>F9</code> : <strong>enable</strong> the Void Cancel (fall forever, no void, no respawn)</li>
-          <li><code>F10</code> : <strong>disable</strong> it — restores the normal void and respawn</li>
+          <li><code>F9</code> : enable the Void Cancel</li>
+          <li><code>F10</code> : disable it, restoring void and respawn</li>
         </ul>
-        <div class="note">
-          <strong>Safer than the glitch:</strong> the manual setup (Cutscene Skip, then falling until the respawn fails) sticks to your <strong>save file</strong>. This mod flips the same two engine switches for the session only, so <code>F10</code> always gets you out.
-        </div>
         <div class="warning">
-          <strong>⚠️ F10 conflict:</strong> on some UE4SS builds F10 also opens the UE4SS debug GUI. If they clash, change <code>DEACTIVATE_KEY</code> at the top of <code>Scripts\main.lua</code>. Falling for a very long time can still end in a <code>fatal error</code> crash, just like the manual glitch.
+          <strong>⚠️ F10</strong> also opens the UE4SS debug GUI on some builds — the README says how to rebind it.
         </div>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FEVoidCancel" target="_blank" rel="noopener noreferrer" class="secondary-btn"><i class="fas fa-book-open"></i> README</a>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods#fe-ue4ss-mods" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
@@ -126,14 +101,11 @@
       <div class="mod-card">
         <div class="mod-icon"><i class="fas fa-eye-slash"></i></div>
         <h2>HUD Mod</h2>
-        <p>Show or hide the game's HUD with one command — handy for clean screenshots, video capture, or just seeing the level without the interface in the way.</p>
+        <p>Hide the HUD for clean screenshots and video capture.</p>
         <h3><i class="fas fa-terminal"></i> Commands</h3>
         <ul>
-          <li><code>hud</code> : show / hide the HUD (toggle) — run it again to bring it back</li>
+          <li><code>hud</code> : show / hide the HUD — run it again to bring it back</li>
         </ul>
-        <div class="note">
-          <strong>Note:</strong> Goes through the game's own <code>YgroCheatManager</code>, so it toggles the HUD exactly as the built-in debug option would. Detailed output goes to the <strong>UE4SS console window</strong>, not the in-game console.
-        </div>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FEHud" target="_blank" rel="noopener noreferrer" class="secondary-btn"><i class="fas fa-book-open"></i> README</a>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods#fe-ue4ss-mods" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
       </div>
@@ -144,17 +116,11 @@
         <p>Give yourself elemental cores, useful for exploration and glitch hunting.</p>
         <h3><i class="fas fa-terminal"></i> Commands</h3>
         <ul>
-          <li><code>core water</code> : spawns a water core and puts it in your "hands"</li>
-          <li><code>core waste</code> : same, waste</li>
-          <li><code>core fire</code> : same, lava</li>
-          <li><code>core glitch</code> : same, corruption</li>
-          <li><code>core power</code> : same, powercore</li>
-          <li><code>core &lt;element&gt; nograb</code> : places it in front of you <strong>without</strong> picking it up</li>
-          <li><code>core list</code> : lists the available elements</li>
+          <li><code>core &lt;element&gt;</code> : spawn a core in your hands — water, waste, fire, glitch, power</li>
+          <li><code>core &lt;element&gt; nograb</code> : drop it in front of you instead</li>
+          <li><code>core list</code> : list the available elements</li>
         </ul>
-        <div class="note">
-          <strong>Note:</strong> Full command reference and tutorial in the <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FECoreGiver" target="_blank" rel="noopener noreferrer">README on GitHub</a>.
-        </div>
+        <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FECoreGiver" target="_blank" rel="noopener noreferrer" class="secondary-btn"><i class="fas fa-book-open"></i> README</a>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods#fe-ue4ss-mods" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
       </div>
       <!-- MoonJump Mod -->
@@ -162,70 +128,54 @@
         <div class="mod-icon"><i class="fas fa-feather"></i></div>
         <h2>MoonJump Mod</h2>
         <p>Infinite jump / BotW-style flight.</p>
-        <h3><i class="fas fa-gamepad"></i> Controls &amp; Commands</h3>
+        <h3><i class="fas fa-gamepad"></i> Controls</h3>
         <ul>
-          <li><code>F7</code> : toggle MoonJump — <strong>hold jump</strong> to keep rising</li>
-          <li><code>F6</code> : toggle MultiJump — re-jump in mid-air, indefinitely</li>
-          <li><code>moonjump</code> : toggle from the console</li>
-          <li><code>moonjump speed &lt;n&gt;</code> : rise speed, cm/s (default 700)</li>
-          <li><code>moonjump key &lt;FKey&gt;</code> : watched key (default SpaceBar; use a Gamepad FKey on pad)</li>
-          <li><code>moonjump status</code> : current state</li>
+          <li><code>F7</code> : MoonJump — <strong>hold jump</strong> to keep rising</li>
+          <li><code>F6</code> : MultiJump — re-jump in mid-air, indefinitely</li>
+          <li><code>moonjump speed &lt;n&gt;</code> : rise speed (default 700)</li>
         </ul>
-        <div class="note">
-          <strong>Note:</strong> Full command reference and tutorial in the <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FEMoonJump" target="_blank" rel="noopener noreferrer">README on GitHub</a>.
-        </div>
+        <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FEMoonJump" target="_blank" rel="noopener noreferrer" class="secondary-btn"><i class="fas fa-book-open"></i> README</a>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods#fe-ue4ss-mods" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
       </div>
       <!-- Chest Mod -->
       <div class="mod-card">
         <div class="mod-icon"><i class="fas fa-box-open"></i></div>
         <h2>Chest Mod</h2>
-        <p>Teleport yourself to all loaded chests.</p>
+        <p>Teleport from chest to chest across the loaded zone, nearest first.</p>
         <h3><i class="fas fa-terminal"></i> Commands</h3>
         <ul>
-          <li><code>chest</code> : teleports to the next chest — the 1st call goes to the <strong>nearest</strong> one</li>
-          <li><code>chest reset</code> : rebuilds the route from your current position</li>
-          <li><code>chest prev</code> : returns to the previous chest</li>
-          <li><code>chest &lt;n&gt;</code> : jumps directly to the n-th chest in the route</li>
-          <li><code>chest list</code> : lists the loaded chests with their distance (in meters)</li>
-          <li><code>chest help</code> : reminder of the commands</li>
+          <li><code>chest</code> : go to the next chest (the 1st call goes to the nearest)</li>
+          <li><code>chest prev</code> / <code>chest &lt;n&gt;</code> : go back / jump to the n-th</li>
+          <li><code>chest list</code> : list the loaded chests and their distance</li>
         </ul>
-        <div class="note">
-          <strong>Note:</strong> Full command reference and tutorial in the <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FEChestHopper" target="_blank" rel="noopener noreferrer">README on GitHub</a>.
-        </div>
+        <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FEChestHopper" target="_blank" rel="noopener noreferrer" class="secondary-btn"><i class="fas fa-book-open"></i> README</a>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods#fe-ue4ss-mods" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
       </div>
       <!-- KillAll Mod -->
       <div class="mod-card">
         <div class="mod-icon"><i class="fas fa-skull-crossbones"></i></div>
         <h2>KillAll Mod</h2>
-        <p>A simple mod that kills all loaded enemies.</p>
+        <p>Kills every enemy currently loaded in the level.</p>
         <h3><i class="fas fa-terminal"></i> Commands</h3>
         <ul>
-          <li><code>killall</code> : kill every currently loaded enemy</li>
-          <li><code>killall count</code> : count the loaded enemies without killing anything</li>
+          <li><code>killall</code> : kill every loaded enemy</li>
+          <li><code>killall count</code> : count them without killing anything</li>
         </ul>
-        <div class="note">
-          <strong>Note:</strong> Full command reference and tutorial in the <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FEKillAll" target="_blank" rel="noopener noreferrer">README on GitHub</a>.
-        </div>
+        <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FEKillAll" target="_blank" rel="noopener noreferrer" class="secondary-btn"><i class="fas fa-book-open"></i> README</a>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods#fe-ue4ss-mods" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
       </div>
       <!-- Source Giver Mod -->
       <div class="mod-card">
         <div class="mod-icon"><i class="fas fa-plug-circle-bolt"></i></div>
         <h2>Source Giver Mod</h2>
-        <p>Give yourself connected sources — opens gates and, at 12, the ending.</p>
+        <p>Give yourself connected sources — they open gates and, at 12, the ending.</p>
         <h3><i class="fas fa-terminal"></i> Commands</h3>
         <ul>
-          <li><code>source</code> : +1 connected source</li>
-          <li><code>source &lt;n&gt;</code> : +n sources (e.g. <code>source 3</code>)</li>
-          <li><code>source set &lt;n&gt;</code> : set the total to n (<code>source set 12</code> opens the ending)</li>
-          <li><code>source status</code> : show the current total without changing anything</li>
-          <li><code>source unlocked &lt;n&gt;</code> : +n <em>found</em> sources (the other stat, milestones 1/3/6/9)</li>
+          <li><code>source</code> / <code>source &lt;n&gt;</code> : +1 or +n connected sources</li>
+          <li><code>source set 12</code> : set the total — 12 opens the ending</li>
+          <li><code>source status</code> : show the current total</li>
         </ul>
-        <div class="note">
-          <strong>Note:</strong> Full command reference and tutorial in the <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FESourceGiver" target="_blank" rel="noopener noreferrer">README on GitHub</a>.
-        </div>
+        <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FESourceGiver" target="_blank" rel="noopener noreferrer" class="secondary-btn"><i class="fas fa-book-open"></i> README</a>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods#fe-ue4ss-mods" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
       </div>
       <!-- XP Giver Mod -->
@@ -235,44 +185,25 @@
         <p>Give yourself Ætherfact points (skill points).</p>
         <h3><i class="fas fa-terminal"></i> Commands</h3>
         <ul>
-          <li><code>xp</code> : +1 Ætherfact point</li>
-          <li><code>xp &lt;n&gt;</code> : +n points (e.g. <code>xp 5</code>)</li>
+          <li><code>xp</code> / <code>xp &lt;n&gt;</code> : +1 or +n Ætherfact points</li>
           <li><code>xp status</code> : show the balance, granting nothing</li>
         </ul>
-        <div class="note">
-          <strong>Note:</strong> Full command reference and tutorial in the <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FEXpGiver" target="_blank" rel="noopener noreferrer">README on GitHub</a>.
-        </div>
+        <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FEXpGiver" target="_blank" rel="noopener noreferrer" class="secondary-btn"><i class="fas fa-book-open"></i> README</a>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods#fe-ue4ss-mods" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
       </div>
       <!-- Skins Mod -->
       <div class="mod-card">
         <div class="mod-icon"><i class="fas fa-shirt"></i></div>
         <h2>Skins Mod</h2>
-        <p>Access One's hidden skins, swap her whole model, or strip the outline.</p>
-        <h3><i class="fas fa-terminal"></i> Skins</h3>
+        <p>Access One's hidden skins, swap her whole model, or strip her black outline.</p>
+        <h3><i class="fas fa-terminal"></i> Commands</h3>
         <ul>
-          <li><code>skin one &lt;0-4&gt;</code> : apply a skin (Skin0 = default, Skin1 = Hellgur One, Skin2/3/4 never shown in the menu)</li>
-          <li><code>skin slots</code> : list the material slots and the detected part (Body/Head/Cape)</li>
-          <li><code>skin lock</code> : re-apply loop (every 2 s) if the game overwrites your skin</li>
-          <li><code>skin reset</code> : restore the original materials</li>
+          <li><code>skin one &lt;0-4&gt;</code> : apply a skin — 1 is Hellgur One, 2/3/4 never appear in the menu</li>
+          <li><code>skin mesh &lt;alias&gt;</code> : swap One's model (<code>skin mesh list</code> for the aliases)</li>
+          <li><code>skin outline off</code> : remove the character outline</li>
+          <li><code>skin reset</code> : restore everything</li>
         </ul>
-        <h3><i class="fas fa-user"></i> Mesh swap</h3>
-        <ul>
-          <li><code>skin mesh list</code> : list the available model aliases (<code>bob</code>, <code>mime</code> = Marcel Bob, <code>rahne</code>, <code>agent</code>…)</li>
-          <li><code>skin mesh &lt;alias&gt;</code> : swap One's model — <code>skin mesh reset</code> restores it</li>
-          <li><code>skin mesh comps</code> / <code>skin mesh near [radius]</code> : list mesh components / nearby actors</li>
-          <li><code>skin mesh hide &lt;ClassName_C&gt;</code> : hide every actor of a class (stray props)</li>
-        </ul>
-        <h3><i class="fas fa-pen-nib"></i> Outline</h3>
-        <ul>
-          <li><code>skin outline off</code> / <code>on</code> : remove or restore One's black outline</li>
-          <li><code>skin outline diag</code> : diagnostic dump only — writes nothing</li>
-          <li><code>skin outline lock</code> : re-run the removal if the game re-imposes it (form change, respawn…)</li>
-          <li><code>skin outline hard</code> : <strong>nuclear &amp; irreversible</strong> until the level reloads — <code>outline on</code> cannot undo it</li>
-        </ul>
-        <div class="note">
-          <strong>Note:</strong> Full command reference and tutorial in the <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FESkins" target="_blank" rel="noopener noreferrer">README on GitHub</a>.
-        </div>
+        <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FESkins" target="_blank" rel="noopener noreferrer" class="secondary-btn"><i class="fas fa-book-open"></i> README</a>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods#fe-ue4ss-mods" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
       </div>
       <!-- Bad Apple Mod -->
@@ -282,18 +213,10 @@
         <p>Play Bad Apple in front of you — the video is rendered live by the game's own cubes!</p>
         <h3><i class="fas fa-terminal"></i> Commands</h3>
         <ul>
-          <li><code>badapple play ism</code> : start playback — <strong>recommended</strong>, zero trailing, one draw call</li>
-          <li><code>badapple play</code> : fallback mode (160 reused cubes; they leave trails under TSR)</li>
-          <li><code>badapple play enemies</code> : gag mode — level <strong>enemies</strong> as pixels on a 16×12 grid</li>
+          <li><code>badapple play ism</code> : start playback (recommended mode, no trailing)</li>
           <li><code>badapple pause</code> / <code>resume</code> : freeze and resume</li>
-          <li><code>badapple stop</code> : stop, destroy everything, restore the game's settings</li>
-          <li><code>badapple frame &lt;n&gt;</code> : show a still frame (framing test)</li>
-          <li><code>badapple info</code> / <code>stat</code> : current state / render diagnostic</li>
-          <li><code>badapple test</code> / <code>probe</code> : spawn one cube / full diagnostic</li>
+          <li><code>badapple stop</code> : stop and clean everything up</li>
         </ul>
-        <div class="note">
-          <strong>Tuning:</strong> <code>badapple set cell &lt;n&gt;</code> shrinks the screen if you can't see it all (it's 64 cells wide), and <code>set dist</code> / <code>set height</code> move it. The log prints a heartbeat every ~3 s — as long as it scrolls, playback is running.
-        </div>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods/tree/main/FEBadApple" target="_blank" rel="noopener noreferrer" class="secondary-btn"><i class="fas fa-book-open"></i> README</a>
         <a href="https://www.youtube.com/watch?v=N81xduMaXXY" target="_blank" rel="noopener noreferrer" class="secondary-btn"><i class="fab fa-youtube"></i> Watch Demo</a>
         <a href="https://github.com/cheapmanga/FE-UE4SS-Mods#fe-ue4ss-mods" target="_blank" rel="noopener noreferrer" class="download-btn"><i class="fas fa-download"></i> Download Mod</a>
