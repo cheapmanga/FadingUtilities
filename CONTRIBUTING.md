@@ -5,7 +5,7 @@ static website (HTML / CSS / vanilla JS, no build step, no framework) hosted on 
 Pages. Anyone can contribute a new glitch, a fix, or an improvement.
 
 > New glitch or route to share? Just drop it in the
-> [Discord](https://discord.gg/KnjSeWrRPv) and a maintainer will add it.
+> [Discord](https://discord.gg/KnjSeWrRPv)!
 
 ---
 
