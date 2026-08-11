@@ -1,7 +1,7 @@
 {
- "_change_number": 37515645,
+ "_change_number": 37889559,
  "_missing_token": false,
- "_sha": "c51f7adc34087bba714ce7087aacde29620bdbcf",
+ "_sha": "e9e01277d70cf90226fce507f9344e454868a589",
  "_size": 6410,
  "appid": "2467880",
  "common": {
@@ -137,7 +137,7 @@
   "oslist": "windows",
   "primary_genre": "1",
   "releasestate": "released",
-  "review_percentage": "96",
+  "review_percentage": "94",
   "review_score": "8",
   "small_capsule": {
    "english": "8911f722ab88dd638c48a2a8c2d305899beb2952/capsule_231x87.jpg",
@@ -248,9 +248,9 @@
    },
    "manifests": {
     "public": {
-     "download": "4931402832",
-     "gid": "4088194719045019993",
-     "size": "5229992088"
+     "download": "4928284288",
+     "gid": "3351107248013324498",
+     "size": "5220231578"
     }
    }
   },
@@ -263,9 +263,9 @@
   },
   "branches": {
    "public": {
-    "buildid": "24333427",
-    "timebuildupdated": "1784721334",
-    "timeupdated": "1784880900"
+    "buildid": "24533807",
+    "timebuildupdated": "1785766698",
+    "timeupdated": "1785836588"
    }
   },
   "hasdepotsindlc": "1",

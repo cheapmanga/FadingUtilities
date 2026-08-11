@@ -1,7 +1,821 @@
 {
- "generated": "2026-07-24T22:11:44.940845+00:00",
+ "generated": "2026-08-09T16:52:23.469518+00:00",
  "appid": "2467880",
  "events": [
+  {
+   "id": "change:37889559",
+   "type": "meta",
+   "types": [
+    "meta"
+   ],
+   "changeid": "37889559",
+   "title": "Changed review_percentage",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37889559",
+   "source": "pics",
+   "date": "2026-08-09T16:52:23.469518+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "review_percentage:"
+        },
+        {
+         "t": "del",
+         "v": "93"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "94"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "change:37886623",
+   "type": "meta",
+   "types": [
+    "meta"
+   ],
+   "changeid": "37886623",
+   "title": "Changed review_percentage",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37886623",
+   "source": "pics",
+   "date": "2026-08-09T13:14:13.354374+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "review_percentage:"
+        },
+        {
+         "t": "del",
+         "v": "94"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "93"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "change:37873170",
+   "type": "meta",
+   "types": [
+    "meta"
+   ],
+   "changeid": "37873170",
+   "title": "Changed review_percentage",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37873170",
+   "source": "pics",
+   "date": "2026-08-08T14:48:39.294403+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "review_percentage:"
+        },
+        {
+         "t": "del",
+         "v": "95"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "94"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "change:37846088",
+   "type": "build",
+   "types": [
+    "build"
+   ],
+   "changeid": "37846088",
+   "title": "Build pushed (content not public)",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37846088",
+   "source": "pics",
+   "date": "2026-08-07T10:16:03.234884+00:00",
+   "opaque": true,
+   "changes": [
+    {
+     "op": "modified",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "ChangeNumber:"
+      },
+      {
+       "t": "del",
+       "v": "37769855"
+      },
+      {
+       "t": "text",
+       "v": " › "
+      },
+      {
+       "t": "ins",
+       "v": "37846088"
+      }
+     ],
+     "children": [
+      {
+       "op": "none",
+       "seg": [
+        {
+         "t": "muted",
+         "v": "Aucun changement dans l'appinfo public : le patch porte sur les depots, que l'API anonyme ne renvoie pas. Le buildid n'est lisible que sur SteamDB."
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "change:37769855",
+   "type": "meta",
+   "types": [
+    "meta"
+   ],
+   "changeid": "37769855",
+   "title": "Changed review_percentage",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37769855",
+   "source": "pics",
+   "date": "2026-08-04T19:51:02.980762+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "review_percentage:"
+        },
+        {
+         "t": "del",
+         "v": "96"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "95"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "change:37757334",
+   "type": "build",
+   "types": [
+    "build",
+    "branch",
+    "depot"
+   ],
+   "changeid": "37757334",
+   "title": "Build 24533807",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37757334",
+   "source": "pics",
+   "date": "2026-08-04T11:36:19.953536+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "depots > 2467881 > manifests > public"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "download:"
+        },
+        {
+         "t": "del",
+         "v": "4931402832"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "4928284288"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "gid:"
+        },
+        {
+         "t": "del",
+         "v": "4088194719045019993"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "3351107248013324498"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "size:"
+        },
+        {
+         "t": "del",
+         "v": "5229992088"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "5220231578"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "depots > branches > public"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "buildid:"
+        },
+        {
+         "t": "del",
+         "v": "24333427"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "24533807"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "timebuildupdated:"
+        },
+        {
+         "t": "del",
+         "v": "1784721334"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "1785766698"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "timeupdated:"
+        },
+        {
+         "t": "del",
+         "v": "1784880900"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "1785836588"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "news:1839676055896958",
+   "type": "news",
+   "types": [
+    "news"
+   ],
+   "changeid": "1839676055896958",
+   "title": "Game Update - Patch #1",
+   "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1839676055896958",
+   "source": "news",
+   "author": "Mehdi-NT",
+   "feed": "Community Announcements",
+   "body": "Hey Legends,\n\nThe Æther's still thin across Corel, but we've patched a few cracks in the current. This update leads with fixes, a couple of balance tweaks, and three new skins to change up how you look while you're out there.\n\nFixes\n\n- Fixed a case where dying during a specific final battle animation could send you into the wrong reality\n- Dying in a final battle no longer boots you to the main menu\n- Fixed the stretched source icon when unleashing an Æther source\n- Fixed the Æther core UI sticking around after it should've faded\n- Fixed Chinese characters appearing in the Japanese localization\n- Fixed corruption agents occasionally grabbing you instantly with no wind-up\n- Fixed a portal loading the wrong reality preview when areas were loaded out of order\n- Fixed post-corrupted immunity not applying when using a cannonball while corrupted\n- Fixed the Corruption Cloud (pink clouds in the last island) draining XP\n- Fixed a rare case where force-closing the game could make the water wave spell disappear\n- Removed the difficulty option from the main menu (it wasn't applying changes correctly there)\n\nBalance & combat\n\n- Combat Camera Assist: in low-assist mode, the assist no longer keeps pulling after you've deactivated it\n- Reduced a pushback exploit\n\nNew skins\n\nYou wishlisted us past 100K, so here's three new looks to celebrate:\n\n- Bob Le Critter  (French skin)\n- Waste One skin\n- Corruption One skin, straight out of the Paradox's own handiwork\n\nPlus updated localization across the board.",
+   "date": "2026-08-04T09:47:06+00:00",
+   "changes": []
+  },
+  {
+   "id": "change:37735231",
+   "type": "build",
+   "types": [
+    "build"
+   ],
+   "changeid": "37735231",
+   "title": "Build pushed (content not public)",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37735231",
+   "source": "pics",
+   "date": "2026-08-03T14:24:57.148045+00:00",
+   "opaque": true,
+   "changes": [
+    {
+     "op": "modified",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "ChangeNumber:"
+      },
+      {
+       "t": "del",
+       "v": "37713468"
+      },
+      {
+       "t": "text",
+       "v": " › "
+      },
+      {
+       "t": "ins",
+       "v": "37735231"
+      }
+     ],
+     "children": [
+      {
+       "op": "none",
+       "seg": [
+        {
+         "t": "muted",
+         "v": "Aucun changement dans l'appinfo public : le patch porte sur les depots, que l'API anonyme ne renvoie pas. Le buildid n'est lisible que sur SteamDB."
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "change:37713468",
+   "type": "meta",
+   "types": [
+    "meta"
+   ],
+   "changeid": "37713468",
+   "title": "Changed review_percentage",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37713468",
+   "source": "pics",
+   "date": "2026-08-02T14:03:41.274607+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "review_percentage:"
+        },
+        {
+         "t": "del",
+         "v": "95"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "96"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "change:37706107",
+   "type": "meta",
+   "types": [
+    "meta"
+   ],
+   "changeid": "37706107",
+   "title": "Changed review_percentage",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37706107",
+   "source": "pics",
+   "date": "2026-08-02T01:02:25.229587+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "review_percentage:"
+        },
+        {
+         "t": "del",
+         "v": "96"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "95"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "change:37651795",
+   "type": "meta",
+   "types": [
+    "meta"
+   ],
+   "changeid": "37651795",
+   "title": "Changed review_percentage",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37651795",
+   "source": "pics",
+   "date": "2026-07-30T18:44:51.915191+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "review_percentage:"
+        },
+        {
+         "t": "del",
+         "v": "97"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "96"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "change:37554996",
+   "type": "build",
+   "types": [
+    "build"
+   ],
+   "changeid": "37554996",
+   "title": "Build pushed (content not public)",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37554996",
+   "source": "pics",
+   "date": "2026-07-27T12:00:55.720224+00:00",
+   "opaque": true,
+   "changes": [
+    {
+     "op": "modified",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "ChangeNumber:"
+      },
+      {
+       "t": "del",
+       "v": "37545705"
+      },
+      {
+       "t": "text",
+       "v": " › "
+      },
+      {
+       "t": "ins",
+       "v": "37554996"
+      }
+     ],
+     "children": [
+      {
+       "op": "none",
+       "seg": [
+        {
+         "t": "muted",
+         "v": "Aucun changement dans l'appinfo public : le patch porte sur les depots, que l'API anonyme ne renvoie pas. Le buildid n'est lisible que sur SteamDB."
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "change:37545705",
+   "type": "meta",
+   "types": [
+    "meta"
+   ],
+   "changeid": "37545705",
+   "title": "Changed review_percentage",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37545705",
+   "source": "pics",
+   "date": "2026-07-26T23:25:12.922351+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "review_percentage:"
+        },
+        {
+         "t": "del",
+         "v": "96"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "97"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
   {
    "id": "change:37515645",
    "type": "meta",
