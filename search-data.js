@@ -24,6 +24,7 @@ const staticSearchIndex = [
     { title: "Source Giver Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Give yourself connected sources - at 12 opens the ending", icon: "fa-plug-circle-bolt" },
     { title: "XP Giver Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Give yourself Ætherfact points (skill points)", icon: "fa-star" },
     { title: "Skins Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Access One's hidden skins, swap her model or strip the outline", icon: "fa-shirt" },
+    { title: "Skin Menu Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Every skin in the game's own Options menu — One's five plus Bob's Marcel Bob (build 1.0.27953)", icon: "fa-palette" },
     { title: "Bad Apple Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Play Bad Apple rendered live by the game's own cubes", icon: "fa-play" },
     { title: "Void Cancel Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "F9/F10 toggle: fall forever, no void, no respawn — and turn it back off", icon: "fa-arrow-down-long" },
     { title: "Game Speed Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Slow-motion or fast-forward the whole game", icon: "fa-gauge-high" },
