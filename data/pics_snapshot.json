@@ -1,8 +1,8 @@
 {
- "_change_number": 37934612,
+ "_change_number": 37941003,
  "_missing_token": false,
- "_sha": "ccb3ffca632ef6d02c93be9d79077e50e2fbd6bc",
- "_size": 6410,
+ "_sha": "90a9009322e2a7021d5f39af0532be9ee45f7a2a",
+ "_size": 8404,
  "appid": "2467880",
  "common": {
   "associations": {
@@ -142,6 +142,75 @@
   "small_capsule": {
    "english": "8911f722ab88dd638c48a2a8c2d305899beb2952/capsule_231x87.jpg",
    "schinese": "0d866606ea43aedc4c9120e2820c2f13950b9465/capsule_231x87_schinese.jpg"
+  },
+  "steam_deck_compatibility": {
+   "category": "3",
+   "configuration": {
+    "gamescope_frame_limiter_not_supported": "0",
+    "hdr_support": "0",
+    "non_deck_display_glyphs": "0",
+    "primary_player_is_controller_slot_0": "1",
+    "recommended_runtime": "proton-11.0-2RC",
+    "requires_h264": "1",
+    "requires_internet_for_setup": "0",
+    "requires_internet_for_singleplayer": "0",
+    "requires_manual_keyboard_invoke": "0",
+    "requires_non_controller_launcher_nav": "0",
+    "requires_proton_soundfonts": "0",
+    "requires_voice_files": "0",
+    "small_text": "0",
+    "supported_input": "other"
+   },
+   "steam_machine_compatibility": "3",
+   "steam_machine_tests": {
+    "0": {
+     "display": "4",
+     "token": "#SteamMachine_TestResult_DefaultControllerConfigFullyFunctional"
+    },
+    "1": {
+     "display": "4",
+     "token": "#SteamMachine_TestResult_ControllerGlyphsMatchDevice"
+    },
+    "2": {
+     "display": "4",
+     "token": "#SteamMachine_TestResult_DefaultConfigurationIsPerformant"
+    }
+   },
+   "steamos_compatibility": "2",
+   "steamos_tests": {
+    "0": {
+     "display": "3",
+     "token": "#SteamOS_TestResult_GameStartupFunctional"
+    },
+    "1": {
+     "display": "1",
+     "token": "#SteamOS_TestResult_ExternalControllersNotSupportedPrimaryPlayer"
+    }
+   },
+   "test_timestamp": "1786454518",
+   "tested_build_id": "24533807",
+   "tests": {
+    "0": {
+     "display": "4",
+     "token": "#SteamDeckVerified_TestResult_DefaultControllerConfigFullyFunctional"
+    },
+    "1": {
+     "display": "4",
+     "token": "#SteamDeckVerified_TestResult_ControllerGlyphsMatchDeckDevice"
+    },
+    "2": {
+     "display": "4",
+     "token": "#SteamDeckVerified_TestResult_InterfaceTextIsLegible"
+    },
+    "3": {
+     "display": "4",
+     "token": "#SteamDeckVerified_TestResult_DefaultConfigurationIsPerformant"
+    },
+    "4": {
+     "display": "1",
+     "token": "#SteamDeckVerified_TestResult_ExternalControllersNotSupportedPrimaryPlayer"
+    }
+   }
   },
   "steam_release_date": "1784620800",
   "store_asset_mtime": "1784798068",

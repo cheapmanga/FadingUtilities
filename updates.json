@@ -1,7 +1,903 @@
 {
- "generated": "2026-08-11T11:58:37.271347+00:00",
+ "generated": "2026-08-11T15:44:05.641268+00:00",
  "appid": "2467880",
  "events": [
+  {
+   "id": "change:37941003",
+   "type": "store",
+   "types": [
+    "store"
+   ],
+   "changeid": "37941003",
+   "title": "Changed category, gamescope_frame_limiter_not_supported, hdr_support +18",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37941003",
+   "source": "pics",
+   "date": "2026-08-11T15:44:05.641268+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > steam_deck_compatibility"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "category:"
+        },
+        {
+         "t": "ins",
+         "v": "3"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "steam_machine_compatibility:"
+        },
+        {
+         "t": "ins",
+         "v": "3"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "steamos_compatibility:"
+        },
+        {
+         "t": "ins",
+         "v": "2"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "test_timestamp:"
+        },
+        {
+         "t": "ins",
+         "v": "1786454518"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "tested_build_id:"
+        },
+        {
+         "t": "ins",
+         "v": "24533807"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > steam_deck_compatibility > configuration"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "gamescope_frame_limiter_not_supported:"
+        },
+        {
+         "t": "ins",
+         "v": "0"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "hdr_support:"
+        },
+        {
+         "t": "ins",
+         "v": "0"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "non_deck_display_glyphs:"
+        },
+        {
+         "t": "ins",
+         "v": "0"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "primary_player_is_controller_slot_0:"
+        },
+        {
+         "t": "ins",
+         "v": "1"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "recommended_runtime:"
+        },
+        {
+         "t": "ins",
+         "v": "proton-11.0-2RC"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "requires_h264:"
+        },
+        {
+         "t": "ins",
+         "v": "1"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "requires_internet_for_setup:"
+        },
+        {
+         "t": "ins",
+         "v": "0"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "requires_internet_for_singleplayer:"
+        },
+        {
+         "t": "ins",
+         "v": "0"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "requires_manual_keyboard_invoke:"
+        },
+        {
+         "t": "ins",
+         "v": "0"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "requires_non_controller_launcher_nav:"
+        },
+        {
+         "t": "ins",
+         "v": "0"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "requires_proton_soundfonts:"
+        },
+        {
+         "t": "ins",
+         "v": "0"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "requires_voice_files:"
+        },
+        {
+         "t": "ins",
+         "v": "0"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "small_text:"
+        },
+        {
+         "t": "ins",
+         "v": "0"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "supported_input:"
+        },
+        {
+         "t": "ins",
+         "v": "other"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > steam_deck_compatibility > steam_machine_tests > 0"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "display:"
+        },
+        {
+         "t": "ins",
+         "v": "4"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "token:"
+        },
+        {
+         "t": "ins",
+         "v": "#SteamMachine_TestResult_DefaultControllerConfigFullyFunctional"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > steam_deck_compatibility > steam_machine_tests > 1"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "display:"
+        },
+        {
+         "t": "ins",
+         "v": "4"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "token:"
+        },
+        {
+         "t": "ins",
+         "v": "#SteamMachine_TestResult_ControllerGlyphsMatchDevice"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > steam_deck_compatibility > steam_machine_tests > 2"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "display:"
+        },
+        {
+         "t": "ins",
+         "v": "4"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "token:"
+        },
+        {
+         "t": "ins",
+         "v": "#SteamMachine_TestResult_DefaultConfigurationIsPerformant"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > steam_deck_compatibility > steamos_tests > 0"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "display:"
+        },
+        {
+         "t": "ins",
+         "v": "3"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "token:"
+        },
+        {
+         "t": "ins",
+         "v": "#SteamOS_TestResult_GameStartupFunctional"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > steam_deck_compatibility > steamos_tests > 1"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "display:"
+        },
+        {
+         "t": "ins",
+         "v": "1"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "token:"
+        },
+        {
+         "t": "ins",
+         "v": "#SteamOS_TestResult_ExternalControllersNotSupportedPrimaryPlayer"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > steam_deck_compatibility > tests > 0"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "display:"
+        },
+        {
+         "t": "ins",
+         "v": "4"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "token:"
+        },
+        {
+         "t": "ins",
+         "v": "#SteamDeckVerified_TestResult_DefaultControllerConfigFullyFunctional"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > steam_deck_compatibility > tests > 1"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "display:"
+        },
+        {
+         "t": "ins",
+         "v": "4"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "token:"
+        },
+        {
+         "t": "ins",
+         "v": "#SteamDeckVerified_TestResult_ControllerGlyphsMatchDeckDevice"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > steam_deck_compatibility > tests > 2"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "display:"
+        },
+        {
+         "t": "ins",
+         "v": "4"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "token:"
+        },
+        {
+         "t": "ins",
+         "v": "#SteamDeckVerified_TestResult_InterfaceTextIsLegible"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > steam_deck_compatibility > tests > 3"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "display:"
+        },
+        {
+         "t": "ins",
+         "v": "4"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "token:"
+        },
+        {
+         "t": "ins",
+         "v": "#SteamDeckVerified_TestResult_DefaultConfigurationIsPerformant"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > steam_deck_compatibility > tests > 4"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "display:"
+        },
+        {
+         "t": "ins",
+         "v": "1"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "token:"
+        },
+        {
+         "t": "ins",
+         "v": "#SteamDeckVerified_TestResult_ExternalControllersNotSupportedPrimaryPlayer"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
   {
    "id": "change:37934612",
    "type": "store",
