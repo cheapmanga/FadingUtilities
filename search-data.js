@@ -12,13 +12,13 @@ const staticSearchIndex = [
     // --- Void Cancel (dedicated page) ---
     { title: "Void Cancel Guide", category: "Any%", page: "voidcancel.html", target: "", desc: "Complete detailed guide to bypass fall limits", icon: "fa-book-open" },
     { title: "Void Cancel (CS Method)", category: "Glitch", page: "voidcancel.html", target: "", desc: "Primary method using Cutscene Skip", icon: "fa-film" },
-    { title: "Void Cancel (Death Method)", category: "Glitch", page: "voidcancel.html", target: "", desc: "Alternative method without CS", icon: "fa-skull" },
+    { title: "Void Cancel (No Cutscene Skip)", category: "Glitch", page: "voidcancel.html", target: "", desc: "Alternative method without CS — not possible anymore, until further proof", icon: "fa-skull" },
 
     // --- Mods ---
     { title: "Teleport Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Alternative to Cheat Engine - F6/F7", icon: "fa-location-arrow" },
     { title: "Volume Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "See invisible walls & triggers", icon: "fa-border-all" },
     { title: "Core Giver Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Give yourself elemental cores (water, waste, fire, glitch, power)", icon: "fa-atom" },
-    { title: "MoonJump Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Infinite jump / BotW-style flight", icon: "fa-feather" },
+    { title: "Ascend Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Rise while jump is held, plus unlimited mid-air re-jumps", icon: "fa-feather" },
     { title: "Chest Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Teleport yourself to all loaded chests", icon: "fa-box-open" },
     { title: "KillAll Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Kills all loaded enemies", icon: "fa-skull-crossbones" },
     { title: "Source Giver Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Give yourself connected sources - at 12 opens the ending", icon: "fa-plug-circle-bolt" },
