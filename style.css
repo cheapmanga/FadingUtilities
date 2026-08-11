@@ -235,6 +235,30 @@ nav {
     color: var(--primary-cyan);
 }
 
+/* Base style for the note/warning banners, wherever they sit (container,
+   .tool-card, …). The .content-card / .mod-card rules below are identical
+   apart from their margin, and keep overriding it. */
+.note,
+.warning {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.note {
+    background: rgba(255, 230, 0, 0.1);
+    border-left: 4px solid var(--primary-yellow);
+}
+
+.note strong { color: var(--primary-yellow); }
+
+.warning {
+    background: rgba(255, 0, 110, 0.1);
+    border-left: 4px solid var(--primary-pink);
+}
+
+.warning strong { color: var(--primary-pink); }
+
 .content-card .note {
     background: rgba(255, 230, 0, 0.1);
     border-left: 4px solid var(--primary-yellow);
