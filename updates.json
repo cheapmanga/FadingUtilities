@@ -1,7 +1,105 @@
 {
- "generated": "2026-08-11T15:44:05.641268+00:00",
+ "generated": "2026-08-11T16:41:01.019684+00:00",
  "appid": "2467880",
  "events": [
+  {
+   "id": "change:37941160",
+   "type": "store",
+   "types": [
+    "store"
+   ],
+   "changeid": "37941160",
+   "title": "Changed category_23, genres",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=37941160",
+   "source": "pics",
+   "date": "2026-08-11T16:41:01.019684+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > category"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "category_23:"
+        },
+        {
+         "t": "ins",
+         "v": "1"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > genres"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "3:"
+        },
+        {
+         "t": "ins",
+         "v": "3"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "4:"
+        },
+        {
+         "t": "ins",
+         "v": "37"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
   {
    "id": "change:37941003",
    "type": "store",
