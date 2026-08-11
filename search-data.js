@@ -24,7 +24,14 @@ const staticSearchIndex = [
     { title: "Source Giver Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Give yourself connected sources - at 12 opens the ending", icon: "fa-plug-circle-bolt" },
     { title: "XP Giver Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Give yourself Ætherfact points (skill points)", icon: "fa-star" },
     { title: "Skins Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Access One's hidden skins, swap her model or strip the outline", icon: "fa-shirt" },
+    { title: "Skin Menu Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Every skin in the game's own Options menu — One's five plus Bob's Marcel Bob (build 1.0.27953)", icon: "fa-palette" },
     { title: "Bad Apple Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Play Bad Apple rendered live by the game's own cubes", icon: "fa-play" },
+    { title: "Void Cancel Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "F9/F10 toggle: fall forever, no void, no respawn — and turn it back off", icon: "fa-arrow-down-long" },
+    { title: "Game Speed Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Slow-motion or fast-forward the whole game", icon: "fa-gauge-high" },
+    { title: "Gravity Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Scale the player gravity — floaty jumps or none at all", icon: "fa-feather-pointed" },
+    { title: "Camera FOV Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Change the camera field of view, with an optional lock", icon: "fa-video" },
+    { title: "Screenshot Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "High-resolution screenshots, up to 8x the screen size", icon: "fa-camera" },
+    { title: "HUD Mod", category: "Mod", page: "mods-tools.html", target: "", desc: "Show or hide the HUD for clean screenshots and capture", icon: "fa-eye-slash" },
 
     // --- Tracker ---
     { title: "Updates", category: "Steam", page: "tracker.html", target: "", desc: "Steam update tracker: builds, depots, branches and patch notes", icon: "fa-satellite-dish" },
