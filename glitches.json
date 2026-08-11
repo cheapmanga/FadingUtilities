@@ -2,116 +2,179 @@
   "sections": [
     {
       "id": "speedrun_moves",
-      "title": "Speedrun Moves",
+      "title": "Speedrun Moves (NMG)",
       "icon": "fa-running",
       "color": "var(--primary-cyan)",
       "search_category": "Glitch",
       "glitches": [
         {
-          "title": "Hyper Dash (HD)",
-          "search_icon": "fa-bolt",
-          "search_desc": "Wave Dash, Long Jump, Collision Jump, Ricochet",
-          "alt_names": "Wave Dash (like in Celeste), Long Jump, Collision Jump, Ricochet",
-          "how_to": "From the air (usually after a jump), dash into a walkable surface and quickly press jump. You'll be launched with the speed of the dash on a long distance, like a boosted bunny hop. It is possible on flat surfaces: the flatter it is, the more delay it needs between dash and jump.",
-          "variations": [
-            {
-              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1512967434791813120\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Poison Hyper Dash</a> - As water form, do a Hyper Dash into a liquid to get the corresponding boost. The Poison version seems to be the most useful for now (less efficient as Steam/Nitro)."
-            }
-          ],
-          "note": "Often used in the run, especially in the intro before getting the Form Dash. Seems conditioned to a higher framerate (ideally, 120fps no vsync).",
-          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672/1513007350787870870",
+          "title": "Jump Kick (JK)",
+          "search_icon": "fa-shoe-prints",
+          "search_desc": "Roll into a corner to get higher, a classic",
+          "alt_names": "",
+          "how_to": "From the air (usually after a <strong>jump</strong>), do a <strong>kick</strong> into a geometry corner with the proper angle to maximize the upward boost.",
+          "variations": [],
+          "note": "This specific clip is from the older demo. It still remains possible but has been nerfed since then. Conditioned to a higher framerate (ideally, 120fps no vsync).",
+          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672/1511705958978424883",
           "videos": []
         },
         {
           "title": "Jump Switch (JS)",
           "search_icon": "fa-arrow-up",
-          "search_desc": "Element Switch, Switch Boost, Poison JS",
+          "search_desc": "Small boost upwards allowing bigger jumps",
           "alt_names": "Element Switch, Switch Boost",
-          "how_to": "As water form, jump and switch at the same time, or at least in that order, to get a small boost up.",
-          "videos": ["HwfF5NkcpIU"],
-          "note": "Mostly used in speedrun as the poison variation, but the basic water Jump Switch still gains a small boost and allows to chain very fast jumps (See Form Dash notes).",
+          "how_to": "As water form, <strong>jump</strong> and quickly <strong>switch</strong> into One.",
           "variations": [
             {
-              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1512521417714040964\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Poison Jump Switch</a> - When releasing the poison by jumping, delay your transformation to receive a big momentum up as One.",
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1512521417714040964\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Poison Jump Switch</a> - When releasing the poison <strong>jump</strong>, delay your <strong>switch</strong> ~0.3s to receive a big momentum up as One.",
               "video_id": "F9q4ra_O3HU"
             }
           ],
-          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672"
+          "note": "Mostly used in speedrun as the poison variation, but the basic water Jump Switch still gains a small boost and allows to chain very fast jumps (see the Form Dash notes).",
+          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672/1512527774655709306",
+          "videos": ["HwfF5NkcpIU"]
         },
         {
-          "title": "Hyper Switch (HS)",
+          "title": "Wave Dash (WD)",
           "search_icon": "fa-bolt",
-          "search_desc": "Combo of Hyper Dash and Jump Switch",
-          "alt_names": "",
-          "how_to": "Combination of Hyper Dash and Jump Switch - Starting as water form in the air, dash into a surface and immediately jump > switch into One.",
-          "videos": ["EowZF2GRpgk"],
-          "note": "Allows to get a bit more height and distance with the Hyper Dash. Can help with jumps like <a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">this one</a>.",
-          "videos_extra": ["_fUESuGJWag"],
+          "search_desc": "Big horizontal boost often used for parkour",
+          "alt_names": "Hyper Dash (like in Celeste), Long Jump, Collision Jump...",
+          "how_to": "From the air (usually after a jump), <strong>dash</strong> into a walkable surface and quickly press <strong>jump</strong>. Possible on flat and inclined surfaces: delay between dash and jump may depend on the geometry.",
           "variations": [
             {
-              "text": "<strong>Poison Hyper Switch</strong> - Combination of Poison Hyper Dash and Poison Jump Switch - Water form > Hyper Dash into Poison > after jumping, delay the transfo like for Poison Jump Switch > get a big boost up and forward.",
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1513393029019340970\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Wave Dash + Switch</a> - Combination of Wave Dash and Jump Switch. As water form and in the air <strong>dash &gt; jump &gt; switch</strong> into One. Allows to get a bit more height/distance, like <a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1514323592156807281\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">here</a>.",
+              "video_id": "EowZF2GRpgk"
+            },
+            {
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1512967434791813120\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Poison Wave Dash</a> - As water form, Wave Dash into poison to get a boost up."
+            },
+            {
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1513382830967750676\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Poison Wave Dash + Switch</a> - Even bigger: combined to the Poison Jump Switch by delaying the <strong>switch</strong> ~0.3s.",
               "video_id": "2GZzKW0rV2g"
             }
           ],
-          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672"
+          "note": "Often used in the run, especially in the intro before getting the Form Dash. Seems conditioned to a higher framerate (ideally, 120fps no vsync).",
+          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672/1513007350787870870",
+          "videos": [],
+          "videos_extra": ["_fUESuGJWag"]
         },
         {
           "title": "Form Dash (FD)",
           "search_icon": "fa-wind",
-          "search_desc": "Form Dash Poison, FDP",
+          "search_desc": "Central move for many mobility techniques - FDJ, FDP, New Form Dash",
           "alt_names": "",
-          "how_to": "Dash just before a transformation to reach a very high speed. Usually stands for the aerial version, but works on the ground (quickly alternating each input).",
+          "how_to": "<strong>Dash</strong> just before a <strong>switch</strong>.",
           "variations": [
             {
-              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1513217181943332885\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Form Dash Poison (FDP)</a> - Press jump > switch > dash (with a precise timing). This will perform a Form Dash without switching to One, but staying as water form. Can be done to keep an item stored while performing a Form Dash."
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1517162372131848274/1531140000047960224\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Ground version</a> - Faster way to move on the ground by optimally chaining the inputs. Perfect for Jojo / Infinite Dash."
+            },
+            {
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1512527774655709306\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Air version</a> - Discovered first, it's an essential way to extend the jump ability. To properly chain it, start as water form &gt; Jump Switch &gt; Form Dash &gt; land and quickly repeat cycle."
+            },
+            {
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1517162372131848274/1523397553968775270\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Form Dash Jump</a> (FDJ) - To raise from the ground and cover great horizontal distance (similarly to the Wave Dash): <strong>Dash &gt; switch &gt; jump</strong>."
+            },
+            {
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1513217181943332885\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Form Dash Pinguin</a> (FDP) - Press <strong>jump &gt; switch &gt; dash</strong> within ~0.3s. This will perform a Form Dash without switching to One, staying as water form and allowing to keep a stored item."
+            },
+            {
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1520041676448469003/1531152365850329112\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">New Form Dash</a> <strong>❗</strong> - An update introduced a precise timing allowing to <strong>keep the water form</strong>, the execution of the dash seemingly cancelling the switch into One. It deeply combines with the existing variations, allowing many optimized moves and to efficiently carry power cores."
             }
           ],
-          "note": "Very often used in the run after the intro. To <a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">chain them properly</a>, start as water form > Jump Switch (jump>switch) > Form Dash (dash>switch) > as soon as you land as water form, repeat this cycle (it can get very fast).",
-          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672",
-          "videos": []
-        },
-        {
-          "title": "Jump Kick (JK)",
-          "search_icon": "fa-shoe-prints",
-          "search_desc": "Gain momentum up",
-          "alt_names": "",
-          "how_to": "From the air (usually quickly after a jump), do the kick move into a geometry corner to gain momentum up.",
-          "variations": [],
-          "note": "This specific clip is from the older demo. It still remains possible but has been nerfed since then. Conditioned to a higher framerate (ideally, 120fps no vsync).",
-          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672",
+          "note": "Central move for many mobility techniques, constantly used after the intro.",
+          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672/1512526272926978048",
           "videos": []
         }
       ]
     },
     {
       "id": "any_percent",
-      "title": "Any% Only",
+      "title": "Major Glitches (Any%)",
       "icon": "fa-trophy",
       "color": "var(--primary-pink)",
       "search_category": "Any%",
       "glitches": [
         {
+          "title": "Glitch² (GG)",
+          "search_icon": "fa-radiation",
+          "search_desc": "Become insensible to enemy attacks and other liquids",
+          "alt_names": "Glitch Glitch, Invincibility...",
+          "how_to": "As One gets <strong>affected by the glitch</strong>, <strong>dash away</strong> from the edge of the pool to fall/void during the animation. <strong>Canceled</strong> by going back to the main menu.",
+          "variations": [],
+          "note": "This is a hidden liquid/color still accessible in the demo, giving us a glimpse on the future puzzles and exploits we might be able to do in the full game... No real use found yet but great potential for the full game and its most intense combat phases.",
+          "note_type": "warning",
+          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672/1512839243381211247",
+          "videos": ["bytIg-bph2A"]
+        },
+        {
+          "title": "Portal Glitch",
+          "search_icon": "fa-door-open",
+          "search_desc": "Exit a working portal - OOB, Pyramid Rob, Portal Void Cancel",
+          "alt_names": "Portal Wrong Load, Portal Escape Glitch",
+          "how_to": "As glitch form, place a <strong>teleportation mark</strong> out of a portal, <strong>stand on the central button</strong> and quickly <strong>teleport back</strong>. The camera will turn to aim the mark you left, leaving enough time for the portal to fully <strong>activate before you get teleported</strong>. Once escaped, the level will unload and switch to the targeted one, leaving you free for a few seconds.",
+          "variations": [
+            {
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1511816420642525187\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Out-of-Bounds</a> - Can be used to unload walls and go OOB. Opening the start menu at a specific moment can allow the new level to load while suspending your position."
+            },
+            {
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1517162372131848274/1528175806952771685\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Pyramid Rob</a> - Taking advantage of the levels swapping, get into a pyramid box to steal its power core and escape using the glitch teleportation."
+            },
+            {
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1517162372131848274/1533216074210738227\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Portal Void Cancel</a> - Use the portal loading time to fall without being respawned and cover great distances downwards."
+            }
+          ],
+          "note": "Exit a working portal using the glitch teleportation, to perform a variety of skips and exploits.",
+          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672/1512860681647554570",
+          "videos": ["SD0DBhZEw08"]
+        },
+        {
+          "title": "Respawn Item Portal (RIP)",
+          "search_icon": "fa-cube",
+          "search_desc": "Bypass the standard portal travel by teleporting an item alone",
+          "alt_names": "",
+          "how_to": "Leave an item in the bubble showing the pre-rendered other level and quickly restart from last checkpoint or void to respawn there (loading screen), leaving some time on the other side to grab the item.",
+          "variations": [],
+          "note": "",
+          "discord_link": "https://discord.com/channels/1262382985844359221/1517162372131848274/1531023607185281165",
+          "videos": []
+        },
+        {
+          "title": "Respawn Aim Shot (RAS)",
+          "search_icon": "fa-crosshairs",
+          "search_desc": "Force an enemy to aim at you while respawning elsewhere",
+          "alt_names": "",
+          "how_to": "Simply restart from last checkpoint (in the same level / no loading screen) just before the shot visualization appears. Theoretically possible using a soft/void checkpoint, but the window is small.",
+          "variations": [],
+          "note": "Forces an enemy to aim at you while you quickly respawn elsewhere, allowing to get certain elements to inappropriate locations.",
+          "discord_link": "https://discord.com/channels/1262382985844359221/1517162372131848274/1529528642328199368",
+          "videos": []
+        },
+        {
           "title": "Cutscene Skip (CS)",
           "search_icon": "fa-film",
           "search_desc": "Key glitch for Any% runs - WR 3:57.04",
           "alt_names": "",
-          "how_to": "From the main menu, choose new game > difficulty and when you validate, quickly press down and enter. What it does is that for a brief moment after starting, you're still able to navigate through the menu: going down and validating makes you choose CONTINUE. Right after that, hold your direction forward, dash, jump and attack. You should be able to hear these actions during the black-screen (and feel a vibration after the attack).",
-          "extra_content": "<h4>To summarize:</h4><p>Enter > Down > Enter > Hold stick forward > Dash > Jump > Attack</p>",
+          "how_to": "From the main menu, choose new game &gt; difficulty and when you <strong>validate</strong>, quickly press <strong>down</strong> and <strong>enter</strong>. What it does is that for a brief moment after starting, you're still able to navigate through the menu: going down and validating makes you choose CONTINUE. Right after that, hold your <strong>direction forward</strong>, <strong>dash</strong>, <strong>jump</strong> and <strong>attack</strong>. You should be able to hear these actions during the black-screen (and feel a vibration after the attack).",
+          "extra_content": "<h4>To summarize:</h4><p>Enter &gt; Down &gt; Enter &gt; Hold stick forward &gt; Dash &gt; Jump &gt; Attack</p><p style=\"margin-top: 10px;\"><strong>Associated room:</strong> <a href=\"https://discord.com/channels/1262382985844359221/1520043436458381374\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">#Cutscene Skip</a> on the Discord.</p>",
           "variations": [],
           "note": "It's at the base of many important glitches like the next ones (Void Cancel, Infinite Dash, etc.). It is a key glitch that allowed us along with an incredible teamwork to get a <strong>WR (3:57.04) runned by @Hulien</strong>. The timings are not so quick and very precise, it is recommended trying different timings and picking the one that suits your playstyle or watch (and listen to) <a href=\"https://www.youtube.com/watch?v=CMLUlUVKSEc&list=PLfS_Ge59iHlSnz583JHwopKhzn1ENZPvz\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">this</a>. You know you did it right if One doesn't talk right after the cutscene and there is no camera movement. It is highly recommended to have the sound of the game turned on, so you can hear your inputs.",
-          "discord_link": "",
+          "discord_link": "https://discord.com/channels/1262382985844359221/1517162372131848274/1517610869196849152",
           "videos": ["CMLUlUVKSEc"]
         },
         {
-          "title": "Void Cancel (VC)",
+          "title": "Void Cancel (VC/DC)",
           "search_icon": "fa-ban",
-          "search_desc": "Fall forever, bypass void/respawn",
+          "search_desc": "Fall forever, bypass void, respawn and death",
           "alt_names": "",
           "title_style": "color: var(--primary-pink);",
-          "how_to": "Through the Cutscene Skip method, fall until the game tries to respawn you - it will fail and you'll instead continuously receive fall damage. Go back to the menu and continue. You will now be able to fall forever, no void, no respawn.",
-          "variations": [],
-          "note": "This glitch allows you to bypass the fall limit that respawns you on the ground. You will be able to cover great vertical and horizontal distances in the air. This state resists everything, even rebooting the game. Just be careful not to fall for too long or you'll get a \"fatal error\" crash.",
-          "discord_link": "",
+          "how_to": "After the <strong>Cutscene Skip</strong>, <strong>fall</strong> until the game tries to respawn you - it will fail and you'll instead continuously receive void damages. Go <strong>back to menu</strong> and <strong>continue</strong>. You will now be able to <strong>fall forever</strong>, no void, no respawn but also <strong>no death</strong> (life bar can't be reduced to 0HP).",
+          "variations": [
+            {
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1514583777333084182\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">No Cutscene Skip</a> <strong>❌</strong> - this version is done by interrupting One's death animation. <strong>Lose</strong> almost all <strong>HP</strong> (faster in Hard difficulty) &gt; <strong>Fall</strong> to your death &gt; <strong>Pause buffer</strong> to aim the first frames of the <strong>death animation</strong> (you take the last hit just after respawning). You may struggle a bit to force the start menu when the animation initiates. Sometimes the controller is vibrating on this frame and continuously goes on when you're in the pause menu - but it's not mandatory, just a good sign &gt; Go back to <strong>main menu</strong> and <strong>continue</strong> &gt; You should be back <strong>unkillable</strong> and with the ability to <strong>fall forever</strong>."
+            }
+          ],
+          "note": "This glitch allows you to bypass both <strong>death</strong> and <strong>the fall limit</strong> that respawns you on the ground. You will be able to stay alive forever, and to cover great vertical and horizontal distances in the air. This state <strong>resists everything</strong>, even rebooting the game. It seems stuck to the save file and you'll have to continue without ever dying or voiding again... Just be careful not to <strong>fall for too long</strong> or you'll get a \"fatal error\" crash (the glitch still remaining active after restarting).",
+          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672/1516660510550921306",
           "videos": [],
           "button_text": "Read the Complete Void Cancel Guide",
           "button_link": "voidcancel.html"
@@ -121,67 +184,85 @@
           "search_icon": "fa-infinity",
           "search_desc": "Void, Voidless, Respawn variations",
           "alt_names": "",
-          "how_to": "Through the Cutscene Skip method, restart from checkpoint (it should not replace you anywhere else, the CS doesn't register the first hard checkpoint) and start mashing dashes.",
+          "how_to": "Through the <strong>Cutscene Skip</strong> method, <strong>restart from checkpoint</strong> (it should not replace you anywhere, the CS doesn't register the first hard checkpoint) and start <strong>mashing dashes</strong>.",
           "variations": [
             {
-              "text": "<strong>Void Infinite Dash (VC not active)</strong> - You will get stuck in the air continuously losing HP but able to \"fly\" towards your destination (restarting checkpoint allows you to refill your HP and potion).",
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1517162372131848274/1517610869196849152\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Void Infinite Dash</a> <em>(CS / no VC)</em> - You will get stuck in the air continuously losing HP but able to \"fly\" towards your destination (restarting checkpoint allows you to refill your HP and potions).",
               "video_id": "CAm_lRESR5c"
             },
             {
-              "text": "<strong>Voidless Infinite Dash (VC active)</strong> - You will be able to naturally infinite dash without losing HP.",
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1516660510550921306\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Voidless Infinite Dash</a> <em>(CS / VC)</em> <strong>❌</strong> - You will be able to naturally infinite dash without losing HP.",
               "video_id": "_qwekz-vO4U"
             },
             {
-              "text": "<strong>Respawn Infinite Dash (No CS needed)</strong> - This alternate version can work without specific setup. Just mash the <strong>dash</strong> after <strong>respawning</strong> from a fall/void. Ideally, do it from a respawn that gets you in the air (like shown in the clip). This can't last very long and the game will make you void pretty fast.",
+              "text": "<a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1512477169778168071\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Respawn Infinite Dash</a> <em>(No CS)</em> - Can work without specific setup: just mash the <strong>dash</strong> after <strong>respawning</strong> from a fall/void; ideally from a spot that gets you in the air like shown in the clip. This can't last very long and the game will quickly make you respawn if you don't go above surfaces to reset the void timer.",
               "video_id": "fbROxGJtnvc"
             }
           ],
           "note": "",
-          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672",
+          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672/1516660510550921306",
           "videos": []
-        },
-        {
-          "title": "Jojo Glitch",
-          "search_icon": "fa-bug",
-          "search_desc": "Volcano Skip",
-          "alt_names": "",
-          "how_to": "Go into a water tube and simply restart from checkpoint (it needs to be in the same level). This seems to disturb the transition from ground to air and locks you into a walking state, unable to jump. You'll be standing onto an invisible floor with the possibility to work your hitbox up or down by entering in contact with the environment. Find the ideal collisions in the level design to navigate in the available space. It allows the <a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1513257445365907749\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Volcano Skip</a> (follow this routing).",
-          "variations": [],
-          "note": "The best spot to perform this is the portal going from Bastion to Volcano, in the underwater biome (there is a checkpoint just next to the first tubes). When active, the fastest way to move horizontally is with the ground version of the Form Dash (quickly alternating dash and switch). The best way to go up seems to be by mashing the switch (no dash) while facing an inclined wall.",
-          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672",
-          "videos": ["ChLZzXPqcxE"]
         }
       ]
     },
     {
-      "id": "more_glitches",
-      "title": "More Glitches",
-      "icon": "fa-puzzle-piece",
+      "id": "work_in_progress",
+      "title": "Work in Progress",
+      "icon": "fa-flask",
       "color": "var(--primary-yellow)",
-      "search_category": "Glitch",
+      "search_category": "WIP",
       "glitches": [
         {
-          "title": "Portal Glitch",
-          "search_icon": "fa-door-open",
-          "search_desc": "Portal Wrong Load, OOB",
-          "alt_names": "Portal Wrong Load, Portal Escape Glitch",
-          "how_to": "Previously done thanks to the \"restart from checkpoint\" - patched. Still possible thanks to the glitch form (purple). Place a teleportation mark out of the portal, turn the camera away from this point, stand on the central button to activate the portal but quickly teleport back to the mark. The camera will turn to aim the mark you left, leaving enough time for the portal to activate just before you get teleported. Once escaped, the level will still unload and switch to the targeted one, leaving you unprotected and free for a few seconds...",
+          "title": "Jojo ❌",
+          "search_icon": "fa-bug",
+          "search_desc": "Fly and never fall - allows the Volcano Skip",
+          "alt_names": "",
+          "how_to": "Fall and void next to a <strong>pipe</strong> to respawn back to the <strong>soft checkpoint</strong> in a previous level. You'll be standing onto an invisible floor, unable to jump, with the possibility to work your hitbox <strong>up or down</strong> by entering in contact with the environment - find the ideal collisions in the level design to navigate. The fastest way to move horizontally is the Form Dash and vertically by facing an inclined wall as One without dashing. It allows the <a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1513257445365907749\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Volcano Skip</a>. <strong>Canceled</strong> by entering a pipe, watching a cutscene that repositions One or going back to the main menu.",
           "variations": [],
-          "note": "Can be used to unload walls and go <a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1511816420642525187\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">OOB</a>. Opening the start menu at a specific moment can allow the new level to load while suspending your position.",
-          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672",
-          "videos": ["SD0DBhZEw08"]
+          "note": "❌ Not possible anymore, until further proof. Allows to fly and prevents to fall by locking One into a walking state.",
+          "note_type": "warning",
+          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672/1512602064826400818",
+          "videos": ["ChLZzXPqcxE"]
         },
         {
-          "title": "Glitch²",
-          "search_icon": "fa-radiation",
-          "search_desc": "Glitch Glitch, GG, invincibility",
-          "alt_names": "Glitch Glitch, GG",
-          "how_to": "As One, get affected by the <a href=\"https://discord.com/channels/1262382985844359221/1501975620953968672/1511796188133724310\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">glitch liquid</a> but dash away from the edge of the pool to fall/void during the animation. After respawning, you'll be insensible to other liquids and to enemy attacks.",
-          "variations": [],
-          "note": "This is a hidden liquid/color still accessible in the demo, giving us a glimpse on the future puzzles and exploits we might be able to do in the full game... No real use found yet but great potential for the full game and its most intense combat phases.",
+          "title": "Infinite Core (IC)",
+          "search_icon": "fa-star",
+          "search_desc": "Conserve an element core to keep using it without limitation - ICW, ICP, ICS, ICG",
+          "alt_names": "",
+          "how_to": "<strong>Work in progress</strong> - Much efforts have been made to figure out a consistent setup but <strong>help is still needed</strong>. For now, the best way to do it is by grabbing any element core and repeatedly fall/void with it. You should respawn with the UI showing the core, even as One. <strong>Canceled</strong> by grabbing another core or going back to the main menu.",
+          "extra_content": "<p style=\"margin-top: 10px;\"><strong>Associated room:</strong> #Infinite Core on the Discord.</p>",
+          "variations": [
+            {
+              "text": "<strong>Water</strong> (ICW) - Using a water core recharges the æther, allowing to spam the powers."
+            },
+            {
+              "text": "<strong>Poison</strong> (ICP) - Nothing huge found yet out of chaining the poison jumps."
+            },
+            {
+              "text": "<strong>Steam</strong> (ICS) - Very useful because it resets the void timer, allowing to fly and fall forever. Perfect with the <a href=\"https://discord.com/channels/1262382985844359221/1533187576050094191/1533196970523623494\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-link\">Respawn Infinite Dash</a>."
+            },
+            {
+              "text": "<strong>Glitch</strong> (ICG) - The warp resets the void timer too, allowing to fly and fall as well."
+            }
+          ],
+          "note": "⚠️ WORK IN PROGRESS: a consistent setup is still being searched for — help is welcome!",
           "note_type": "warning",
-          "discord_link": "https://discord.com/channels/1262382985844359221/1501975620953968672",
-          "videos": ["bytIg-bph2A"]
+          "discord_link": "https://discord.com/channels/1262382985844359221/1520041676448469003/1521948858681262161",
+          "videos": ["-1wQqhp9bHo"],
+          "hover_video": false
+        },
+        {
+          "title": "Point Zero ❌",
+          "search_icon": "fa-map-pin",
+          "search_desc": "Coordinates far from the levels",
+          "alt_names": "",
+          "how_to": "This place is located at certain coordinates far from the levels, and can be reached by quickly coming back to the menu (keep mashing to continue quickly). The first frame when One spawns in the game, she will be standing there on a small platform, before being replaced at the last soft checkpoint.",
+          "extra_content": "<p style=\"margin-top: 10px;\">If you quickly go back to the menu twice in a row, you can actually place your soft checkpoint on the Point Zero and stay there. From that, <strong>many things might be possible!</strong></p>",
+          "variations": [],
+          "note": "❌ Not possible anymore, until further proof.",
+          "note_type": "warning",
+          "discord_link": "https://discord.com/channels/1262382985844359221/1520041676448469003/1520650319284015175",
+          "videos": []
         }
       ]
     },
@@ -193,34 +274,23 @@
       "search_category": "Breakthrough",
       "glitches": [
         {
-          "title": "Infinite Core Glitch",
-          "search_icon": "fa-star",
-          "search_desc": "Point Zero, WIP",
-          "alt_names": "",
-          "title_prefix": "<i class=\"fas fa-star\"></i> ",
-          "card_style": "border: 2px solid #ff6b9d; background: linear-gradient(135deg, rgba(255, 107, 157, 0.05), rgba(0, 245, 255, 0.03));",
-          "title_style": "color: #ff6b9d;",
-          "note": "⚠️ WORK IN PROGRESS: We are currently working on the return of the Infinite Core Glitch!",
-          "note_type": "warning",
-          "videos": ["-1wQqhp9bHo"],
-          "hover_video": false
-        },
-        {
-          "title": "Invincibility Glitch",
+          "title": "Invincibility Glitch ❌",
           "search_icon": "fa-shield-halved",
           "search_desc": "Insensible to any type of death blow",
           "card_style": "border: 2px solid #ff6b9d; background: linear-gradient(135deg, rgba(255, 107, 157, 0.05), rgba(0, 245, 255, 0.03));",
           "title_style": "color: #ff6b9d;",
-          "how_to": "Doing the setup of the Void Cancel, if you go back to the menu after losing all your HP, it's possible to remain insensible to any type of death blow (you can receive damages, but never die)."
+          "how_to": "Doing the setup of the Void Cancel, if you go back to the menu after losing all your HP, it's possible to remain insensible to any type of death blow (you can receive damages, but never die).",
+          "note": "❌ Not possible anymore, until further proof.",
+          "note_type": "warning"
         },
         {
-          "title": "Point Zero",
-          "search_icon": "fa-map-pin",
-          "search_desc": "Coordinates far from levels",
+          "title": "Multiverse",
+          "search_icon": "fa-layer-group",
+          "search_desc": "Still to be documented",
           "card_style": "border: 2px solid #ff6b9d; background: linear-gradient(135deg, rgba(255, 107, 157, 0.05), rgba(0, 245, 255, 0.03));",
           "title_style": "color: #ff6b9d;",
-          "how_to": "What we call the <strong>\"Point Zero\"</strong> is located at certain coordinates far from the levels, and can be reached by quickly coming back to the menu (keep mashing to continue quickly). The first frame when One spawns in the game, she will be standing there onto a small platform, before being replaced at the last soft checkpoint.",
-          "extra_content": "<p style=\"margin-top: 10px;\">If you quickly go back to the menu twice in a row, you can actually place your soft checkpoint on the Point Zero and stay there. From that, <strong>many things might be possible!</strong></p>"
+          "note": "⚠️ Listed in the community doc, not documented yet — details to come.",
+          "note_type": "warning"
         }
       ]
     }
