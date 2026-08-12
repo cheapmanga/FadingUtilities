@@ -1,7 +1,7 @@
 {
- "_change_number": 37941160,
+ "_change_number": 37956974,
  "_missing_token": false,
- "_sha": "8e5f1a574e68196a2c9b71b059736ee4e604dbe5",
+ "_sha": "8ff7710e61e883a4e4e9d80e8a487693af0d5eff",
  "_size": 8451,
  "appid": "2467880",
  "common": {
@@ -216,7 +216,7 @@
    }
   },
   "steam_release_date": "1784620800",
-  "store_asset_mtime": "1784798068",
+  "store_asset_mtime": "1786513432",
   "store_tags": {
    "0": "4106",
    "1": "19",
