@@ -1,7 +1,7 @@
 {
- "_change_number": 38664565,
+ "_change_number": 38692534,
  "_missing_token": false,
- "_sha": "769418e4bd6f9d791a24300c3693f7c92a9b6037",
+ "_sha": "940e23cea21dc334a0c52ffdad963267d868297d",
  "_size": 8451,
  "appid": "2467880",
  "common": {
@@ -140,7 +140,7 @@
   "oslist": "windows",
   "primary_genre": "1",
   "releasestate": "released",
-  "review_percentage": "91",
+  "review_percentage": "92",
   "review_score": "8",
   "small_capsule": {
    "english": "8911f722ab88dd638c48a2a8c2d305899beb2952/capsule_231x87.jpg",
