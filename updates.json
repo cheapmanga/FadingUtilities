@@ -1,7 +1,523 @@
 {
- "generated": "2026-09-09T01:17:36.912332+00:00",
+ "generated": "2026-09-11T12:38:16.865609+00:00",
  "appid": "2467880",
  "events": [
+  {
+   "id": "change:38792971",
+   "type": "assets",
+   "types": [
+    "assets"
+   ],
+   "changeid": "38792971",
+   "title": "Changed japanese, koreana, schinese +3",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=38792971",
+   "source": "pics",
+   "date": "2026-09-11T12:38:16.865609+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "store_asset_mtime:"
+        },
+        {
+         "t": "del",
+         "v": "1786513432"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "1788444297"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > header_image"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "japanese:"
+        },
+        {
+         "t": "ins",
+         "v": "c8ce39d63219049ba6cccc89fbed2cf51a3efda6/header_japanese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c8ce39d63219049ba6cccc89fbed2cf51a3efda6/header_japanese.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "koreana:"
+        },
+        {
+         "t": "ins",
+         "v": "c8ce39d63219049ba6cccc89fbed2cf51a3efda6/header_koreana.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c8ce39d63219049ba6cccc89fbed2cf51a3efda6/header_koreana.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "schinese:"
+        },
+        {
+         "t": "del",
+         "v": "64d7a877c399405bfa9159f523dcaedab6bd690f/header_schinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/64d7a877c399405bfa9159f523dcaedab6bd690f/header_schinese.jpg",
+         "media": "image"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "c8ce39d63219049ba6cccc89fbed2cf51a3efda6/header_schinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c8ce39d63219049ba6cccc89fbed2cf51a3efda6/header_schinese.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "tchinese:"
+        },
+        {
+         "t": "ins",
+         "v": "c8ce39d63219049ba6cccc89fbed2cf51a3efda6/header_tchinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/c8ce39d63219049ba6cccc89fbed2cf51a3efda6/header_tchinese.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > library_assets"
+      }
+     ],
+     "children": [
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "library_capsule:"
+        },
+        {
+         "t": "del",
+         "v": "en,zh-cn"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "en,zh-cn,zh-tw,ja,ko"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > library_assets_full > library_capsule > image"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "japanese:"
+        },
+        {
+         "t": "ins",
+         "v": "4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_japanese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_japanese.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "koreana:"
+        },
+        {
+         "t": "ins",
+         "v": "4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_koreana.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_koreana.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "schinese:"
+        },
+        {
+         "t": "del",
+         "v": "dd1ff96afb648464bef34a44f1ba2b5bd2f73a5f/library_capsule_schinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/dd1ff96afb648464bef34a44f1ba2b5bd2f73a5f/library_capsule_schinese.jpg",
+         "media": "image"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_schinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_schinese.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "tchinese:"
+        },
+        {
+         "t": "ins",
+         "v": "4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_tchinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_tchinese.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > library_assets_full > library_capsule > image2x"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "japanese:"
+        },
+        {
+         "t": "ins",
+         "v": "4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_japanese_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_japanese_2x.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "koreana:"
+        },
+        {
+         "t": "ins",
+         "v": "4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_koreana_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_koreana_2x.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "schinese:"
+        },
+        {
+         "t": "del",
+         "v": "dd1ff96afb648464bef34a44f1ba2b5bd2f73a5f/library_capsule_schinese_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/dd1ff96afb648464bef34a44f1ba2b5bd2f73a5f/library_capsule_schinese_2x.jpg",
+         "media": "image"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_schinese_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_schinese_2x.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "tchinese:"
+        },
+        {
+         "t": "ins",
+         "v": "4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_tchinese_2x.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/4860fd52b2e6dde0945cc2b4703b76369eb4b4d0/library_capsule_tchinese_2x.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      }
+     ]
+    },
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > small_capsule"
+      }
+     ],
+     "children": [
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "japanese:"
+        },
+        {
+         "t": "ins",
+         "v": "7f10661fac1046aec0c956816fffca28170b9f29/capsule_231x87_japanese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/7f10661fac1046aec0c956816fffca28170b9f29/capsule_231x87_japanese.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "koreana:"
+        },
+        {
+         "t": "ins",
+         "v": "7f10661fac1046aec0c956816fffca28170b9f29/capsule_231x87_koreana.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/7f10661fac1046aec0c956816fffca28170b9f29/capsule_231x87_koreana.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "modified",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Changed "
+        },
+        {
+         "t": "field",
+         "v": "schinese:"
+        },
+        {
+         "t": "del",
+         "v": "0d866606ea43aedc4c9120e2820c2f13950b9465/capsule_231x87_schinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/0d866606ea43aedc4c9120e2820c2f13950b9465/capsule_231x87_schinese.jpg",
+         "media": "image"
+        },
+        {
+         "t": "text",
+         "v": " › "
+        },
+        {
+         "t": "ins",
+         "v": "7f10661fac1046aec0c956816fffca28170b9f29/capsule_231x87_schinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/7f10661fac1046aec0c956816fffca28170b9f29/capsule_231x87_schinese.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "added",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Added "
+        },
+        {
+         "t": "field",
+         "v": "tchinese:"
+        },
+        {
+         "t": "ins",
+         "v": "7f10661fac1046aec0c956816fffca28170b9f29/capsule_231x87_tchinese.jpg",
+         "href": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2467880/7f10661fac1046aec0c956816fffca28170b9f29/capsule_231x87_tchinese.jpg",
+         "media": "image"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
   {
    "id": "change:38712863",
    "type": "meta",
