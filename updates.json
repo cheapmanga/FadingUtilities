@@ -1,7 +1,72 @@
 {
- "generated": "2026-11-08T18:23:34.096288+00:00",
+ "generated": "2026-11-13T14:28:34.299798+00:00",
  "appid": "2467880",
  "events": [
+  {
+   "id": "change:40916547",
+   "type": "store",
+   "types": [
+    "store"
+   ],
+   "changeid": "40916547",
+   "title": "Changed name, type",
+   "url": "https://steamdb.info/app/2467880/history/?changeid=40916547",
+   "source": "pics",
+   "date": "2026-11-13T14:28:34.299798+00:00",
+   "changes": [
+    {
+     "op": "none",
+     "seg": [
+      {
+       "t": "text",
+       "v": "Changed "
+      },
+      {
+       "t": "field",
+       "v": "common > associations > 2"
+      }
+     ],
+     "children": [
+      {
+       "op": "removed",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Removed "
+        },
+        {
+         "t": "field",
+         "v": "name:"
+        },
+        {
+         "t": "del",
+         "v": "Com2uS Holdings"
+        }
+       ],
+       "children": []
+      },
+      {
+       "op": "removed",
+       "seg": [
+        {
+         "t": "text",
+         "v": "Removed "
+        },
+        {
+         "t": "field",
+         "v": "type:"
+        },
+        {
+         "t": "del",
+         "v": "publisher"
+        }
+       ],
+       "children": []
+      }
+     ]
+    }
+   ]
+  },
   {
    "id": "change:40731124",
    "type": "meta",

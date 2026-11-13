@@ -1,8 +1,8 @@
 {
- "_change_number": 40731124,
+ "_change_number": 40916547,
  "_missing_token": false,
- "_sha": "ed2f834fa95bd7f4dc1ca8e79cf923e63c0d8cbc",
- "_size": 9490,
+ "_sha": "82e992b1a2cd2bf384c77c61136c4f5f48dc2211",
+ "_size": 9419,
  "appid": "2467880",
  "common": {
   "associations": {
@@ -12,10 +12,6 @@
    },
    "1": {
     "name": "New Tales",
-    "type": "publisher"
-   },
-   "2": {
-    "name": "Com2uS Holdings",
     "type": "publisher"
    }
   },
